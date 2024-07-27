@@ -1,5 +1,6 @@
 # Brooklyn-Nine CTF [TryHackMe-Walkthrough](https://tryhackme.com/r/room/brooklynninenine)
-#
+
+![brooklyn99](https://github.com/user-attachments/assets/f99597c1-133b-4e59-a5b7-5e673ec6c862)
 
 ## Task 1. Deploy and get hacking.
 
