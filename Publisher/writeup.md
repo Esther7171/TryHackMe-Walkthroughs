@@ -148,12 +148,8 @@ cd CVE-2023-27372/
 pip install -r requirements.txt
 ```
 
-### Oh my machine got expired.
+### Oh my machine got expired. the ip was changed
 ### Now Let take a try might be it will work. Let try to print hii and save it into a txt file.
-```
-python3 CVE-2023-27372.py -u http://10.10.191.151/spip -c 'echo "hii" > hii.txt'  -v
-```
-* ###  Let try getuid of system.
 ```
 python3 CVE-2023-27372.py -u http://10.10.191.151/spip -c 'echo "hii" > hii.txt'  -v
 ```
@@ -295,7 +291,7 @@ think@publisher:~$
 * ### Let try a blank entry
 ![image](https://github.com/user-attachments/assets/01f48f8f-49a1-4626-9613-e543fb54ba55)
 
-* ### Here is script in opt directory let view this.
+* ### Here is script in opt directory we cant access opt but we can read the contant of file.
 ![image](https://github.com/user-attachments/assets/7570a085-40a4-4f8c-80e0-d2d609dca2b3)
 
 ### As i just casuslly look at the shell i found this:
