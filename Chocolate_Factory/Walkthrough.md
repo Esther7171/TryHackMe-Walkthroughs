@@ -1,9 +1,11 @@
-# ChocolateFactory Walkthrough [Tryhackme.com](https://tryhackme.com/r/room/chocolatefactory)
-![choclate factory](https://github.com/Esther7171/ChocolateFactory/assets/122229257/848611bd-bcfb-4f7d-bfd6-2d5512accd04)
+# <div align="center">[Chocolate Factory](https://tryhackme.com/r/room/chocolatefactory)</div>
 
-## Task 1. Introduction.
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/1db6a365-f65f-43f0-a641-a8b6a5d714f3" ></img>
+</div>
 
-## TASK 2. Challenges
+
+## TASK 1. Challenges
 
 ### Ques 1. Enter the key you found!
 ```bash
@@ -14,9 +16,6 @@
 ```bash
 cn7824
 ```
-
-### Ques 3. change user to charlie
-#### Ans. ---
 
 ### Ques 4. Enter the user flag
 ```bash
