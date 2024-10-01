@@ -5,15 +5,23 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 ## Walkthroughs
 
 - [agentSudoCTF](./Agent%20Sudo/walkthrough.md)
-- [Basic Pentesting](./Basic%20Pentesting/walkthrought.md)
-- [Bounty Hacker](./Bounty%20Hacker/walkthrought.md)
-- [kenobi](./kenobi/walkthrought.md)
-- [MR Robot](./MR%20Robot/walkthrought.md)
-- [picklerick](./picklerick/walkthrought.md)
-- [rootme](./rootme/walkthrought.md)
-- [Simple CTF](./Simple%20CTF/walkthrought.md)
-- [source](./source/walkthrought.md)
-
+- [Basic Pentesting](./Basic-Pentesting/walkthrough.md)
+- [Bounty Hacker](./Bounty-Hacker/Walkthrough.md)
+- [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md)
+- [Cheese CTF](./Cheese%20CTF/walkthrough.md)
+- [Chocolate Factory](./Chocolate_Factory/Walkthrough.md)
+- [Ice](./Ice/WriteUp.md)
+- [Ignite](./ignite%20walkthrough.pdf)
+- [kenobi](./kenobi/walkthrought.md)           ------------->  dooooooo
+- [MR Robot](./MR%20Robot/walkthrought.md) ==============> 
+- [picklerick](./picklerick/walkthrought.md) =============>
+- [Publisher](./Publisher/writeup.md)
+- [rootme](./rootme/walkthrought.md) ==============>
+- [Simple CTF](./Simple%20CTF/walkthrought.md) ==================>
+- [Startup](./Startup/writeup.md)
+- [source](./source/walkthrought.md) ===============>
+- [Wgel CTF](./Wgel%20CTF/wgel%20CTF.pdf)
+- [Wonderland](./Wonderland-CTF/walkthroughs.md)
 Feel free to explore the walkthroughs and learn more about the different challenges and techniques covered in each room.
 
 ## Additional Information
