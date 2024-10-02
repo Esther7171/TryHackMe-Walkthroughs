@@ -20,6 +20,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 - [Simple CTF](./Simple%20CTF/walkthrought.md) ==================>
 - [Startup](./Startup/writeup.md)
 - [source](./source/walkthrought.md) ===============>
+- [Welcome](./Welcome/Flag.md)
 - [Wgel CTF](./Wgel%20CTF/wgel%20CTF.pdf)
 - [Wonderland](./Wonderland-CTF/walkthroughs.md)
 
