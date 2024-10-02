@@ -10,6 +10,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 - [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md)
 - [Cheese CTF](./Cheese%20CTF/walkthrough.md)
 - [Chocolate Factory](./Chocolate_Factory/Walkthrough.md)
+- [Corridor](./Corridor/writeup.md)
 - [Ice](./Ice/WriteUp.md)
 - [Ignite](./ignite%20walkthrough.pdf)
 - [kenobi](./kenobi/walkthrought.md)           ------------->  dooooooo
