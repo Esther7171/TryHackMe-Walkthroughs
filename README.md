@@ -36,6 +36,8 @@ Please note that the walkthroughs provided here are for educational purposes onl
 
 ## Contributing
 
+Happy hacking!
+
 <!--
 
 # TryHackMe Writeups
@@ -132,4 +134,4 @@ $ gobuster help dir | grep -e "-t"
 -->
 
 
-Happy hacking!
+
