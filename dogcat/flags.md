@@ -1,3 +1,4 @@
+# <div align="center">
 # Flags
 * ## What is flag 1?
 ```
