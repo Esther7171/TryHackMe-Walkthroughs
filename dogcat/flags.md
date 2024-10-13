@@ -1,5 +1,8 @@
 # <div align="center">[Dogcat](https://tryhackme.com/r/room/dogcat)</div>
-<div align="center"></div>
+<div align="center">
+ <img src="" height="200"></img> 
+</div>
+
 # Flags
 * ## What is flag 1?
 ```
