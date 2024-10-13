@@ -1,4 +1,4 @@
-# <div align="center">
+# <div align="center"></div>
 # Flags
 * ## What is flag 1?
 ```
