@@ -1,6 +1,6 @@
 # <div align="center">[Dogcat](https://tryhackme.com/r/room/dogcat)</div>
 <div align="center">
- <img src="https://tryhackme-images.s3.amazonaws.com/room-icons/ce2fe16cfcdac475834f262306243b0a.png" height="200"></img> 
+ <img src="https://github.com/user-attachments/assets/891b7488-99a8-4248-a5c7-24224ff1728d" height="150"></img> 
 </div>
 
 # Flags
