@@ -9,6 +9,7 @@ This room will take upto 5 minutes to fully boot , please be patient.
 
 Please use rate limiters while brute-forcing.
 
+# Task 1. Capture the Flag
 # What is the user flag?
 ```
 THM{l0n6_l1v3_7h3_qu33n}
