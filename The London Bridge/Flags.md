@@ -8,7 +8,6 @@ This is a classic boot2root CTF-style room. Make sure to get all the flags.
 This room will take upto 5 minutes to fully boot , please be patient.
 
 Please use rate limiters while brute-forcing.
-
 Answer the questions below
 What is the user flag?
 THM{l0n6_l1v3_7h3_qu33n}
