@@ -8,22 +8,16 @@ This is a classic boot2root CTF-style room. Make sure to get all the flags.
 This room will take upto 5 minutes to fully boot , please be patient.
 
 Please use rate limiters while brute-forcing.
-Answer the questions below
-What is the user flag?
+
+# What is the user flag?
+```
 THM{l0n6_l1v3_7h3_qu33n}
-Correct Answer
-Hint
-What is the root flag?
-
+```
+# What is the root flag?
+```
 THM{l0nd0n_br1d63_p47ch3d}
-Correct Answer
-What is the password of charles?
-
+```
+# What is the password of charles?
+```
 thekingofengland
-Correct Answer
-Created by
-
-User avatar
-tryhackme
-User avatar
-Sharib
+```
