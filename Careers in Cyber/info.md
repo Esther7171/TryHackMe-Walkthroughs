@@ -8,11 +8,6 @@
 
 # Task 1. Introduction
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/f9b8fe62-64a1-4864-9e6a-d0ca82f414e3" height="200px"></img>
-
-</div>
-
 ###### Cyber security careers are becoming more in demand and offer high salaries. There are many different jobs within the security industry, from offensive pentesting (hacking machines and reporting on vulnerabilities) to defensive security (defending against and investigating cyberattacks).
 
 ##### Why get a career in cyber:
@@ -22,12 +17,14 @@
 ###### Be in demand - there are over 3.5 million unfilled cyber positions
 
 # Task 2. Security Analyst
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/703cc9b8-5d6a-4ebf-8139-a6d427b9b37d" height="200px"></img>
-</div>
 
+###### Security analysts are integral to constructing security measures across organisations to protect the company from attacks. Analysts explore and evaluate company networks to uncover actionable data and recommendations for engineers to develop preventative measures. This job role requires working with various stakeholders to gain an understanding of security requirements and the security landscape.
 
-######
+##### Responsibilities
+* ##### Working with various stakeholders to analyse the cyber security throughout the company
+* ##### Compile ongoing reports about the safety of networks, documenting security issues and measures taken in response
+* ##### Develop security plans, incorporating research on new attack tools and trends, and measures needed across teams to maintain data security.
+
 
 
 
