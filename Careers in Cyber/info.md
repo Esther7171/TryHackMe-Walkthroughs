@@ -25,16 +25,16 @@
 * ##### Compile ongoing reports about the safety of networks, documenting security issues and measures taken in response
 * ##### Develop security plans, incorporating research on new attack tools and trends, and measures needed across teams to maintain data security.
 
+# Task 3. Security Engineer
 
+###### Design, monitor and maintain security controls, networks, and systems to help prevent cyberattacks
 
+###### Security engineers develop and implement security solutions using threats and vulnerability data - often sourced from members of the security workforce. Security engineers work across circumventing a breadth of attacks, including web application attacks, network threats, and evolving trends and tactics. The ultimate goal is to retain and adopt security measures to mitigate the risk of attack and data loss.
 
-
-
-
-
-
-
-
+##### Responsibilities
+* ##### Testing and screening security measures across software
+* ##### Monitor networks and reports to update systems and mitigate vulnerabilities
+* ##### Identify and implement systems needed for optimal security
 
 
 
