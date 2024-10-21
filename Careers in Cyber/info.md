@@ -8,6 +8,10 @@
 
 # Task 1. Introduction
 
+<div align="center">
+  <img src="" height="200px"></img>
+</div>
+
 ###### Cyber security careers are becoming more in demand and offer high salaries. There are many different jobs within the security industry, from offensive pentesting (hacking machines and reporting on vulnerabilities) to defensive security (defending against and investigating cyberattacks).
 
 ##### Why get a career in cyber:
