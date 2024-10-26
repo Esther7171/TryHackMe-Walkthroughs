@@ -6,7 +6,8 @@
 
 
 
-## Task 1. Deploy the vulnerable machine
+## <div align="center">Task 1. Deploy the vulnerable machine</div>
+
 <div align="center">
 <img src="https://i.imgur.com/OcA2KrK.gif" height="200"></img>
 </div>
@@ -18,10 +19,10 @@ Answer the questions below
 ```
 7
 ```
-## Task 2.Enumerating
+## <div align="center">Task 2.Enumerating</div>
 
 <div align="center">
-<img src="https://i.imgur.com/O8S93Kr.png" height="200"></img>
+<img src="https://i.imgur.com/O8S93Kr.png" height="200" width=300"></img>
 </div>
 
 Samba is the standard Windows interoperability suite of programs for Linux and Unix. It allows end users to access and use files, printers and other commonly shared resources on a companies intranet or internet. Its often referred to as a network file system.
@@ -34,7 +35,18 @@ Samba is based on the common client/server protocol of Server Message Block (SMB
 ```
 ### Once you're connected, list the files on the share. What is the file can you see?
 ```
+log.txt
 ```
+### What port is FTP running on?
+```
+21
+```
+### What mount can we see?
+```
+/var
+```
+
+
 
 
 
@@ -120,10 +132,42 @@ getting file \log.txt of size 12237 as log.txt (15.0 KiloBytes/sec) (average 15.
 smb: \> 
 ```
 * #### I attached a copy of log.txt in this repo.
-* 
+* #### After reading log.txt I found few interesting things.
+* ##### Information generated for Kenobi when generating an SSH key for the user
+* ##### Information about the ProFTPD server running on port 21.
+#### Earlier nmap port scan will have shown port 111 running the service rpcbind. This is just a server that converts remote procedure call (RPC) program number into universal addresses. When an RPC service is started, it tells rpcbind the address at which it is listening and the RPC program number its prepared to serve. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
 
+```
+└─$ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.100.244
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-26 12:20 IST
+Nmap scan report for 10.10.100.244
+Host is up (0.20s latency).
 
+PORT    STATE SERVICE
+111/tcp open  rpcbind
+| nfs-showmount: 
+|_  /var *
+| nfs-statfs: 
+|   Filesystem  1K-blocks  Used       Available  Use%  Maxfilesize  Maxlink
+|_  /var        9204224.0  1838840.0  6874788.0  22%   16.0T        32000
+| nfs-ls: Volume /var
+|   access: Read Lookup NoModify NoExtend NoDelete NoExecute
+| PERMISSION  UID  GID  SIZE  TIME                 FILENAME
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  .
+| rwxr-xr-x   0    0    4096  2019-09-04T12:27:33  ..
+| rwxr-xr-x   0    0    4096  2019-09-04T12:09:49  backups
+| rwxr-xr-x   0    0    4096  2019-09-04T10:37:44  cache
+| rwxrwxrwx   0    0    4096  2019-09-04T08:43:56  crash
+| rwxrwsr-x   0    50   4096  2016-04-12T20:14:23  local
+| rwxrwxrwx   0    0    9     2019-09-04T08:41:33  lock
+| rwxrwxr-x   0    108  4096  2019-09-04T10:37:44  log
+| rwxr-xr-x   0    0    4096  2019-01-29T23:27:41  snap
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  www
+|_
 
+Nmap done: 1 IP address (1 host up) scanned in 4.33 seconds
+```
+#### We can see a var mount here
 
 
 
