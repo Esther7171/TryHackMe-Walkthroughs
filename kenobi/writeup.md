@@ -21,7 +21,7 @@ Answer the questions below
 ## Task 2.Enumerating
 
 <div align="center">
-<img src="https://i.imgur.com/O8S93Kr.png" height=""></img>
+<img src="https://i.imgur.com/O8S93Kr.png" height="200"></img>
 </div>
 
 
