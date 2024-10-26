@@ -4,7 +4,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 
 ## Walkthroughs
 
-- [agentSudoCTF](./Agent%20Sudo/walkthrough.md)
+- [AgentSudoCTF](./Agent%20Sudo/walkthrough.md)
 - [Basic Pentesting](./Basic-Pentesting/walkthrough.md)
 - [Bounty Hacker](./Bounty-Hacker/Walkthrough.md)
 - [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md)
@@ -14,7 +14,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 - [Hydra](./Hydra/writeup.md)
 - [Ice](./Ice/WriteUp.md)
 - [Ignite](./ignite%20walkthrough.pdf)
-- [kenobi](./kenobi/walkthrought.md)           ------------->  dooooooo
+- [kenobi](./Kenobi/writeup.md)
 - [MR Robot](./MR%20Robot/walkthrought.md) ==============> 
 - [picklerick](./picklerick/walkthrought.md) =============>
 - [Publisher](./Publisher/writeup.md)
