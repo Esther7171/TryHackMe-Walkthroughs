@@ -8,7 +8,7 @@
 
 # Task 1. Deploy the vulnerable machine
 <div align="center">
-<img src="https://i.imgur.com/OcA2KrK.gif" height=""></img>
+<img src="https://i.imgur.com/OcA2KrK.gif" height="200"></img>
 </div>
 
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
