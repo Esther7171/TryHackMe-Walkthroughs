@@ -4,8 +4,6 @@
 </div>
 
 
-
-
 ## <div align="center">Task 1. Deploy the vulnerable machine</div>
 
 <div align="center">
@@ -45,7 +43,9 @@ log.txt
 ```
 /var
 ```
-
+<div align="center">
+<img src="https://i.imgur.com/L54MBzX.png" height=""></img>
+</div>
 
 
 
@@ -168,7 +168,6 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 4.33 seconds
 ```
 #### We can see a var mount here
-
 
 
 
