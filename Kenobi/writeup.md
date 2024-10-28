@@ -43,19 +43,38 @@ log.txt
 ```
 /var
 ```
+## <div align="center">Task 3. Task 3. Gain initial access with ProFtpd</div>
+
 <div align="center">
 <img src="https://i.imgur.com/L54MBzX.png" height=""></img>
 </div>
 
+### What is the version?
+```
+```
+### How many exploits are there for the ProFTPd running?
+```
+```
+### What is Kenobi's user flag (/home/kenobi/user.txt)?
+```
+```
+# <div align="center">Task 4. Privilege Escalation with Path Variable Manipulation</div>
+### What file looks particularly out of the ordinary? 
+```
+```
+### Run the binary, how many options appear?
+```
+```
+### What is the root flag (/root/root.txt)?
+```
 
-
-
+```
 # Let start Scanning The Network
 
 ```
-└─$ nmap 10.10.100.244 -sV -Pn
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-26 11:48 IST
-Nmap scan report for 10.10.100.244
+└─$ nmap 10.10.101.17 -sV -Pn                                                
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-28 11:20 IST
+Nmap scan report for 10.10.101.17
 Host is up (0.21s latency).
 Not shown: 993 closed tcp ports (reset)
 PORT     STATE SERVICE     VERSION
@@ -69,16 +88,17 @@ PORT     STATE SERVICE     VERSION
 Service Info: Host: KENOBI; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 136.33 seconds
+Nmap done: 1 IP address (1 host up) scanned in 15.70 seconds
+
 ```
 * #### Total 7 ports are open. 
 
 #### As Smb is open let enumerate it using nmap,```nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.100.244```
 ```
-└─$ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.100.244
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-26 11:58 IST
-Nmap scan report for 10.10.100.244
-Host is up (0.21s latency).
+└─$ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.101.17
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-28 11:21 IST
+Nmap scan report for 10.10.101.17
+Host is up (0.19s latency).
 
 PORT    STATE SERVICE
 445/tcp open  microsoft-ds
@@ -86,7 +106,7 @@ PORT    STATE SERVICE
 Host script results:
 | smb-enum-shares: 
 |   account_used: guest
-|   \\10.10.100.244\IPC$: 
+|   \\10.10.101.17\IPC$: 
 |     Type: STYPE_IPC_HIDDEN
 |     Comment: IPC Service (kenobi server (Samba, Ubuntu))
 |     Users: 1
@@ -94,15 +114,15 @@ Host script results:
 |     Path: C:\tmp
 |     Anonymous access: READ/WRITE
 |     Current user access: READ/WRITE
-|   \\10.10.100.244\anonymous: 
+|   \\10.10.101.17\anonymous: 
 |     Type: STYPE_DISKTREE
 |     Comment: 
-|     Users: 0
+|     Users: 1
 |     Max Users: <unlimited>
 |     Path: C:\home\kenobi\share
 |     Anonymous access: READ/WRITE
 |     Current user access: READ/WRITE
-|   \\10.10.100.244\print$: 
+|   \\10.10.101.17\print$: 
 |     Type: STYPE_DISKTREE
 |     Comment: Printer Drivers
 |     Users: 0
@@ -111,25 +131,25 @@ Host script results:
 |     Anonymous access: <none>
 |_    Current user access: <none>
 
-Nmap done: 1 IP address (1 host up) scanned in 30.33 seconds
+Nmap done: 1 IP address (1 host up) scanned in 31.42 seconds
 ```
 * #### We have 3 share r listed here , let try to connect with anonymous share.
 ```
-└─$ smbclient //10.10.100.244/anonymous
+└─$ smbclient //10.10.101.17/anonymous
 Password for [WORKGROUP\death]:
 Try "help" to get a list of possible commands.
-smb: \> ls
+smb: \> ls 
   .                                   D        0  Wed Sep  4 16:19:09 2019
   ..                                  D        0  Wed Sep  4 16:26:07 2019
   log.txt                             N    12237  Wed Sep  4 16:19:09 2019
 
-		9204224 blocks of size 1024. 6874796 blocks available
+		9204224 blocks of size 1024. 6877088 blocks available
 ```
 * #### Here is a log.tx , let download this to our system.
 ```
-smb: \> get log.txt 
-getting file \log.txt of size 12237 as log.txt (15.0 KiloBytes/sec) (average 15.0 KiloBytes/sec)
-smb: \> 
+smb: \> get log.txt
+getting file \log.txt of size 12237 as log.txt (16.8 KiloBytes/sec) (average 16.8 KiloBytes/sec)
+smb: \>  
 ```
 * #### I attached a copy of log.txt in this repo.
 * #### After reading log.txt I found few interesting things.
@@ -138,18 +158,15 @@ smb: \>
 #### Earlier nmap port scan will have shown port 111 running the service rpcbind. This is just a server that converts remote procedure call (RPC) program number into universal addresses. When an RPC service is started, it tells rpcbind the address at which it is listening and the RPC program number its prepared to serve. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
 
 ```
-└─$ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.100.244
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-26 12:20 IST
-Nmap scan report for 10.10.100.244
+└─$ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.101.17
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-28 11:21 IST
+Nmap scan report for 10.10.101.17
 Host is up (0.20s latency).
 
 PORT    STATE SERVICE
 111/tcp open  rpcbind
 | nfs-showmount: 
 |_  /var *
-| nfs-statfs: 
-|   Filesystem  1K-blocks  Used       Available  Use%  Maxfilesize  Maxlink
-|_  /var        9204224.0  1838840.0  6874788.0  22%   16.0T        32000
 | nfs-ls: Volume /var
 |   access: Read Lookup NoModify NoExtend NoDelete NoExecute
 | PERMISSION  UID  GID  SIZE  TIME                 FILENAME
@@ -164,10 +181,21 @@ PORT    STATE SERVICE
 | rwxr-xr-x   0    0    4096  2019-01-29T23:27:41  snap
 | rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  www
 |_
+| nfs-statfs: 
+|   Filesystem  1K-blocks  Used       Available  Use%  Maxfilesize  Maxlink
+|_  /var        9204224.0  1836544.0  6877084.0  22%   16.0T        32000
 
-Nmap done: 1 IP address (1 host up) scanned in 4.33 seconds
+Nmap done: 1 IP address (1 host up) scanned in 4.60 seconds
 ```
 #### We can see a var mount here
+
+### According to provided info, Let try banner grabbuing to get ftp version.
+```
+└─$ nc 10.10.101.17 21
+220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.101.17]
+```
+
+### Let Search for any Exploit for this version.
 
 
 
