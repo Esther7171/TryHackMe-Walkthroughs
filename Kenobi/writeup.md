@@ -51,9 +51,11 @@ log.txt
 
 ### What is the version?
 ```
+1.3.5
 ```
 ### How many exploits are there for the ProFTPd running?
 ```
+4
 ```
 ### What is Kenobi's user flag (/home/kenobi/user.txt)?
 ```
