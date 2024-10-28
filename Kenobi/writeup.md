@@ -198,8 +198,18 @@ Nmap done: 1 IP address (1 host up) scanned in 4.60 seconds
 ```
 
 ### Let Search for any Exploit for this version.
-
-
+```
+└─$ searchsploit ProFTPD 1.3.5
+--------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                             |  Path                          |
+--------------------------------------------------------------------------- ---------------------------------
+ProFTPd 1.3.5 - 'mod_copy' Command Execution (Metasploit)                  | linux/remote/37262.rb          |
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution                        | linux/remote/36803.py          |
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution (2)                    | linux/remote/49908.py          |
+ProFTPd 1.3.5 - File Copy                                                  | linux/remote/36742.txt         |
+--------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+```
 
 
 
