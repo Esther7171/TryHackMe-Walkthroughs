@@ -131,6 +131,10 @@ You can make the scan fast by specifying the numbers of threats you want to use.
 ````commandline
 $ gobuster help dir | grep -e "-t"
 ...
+
+<!--
+https://github.com/BEPb/tryhackme/tree/master/02.Medium
+>
   -t, --threads int       Number of concurrent threads (default 10)
 ````
 -->
