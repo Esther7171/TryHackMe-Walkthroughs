@@ -1,6 +1,6 @@
 # <div align="center">[kenobi](https://tryhackme.com/r/room/kenobi)</div>
 <div align="center">
-<img src="https://github.com/user-attachments/assets/87cc5aeb-1a06-43b3-93fe-9533cd3f9402" height="200"></img>
+<img src="https://github.com/user-attachments/assets/87cc5aeb-1a06-43b3-93fe-9533cd3f9402" height="270"></img>
 </div>
 
 
