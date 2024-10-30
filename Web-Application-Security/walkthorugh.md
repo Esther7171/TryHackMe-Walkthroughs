@@ -18,9 +18,7 @@ Identification and Authentication Failure.You noticed that the username and pass
 Cryptographic Failures
 ```
 # Task 3
-Practical Example of Web Application Security
-
-
-Check the other users to discover which user account was used to make the malicious changes and revert them. After reverting the changes, what is the flag that you have received?
-
+Practical Example of Web Application Security Check the other users to discover which user account was used to make the malicious changes and revert them. After reverting the changes, what is the flag that you have received?
+```
 THM{IDOR_EXPLORED}
+```
