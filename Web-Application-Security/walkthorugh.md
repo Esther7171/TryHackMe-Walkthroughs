@@ -7,4 +7,5 @@
 
 ### What do you need to access a web application?
 ```
+Browser
 ```
