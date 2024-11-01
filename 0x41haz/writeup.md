@@ -8,3 +8,8 @@
 In this challenge, you are asked to solve a simple reversing solution. Download and analyze the binary to discover the password.
 
 There may be anti-reversing measures in place!
+
+## 
+```
+THM{2@@25$gfsT&@L}
+```
