@@ -9,7 +9,8 @@ In this challenge, you are asked to solve a simple reversing solution. Download 
 
 There may be anti-reversing measures in place!
 
-## 
+## What is the password?
+
 ```
 THM{2@@25$gfsT&@L}
 ```
