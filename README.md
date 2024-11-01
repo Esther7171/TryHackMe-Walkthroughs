@@ -3,7 +3,7 @@
 This repository contains walkthroughs for various rooms on TryHackMe, a platform for learning and practicing cybersecurity skills through hands-on virtual environments. Each directory corresponds to a specific room and includes a detailed walkthrough guide, along with any necessary files or resources. Purpose of creating this for self learning and helping others.
 
 ## Walkthroughs
-
+- [0x41haz](./0x41haz/writeup.md)
 - [AgentSudoCTF](./Agent%20Sudo/walkthrough.md)
 - [Basic Pentesting](./Basic-Pentesting/walkthrough.md)
 - [Bounty Hacker](./Bounty-Hacker/Walkthrough.md)
