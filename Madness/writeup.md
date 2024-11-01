@@ -4,11 +4,38 @@
 </div>
 
 ## Let start with Scanning The IP ```nmap -sC -sV <IP>```
+```
+death@esther:~$ nmap -sC -sV 10.10.183.133
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-01 21:50 IST
+Nmap scan report for 10.10.183.133
+Host is up (0.19s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 ac:f9:85:10:52:65:6e:17:f5:1c:34:e7:d8:64:67:b1 (RSA)
+|   256 dd:8e:5a:ec:b1:95:cd:dc:4d:01:b3:fe:5f:4e:12:c1 (ECDSA)
+|_  256 e9:ed:e3:eb:58:77:3b:00:5e:3a:f5:24:d8:58:34:8e (ED25519)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+## On apache2 default page there is a comment and Path of img.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0d7cda38-0438-4380-8cf5-5fb5b05902c5" height=""></img>
+</div>
 
-curl -s http://<IP>
-wget http://<IP>/thm.jpg
+
+## Let download this imge
+```
+wget http://10.10.183.133/thm.jpg
+```
+## Its not an image as i examined the first 12 bits of and converted it to a **JPG** format.
+```
 xxd thm.jpg | head
 printf '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' | dd conv=notrunc of=thm.jpg bs=1
+```
 curl -s http://<IP>/th1s_1s_h1dd3n/
 curl -s http://<IP>/th1s_1s_h1dd3n/?secret=34
 python secret.py
