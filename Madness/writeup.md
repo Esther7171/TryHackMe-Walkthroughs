@@ -21,24 +21,61 @@ PORT   STATE SERVICE VERSION
 |_http-title: Apache2 Ubuntu Default Page: It works
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-## On apache2 default page there is a comment and Path of img.
+### On apache2 default page there is a comment and Path of img.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/0d7cda38-0438-4380-8cf5-5fb5b05902c5" height=""></img>
 </div>
 
 
-## Let download this imge
+### Let download this imge
 ```
 wget http://10.10.183.133/thm.jpg
 ```
-## Its not an image as i examined the first 12 bits of and converted it to a **JPG** format.
+### Its not an image as i examined the first 12 bits of and converted it to a **JPG** format.
 ```
 xxd thm.jpg | head
 printf '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' | dd conv=notrunc of=thm.jpg bs=1
 ```
-curl -s http://<IP>/th1s_1s_h1dd3n/
-curl -s http://<IP>/th1s_1s_h1dd3n/?secret=34
-python secret.py
+### Let take look at this:
+```
+http://10.10.183.133/th1s_1s_h1dd3n
+```
+### Source code i got this
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5fb24250-f28b-433b-8590-473505d2fa1e" height=""></img>
+</div>
+
+### Let try to enter random value
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/f0fbbd0e-ac18-4e9c-9058-3c128f36117d" height=""></img>
+</div>
+
+### Doing this manually take a long time let automate this with help of python, I allready created secret.py [tap here](./Madness/secret.py) 
+```
+death@esther:~$ python3 secret.py 
+Enter IP:10.10.183.133
+Found secret: 73
+<html>
+<head>
+  <title>Hidden Directory</title>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="main">
+<h2>Welcome! I have been expecting you!</h2>
+<p>To obtain my identity you need to guess my secret! </p>
+<!-- It's between 0-99 but I don't think anyone will look here-->
+
+<p>Secret Entered: 73</p>
+
+<p>Urgh, you got it right! But I won't tell you who I am! y2RPJ4QaPF!B</p>
+
+</div>
+</body>
+</html>
+```
 # y2RPJ4QaPF!B 
 steghide info thm.jpg
 steghide extract -sf thm.jpg
