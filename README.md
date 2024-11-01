@@ -15,6 +15,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 - [Ice](./Ice/WriteUp.md)
 - [Ignite](./ignite%20walkthrough.pdf)
 - [kenobi](./Kenobi/writeup.md)
+- [Madness](./Madness/writeup.md) ---------------------------------> complete this
 - [MR Robot](./MR%20Robot/walkthrought.md) ==============> 
 - [picklerick](./picklerick/walkthrought.md) =============>
 - [Publisher](./Publisher/writeup.md)
