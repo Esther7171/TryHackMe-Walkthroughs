@@ -1,6 +1,6 @@
 # <div align="center">[Madness](https://tryhackme.com/r/room/madness)</div>
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d1a28066-5e54-4f86-ba21-2353d5ecb097" height="200"></img>
+  <img src="https://github.com/user-attachments/assets/044d66b7-a10d-45ac-9790-2df9df4478c2" height="200"></img>
 </div>
 
 ```
