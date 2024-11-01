@@ -77,6 +77,7 @@ Found secret: 73
 </html>
 ```
 # y2RPJ4QaPF!B 
+
 steghide info thm.jpg
 steghide extract -sf thm.jpg
 cat hidden.txt
