@@ -3,8 +3,8 @@
   <img src="https://github.com/user-attachments/assets/044d66b7-a10d-45ac-9790-2df9df4478c2" height="200"></img>
 </div>
 
-```
-nmap -sC -sV <IP>
+## Let start with Scanning The IP ```nmap -sC -sV <IP>```
+
 curl -s http://<IP>
 wget http://<IP>/thm.jpg
 xxd thm.jpg | head
