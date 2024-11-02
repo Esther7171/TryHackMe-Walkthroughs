@@ -94,7 +94,6 @@ cat user.txt
 ```
 THM{d5781e53b130efe2f94f9b0354a5e4ea}
 ```
-
 ```
 find / -user root -perm -u=s 2>/dev/null
 ls -l /bin/screen*
