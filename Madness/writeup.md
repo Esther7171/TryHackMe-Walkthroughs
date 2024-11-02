@@ -29,7 +29,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### Let download this imge
 ```
-wget http://10.10.183.133/thm.jpg
+wget http://10.10.124.101/thm.jpg
 ```
 ### Its not an image as i examined the first 12 bits of and converted it to a **JPG** format.
 ```
@@ -38,12 +38,12 @@ printf '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' | dd conv=notrunc of=t
 ```
 ### Let take look at this:
 ```
-http://10.10.183.133/th1s_1s_h1dd3n
+http://10.10.124.101/th1s_1s_h1dd3n
 ```
 ### Source code i got this
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/5fb24250-f28b-433b-8590-473505d2fa1e" height=""></img>
+  <img src="https://github.com/user-attachments/assets/20970dbb-2034-4e99-bbe5-a024182ee976" height=""></img>
 </div>
 
 ### Let try to enter random value
