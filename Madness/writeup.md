@@ -5,10 +5,10 @@
 
 ## Let start with Scanning The IP ```nmap -sC -sV <IP>```
 ```
-death@esther:~$ nmap -sC -sV 10.10.183.133
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-01 21:50 IST
-Nmap scan report for 10.10.183.133
-Host is up (0.19s latency).
+death@esther:~$ nmap -sC -sV 10.10.81.42
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-04 15:36 IST
+Nmap scan report for 10.10.81.42
+Host is up (0.16s latency).
 Not shown: 998 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
@@ -17,8 +17,8 @@ PORT   STATE SERVICE VERSION
 |   256 dd:8e:5a:ec:b1:95:cd:dc:4d:01:b3:fe:5f:4e:12:c1 (ECDSA)
 |_  256 e9:ed:e3:eb:58:77:3b:00:5e:3a:f5:24:d8:58:34:8e (ED25519)
 80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
-|_http-server-header: Apache/2.4.18 (Ubuntu)
 |_http-title: Apache2 Ubuntu Default Page: It works
+|_http-server-header: Apache/2.4.18 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 ### On apache2 default page there is a comment and Path of img.
@@ -40,10 +40,10 @@ printf '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' | dd conv=notrunc of=t
 ```
 http://10.10.81.42/th1s_1s_h1dd3n
 ```
-### Source code i got this
+### Source code i got this ```http://Ip/th1s_1s_h1dd3n/?secret=```
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/20970dbb-2034-4e99-bbe5-a024182ee976" height=""></img>
+  <img src="https://github.com/user-attachments/assets/cd9f8dce-c50d-4732-a035-7c04232298ed" height=""></img>
 </div>
 
 ### Let try to enter random value
