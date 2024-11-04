@@ -46,16 +46,10 @@ http://10.10.81.42/th1s_1s_h1dd3n
   <img src="https://github.com/user-attachments/assets/cd9f8dce-c50d-4732-a035-7c04232298ed" height=""></img>
 </div>
 
-### Let try to enter random value
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/f0fbbd0e-ac18-4e9c-9058-3c128f36117d" height=""></img>
-</div>
-
 ### Doing this manually take a long time let automate this with help of python, I already created secret.py [tap here](./secret.py) 
 ```
 death@esther:~$ python3 secret.py 
-Enter IP:10.10.183.133
+Enter IP:10.10.81.42
 Found secret: 73
 <html>
 <head>
