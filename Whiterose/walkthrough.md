@@ -1,3 +1,4 @@
+# <div align="center">[Whiterose](https://tryhackme.com/r/room/whiterose)</div>
 <div align="center"> Yet another Mr. Robot themed challenge.</div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/63573b56-425b-415c-9133-31f9b701470b" height="200"></img>
