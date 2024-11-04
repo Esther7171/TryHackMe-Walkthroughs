@@ -29,7 +29,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### Let download this imge
 ```
-wget http://10.10.124.101/thm.jpg
+wget http://10.10.81.42/thm.jpg
 ```
 ### Its not an image as i examined the first 12 bits of and converted it to a **JPG** format.
 ```
@@ -38,7 +38,7 @@ printf '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' | dd conv=notrunc of=t
 ```
 ### Let take look at this:
 ```
-http://10.10.124.101/th1s_1s_h1dd3n
+http://10.10.81.42/th1s_1s_h1dd3n
 ```
 ### Source code i got this
 
