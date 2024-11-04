@@ -70,14 +70,42 @@ Found secret: 73
 </body>
 </html>
 ```
-# y2RPJ4QaPF!B 
+```
+y2RPJ4QaPF!B
+```
 
-steghide info thm.jpg
+### Let try steghide maybe this is the passphrase,
+```
+death@esther:~$ steghide info thm.jpg
+"thm.jpg":
+  format: jpeg
+  capacity: 1.0 KB
+Try to get information about embedded data ? (y/n) y
+Enter passphrase: 
+  embedded file "hidden.txt":
+    size: 101.0 Byte
+    encrypted: rijndael-128, cbc
+    compressed: yes
+```
+```
 steghide extract -sf thm.jpg
-cat hidden.txt
-# wbxre
+```
+### We got hidden.txt
+```
+death@esther:~$ cat hidden.txt 
+Fine you found the password! 
+
+Here's a username 
+
+wbxre
+
+I didn't say I would make it easy for you!
+```
+### This username looks strange to me let try to decode this
+```
 echo -n "wbxre" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-# joker
+```
+### joker
 wget https://<IP>/5iW7kC8.jpg
 steghide info 5iW7kC8.jpg
 steghide extract -sf 5iW7kC8.jpg
