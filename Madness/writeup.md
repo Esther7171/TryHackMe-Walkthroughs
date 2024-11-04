@@ -105,14 +105,17 @@ I didn't say I would make it easy for you!
 ```
 echo -n "wbxre" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
-### this is ```rot13`` cypher on cyberchef
+### this is ```Rot13``` cypher on cyberchef
 <div align="center">
   <img src="https://github.com/user-attachments/assets/b76ced3d-fed9-4105-87bb-f69c036a6921" height=""></img>
 </div>
 
 ### ```joker``` this is the real username.
 
+### I have tried everthing but didn't find anything after help of some resource i found the lab banner contain some information. 
+```
 wget https://<IP>/5iW7kC8.jpg
+```
 steghide info 5iW7kC8.jpg
 steghide extract -sf 5iW7kC8.jpg
 cat password.txt
