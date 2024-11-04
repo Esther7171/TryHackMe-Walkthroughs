@@ -114,12 +114,64 @@ echo -n "wbxre" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 
 ### I have tried everthing but didn't find anything after help of some resource i found the lab banner contain some information. 
 ```
-wget https://<IP>/5iW7kC8.jpg
+wget https://github.com/Esther7171/THM-Walkthroughs/blob/main/Madness/banner.jpg
 ```
-steghide info 5iW7kC8.jpg
-steghide extract -sf 5iW7kC8.jpg
-cat password.txt
-sshpass -p "*axA&GF8dP" ssh joker@<IP>
+```
+death@esther:~$ steghide info banner.jpg 
+"banner.jpg":
+  format: jpeg
+  capacity: 6.6 KB
+Try to get information about embedded data ? (y/n) y
+Enter passphrase: 
+  embedded file "password.txt":
+    size: 83.0 Byte
+    encrypted: rijndael-128, cbc
+    compressed: yes
+```
+### It just a blank entry as passphase,
+```
+death@esther:~$ steghide extract -sf banner.jpg 
+Enter passphrase: 
+wrote extracted data to "password.txt".
+```
+### Let take a look at this password.txt
+```
+death@esther:~$ cat password.txt 
+I didn't think you'd find me! Congratulations!
+
+Here take my password
+
+*axA&GF8dP
+```
+### Let log in with SSH.
+* ### Username: ```joker```
+* ### Password: ```*axA&GF8dP```
+* ### ```ssh joker@<IP>```
+```
+death@esther:~$ ssh joker@10.10.81.42
+The authenticity of host '10.10.81.42 (10.10.81.42)' can't be established.
+ED25519 key fingerprint is SHA256:B0gcnLQ9MrwK4uUZINN4JI6gd+EofSsF2e8c5ZMDrwY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.81.42' (ED25519) to the list of known hosts.
+joker@10.10.81.42's password: 
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Last login: Sun Jan  5 18:51:33 2020 from 192.168.244.128
+joker@ubuntu:~$ 
+```
 cat user.txt 
 ```
 ```
