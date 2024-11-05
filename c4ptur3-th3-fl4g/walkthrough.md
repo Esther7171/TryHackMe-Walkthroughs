@@ -61,3 +61,9 @@ Let's make this a bit trickier...
 ```
 Super Secret Message
 ```
+# Task 3. Steganography
+* Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video.
+### Decode the image to reveal the answer.
+```
+SpaghettiSteg
+```
