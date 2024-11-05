@@ -1,5 +1,7 @@
-# Bounty Hacker [TryHackMe](https://tryhackme.com/r/room/cowboyhacker) Walkthrough
-![9ad38a2cc31d6ae0030c888aca7fe646](https://github.com/Esther7171/Bounty-Hacker-TryHackMe-/assets/122229257/5af497af-a833-46b2-90bb-c7c5c752e6bf)
+# <div align="center">[Bounty Hacker](https://tryhackme.com/r/room/cowboyhacker)</div>
+<div align="center">
+<img src="https://github.com/user-attachments/assets/a1c1a330-8473-4c7d-afc9-8ed0e17fe801" height="200"></img>
+</div>
 
 ##  Task 1 . Living up to the title.
 
