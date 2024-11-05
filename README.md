@@ -8,6 +8,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 - [Basic Pentesting](./Basic-Pentesting/walkthrough.md)
 - [Bounty Hacker](./Bounty-Hacker/Walkthrough.md)
 - [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md)
+- [C4ptur3-th3-fl4g](./C4ptur3-th3-fl4g/walkthrough.md)
 - [Cheese CTF](./Cheese%20CTF/walkthrough.md)
 - [Chocolate Factory](./Chocolate_Factory/Walkthrough.md)
 - [Corridor](./Corridor/writeup.md)
