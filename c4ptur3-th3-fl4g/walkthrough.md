@@ -67,3 +67,18 @@ Super Secret Message
 ```
 SpaghettiSteg
 ```
+
+# Task 4. Security through obscurity
+* Security through obscurity is the reliance in security engineering on the secrecy of the design or implementation as the main method of providing security for a system or component of a system.
+
+### Download and get 'inside' the file. What is the first filename & extension?
+```
+hackerchat.png
+```
+### Get inside the archive and inspect the file carefully. Find the hidden text.
+```
+AHH_YOU_FOUND_ME!
+```
+
+## Done 😙 
+
