@@ -20,7 +20,7 @@ THM{N0t_ ju5t_ANY_D3sk}
 ```
 THM{0nly_ th3m_5.5.2_D3sk}
 ```
-
+<!--
 # Let start with Scanning the target:
 ```
 nmap -sC -sV
