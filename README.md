@@ -1,6 +1,5 @@
 <div align="center">
-<img src="
-https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height=""></img>
+<img src="https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height=""></img>
 </div>
 
 # TryHackMe-Walkthroughs
