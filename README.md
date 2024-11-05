@@ -3,9 +3,24 @@
 This repository contains walkthroughs for various rooms on TryHackMe, a platform for learning and practicing cybersecurity skills through hands-on virtual environments. Each directory corresponds to a specific room and includes a detailed walkthrough guide, along with any necessary files or resources. Purpose of creating this for self learning and helping others.
 
 ## Walkthroughs
-| Room Name | Difficulty | OS |Description |
-|:---:|:---:|---|---|
-| [[0x41haz]](./0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge |
+| Room Name | Difficulty | Type |Description | Room Type |
+|:---:|:---:|---|---|---|
+| [[0x41haz]](./0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge |  Reversing |
+| [[Annie]](./Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
+| [[Basic-Pentesting]](./Basic-Pentesting/walkthrough.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
+| [[Bounty-Hacker]](./Bounty-Hacker/Walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
+| [[Brooklyn-Nine-Nine]](./Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
+| [[C4ptur3-th3-fl4g]](./C4ptur3-th3-fl4g/walkthrough.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
+| [[Careers-in-Cyber]](./Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
+| [[Cheese-CTF]](./Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
+| [[Chocolate_Factory]](./Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
+| [[Corridor]](./Corridor/writeup.md) | Easy | Web | Can you escape the Corridor?| IDOR |
+| [[Hydra]](./Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
+| [[Ice]](./Ice/writeUp.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
+| [[Ignite]](./Ignite/ignite walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [[Madness]](./Madness/writeup.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
+| [[]]() | | | |
+
 
 
 - [0x41haz](./0x41haz/writeup.md)
