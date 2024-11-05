@@ -60,6 +60,8 @@ Feel free to explore the walkthroughs and learn more about the different challen
 
 In addition to the walkthroughs, this repository may also include other relevant files or resources associated with each room, such as exploit scripts, log files, or nmap scans. These files can be found within the respective directories.
 
+Sometime im too lazy to make a complete walkthorugh so please ignore that..
+
 Please note that the walkthroughs provided here are for educational purposes only and should not be used for any malicious activities. Always adhere to ethical hacking practices and respect the terms and conditions of the TryHackMe platform.
 
 ## Contributing
