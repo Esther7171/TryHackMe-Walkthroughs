@@ -17,7 +17,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [[Corridor]](./Corridor/writeup.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [[Hydra]](./Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [[Ice]](./Ice/writeUp.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
-| [[Ignite]](./Ignite/ignite walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [[Ignite]](./Ignite/ignite-walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [[Madness]](./Madness/writeup.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [[]]() | | | |
 
