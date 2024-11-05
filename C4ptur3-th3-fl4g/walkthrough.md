@@ -1,4 +1,3 @@
-
 # <div align="center">[c4ptur3-th3-fl4g](https://tryhackme.com/r/room/c4ptur3th3fl4g)</div>
 <div align="center">A beginner level CTF challenge</div>
 <br>
