@@ -1,17 +1,19 @@
 # <div align="center">[Capture!](https://tryhackme.com/r/room/capture)</div>
 
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/b80bf4c0-f7c0-4d57-9365-cfec6de6020a" height="200"></img>
 </div>
 
-# Task 1. Download the file.
-# Tast 2. Bypass the login form
-## What is the value of flag.txt?
+## Task 1. Download the file.
 ```
-
+NO need
 ```
-## Let make a Nmap scan
+## Tast 2. Bypass the login form
+### What is the value of flag.txt?
+```
+7df2eabce36f02ca8ed7f237f77ea416
+```
+<!--## Let make a Nmap scan
 ```
 death@esther:~$ nmap 10.10.236.203 -sV 
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-02 06:37 IST
