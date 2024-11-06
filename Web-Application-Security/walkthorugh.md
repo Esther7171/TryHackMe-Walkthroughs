@@ -1,7 +1,8 @@
 # <div align="center">[Web Application Security](https://tryhackme.com/r/room/introwebapplicationsecurity)</div>
 
-
-<div align="center"></div>
+<div align="center">
+<img src="https://github.com/user-attachments/assets/a4bb194c-cfa0-4cc7-aa24-abd0d3a8354e" height="200"></img>
+</div>
 
 # Task 1. Introduction
 
