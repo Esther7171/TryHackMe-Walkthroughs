@@ -13,47 +13,41 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Agent Sudo](Agent-Sudo/walkthrough.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | |CTF ```CVE-2019-14287``` |
 | [Annie](./Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
 | [Basic-Pentesting](./Basic-Pentesting/walkthrough.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
-| [Bounty-Hacker](./Bounty-Hacker/Walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
+| [Bitem](Biteme/writeup.md) | Medium | Linux | Stay out of my server! | CTF |
+| [Blue](Blue/walkthrough.md) | Easy | Windows | Windows Exploitation Basics - Easy | ```MS17-010``` EternalBlue SMB Remote Windows Kernel Pool Corruption |
+| [Bounty Hacker](./Bounty-Hacker/Walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
+| [Break Out The Cage](Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
 | [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [C4ptur3-th3-fl4g](./C4ptur3-th3-fl4g/walkthrough.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
-| [Careers-in-Cyber](./Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
-| [Cheese-CTF](./Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
-| Chocolate_Factory](./Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
+| [Capture!](Capture!/writeup.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
+| [Careers in Cyber](./Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
+| [Cheese CTF](./Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
+| [Chocolate_Factory](./Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
 | [Corridor](./Corridor/writeup.md) | Easy | Web | Can you escape the Corridor?| IDOR |
+| [Dogcat](Dogcat/flags.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` |
 | [Hydra](./Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Ice](./Ice/writeUp.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
-| [[Ignite](./Ignite/ignite-walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [Ignite](./Ignite/ignite-walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [Madness](./Madness/writeup.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
-| [[]]() | | | |
+| [Metamorphosis](Metamorphosis/walkthrough.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
+| [Mr Robot CTF](Mr-Robot-CTF/walkthrough.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
+| [Pickle Rick](Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
+| [Publisher](Publisher/writeup.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
+| [Startup](Startup/writeup.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
+| [The London Bridge](The-London-Bridge/Flags.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
+| [The Marketplace](The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
+| [The Server From Hell](The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
+| [Watcher](Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
+| [Web Application Security](Web-Application-Security/walkthorugh.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
+| [Wekor](Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
+| [Welcome](Welcome/Flag.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
+| [Wgel CTF](Wgel-CTF/wgel-CTF.pdf) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
+| [Whiterose](Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ``SSTI```|
+| [Wonderland](Wonderland-CTF/walkthroughs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
 
-
-
-- [0x41haz](./0x41haz/writeup.md)
-- [AgentSudoCTF](./Agent%20Sudo/walkthrough.md)
-- [Basic Pentesting](./Basic-Pentesting/walkthrough.md)
-- [Bounty Hacker](./Bounty-Hacker/Walkthrough.md)
-- [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md)
-- [C4ptur3-th3-fl4g](./C4ptur3-th3-fl4g/walkthrough.md)
-- [Cheese CTF](./Cheese%20CTF/walkthrough.md)
-- [Chocolate Factory](./Chocolate_Factory/Walkthrough.md)
-- [Corridor](./Corridor/writeup.md)
-- [Hydra](./Hydra/writeup.md)
-- [Ice](./Ice/WriteUp.md)
-- [Ignite](./ignite%20walkthrough.pdf)
-- [kenobi](./Kenobi/writeup.md)
-- [Madness](./Madness/writeup.md)
-- [MR Robot](./MR%20Robot/walkthrought.md) ==============> 
-- [picklerick](./picklerick/walkthrought.md) =============>
-- [Publisher](./Publisher/writeup.md)
-- [rootme](./rootme/walkthrought.md) ==============>
-- [Simple CTF](./Simple%20CTF/walkthrought.md) ==================>
-- [Startup](./Startup/writeup.md)
-- [source](./source/walkthrought.md) ===============>
-- [Welcome](./Welcome/Flag.md)
-- [Wgel CTF](./Wgel%20CTF/wgel%20CTF.pdf)
-- [Wonderland](./Wonderland-CTF/walkthroughs.md)
-- <!-- https://github.com/BEPb/tryhackme/blob/master/01.easy/Anthem.md -------- complete this -------->
-
+<!--
+| []() | | | |
+-->
 
 Feel free to explore the walkthroughs and learn more about the different challenges and techniques covered in each room.
 
