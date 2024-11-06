@@ -2,7 +2,7 @@
 <div align="center">Help Cage bring back his acting career and investigate the nefarious goings on of his agent!</div>
 
 <div align="center">
-<img src="" height="200"></img>
+<img src="https://github.com/user-attachments/assets/ed38db2b-132d-4481-91b0-b98251287fd6" height="200"></img>
 </div>
 
 ## Task 1. Investigate!
