@@ -1,41 +1,82 @@
-# Agent-Sudo-Walkthrough [Tryhackme](https://tryhackme.com/r/room/agentsudoctf)
+# <div align="center">[Agent Sudo](https://tryhackme.com/r/room/agentsudoctf)</div>
+<div align="center">You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth.</div>
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/4af38d66-6dd1-41ae-9086-7f17ffda540b" height="200"></img>
+</div>
+
 
 ##  Task 1. Author note
-
+```
+No need
+```
 ## Task 2. Enumerate
-### Ques 1. How many open ports?
+Enumerate the machine and get all the important information
+
+### How many open ports?
 ```bash
 3
 ```
-### Ques 2. How you redirect yourself to a secret page?
+### How you redirect yourself to a secret page?
 ```bash
 user-agent
 ```
-### Ques 3.What is the agent name?
+### What is the agent name?
 ```bash
 chris
 ```
-##  Task 3. Hash cracking and brute-force
-### Ques 1. FTP password
+## Task 3. Hash cracking and brute-force
+Done enumerate the machine? Time to brute your way out.
+
+### FTP password
 ```bash
 crystal
 ```
-### Ques 2. Zip file password
-### Ques 3. steg password
-```bash
+### Zip file password
 ```
-### Ques 4. Who is the other agent (in full name)?
-```bash
+alien
 ```
-### Ques 5. SSH password
-```bash
+### steg password
 ```
-### Ques
-### Ques
-### Ques
-### Ques
+Area51
+```
+### Who is the other agent (in full name)?
+```
+james
+```
+### SSH password
+```
+hackerrules!
+```
+## Task 4
+Capture the user flag
 
+### What is the user flag?
+```
+b03d975e8c92a7c04146cfa7a5a313c7
+```
+### What is the incident of the photo called?
+```
+Roswell alien autopsy
+```
+## Task 5
+Privilege escalation
+Enough with the extraordinary stuff? Time to get real.
 
+CVE number for the escalation 
+
+### (Format: CVE-xxxx-xxxx)
+```
+CVE-2019-14287
+```
+### What is the root flag?
+```
+b53a02f55b57d4439e3341834d70c062
+```
+### (Bonus) Who is Agent R?
+```
+DesKel
+```
 
 ## 1. Let start with basic scan 
 ```bash
