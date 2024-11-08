@@ -13,8 +13,7 @@ Please also note that this box does not require brute forcing!
 ```
 thm{c529b5d5d6ab6b430b7eb1903b2b5e1b}
 ```
-### ```+ 50```
-Escalate your privileges and obtain root.txt    
+### ```+ 50``` Escalate your privileges and obtain root.txt    
 
 thm{9f85b7fdeb2cf96985bf5761a93546a2}
 Correct Answer
