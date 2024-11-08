@@ -10,7 +10,7 @@
 Please also note that this box does not require brute forcing!
 
 ### Compromise this machine and obtain user.txt
-
+```
 thm{c529b5d5d6ab6b430b7eb1903b2b5e1b}
 Correct Answer
 Hint
