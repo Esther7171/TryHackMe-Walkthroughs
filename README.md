@@ -19,6 +19,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Break Out The Cage](Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
 | [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [C4ptur3-th3-fl4g](./C4ptur3-th3-fl4g/walkthrough.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
+| [CMesS](https://tryhackme.com/r/room/cmess) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
 | [Capture!](Capture!/writeup.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
 | [Careers in Cyber](./Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
 | [Cheese CTF](./Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
