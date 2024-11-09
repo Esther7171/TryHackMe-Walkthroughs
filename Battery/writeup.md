@@ -58,5 +58,6 @@ THM{20c1d18791a246001f5df7867d4e6bf5}
 * ```cyber yash```
 * ```emergency.py fernet flag2.txt root.txt```
 * ```cat flag2.txt```
-
+```
 THM{db12b4451d5e70e2a177880ecfe3428d}
+```
