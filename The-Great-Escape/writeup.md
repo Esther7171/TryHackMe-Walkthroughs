@@ -9,10 +9,10 @@
 ## Task 2. A Simple Webapp
 Start off with a simple webapp. Can you find the hidden flag?
 ### Find the flag hidden in the webapp
+
 ```
 THM{b801135794bf1ed3a2aafaa44c2e5ad4}
 ```
-
 * ```nmap -sSCV -p- <IP>```
 * ```gobuster dir -f -u http://<IP> -w /usr/share/wordlists/dirb/big.txt```
 * ```curl http://<IP>/.well-known/security.txt```
@@ -20,8 +20,7 @@ THM{b801135794bf1ed3a2aafaa44c2e5ad4}
 
 ## Task 3. Root! Root?
 ```
-
-
+THM{0cb4b947043cb5c0486a454b75a10876}
 ```
 ```
 curl http://<IP>/robots.txt
