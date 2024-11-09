@@ -13,6 +13,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Agent Sudo](Agent-Sudo/walkthrough.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | |CTF ```CVE-2019-14287``` |
 | [Annie](./Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
 | [Basic-Pentesting](./Basic-Pentesting/walkthrough.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
+| [Battery](./Battery/writeup.md) | Medium | Linux | CTF designed by CTF lover for CTF lovers | ```Re-Registration Attack``` ```XML External Entity``` ```Sudo Abuse```|
 | [Bitem](Biteme/writeup.md) | Medium | Linux | Stay out of my server! | CTF |
 | [Blue](Blue/walkthrough.md) | Easy | Windows | Windows Exploitation Basics - Easy | ```MS17-010``` EternalBlue SMB Remote Windows Kernel Pool Corruption |
 | [Bounty Hacker](./Bounty-Hacker/Walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
