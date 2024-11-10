@@ -43,9 +43,9 @@ Quick and dirty login implementations usually goes with poor data management.
 There must be something you can do to explore this machine more thoroughly..
 
 ### There is a database lying around, what is its filename?
+```
 utech.db.sqlite
-Correct Answer
-Hint
+```
 What is the first user's password hash?
 
 f357a0c52799563c7c7b76c1e7543a32
