@@ -14,5 +14,24 @@ Have a look at the source code before moving on to Task 2.
 
 You can review the source code by clicking on the Download Task Files button at the top of this task to download the required file.
 
-Answer the questions below
 I have downloaded the source code.
+```
+No Need
+```
+
+## Task 2. Get those flags!
+
+Your friend told me you were wise, but I don't believe them. Can you prove me wrong?
+
+When you are ready, click the Start Machine button to fire up the Virtual Machine. Please allow 3-5 minutes for the VM to start fully.
+
+The server is listening on port 1337 via TCP. You can connect to it using Netcat or any other tool you prefer.
+
+### What is the first flag?
+```
+THM{p1alntExtAtt4ckcAnr3alLyhUrty0urxOr}
+```
+### What is the second and final flag?
+```
+THM{BrUt3_ForC1nG_XOR_cAn_B3_FuN_nO?}
+```
