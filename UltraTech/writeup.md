@@ -42,8 +42,7 @@ Quick and dirty login implementations usually goes with poor data management.
 
 There must be something you can do to explore this machine more thoroughly..
 
-Answer the questions below
-There is a database lying around, what is its filename?
+### There is a database lying around, what is its filename?
 utech.db.sqlite
 Correct Answer
 Hint
