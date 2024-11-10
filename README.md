@@ -9,7 +9,8 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 # Walkthroughs
 | Room Name | Difficulty | Type |Description | Room Type |
 |:---:|:---:|---|---|---|
-| [0x41haz](./0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge |  Reversing |
+| [0x41haz](./Room/0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge |  Reversing |
+<!--(./0x41haz/writeup.md)-->
 | [Agent Sudo](Agent-Sudo/walkthrough.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | |CTF ```CVE-2019-14287``` |
 | [Annie](./Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
 | [Basic-Pentesting](./Basic-Pentesting/walkthrough.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
