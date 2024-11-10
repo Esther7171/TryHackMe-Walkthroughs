@@ -34,10 +34,6 @@ Ubuntu
 ```
 ## Task 3. Let the fun begin
 
-
-
-
-
 Now that you know which services are available, it's time to exploit them!
 
 Did you find somewhere you could try to login? Great!
