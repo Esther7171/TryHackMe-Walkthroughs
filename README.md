@@ -40,6 +40,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [The London Bridge](The-London-Bridge/Flags.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
 | [The Marketplace](The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
 | [The Server From Hell](The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
+| [UltraTech](UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
 | [Watcher](Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
 | [Web Application Security](Web-Application-Security/walkthorugh.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
 | [Wekor](Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
