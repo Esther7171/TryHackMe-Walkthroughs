@@ -1,4 +1,4 @@
-<div align="center">
+f<div align="center">
 <img src="https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height="200"></img>
 </div>
 
@@ -30,6 +30,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Hydra](./Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Ice](./Ice/writeUp.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
 | [Ignite](./Ignite/ignite-walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [Kiba](Kiba/wrietup.md) |  Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` | 
 | [Madness](./Madness/writeup.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](Metamorphosis/walkthrough.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Mr Robot CTF](Mr-Robot-CTF/walkthrough.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
