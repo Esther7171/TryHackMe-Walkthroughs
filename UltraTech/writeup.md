@@ -50,10 +50,22 @@ utech.db.sqlite
 ```
 f357a0c52799563c7c7b76c1e7543a32
 ```
-What is the password associated with this hash?
-
+### What is the password associated with this hash?
+```
 n100906
-Correct Answer
-Hint
-Task 4
-The root of all evil
+```
+## Task 4. The root of all evil
+
+Congrats if you've made it this far, you should be able to comfortably run commands on the server by now!
+
+Now's the time for the final step!
+
+You'll be on your own for this one, there is only one question and there might be more than a single way to reach your goal.
+
+Mistakes were made, take advantage of it.
+
+### What are the first 9 characters of the root user's private SSH key?
+```
+MIIEogIBA
+```
+
