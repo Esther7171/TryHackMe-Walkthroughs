@@ -34,3 +34,31 @@ Ubuntu
 ```
 ## Task 3. Let the fun begin
 
+
+
+
+
+Now that you know which services are available, it's time to exploit them!
+
+Did you find somewhere you could try to login? Great!
+
+Quick and dirty login implementations usually goes with poor data management.
+
+There must be something you can do to explore this machine more thoroughly..
+
+Answer the questions below
+There is a database lying around, what is its filename?
+utech.db.sqlite
+Correct Answer
+Hint
+What is the first user's password hash?
+
+f357a0c52799563c7c7b76c1e7543a32
+Correct Answer
+What is the password associated with this hash?
+
+n100906
+Correct Answer
+Hint
+Task 4
+The root of all evil
