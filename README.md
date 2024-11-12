@@ -15,10 +15,10 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Basic-Pentesting](./Room/Basic-Pentesting/writeup.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
 | [Battery](./Room/Battery/writeup.md) | Medium | Linux | CTF designed by CTF lover for CTF lovers | ```Re-Registration Attack``` ```XML External Entity``` ```Sudo Abuse```|
 | [Biteme](./Room/Biteme/writeup.md) | Medium | Linux | Stay out of my server! | CTF |
-| [Blue](Blue/walkthrough.md) | Easy | Windows | Windows Exploitation Basics - Easy | ```MS17-010``` EternalBlue SMB Remote Windows Kernel Pool Corruption |
-| [Bounty Hacker](./Bounty-Hacker/Walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
-| [Break Out The Cage](Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
-| [Brooklyn-Nine-Nine](./Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
+| [Blue](./Room/Blue/writeup.md) | Easy | Windows | Windows Exploitation Basics - Easy | ```MS17-010``` EternalBlue SMB Remote Windows Kernel Pool Corruption |
+| [Bounty Hacker](./Room/Bounty-Hacker/writeup.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
+| [Break Out The Cage](./Room/Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
+| [Brooklyn-Nine-Nine](./Rooms/Brooklyn-Nine-Nine/writeup.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [C4ptur3-th3-fl4g](./C4ptur3-th3-fl4g/walkthrough.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
 | [CMesS](https://tryhackme.com/r/room/cmess) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
 | [Capture!](Capture!/writeup.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
