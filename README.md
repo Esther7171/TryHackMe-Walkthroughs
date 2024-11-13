@@ -29,10 +29,9 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` |
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Ice](./Room/Ice/walkthrough.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
-
-| [Ignite](./Ignite/ignite-walkthrough.pdf) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
-| [Kiba](Kiba/wrietup.md) |  Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` | 
-| [Madness](./Madness/writeup.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
+| [Ignite](./Room/Ignite) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [Kiba](./Room/Kiba/wrietup.md) |  Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` | 
+| [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](Metamorphosis/walkthrough.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Mr Robot CTF](Mr-Robot-CTF/walkthrough.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Pickle Rick](Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
