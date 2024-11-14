@@ -156,7 +156,7 @@ smb: \> get log.txt
 getting file \log.txt of size 12237 as log.txt (16.8 KiloBytes/sec) (average 16.8 KiloBytes/sec)
 smb: \>  
 ```
-* #### I attached a copy of log.txt in this repo.
+* #### I attached a copy of [logs](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Kenobi/log.txt)
 * #### After reading log.txt I found few interesting things.
 * ##### Information generated for Kenobi when generating an SSH key for the user
 * ##### Information about the ProFTPD server running on port 21.
