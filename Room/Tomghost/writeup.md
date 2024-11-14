@@ -26,3 +26,5 @@ THM{GhostCat_1s_so_cr4sy}
 ```
 THM{Z1P_1S_FAKE}
 ```
+
+### [Exploit](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Tomghost/exploit.py)
