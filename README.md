@@ -25,6 +25,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Careers in Cyber](./Room/Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
 | [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
+| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol:1/writeup.md) | Medium | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```cryptography``` |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` |
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
@@ -36,14 +37,15 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
-| [Pickle Rick](Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
-| [Publisher](Publisher/writeup.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
-| [Startup](Startup/writeup.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
-| [The Great Escape](The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
-| [The London Bridge](The-London-Bridge/Flags.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
-| [The Marketplace](The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
-| [The Server From Hell](The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
-| [Tomghost](Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
+| [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
+| [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
+| [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
+| [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
+| [The Great Escape](./Room/The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
+| [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
+| [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
+| [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
+| [Tomghost](./Room/Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
 | [UltraTech](UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
 | [W1seGuy](W1seGuy/writeup.md) | Easy | Linux| A w1se guy 0nce said, the answer is usually as plain as day. | ```Cryptographic``` | 
 | [Watcher](Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
