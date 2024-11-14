@@ -4,7 +4,7 @@
 </div>
 
 
-## <div align="center">Task 1. Deploy the vulnerable machine</div>
+## Task 1. Deploy the vulnerable machine
 
 <div align="center">
 <img src="https://i.imgur.com/OcA2KrK.gif" height="200"></img>
@@ -17,7 +17,7 @@ Answer the questions below
 ```
 7
 ```
-## <div align="center">Task 2.Enumerating</div>
+## Task 2.Enumerating
 
 <div align="center">
 <img src="https://i.imgur.com/O8S93Kr.png" height="200" width=300"></img>
@@ -43,7 +43,7 @@ log.txt
 ```
 /var
 ```
-## <div align="center">Task 3. Task 3. Gain initial access with ProFtpd</div>
+## Task 3. Gain initial access with ProFtpd
 
 <div align="center">
 <img src="https://i.imgur.com/L54MBzX.png" height=""></img>
@@ -61,7 +61,7 @@ log.txt
 ```
 d0b0f3f53b6caa532a83915e19224899
 ```
-# <div align="center">Task 4. Privilege Escalation with Path Variable Manipulation</div>
+## Task 4. Privilege Escalation with Path Variable Manipulation
 ### What file looks particularly out of the ordinary? 
 ```
 3
