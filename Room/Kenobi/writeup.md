@@ -245,7 +245,7 @@ mount 10.10.101.17:/var /mnt/kenobiNFS
 ls -la /mnt/kenobiNFS
 ```
 ### If u get any error doing this just install ```showmount``` command and all it pkg will start downloading with it.
-### Copy id_rsa
+### Copy [id_rsa](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Kenobi/id_rsa.md)
 ```
 cp /mnt/kenobiNFS/tmp/id_rsa .
 ```
