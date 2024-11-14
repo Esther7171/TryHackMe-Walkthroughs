@@ -27,13 +27,15 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` |
+| [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Ice](./Room/Ice/walkthrough.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
 | [Ignite](./Room/Ignite) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [Kiba](./Room/Kiba/wrietup.md) |  Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` | 
+| [kenobi](./Room/Kenobi/walkthrough.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | ```ProFtpd``` ```SUID```| 
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
-| [Metamorphosis](Metamorphosis/walkthrough.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
-| [Mr Robot CTF](Mr-Robot-CTF/walkthrough.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
+| [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
+| [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Pickle Rick](Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
 | [Publisher](Publisher/writeup.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
 | [Startup](Startup/writeup.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
