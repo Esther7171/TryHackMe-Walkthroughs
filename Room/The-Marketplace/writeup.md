@@ -72,6 +72,4 @@ cat /root/root.txt
 ```
 THM{d4f76179c80c0dcf46e0f8e43c9abd62}
 ```
-Answer format: ***{********************************}
-Submit
-What is flag 3? (Root.txt)
+
