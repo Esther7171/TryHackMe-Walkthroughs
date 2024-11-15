@@ -46,15 +46,15 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
 | [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
 | [Tomghost](./Room/Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
-| [UltraTech](UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
-| [W1seGuy](W1seGuy/writeup.md) | Easy | Linux| A w1se guy 0nce said, the answer is usually as plain as day. | ```Cryptographic``` | 
-| [Watcher](Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
-| [Web Application Security](Web-Application-Security/walkthorugh.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
-| [Wekor](Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
-| [Welcome](Welcome/Flag.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
-| [Wgel CTF](Wgel-CTF/wgel-CTF.pdf) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
+| [UltraTech](./Room/UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
+| [W1seGuy](./Room/W1seGuy/writeup.md) | Easy | Linux| A w1se guy 0nce said, the answer is usually as plain as day. | ```Cryptographic``` | 
+| [Watcher](./Room/Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
+| [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
+| [Wekor](./Room/Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
+| [Welcome](./Room/Welcome/writeup.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
+| [Wgel CTF](./Room/Wgel CTF) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
 | [Whiterose](Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
-| [Wonderland](Wonderland-CTF/walkthroughs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
+| [Wonderland](Wonderland-CTF/walkthroug./hs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
 | [Zeno](Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
 
 Zeno/writeup.md
