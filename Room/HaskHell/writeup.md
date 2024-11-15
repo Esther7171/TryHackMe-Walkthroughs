@@ -9,9 +9,7 @@
 
 Show your professor that his PhD isn't in security.
 
-Please send comments/concerns/hatemail to @passthehashbrwn on Twitter.
-
-### Get the flag in the user.txt file.
+## Get the flag in the user.txt file.
 ```
 flag{academic_dishonesty}
 ```
@@ -39,7 +37,7 @@ chmod 600 id_rsa
 ssh -i id_rsa prof@<IP>
 cat /home/prof/user.txt
 ```
-### Obtain the flag in root.txt
+## Obtain the flag in root.txt
 ```
 flag{im_purely_functional}
 ```
