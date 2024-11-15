@@ -52,10 +52,10 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
 | [Wekor](./Room/Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
 | [Welcome](./Room/Welcome/writeup.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
-| [Wgel CTF](./Room/Wgel CTF) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
-| [Whiterose](Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
-| [Wonderland](Wonderland-CTF/walkthroug./hs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
-| [Zeno](Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
+| [Wgel CTF](./Room/Wgel) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
+| [Whiterose](./Room/Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
+| [Wonderland](./Room/Wonderland-CTF/walkthroughs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
+| [Zeno](./Room/Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
 
 Zeno/writeup.md
 <!--
