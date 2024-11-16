@@ -1,7 +1,7 @@
 # <div align="center">[Mindgames](https://tryhackme.com/r/room/mindgames)</div>
 <div align="center">Just a terrible idea...</div> <br>
 <div align="center">
-<img src="https://github.com/user-attachments/assets/0d678302-ea56-43cf-af22-0a868e76a63e" height=""></img>
+<img src="https://github.com/user-attachments/assets/0d678302-ea56-43cf-af22-0a868e76a63e" height="200"></img>
 </div>
 
 ## Task 1. Capture the flags
