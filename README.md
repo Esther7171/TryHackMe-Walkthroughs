@@ -38,6 +38,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
+| [Nax](./Room/Nax/writeup.md) | Medium | Linux | Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution. | ```CVE-2019-15949``` ``` Metasploit```|
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
