@@ -43,6 +43,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
+| [Simple CTF](./Room/Simple-CTF/writeup.md) | Easy | Linux | Beginner level ctf | ```CVE-2019-9053``` ```Vim``` |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
 | [The Great Escape](./Room/The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
 | [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
