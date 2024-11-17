@@ -15,7 +15,7 @@ Read user.txt and root.txt
 * ```nmap -sC -sV <IP>```
 * ```ftp <IP>```
 * ```cd home/melodias```
-* ```get user.txt
+* ```get user.txt```
 * ```cat user.txt```
 
 ### Root.txt
