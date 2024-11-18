@@ -2,5 +2,5 @@
 <div align="center">Boot2root, Web exploitation, Privilege escalation, LFI</div>
 <br>
 <div align="center">
-<img src="" height="200"></img>
+<img src="https://github.com/user-attachments/assets/a2d75f44-5757-47a5-899a-0b4fc03059ab" height="200"></img>
 </div>
