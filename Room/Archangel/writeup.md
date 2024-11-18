@@ -18,20 +18,22 @@ No answer needed
 Enumerate the machine
 ### Find a different hostname
 * ```nmap -sC -sV -A -p- $IP```
-* ```gobuster dir -u <IP> -w /usr/share/wordlists/dirb/common.tx```
+* ```dirsearch -u <IP> -w /usr/share/wordlists/dirb/common.tx```
 * ```curl -s <IP> | grep ".thm"```
 ```
 mafialive.thm
 ```
-Find flag 1
+### Find flag 1
+* ```echo "<IP> mafialive.thm" | sudo tee -a /etc/hosts```
+* ```curl -s http://mafialive.thm/```
+```
 thm{f0und_th3_r1ght_h0st_n4m3}
-Correct Answer
-Look for a page under development
-
+```
+### Look for a page under development
+```
 test.php
-Correct Answer
-Hint
-Find flag 2
+```
+### Find flag 2
 
 thm{explo1t1ng_lf1}
 Correct Answer
