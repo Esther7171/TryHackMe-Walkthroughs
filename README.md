@@ -13,7 +13,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | |CTF ```CVE-2019-14287``` |
 | [Annie](./Room/Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
 | [Anonforce](./Room/Anonforce/writeup.md) | Easy | Linux | boot2root machine for FIT and bsides guatemala CTF | CTF |
-| [Archangel](./) | Easy | Linux | Boot2root, Web exploitation, Privilege escalation, LFI |
+| [Archangel](./Room/Archangel/writeup) | Easy | Linux | Boot2root, Web exploitation, Privilege escalation, LFI |
 | [Basic-Pentesting](./Room/Basic-Pentesting/walkthrough.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | Beginner Level CTF |
 | [Battery](./Room/Battery/writeup.md) | Medium | Linux | CTF designed by CTF lover for CTF lovers | ```Re-Registration Attack``` ```XML External Entity``` ```Sudo Abuse```|
 | [Biteme](./Room/Biteme/writeup.md) | Medium | Linux | Stay out of my server! | CTF |
