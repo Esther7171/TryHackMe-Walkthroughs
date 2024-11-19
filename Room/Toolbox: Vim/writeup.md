@@ -2,7 +2,7 @@
 <div align="center">Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit.</div>
 <br>
 <div align="center">
-<img src="" height="200"></img>
+<img src="https://github.com/user-attachments/assets/f66bf6d7-d37e-4fcf-a500-70d735b56758" height="200"></img>
 </div>
 
 ## Task 1
@@ -282,3 +282,5 @@ N
 ```
 :vimgrep
 ```
+
+### Done 😄
