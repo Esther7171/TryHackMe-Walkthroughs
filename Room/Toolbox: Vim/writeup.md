@@ -10,9 +10,9 @@ Lets get started!
 
 To check whether Vim is installed:
 
-    - Launch a Terminal Window
+- Launch a Terminal Window
 
-    - Type "vim"
+- Type "vim"
 
 If you're looking at the Vim splash page 
 Then you're in luck! 
