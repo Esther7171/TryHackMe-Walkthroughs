@@ -1,4 +1,4 @@
-# <div align="center">[Toolbox: Vim]()</div>
+# <div align="center">[Toolbox: Vim](https://tryhackme.com/r/room/toolboxvim)</div>
 <div align="center">Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit.</div>
 <br>
 <div align="center">
