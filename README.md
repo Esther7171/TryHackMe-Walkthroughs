@@ -10,7 +10,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | Room Name | Difficulty | Type |Description | Room Type |
 |:---:|:---:|---|---|---|
 | [0x41haz](./Room/0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge | ```Reverse Engerniering``` |
-| [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | |CTF ```CVE-2019-14287``` |
+| [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | CTF ```CVE-2019-14287``` |
 | [Annie](./Room/Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
 | [Anonforce](./Room/Anonforce/writeup.md) | Easy | Linux | boot2root machine for FIT and bsides guatemala CTF | CTF |
 | [Archangel](./Room/Archangel/writeup.md) | Easy | Linux | Boot2root, Web exploitation, Privilege escalation, LFI | CTF |
