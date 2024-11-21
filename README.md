@@ -29,7 +29,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
 | [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```cryptography``` |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
-| [Crack the hash](./Room/Crack-the-hash/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
+| [Crack the hash](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
 | [Crack The Hash Level 2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
