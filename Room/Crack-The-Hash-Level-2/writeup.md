@@ -1,7 +1,7 @@
 <div align="center">Crack The Hash Level 2</div>
 <div align="center">Advanced cracking hashes challenges and wordlist generation</div>
 <div align="center">
-<img src="" height=""></img>
+<img src="https://github.com/user-attachments/assets/9e810060-24db-4072-96bb-ab25f9484040" height=""></img>
 </div>
 
 
