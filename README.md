@@ -23,11 +23,12 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/writeup.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
 | [CMesS](./Room/CMesS/writeup.md) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
+| [CTF collection Vol.2](./Room/CTF-collection-Vol.2/writeup.md) | Medium | Linux | Sharpening up your CTF skill with the collection. The second volume is about web-based CTF. | CTF ```Cryptography``` |
 | [Capture!](./Room/Capture!/writeup.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
 | [Careers in Cyber](./Room/Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
 | [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
-| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```cryptography``` |
+| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```Cryptography``` |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Crack the hash](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
 | [Crack The Hash Level 2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
