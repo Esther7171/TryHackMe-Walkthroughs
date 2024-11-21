@@ -18,8 +18,8 @@ Note: All the challenges flag are formatted as THM{flag}, unless stated otherwis
 ```
 No answer needed
 ```
-## Task 2. ### Easter egg
-Submit all your ### Easter egg right here. Gonna find it all!
+## Task 2. Easter egg
+Submit all your Easter egg right here. Gonna find it all!
 
 
 ### Easter 1
@@ -86,7 +86,7 @@ THM{ju57_4_64m3}
 ```
 THM{73mp3r_7h3_h7ml}
 ```
-### ### Easter 17
+### Easter 17
 ```
 THM{j5_j5_k3p_d3c0d3}
 ```
@@ -94,11 +94,11 @@ THM{j5_j5_k3p_d3c0d3}
 ```
 THM{70ny_r0ll_7h3_366}
 ```
-### ### Easter 19
+### Easter 19
 ```
 THM{700_5m4ll_3yy}
 ```
-### ### Easter 20
+### Easter 20
 ```
 THM{17_w45_m3_4ll_4l0n6}
 ```
