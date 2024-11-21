@@ -18,6 +18,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Battery](./Room/Battery/writeup.md) | Medium | Linux | CTF designed by CTF lover for CTF lovers | ```Re-Registration Attack``` ```XML External Entity``` ```Sudo Abuse```|
 | [Biteme](./Room/Biteme/writeup.md) | Medium | Linux | Stay out of my server! | CTF |
 | [Blue](./Room/Blue/writeup.md) | Easy | Windows | Windows Exploitation Basics - Easy | ```MS17-010``` EternalBlue SMB Remote Windows Kernel Pool Corruption |
+| [Blueprint](./Room/Blueprint/writeup.md) | Easy| Windows | Hack into this Windows machine and escalate your privileges to Administrator. | ```osCommerce 2.3.4.1 - Remote Code Execution``` -----------> do it [Lab](https://tryhackme.com/r/room/blueprint) |
 | [Bounty Hacker](./Room/Bounty-Hacker/walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
 | [Break Out The Cage](./Room/Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
 | [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
