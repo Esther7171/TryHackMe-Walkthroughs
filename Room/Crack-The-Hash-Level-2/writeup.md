@@ -1,4 +1,4 @@
-<div align="center">Crack The Hash Level 2</div>
+# <div align="center">Crack The Hash Level 2</div>
 <div align="center">Advanced cracking hashes challenges and wordlist generation</div>
 <div align="center">
 <img src="https://github.com/user-attachments/assets/9e810060-24db-4072-96bb-ab25f9484040" height="200"></img>
@@ -213,4 +213,47 @@ Crack this md5 hash with combination.txt.
 ```e5b47b7e8df2597077e703c76ee86aee```
 ```
 1551-li
+```
+
+## Task 6. Challenge It's time to crack hashes
+Start Machine
+You will have to crack several hashes. For each hash you will be given a short scenario that will help you to create a mangling rules, build a wordlist or finding some specialized data you'll need to crack the hash.
+
+The scenarios are located on the website: Password advisor (http://MACHINE_IP), each piece of advice matches one of the following hashes (in the same order).
+
+### Advice n°1 ```b16f211a8ad7f97778e5006c7cecdf31```
+```
+Zachariah1234*
+```
+### Advice n°2 ```7463fcb720de92803d179e7f83070f97```
+```
+Angelita35!
+```
+### Advice n°3 ```f4476669333651be5b37ec6d81ef526f```
+```
+Tl@xc@l@ncing0
+```
+### Advice n°4 ```a3a321e1c246c773177363200a6c0466a5030afc```
+```
+DavIDgUEtTApAn
+```
+### Advice n°5 ```d5e085772469d544a447bc8250890949```
+```
+uoy ot miws ot em rof peed oot ro ediw oot si revir oN
+```
+### Advice n°6 ```377081d69d23759c5946a95d1b757adc```
+```
++17215440375
+```
+Advice n°7 ```ba6e8f9cd4140ac8b8d2bf96c9acd2fb58c0827d556b78e331d1113fcbfe425ca9299fe917f6015978f7e1644382d1ea45fd581aed6298acde2fa01e7d83cdbd```
+``
+!@#redrose!@#
+```
+Advice n°8 ```9f7376709d3fe09b389a27876834a13c6f275ed9a806d4c8df78f0ce1aad8fb343316133e810096e0999eaf1d2bca37c336e1b7726b213e001333d636e896617```
+```
+hackinghackinghackinghacking
+```
+### Advice n°9 ```$6$kI6VJ0a31.SNRsLR$Wk30X8w8iEC2FpasTo0Z5U7wke0TpfbDtSwayrNebqKjYWC4gjKoNEJxO/DkP.YFTLVFirQ5PEh4glQIHuKfA/```
+```
+kakashi1
 ```
