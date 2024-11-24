@@ -67,6 +67,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Wgel CTF](./Room/Wgel) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
 | [Whiterose](./Room/Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
 | [Wonderland](./Room/Wonderland-CTF/walkthroughs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
+| [Year of the Dog](./Room/Year-of-the-Dog/writeup.md) | Hard | Linux | Always so polite... | ```Sqli``` ``Gitea`` |
 | [Zeno](./Room/Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
 
 <!--
