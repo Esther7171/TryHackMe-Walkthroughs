@@ -1,3 +1,8 @@
+<!-- 
+Rabbit hole hard pass: ssh admin@rabbithole.thm
+fEeFBqOXBOLmjpTt0B3LNpuwlr7mJx19dR8kgTpbOQcLlvgmoCt35qogicf8a00Q
+
+-->
 <div align="center">
 <img src="https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height="200"></img>
 </div>
