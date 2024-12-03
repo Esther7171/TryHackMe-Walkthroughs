@@ -1,4 +1,4 @@
-# <div align="center">Bugged</div>
+# <div align="center">[Bugged](https://tryhackme.com/r/room/bugged)</div>
 <br>
 <div align="center">John likes to live in a very Internet connected world. Maybe too connected...</div><br>
 <div align="center">
