@@ -27,6 +27,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Bounty Hacker](./Room/Bounty-Hacker/walkthrough.md) | Easy | Linux | You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!|  Beginner Level CTF |
 | [Break Out The Cage](./Room/Break-Out-The-Cage/writeup.md) | Easy | Linux | Help Cage bring back his acting career and investigate the nefarious goings on of his agent! | CTF | 
 | [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
+| [Bugged](./Room/Bugged/writeup.md) | Easy | Linux | John likes to live in a very Internet connected world. Maybe too connected...|  ```IoT Device hacking``` |
 | [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/writeup.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
 | [CMesS](./Room/CMesS/writeup.md) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
 | [CTF collection Vol.2](./Room/CTF-collection-Vol.2/writeup.md) | Medium | Linux | Sharpening up your CTF skill with the collection. The second volume is about web-based CTF. | CTF ```Cryptography``` |
