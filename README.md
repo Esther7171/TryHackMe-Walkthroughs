@@ -65,7 +65,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
 | [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
 | [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
-| [The-Sticker-Shop](./Room/The-Sticker-Shop/writeup.md) | Easy | Linux | Can you exploit the sticker shop in order to capture the flag? | ```XSS``` |
+| [The Sticker Shop](./Room/The-Sticker-Shop/writeup.md) | Easy | Linux | Can you exploit the sticker shop in order to capture the flag? | ```XSS``` |
 | [Tomghost](./Room/Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
 | [Toolbox: Vim](./Room/Toolbox:Vim/writeup.md) | Easy | Lin/Win | Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit. | Text Editor |
 | [UltraTech](./Room/UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
