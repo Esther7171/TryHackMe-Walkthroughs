@@ -20,7 +20,7 @@
 5a285a9f257e45c68bb6c9f9f57d18e8
 ```
 
-## Walkthrough: Network Penetration Testing
+## Walkthrough
 
 ### Scanning the Target Network
 
