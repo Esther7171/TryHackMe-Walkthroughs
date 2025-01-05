@@ -456,6 +456,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-01-05 19:06:
 [22][ssh] host: lookup.thm   login: think   password: josemario.AKA(think)
 1 of 1 target successfully completed, 1 valid password found
 ```
+We got the password `think`:`josemario.AKA`
 
 <div align="center">
 <img src="" height="200"></img>
