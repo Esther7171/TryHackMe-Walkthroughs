@@ -104,7 +104,6 @@ Happy hacking!
 <!-- 
 * [tomorrow]() 
 -->
-* [tomorrow](https://tryhackme.com/r/room/yearoftheowl)
 * [tomorrow](https://tryhackme.com/r/room/chillhack)
 * [tomorrow](https://tryhackme.com/r/room/allinonemj)
 * [tomorrow](https://tryhackme.com/r/room/busyvimfrosteau)
