@@ -261,11 +261,10 @@ Request Headers
 Request Headers allow extra information to be conveyed to the web server about the request. Some common headers are as follows:
 
 Common Request Headers
-
-|Request Header|Example|Description|
-|:---:|:---:|:---:|:---:|
-|Host|```Host: tryhackme.com```|Specifies the name of the web server the request is for.|
-|User-Agent	|```User-Agent: Mozilla/5.0```|Shares information about the web browser the request is coming from.|
+| Request Header | Example | Description |
+|:---:|:---:|---|
+| Host |```Host: tryhackme.com```| Specifies the name of the web server the request is for.|
+| User-Agent |```User-Agent: Mozilla/5.0```|Shares information about the web browser the request is coming from.|
 |Referer|```Referer: https://www.google.com```|Indicates the URL from which the request came from.|
 |Cookie|```Cookie: user_type=student; room=introtowebapplication; room_status=in_progress```|Information the web server previously asked the web browser to store is held in cookies.|
 |Content-Type|```Content-Type: application/json```|Describes what type or format of data is in the request.|
