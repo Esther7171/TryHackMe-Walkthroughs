@@ -73,6 +73,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [W1seGuy](./Room/W1seGuy/writeup.md) | Easy | Linux| A w1se guy 0nce said, the answer is usually as plain as day. | ```Cryptographic``` | 
 | [Watcher](./Room/Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
 | [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
+| [Web Application Basics](./Room/Web_Application_Basics/readme.md) | Easy | Web | Learn the basics of web applications: HTTP, URLs, request methods, response codes, and headers.| Info | 
 | [Wekor](./Room/Wekor/writeup.md) | Medium | Linux |CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;) | ```SQL``` ```WordPress``` ```Eeverse engineering``` |
 | [Welcome](./Room/Welcome/writeup.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
 | [Wgel CTF](./Room/Wgel) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
