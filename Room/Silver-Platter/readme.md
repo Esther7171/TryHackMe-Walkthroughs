@@ -391,7 +391,7 @@ Upon reaching the default login page, I noticed something interesting—the vers
 
 ![image](https://github.com/user-attachments/assets/1a1d8c9d-7d21-49ad-be4f-79cee418538f)
 
-After checking, I found that CVE-2024-36042 affects Silverpeas CRM and allows for authentication bypass. A detailed description of the exploit can be found in this repository: [CVE-2024-36042](https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d)
+After checking, I found that `CVE-2024-36042` affects Silverpeas CRM and allows for authentication bypass. A detailed description of the exploit can be found in this repository: [CVE-2024-36042](https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d)
 
 Exploiting the Vulnerability
 Using Burp Suite, I intercepted the login request.
