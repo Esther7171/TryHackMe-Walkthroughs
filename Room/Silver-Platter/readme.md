@@ -54,7 +54,7 @@ As We can See there are 3 services that are runnig
 * `Http` on port `80` (nginx 1.18.0 Ubuntu).
 * `Http-proxy` on port `8080`.
 
-#### Exploring the Web Application
+### Exploring the Web Application
 
 Since a web service is available on port 80, let take a look at web.
 
