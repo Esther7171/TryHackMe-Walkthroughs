@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a" height="200"></img>
 </div>
 
-### 1. Reconnaissance
+## 1. Reconnaissance
 
 The first step in any penetration test is reconnaissance—gathering as much information as possible about the target. In this case, we start by scanning the network using Nmap to identify open ports and running services.
 ```
@@ -98,7 +98,7 @@ Let Take a look at both directories
 
 Both `/assets` and `/images` were forbidden
 
-#### Enumerating HTTP Proxy
+### Enumerating HTTP Proxy
 Since nothing significant was found, I decided to enumerate the HTTP proxy on port `8080`.
 ```
 death@esther:~$ dirsearch -u 10.10.12.168:8080
@@ -383,7 +383,7 @@ Task Completed
 death@esther:~$
 ```
 
-### Exploitation
+## Exploitation
 
 #### Identifying the Vulnerability
 
@@ -424,7 +424,7 @@ Copying the notification URL and pasting it into the browser:
 
 ![image](https://github.com/user-attachments/assets/fd635ccb-497d-4561-b5c2-0866923a8472)
 
-##### ID Enumeration
+### ID Enumeration
 The request contained an ID parameter. By iterating through IDs (0-6), I discovered additional messages.
 
 At ID 6, I found credentials for SSH access!
@@ -438,8 +438,8 @@ Use a password manager and quit using your silly sticky notes.
 Username: tim  
 Password: cm0nt!md0ntf0rg3tth!spa$$w0rdagainlol  
 -->
-### Post Exploitation
-#### Gaining SSH Access
+## Post Exploitation
+### Gaining SSH Access
 Now that we have valid SSH credentials, let's log in as `tim`.
 ```
 death@esther:~$ ssh tim@10.10.12.168
@@ -485,7 +485,7 @@ THM{c4c***************************b}
 THM{c4ca4238a0b923820dcc509a6f75849b}
 -->
 
-### Post-Exploitation
+## Post-Exploitation
 Checking User Privileges
 
 Listing home directories reveals two users:
@@ -557,4 +557,4 @@ root@silver-platter:/home/tim#
 <!--
 THM{098f6bcd4621d373cade4e832627b4f6}
 -->
-#### Done
+### Done
