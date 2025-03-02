@@ -1,12 +1,17 @@
-![image](https://github.com/user-attachments/assets/c36dbb68-45da-4b55-881e-2d7773a323bc)# <div align="center">Silver Platter</div>
+# <div align="center">[Silver Platter](https://tryhackme.com/room/silverplatter)</div>
 <div align="center">Can you breach the server?</div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a" height="200"></img>
 </div>
 
+### 1. Reconnaissance
 
-Recone
-Let start with the Network Scan
+Network Scan
+
+We begin with an nmap scan to identify open ports and running services:
+```
+nmap -sC -sV 
+```
 ```
 death@esther:~$ nmap 10.10.12.168 -sV -sC
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-03-02 18:30 IST
