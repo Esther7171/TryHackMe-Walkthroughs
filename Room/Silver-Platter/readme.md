@@ -6,11 +6,9 @@
 
 ### 1. Reconnaissance
 
-Network Scan
-
-We begin with an nmap scan to identify open ports and running services:
+The first step in any penetration test is reconnaissance—gathering as much information as possible about the target. In this case, we start by scanning the network using Nmap to identify open ports and running services.
 ```
-nmap -sC -sV 
+nmap -sC -sV <ip>
 ```
 ```
 death@esther:~$ nmap 10.10.12.168 -sV -sC
@@ -52,11 +50,13 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 115.03 seconds
 ```
 As We can See there are 3 services that are runnig 
-* `SSH` on port `22`.
-* `Http` on port `80`.
+* `SSH` on port `22` (OpenSSH 8.9p1 Ubuntu).
+* `Http` on port `80` (nginx 1.18.0 Ubuntu).
 * `Http-proxy` on port `8080`.
 
-First Let take a look at web,
+#### Exploring the Web Application
+
+Since a web service is available on port 80, let take a look at web.
 
 ![image](https://github.com/user-attachments/assets/c4748ed9-d6ae-43e9-a79a-db1dd7698d48)
 
@@ -385,6 +385,7 @@ So here is the default Login page,And intreasting thing is the version of the we
 
 CVE-2024-36042As i check for the version there is an `CVE-2024-36042` Silverpeas CRM - Authentication Bypass. I found this repo that describe this things in breef [CVE-2024-36042](https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d)
 
+### Exploitation
 Let Use burpsuite to Intercept the request
 
 As we know the username already `scr1ptkiddy` let try to login
@@ -428,9 +429,8 @@ Username: tim
 
 Password: cm0nt!md0ntf0rg3tth!spa$$w0rdagainlol
 -->
-##  Initial access
 
-
+Post Exploitation
 Let logged in using ssh
 ```
 death@esther:~$ ssh tim@10.10.12.168
@@ -454,35 +454,6 @@ Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-91-generic x86_64)
   Swap usage:   0%                IPv4 address for ens5:    10.10.12.168
 
   => / is using 89.9% of 8.33GB
-
-
-Expanded Security Maintenance for Applications is not enabled.
-
-39 updates can be applied immediately.
-To see these additional updates run: apt list --upgradable
-
-Enable ESM Apps to receive additional future security updates.
-See https://ubuntu.com/esm or run: sudo pro status
-
-
-The list of available updates is more than a week old.
-To check for new updates run: sudo apt update
-
-
-The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
-
-
-The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
 
 Last login: Wed Dec 13 16:33:12 2023 from 192.168.1.20
 tim@silver-platter:~$
@@ -518,7 +489,7 @@ tim@silver-platter:~$
 ```
 Our tim is not a sudore user
 
-## Privesc
+### Post-Exploitation
 
 Let check for authentication logs
 ```
