@@ -29,7 +29,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [Bugged](./Room/Bugged/writeup.md) | Easy | Linux | John likes to live in a very Internet connected world. Maybe too connected...|  ```IoT Device hacking``` |
 | [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/writeup.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
-| [CMesS](./Room/CMesS/writeup.md) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
+| [CMesS](./Room/CMesS) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
 | [CTF collection Vol.2](./Room/CTF-collection-Vol.2/writeup.md) | Medium | Linux | Sharpening up your CTF skill with the collection. The second volume is about web-based CTF. | CTF ```Cryptography``` |
 | [Capture!](./Room/Capture!/writeup.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
 | [Careers in Cyber](./Room/Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
