@@ -49,6 +49,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Ignite](./Room/Ignite) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [kenobi](./Room/Kenobi/walkthrough.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | ```ProFtpd``` ```SUID```| 
 | [Kiba](./Room/Kiba/wrietup.md) |  Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` | 
+| [Lo-Fi](./Room/Lo-Fi) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI`| 
 | [Looking Glass](./Room/Looking-Glass/writeup.md) | Linux | Medium | Step through the looking glass. A sequel to the Wonderland challenge room. | CTF |
 | [Lookup](./Room/Lookup/walkthrough.md)| Linux | Easy | Test your enumeration skills on this boot-to-root machine. | CTF `elFinder PHP Connector exiftran Command Injection vulnerability` `Path manipulation exploitation` |
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
