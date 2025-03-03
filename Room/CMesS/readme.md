@@ -1,4 +1,3 @@
-
 # <div align="center">[CMesS](https://tryhackme.com/r/room/cmess)</div>
 <div align="center">Can you root this Gila CMS box?</div>
 
