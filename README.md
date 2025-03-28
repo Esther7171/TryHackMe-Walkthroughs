@@ -1,6 +1,8 @@
+<!--
 ```
 https://us06web.zoom.us/j/6899287498?pwd=S0MikKqFP2Bp8wS9NOKFaBQirrwOlZ.1&omn=89225717618
 ```
+-->
 <!-- 
 Rabbit hole hard pass: ssh admin@rabbithole.thm
 fEeFBqOXBOLmjpTt0B3LNpuwlr7mJx19dR8kgTpbOQcLlvgmoCt35qogicf8a00Q
