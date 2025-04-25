@@ -36,6 +36,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Crack The Hash Level 2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Linux | Have you ever been curious about how your router works? What OS it runs? What makes it tick? | Investigation of router firmware |
+| [Erlang/OTP SSH: CVE-2025-32433](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Learn about and exploit Erlang/OTP SSH CVE-2025-32433 in a lab setup. | `CVE-2025-32433` |
 | [FFuF](./Room/Ffuf/writeup.md) | Easy | Linux | Enumeration, fuzzing, and directory brute forcing using ffuf | Tool Guide |
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
