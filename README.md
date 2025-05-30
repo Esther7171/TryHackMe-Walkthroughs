@@ -56,6 +56,8 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
+| [Red Team Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Red%20Team%20Fundamentals#red-team-fundamentals) | Easy | Any |Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.|
+| [RootMe]
 | [Silver Platter](./Room/Silver-Platter/readme.md)| Easy | Linux | Can you breach the server? | CTF ```CVE-2024-36042``` |
 | [Simple CTF](./Room/Simple-CTF/writeup.md) | Easy | Linux | Beginner level ctf | ```CVE-2019-9053``` ```Vim``` |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
