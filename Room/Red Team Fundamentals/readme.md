@@ -1,4 +1,4 @@
-# <div align='center'>Red Team Fundamentals</div>
+# <div align='center'>[Red Team Fundamentals](https://tryhackme.com/room/redteamfundamentals)</div>
 <div align='center'>Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.</div>
 <div align='center'>
   <img src='https://github.com/user-attachments/assets/165c5573-71ed-4552-a528-355f68666c23' height='200'></img>
