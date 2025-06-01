@@ -103,11 +103,12 @@ Happy hacking!
 <!-- 
 * [tomorrow]() 
 -->
-* [tomorrow](https://tryhackme.com/r/room/chillhack)
-* [tomorrow](https://tryhackme.com/r/room/allinonemj)
-* [tomorrow](https://tryhackme.com/r/room/busyvimfrosteau)
-* [tomorrow](https://tryhackme.com/r/room/surfingyetiiscomingtotown)
+### Room Series
+* [Http smulgging](https://tryhackme.com/module/http-request-smuggling)
+* [windcorp](https://tryhackme.com/module/windcorp)
 
-
-
-
+## Premium Rooms
+* [Steel Mountain](https://tryhackme.com/why-subscribe?roomCode=steelmountain)
+* [Hack Park](https://tryhackme.com/why-subscribe?roomCode=hackpark)
+* [powershell](https://tryhackme.com/why-subscribe?roomCode=powershell)
+* [](https://tryhackme.com/module/windcorp)
