@@ -407,3 +407,7 @@ C:\Users\bill\Desktop> sc start AdvancedSystemCareService9
 ```
 
 
+## Root flag
+```
+9af5f314f57607c00fd09803a587db80
+```
