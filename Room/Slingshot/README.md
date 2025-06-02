@@ -4,9 +4,7 @@
   <img src='https://github.com/user-attachments/assets/9a05c698-e2b9-4746-8370-7794d65ced77' height='200'></img>
 </div>
 
-Task 1
-Scenario
-Start Machine
+## Task 1. Scenario
 
 Slingway Inc., a leading toy company, has recently noticed suspicious activity on its e-commerce web server and potential modifications to its database. To investigate the suspicious activity, they've hired you as a SOC Analyst to look into the web server logs and uncover any instances of malicious activity.
 
@@ -21,68 +19,55 @@ Instructions
 
 First, click Start Machine to start the VM attached to this task. You may access the VM using the AttackBox or your VPN connection. You can start the AttackBox by pressing the Start AttackBox button on the top-right of this room. Note: The Elastic Stack may take up to 5 minutes to fully start up. If you receive any errors, give it a few minutes and refresh the page.
 
-Once online, navigate to http://10.10.118.187 using a web browser.
-
-You should see the Elastic login page. Please log in using the following credentials:
-
-THM key
-Username	elastic
-Password	raCK0W**BLlW66oNlKAk
-Answer the questions below
-What was the attacker's IP?
-10.0.2.15
-Correct Answer
-What was the first scanner that the attacker ran against the web server?
-
+### What was the first scanner that the attacker ran against the web server?
+```
 Nmap Scripting Engine
-Correct Answer
-What was the User Agent of the directory enumeration tool that the attacker used on the web server?
-
+```
+### What was the User Agent of the directory enumeration tool that the attacker used on the web server?
+```
 Mozilla/5.0 (Gobuster)
-Correct Answer
-In total, how many requested resources on the web server did the attacker fail to find?
-
+```
+### In total, how many requested resources on the web server did the attacker fail to find?
+```
 1867
-Correct Answer
-What is the flag under the interesting directory the attacker found?
-
+```
+### What is the flag under the interesting directory the attacker found?
+```
 a76637b62ea99acda12f5859313f539a
-Correct Answer
-What login page did the attacker discover using the directory enumeration tool?
-
+```
+### What login page did the attacker discover using the directory enumeration tool?
+```
 /admin-login.php
-Correct Answer
-What was the user agent of the brute-force tool that the attacker used on the admin panel?
-
+```
+### What was the user agent of the brute-force tool that the attacker used on the admin panel?
+```
 Mozilla/4.0 (Hydra)
-Correct Answer
-What username:password combination did the attacker use to gain access to the admin page?
-
+```
+### What username:password combination did the attacker use to gain access to the admin page?
+```
 admin:thx1138
-Correct Answer
-What flag was included in the file that the attacker uploaded from the admin directory?
-
+```
+### What flag was included in the file that the attacker uploaded from the admin directory?
+```
 THM{ecb012e53a58818cbd17a924769ec447}
-Correct Answer
-What was the first command the attacker ran on the web shell?
-
+```
+### What was the first command the attacker ran on the web shell?
+```
 whoami
-Correct Answer
-What file location on the web server did the attacker extract database credentials from using Local File Inclusion?
-
+```
+### What file location on the web server did the attacker extract database credentials from using Local File Inclusion?
+```
 /etc/phpmyadmin/config-db.php
-Correct Answer
-What directory did the attacker use to access the database manager?
-
+```
+### What directory did the attacker use to access the database manager?
+```
 /phpmyadmin
-Correct Answer
-What was the name of the database that the attacker exported?
-
+```
+### What was the name of the database that the attacker exported?
+```
 customer_credit_cards
-Correct Answer
-What flag does the attacker insert into the database?
-
+```
+### What flag does the attacker insert into the database?
+```
 c6aa3215a7d519eeb40a660f3b76e64c
-Correct Answer
-Task 2
-Conclusion
+```
