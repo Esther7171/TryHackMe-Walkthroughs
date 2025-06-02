@@ -57,9 +57,11 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
 | [Red Team Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Red%20Team%20Fundamentals#red-team-fundamentals) | Easy | Any |Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.|
-| [RootMe]
+| [RootMe]()
 | [Silver Platter](./Room/Silver-Platter/readme.md)| Easy | Linux | Can you breach the server? | `CVE-2024-36042` |
 | [Simple CTF](./Room/Simple-CTF/writeup.md) | Easy | Linux | Beginner level ctf | ```CVE-2019-9053``` ```Vim``` |
+| [Slingshot](https://github.com/Esther7171/THM-Walkthroughs/edit/main/Room/Slingshot/README.md#slingshot) | Easy | Linux |Can you retrace an attacker's steps after they enumerate and compromise a web server?| Logs |
+| [smol](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Smol#smol) | Medium | Linux |Test your enumeration skills on this boot-to-root machine. | CTF |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
 | [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain) | Easy | Linux | Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access. | `CVE-2014-6287` |
 | [The Great Escape](./Room/The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
