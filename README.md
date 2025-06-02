@@ -58,9 +58,10 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
 | [Red Team Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Red%20Team%20Fundamentals#red-team-fundamentals) | Easy | Any |Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.|
 | [RootMe]
-| [Silver Platter](./Room/Silver-Platter/readme.md)| Easy | Linux | Can you breach the server? | CTF ```CVE-2024-36042``` |
+| [Silver Platter](./Room/Silver-Platter/readme.md)| Easy | Linux | Can you breach the server? | `CVE-2024-36042` |
 | [Simple CTF](./Room/Simple-CTF/writeup.md) | Easy | Linux | Beginner level ctf | ```CVE-2019-9053``` ```Vim``` |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
+| [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain) | Easy | Linux | Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access. | `CVE-2014-6287` |
 | [The Great Escape](./Room/The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
 | [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
 | [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
