@@ -34,7 +34,7 @@ find nothing usefull here
 
 Okay let try default credentials `admin:admin`
 
-![image](https://github.com/user-attachments/assets/7ec80b49-388b-49d5-9c9d-af3ff0045f2d)
+![image](https://github.com/user-attachments/assets/a53f02a6-4d96-4c6f-94ca-ea4b7376ead0)
 
 bingo ! im genious
 
