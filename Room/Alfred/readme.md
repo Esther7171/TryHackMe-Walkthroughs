@@ -208,3 +208,4 @@ type 'C:\Windows\System32\config\root.txt'
 ```
 
 ![image](https://github.com/user-attachments/assets/609af3d5-7e0b-43b4-a689-640cbde2695e)
+<!!-- dff0f748678f280250f25a45b8046b4a -->
