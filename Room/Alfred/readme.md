@@ -167,8 +167,10 @@ whoami /prive
 
 You can see that two privileges(SeDebugPrivilege, SeImpersonatePrivilege) are enabled. Let's use the incognito module that will allow us to exploit this vulnerability.
 
-Enter: load incognito to load the incognito module in Metasploit. Please note that you may need to use the use incognito command if the previous command doesn't work. Also, ensure that your Metasploit is up to date.
-
+Enter: `load incognito` to load the incognito module in Metasploit. Please note that you may need to use the use incognito command if the previous command doesn't work. Also, ensure that your Metasploit is up to date.
+```
+load incognito
+```
 Press `ctrl`+`c` to exit shell and back to meterpreter
 
 Let see which tokens are available
