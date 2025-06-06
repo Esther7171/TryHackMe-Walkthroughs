@@ -239,6 +239,12 @@ Answer the questions below
 %windir%
 ```
 ## Task 6. User Accounts, Profiles, and Permissions
+User accounts can be one of two types on a typical local Windows system: **Administrator** & **Standard User**. 
+
+The user account type will determine what actions the user can perform on that specific Windows system. 
+* An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc.
+* A Standard User can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs.
+
 
 
 
