@@ -245,6 +245,8 @@ The user account type will determine what actions the user can perform on that s
 * An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc.
 * A Standard User can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs.
 
+You are currently logged in as an Administrator. There are several ways to determine which user accounts exist on the system. 
+
 
 
 
