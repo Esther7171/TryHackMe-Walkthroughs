@@ -39,7 +39,28 @@ We will come on to discuss the various types of vulnerabilities in a later room.
 |--|--|
 |Operating System|These types of vulnerabilities are found within Operating Systems (OSs) and often result in privilege escalation.|
 |(Mis)Configuration-based|These types of vulnerability stem from an incorrectly configured application or service. For example, a website exposing customer details.|
-|Weak or Default Credentials|Applications and services that have an element of authentication will come with default credentials when installed. For example, an administrator dashboard may have the username and password of "admin". These are easy to guess by an attacker.|Application Logic|These vulnerabilities are a result of poorly designed applications. For example, poorly implemented authentication mechanisms that may result in an attacker being able to impersonate a user.|
+|Weak or Default Credentials|Applications and services that have an element of authentication will come with default credentials when installed. For example, an administrator dashboard may have the username and password of "admin". These are easy to guess by an attacker.|
+|Application Logic|These vulnerabilities are a result of poorly designed applications. For example, poorly implemented authentication mechanisms that may result in an attacker being able to impersonate a user.|
 |Human-Factor|Human-Factor vulnerabilities are vulnerabilities that leverage human behaviour. For example, phishing emails are designed to trick humans into believing they are legitimate.|
 
 As a cybersecurity researcher, you will be assessing applications and systems - using vulnerabilities against these targets in day-to-day life, so it is crucial to become familiar with this discovery and exploitation process.
+
+Answer the questions below
+
+### An attacker has been able to upgrade the permissions of their system account from "user" to "administrator". What type of vulnerability is this?
+```
+Operating System
+```
+### You manage to bypass a login panel using cookies to authenticate. What type of vulnerability is this?
+```
+Application Logic
+```
+## Task 3. Scoring Vulnerabilities (CVSS & VPR)
+
+
+Vulnerability management is the process of evaluating, categorising and ultimately remediating threats (vulnerabilities) faced by an organisation.
+It is arguably impossible to patch and remedy every single vulnerability in a network or computer system and sometimes a waste of resources.
+
+After all, only approximately 2% of vulnerabilities only ever end up being exploited ([Kenna security., 2020](https://www.kennasecurity.com/resources/prioritization-to-prediction-report/). Instead, it is all about addressing the most dangerous vulnerabilities and reducing the likelihood of an attack vector being used to exploit a system.
+
+This is where vulnerability scoring comes into play. 
