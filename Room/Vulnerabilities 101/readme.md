@@ -67,6 +67,31 @@ This is where vulnerability scoring comes into play. Vulnerability scoring serve
 
 Of course, as always in the world of IT, there is never just one framework or proposed idea. Let’s explore two of the more common frameworks and analyse how they differ.
 
-Common Vulnerability Scoring System
 
 **_Common Vulnerability Scoring System_**
+
+First introduced in 2005, the Common Vulnerability Scoring System (or CVSS) is a very popular framework for vulnerability scoring and has three major iterations. As it stands, the current version is CVSSv3.1 (with version 4.0 currently in draft) a score is essentially determined by some of the following factors (but many more):
+
+  1. How easy is it to exploit the vulnerability?
+
+  2. Do exploits exist for this?
+
+  3. How does this vulnerability interfere with the CIA triad?
+     
+In fact, there are so many variables that you have to use a [calculator](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator) to figure out the score using this framework. A vulnerability is given a classification (out of five) depending on the score that is has been assigned. I have put the Qualitative Severity Rating Scale and their score ranges into the table below. 
+
+| Rating | Score |
+|--|--|
+|None| 0 |
+|Low	| 0.1 - 3.9|
+|Medium	| 4.0 - 6.9|
+|High	| 7.0 - 8.9|
+|Critical |	9.0 - 10.0|
+
+However, CVSS is not a magic bullet. Let's analyse some of the advantages and disadvantages of CVSS in the table below:
+
+Advantages of CVSS | Disadvantages of CVSS |
+|--|--|
+|CVSS has been around for a long time.	| CVSS was never designed to help prioritise vulnerabilities, instead, just assign a value of severity.|
+|CVSS is popular in organisations.	| CVSS heavily assesses vulnerabilities on an exploit being available. However, only 20% of all vulnerabilities have an exploit available ([Tenable., 2020](https://www.tenable.com/research)) . | 
+|CVSS is a free framework to adopt and recommended by organisations such as NIST.	| Vulnerabilities rarely change scoring after assessment despite the fact that new developments such as exploits may be found. |
