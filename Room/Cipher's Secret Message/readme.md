@@ -7,8 +7,6 @@
 </div>
 
 ## Task 1. Crypto  Cipher's Secret Message
-<img src="https://github.com/user-attachments/assets/855c2a47-b027-4d0d-a6d7-11e5ebea076e"/>
-
 
 Answer the questions below
 
