@@ -114,7 +114,7 @@ Happy hacking!
 * [windcorp](https://tryhackme.com/module/windcorp)
 
 ## Premium Rooms
-* [Steel Mountain](https://tryhackme.com/why-subscribe?roomCode=steelmountain)
+* [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain)
 * [Hack Park](https://tryhackme.com/why-subscribe?roomCode=hackpark)
 * [powershell](https://tryhackme.com/why-subscribe?roomCode=powershell)
 * [](https://tryhackme.com/module/windcorp)
