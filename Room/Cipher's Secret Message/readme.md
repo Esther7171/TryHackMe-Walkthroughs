@@ -3,10 +3,14 @@
 <div align="center">Sharpen your cryptography skills by analyzing code to get the flag.</div>
 
 <div align='center'>
-  <img src='https://github.com/user-attachments/assets/473a4962-a4c5-492b-917f-34de60739102' height='200'></img>
+  <img src='https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263' height='200'></img>
 </div>
+![cipher-secret-message](https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263)
+
 
 ## Task 1. Crypto  Cipher's Secret Message
+
+<img src='https://github.com/user-attachments/assets/2c164f29-51ed-4907-97c6-ef8238a82b8c' />
 
 Answer the questions below
 
