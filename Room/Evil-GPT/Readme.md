@@ -61,7 +61,7 @@ Execute to get:
 THM{AI_HACK_THE_FUTURE}
 ```
 
-<img src='https://github.com/user-attachments/assets/03df8c5b-66f0-47b6-86cc-e04e373c94f8' /img>
+![Screenshot](https://github.com/user-attachments/assets/9f733d34-77d1-43d0-9526-87251592632e)
 
 🏁 Flag: THM{AI_HACK_THE_FUTURE}
 
