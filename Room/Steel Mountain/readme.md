@@ -6,6 +6,11 @@
 
 ## Task 1. Introduction
 
+<div align='center'>
+  <img src='https://github.com/user-attachments/assets/ae28e5b6-6b2f-42e7-a3ca-aebbb75d12c3' height='200'></img>
+</div>
+
+
 
 In this room you will enumerate a Windows machine, gain initial access with Metasploit, use Powershell to further enumerate the machine and escalate your privileges to Administrator.
 
