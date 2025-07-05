@@ -5,8 +5,6 @@
 <div align='center'>
   <img src='https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263' height='200'></img>
 </div>
-![cipher-secret-message](https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263)
-
 
 ## Task 1. Crypto  Cipher's Secret Message
 
