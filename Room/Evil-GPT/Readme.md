@@ -6,6 +6,8 @@
 
 Discover how prompt injection can exploit AI-driven systems in this TryHackMe Evil-GPT walkthrough using LLM abuse to gain root access.
 
+---
+
 🧠 Overview
 "Evil-GPT" is a fun and short room that simulates a compromised AI assistant executing system commands based on user input. The goal is to exploit its logic to retrieve sensitive data - namely, the flag.txt from the /root directory.
 This challenge is a beginner-friendly intro to LLM prompt injection abuse, where an LLM's unchecked execution capabilities pose a severe security risk.
