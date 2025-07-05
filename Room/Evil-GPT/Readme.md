@@ -13,6 +13,8 @@ Discover how prompt injection can exploit AI-driven systems in this TryHackMe Ev
 "Evil-GPT" is a fun and short room that simulates a compromised AI assistant executing system commands based on user input. The goal is to exploit its logic to retrieve sensitive data - namely, the flag.txt from the /root directory.
 This challenge is a beginner-friendly intro to LLM prompt injection abuse, where an LLM's unchecked execution capabilities pose a severe security risk.
 
+---
+
 🔌 Step 1: Connect to the AI Shell
 
 Once the machine boots up (~5–6 minutes), connect using nc to the provided port.
