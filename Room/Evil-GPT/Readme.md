@@ -92,5 +92,7 @@ Element Details Flag THM{AI_HACK_THE_FUTURE} Difficulty Easy Skills Tested Promp
 🔗 Follow My Lab Series
 This walkthrough is part of my LLM hacking and AI+Cybersecurity series.
  Check out other writeups and tips on:
+
 ➡️ [YashAdhikari](https://yashadhikari.medium.com/)
+
 ➡️ [Esther7171](https://github.com/Esther7171)
