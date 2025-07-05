@@ -7,8 +7,11 @@
 ## Task 1. Crypto  Cipher's Secret Message
 <img src="https://github.com/user-attachments/assets/855c2a47-b027-4d0d-a6d7-11e5ebea076e"/>
 
+
 Answer the questions below
+
 ### What is the flag?
+
 ```
 THM{a_sm4ll_crypt0_message_to_st4rt_with_THM_cracks}
 ```
