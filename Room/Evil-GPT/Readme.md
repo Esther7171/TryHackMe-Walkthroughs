@@ -1,4 +1,4 @@
-# <div align='center'>Evil-GPT</div>
+# <div align='center'>[Evil-GPT](https://tryhackme.com/room/hfb1evilgpt)</div>
 <div align='center'>Practice your LLM hacking skills.</div>
 <div align='center'>
   <img src="https://github.com/user-attachments/assets/d5a568d2-e70c-43ce-8ba1-7ef01f76c718" /img>
