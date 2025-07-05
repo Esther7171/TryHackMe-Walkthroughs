@@ -20,6 +20,9 @@ This prompt triggered a system-level AI response, revealing internal logic and l
 ---
 
 ✅ Key Takeaway
- Evil-GPT v2 shows how vulnerable LLMs can be when input isn't properly sandboxed or filtered - highlighting the risk of prompt injection in AI systems.
+
+Evil-GPT v2 shows how vulnerable LLMs can be when input isn't properly sandboxed or filtered - highlighting the risk of prompt injection in AI systems.
+
 📌 Follow for More
+
 For more AI security labs, CTF write-ups, and prompt injection techniques, follow [yash](https://yashadhikari.medium.com/).
