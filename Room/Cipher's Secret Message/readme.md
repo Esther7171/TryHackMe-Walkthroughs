@@ -1,7 +1,9 @@
 # <div align="center">[Cipher's Secret Message – TryHackMe Writeup](https://tryhackme.com/room/hfb1cipherssecretmessage)</div>
+
 <div align="center">Sharpen your cryptography skills by analyzing code to get the flag.</div>
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/473a4962-a4c5-492b-917f-34de60739102" height="200"/>
+  <img src="https://github.com/user-attachments/assets/473a4962-a4c5-492b-917f-34de60739102" height="200" ></img>
 </div>
 
 ## Task 1. Crypto  Cipher's Secret Message
