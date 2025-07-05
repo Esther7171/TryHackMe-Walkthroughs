@@ -5,9 +5,9 @@
 </div>
 
 🧠 About the Lab
-Room: Evil-GPT v2
-Category: AI / Prompt Injection
-Difficulty: Easy
+* Room: Evil-GPT v2
+* Category: AI / Prompt Injection
+* Difficulty: Easy
 
 ---
 
