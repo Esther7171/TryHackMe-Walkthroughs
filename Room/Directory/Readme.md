@@ -121,6 +121,74 @@ tshark -r traffic-1725627206938.pcap -Y "kerberos" \
 <img width="692" height="134" alt="image" src="https://github.com/user-attachments/assets/979b672f-7689-4f9e-9ab9-9bb65838c004" />
 
 The username appears more than once, but it's the same account - this is the one used for the successful foothold.
+Alright, here’s a calmer, more human rewrite in **first person**, explaining *why* I’m doing each step and keeping it conversational, like a real walkthrough rather than a sterile AI write-up.
+
+### Extracting & Cracking the User’s Password
+
+At this stage, I already know the valid Kerberos username from the earlier traffic analysis — `larry.doe`. My goal now is to figure out the password.
+When I looked closer at the packet capture, I spotted an AS-REP response for Kerberos 5 using etype 23. This is perfect, because AS-REP data can be extracted and cracked offline, meaning I don’t need live access to the system to get the password.
+
+#### Step 1: Finding the AS-REP Packet
+
+Since I already knew the username, I filtered the Kerberos traffic to show only packets where the client principal name matched `larry.doe`. This let me quickly zero in on the right packet.
+
+```bash
+tshark -r traffic-1725627206938.pcap \
+  -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
+  -T fields -e kerberos.CNameString -e kerberos.crealm \
+            -e kerberos.sname_string -e kerberos.checksum \
+            -e kerberos.cipher -e kerberos.info_salt \
+  | tail -n 1
+```
+
+<img width="1907" height="487" alt="image" src="https://github.com/user-attachments/assets/447ccae6-7682-4603-9cf3-69869857a41e" />
+
+This revealed the AS-REP cipher data — exactly what I need for offline cracking.
+
+#### Step 2: Pulling Out Only the Cipher
+
+The AS-REP packet contains a lot of extra information, but Hashcat doesn’t need all of it. It only cares about the second part of the `kerberos.cipher` field, so I extracted that directly.
+
+```bash
+tshark -r traffic-1725627206938.pcap \
+  -Y "frame.number==4817" \
+  -T fields -e kerberos.cipher
+```
+
+<img width="1909" height="419" alt="image" src="https://github.com/user-attachments/assets/39023775-9e1b-4b0b-8dc9-36186b04c289" />
+
+#### Step 3: Formatting the Hash for Hashcat
+
+Hashcat expects AS-REP hashes to look like this:
+
+```
+$krb5asrep$23$user@DOMAIN:<cipher>
+```
+
+To get it in that format without typing everything manually, I used `awk` to combine the cipher with the username and realm from the packet.
+
+```bash
+tshark -r traffic-1725627206938.pcap -Y "frame.number==4817" -T fields -e kerberos.cipher -e kerberos.CNameString -e kerberos.crealm | \
+awk -F'\t' '{split($1,a,","); print "$krb5asrep$23$"$2"@"$3":"a[2]}' | \
+awk -F':' '{prefix_len=length($1) + 33; print substr($0, 1, prefix_len) "$" substr($0, prefix_len+1)}' | tee -a directory.hash
+```
+
+<img width="1905" height="163" alt="image" src="https://github.com/user-attachments/assets/e510cdf3-f810-41fd-ba6b-36a8b631aa44" />
+
+Now I had a clean `$krb5asrep$` hash ready to crack.
+
+#### Step 4: Cracking the Password
+
+I saved the hash to a file called `directory.hash` and used Hashcat with mode `18200` (Kerberos 5 AS-REP, etype 23). I pointed it at the `rockyou.txt` wordlist to try common passwords.
+
+```bash
+  hashcat -a 0 -m 18200 directory.hash /usr/share/wordlists/rockyou.txt
+```
+
+Within seconds, the password popped out in plain text.
+Mission accomplished.
+
+<img width="1891" height="127" alt="image" src="https://github.com/user-attachments/assets/8ddd7c42-6e07-4f3e-99f5-a4732ec62963" />
 
 
 
