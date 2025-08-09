@@ -33,7 +33,7 @@ DIRECTORY.THM\larry.doe
 
 ### The threat actor captured a hash from the user in question 2. What are the last 30 characters of that hash?
 ```
-Answer format: ******************************
+Password1!
 ```
 
 ### What is the user's password?
@@ -189,6 +189,7 @@ Within seconds, the password popped out in plain text.
 Mission accomplished.
 
 <img width="1891" height="127" alt="image" src="https://github.com/user-attachments/assets/8ddd7c42-6e07-4f3e-99f5-a4732ec62963" />
+
 
 
 
