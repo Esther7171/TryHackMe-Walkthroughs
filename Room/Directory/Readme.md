@@ -33,21 +33,21 @@ DIRECTORY.THM\larry.doe
 
 ### The threat actor captured a hash from the user in question 2. What are the last 30 characters of that hash?
 ```
-Password1!
+55616532b664cd0b50cda8d4ba469f
 ```
 
 ### What is the user's password?
 ```
-Answer format: **********
+Password1!
 ```
 
 ### What were the second and third commands that the threat actor executed on the system? Format: command1,command2
 ```
-Answer format: *** **** ****\****** *:\******,*** **** ****\*** *:\***
+reg save HKLM\SYSTEM C:\SYSTEM,reg save HKLM\SAM C:\SAM
 ```
 ### What is the flag?
 ```
-Answer format: ***{**_***_********}
+THM{Ya_G0t_R0aSt3d!}
 ```
 
 ## HII
@@ -121,7 +121,45 @@ tshark -r traffic-1725627206938.pcap -Y "kerberos" \
 <img width="692" height="134" alt="image" src="https://github.com/user-attachments/assets/979b672f-7689-4f9e-9ab9-9bb65838c004" />
 
 The username appears more than once, but it's the same account - this is the one used for the successful foothold.
-Alright, here’s a calmer, more human rewrite in **first person**, explaining *why* I’m doing each step and keeping it conversational, like a real walkthrough rather than a sterile AI write-up.
+
+
+#### Getting the Last 30 Characters of the Cipher
+
+Now that I had confirmed the username from earlier, I wanted to grab part of the encrypted blob that Kerberos sent during authentication.
+Technically, this isn’t a “hash” in the usual sense — it’s part of an **AS-REP** packet, which is an encrypted response from the Key Distribution Center. It can be encrypted with RC4, AES, or sometimes PKINIT, depending on the setup.
+
+Since I already knew the username (`larry.doe`), my plan was to filter for only the Kerberos packets involving them and then pull the cipher field.
+
+First, I checked all Kerberos packets for `larry.doe` and listed a few useful fields, including the frame number:
+
+```bash
+tshark -r traffic-1725627206938.pcap \
+  -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
+  -T fields -e kerberos.checksum -e kerberos.cipher -e kerberos.CNameString -e frame.number
+```
+
+From that output, I could see the frame right before `4817` contained the blob I was after.
+
+Next, I focused only on the cipher itself and grabbed the last one in the capture:
+
+```bash
+tshark -r traffic-1725627206938.pcap \
+  -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
+  -T fields -e kerberos.cipher | tail -n 1
+```
+
+Finally, I used `awk` to print just the **last 30 characters**:
+
+```bash
+tshark -r traffic-1725627206938.pcap \
+  -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
+  -T fields -e kerberos.cipher | tail -n 1 | \
+  awk '{print substr($0, length($0)-29)}'
+```
+<img width="584" height="147" alt="image" src="https://github.com/user-attachments/assets/0df58e80-af0e-46fc-8df9-b4854123b246" />
+
+That gave me exactly what the question was asking for.
+
 
 ### Extracting & Cracking the User’s Password
 
@@ -190,7 +228,39 @@ Mission accomplished.
 
 <img width="1891" height="127" alt="image" src="https://github.com/user-attachments/assets/8ddd7c42-6e07-4f3e-99f5-a4732ec62963" />
 
+### Finding the Second and Third Commands
 
+After I had larry.doe's credentials, I noticed some interesting traffic headed to port 5985. That port is used for WinRM (Windows Remote Management), which usually means remote administrative commands are being executed after authentication. The only problem was that all of this traffic was encrypted.
+
+Since I had the password, I decided to try decrypting it. I found a Github Gist containing code for Decrypting Traffic.
+Gist-link
+
+You can either clone the repo or copy & past the code. I simply copied and pasted in into
+```
+nano decrypt.py
+```
+Now, run this: 
+```
+python3 decrypt.py -p 'Password-U-found' ./traffic-1725627206938.pcap > decrypted_traffic.txt
+```
+Scrolling through the file, I started to notice a pattern - the commands being run were hidden inside <rsp:Arguments> tags and base64 encoded. I decided to extract just those chunks into a separate file:
+```
+grep -oP '(?<=<rsp:Arguments>).*?(?=</rsp:Arguments>)' decrypted_traffic.txt > en_args.txt
+```
+From there, I decoded each one and saved the results:
+```
+while read line; do
+  echo "$line" | base64 --decode >> arguments.txt
+  echo "" >> arguments.txt
+done < en_args.txt
+```
+Looking through arguments.txt, I spotted the first command right away - whoami. I wanted to see everything in order, so I cleaned it up with:
+```
+grep -a '<S N="V">' arguments.txt | awk -F'[<>]' '{print $3}'
+```
+<img width="766" height="866" alt="image" src="https://github.com/user-attachments/assets/49c92c97-a47a-4289-88fb-aede8651c1eb" />
+
+That gave me the full sequence of commands run after the initial login, and from there I could clearly identify the second and third ones the attacker used.
 
 
 
