@@ -1,4 +1,8 @@
 # <div align="center">[Root Me](https://tryhackme.com/room/rrootme)</div>
+<div align="center">A ctf for beginners, can you root me?</div>
+<div align="center">
+ <img width="200" height="200" alt="rootme" src="https://github.com/user-attachments/assets/94c6984c-5b16-4b2c-8c86-2164c33d3080" />
+</div>
 
 ## Step 1: Reconnaissance
 
