@@ -41,6 +41,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Erlang/OTP SSH: CVE-2025-32433](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Learn about and exploit Erlang/OTP SSH CVE-2025-32433 in a lab setup. | `CVE-2025-32433` |
 | [Evil-GPT](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt) | Easy | Linux | Practice your LLM hacking skills. | `LLM hacking ` `Prompt Injection` |
 | [Evil-GPT v2](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt)| Easy | Web | Put your LLM hacking skills to the test one more time. | `Advance LLM hacking ` `Prompt Injection` |
+| [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
 | [FFuF](./Room/Ffuf/writeup.md) | Easy | Linux | Enumeration, fuzzing, and directory brute forcing using ffuf | Tool Guide |
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
