@@ -35,6 +35,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Crack the Hash Level 1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
 | [Crack The Hash Level 2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
+| [Directory](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Directory#directory) | Hard | Any | Do you have what it takes to crack this case? | `DFIR` |
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Linux | Have you ever been curious about how your router works? What OS it runs? What makes it tick? | Investigation of router firmware |
 | [Erlang/OTP SSH: CVE-2025-32433](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Learn about and exploit Erlang/OTP SSH CVE-2025-32433 in a lab setup. | `CVE-2025-32433` |
