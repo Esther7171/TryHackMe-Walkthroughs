@@ -56,7 +56,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Metasploit: Exploitation](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Metasploit%3A%20Exploitation#metasploit-exploitation) | Easy | Linux | Using Metasploit for scanning, vulnerability assessment and exploitation. | `Msf` |
-| [Metasploit: Meterpreter](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Metasploit%3A%20Meterpreter#metasploit-meterpreter) | Easy | Linux | Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation. | `msf` |
+| [Metasploit: Meterpreter](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Metasploit%3A%20Meterpreter#metasploit-meterpreter) | Easy | Linux | Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation. | `Msf` |
 | [Mindgames](./Room/Mindgames/writeup.md) | Medium | Linux | Just a terrible idea... | ```Python``` ```C```|
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Nax](./Room/Nax/writeup.md) | Medium | Linux | Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution. | ```CVE-2019-15949``` ``` Metasploit```|
