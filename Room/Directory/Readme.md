@@ -50,24 +50,19 @@ reg save HKLM\SYSTEM C:\SYSTEM,reg save HKLM\SAM C:\SAM
 THM{Ya_G0t_R0aSt3d!}
 ```
 
-## HII
+### Initial Reconnaissance: Finding Open Ports
 
-#### Finding Open Ports
-The first step is to identify which ports the attacker found open. In network forensics, an open port is confirmed when a target responds to a TCP SYN with a SYN+ACK, completing part of the three-way handshake. Since we have a .pcap file, we can use TShark (Wireshark's command-line tool) to pull this info."
+The attacker’s first step was to scan the target system to find open ports—these are the gateways that could allow further access. In TCP communication, a port is considered open when the target responds to a connection request (a SYN packet) with a SYN and ACK, which means it’s ready to connect.
+
+To see which ports the attacker found open, I analyzed the network capture file (`traffic.pcap`) using TShark, which is the command-line version of Wireshark. I ran this command to filter packets where the target sent SYN and ACK responses, limiting the analysis to the first 3000 packets to keep it quick:
+
 ```bash
 tshark -r traffic-1725627206938.pcap -c 3000 -T fields -e tcp.srcport -Y "tcp.flags.syn == 1 && tcp.flags.ack == 1" | sort -n | uniq | paste -sd ','
 ```
-Explanation:
-* `-r` traffic.pcap → Read from the PCAP file.
-* `-c 3000` → Limit reading to the first 3000 packets for faster processing (enough to cover the scan).
-* `-Y` → Apply a display filter for SYN+ACK responses.
-* `-T` fields → Output in field format instead of full packet details.
-* `-e` tcp.srcport → Extract the source port field.
-* `sort -n | uniq` → Remove duplicates and sort.
-* `paste -sd ','` → Join results into a single comma-separated line.
 
-<img width="639" height="136" alt="image" src="https://github.com/user-attachments/assets/d5373bb4-1fc4-4404-848a-c337b8ec3fc8" />
+This gave me a sorted list of unique open ports, showing exactly which services were accessible to the attacker:
 
+<img width="639" height="136" alt="Open Ports Discovered" src="https://github.com/user-attachments/assets/d5373bb4-1fc4-4404-848a-c337b8ec3fc8" />
 
 While going through the packets in Wireshark, I noticed Kerberos traffic starting around packet **4667**.
 
