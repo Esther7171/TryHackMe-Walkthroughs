@@ -4,6 +4,18 @@
   <img alt="gamebuzz" src="https://github.com/user-attachments/assets/b82d2e36-8800-4cd3-98a7-388c3ff47c7b" height='200'></img>
 </div>
 
+## Task 1. Challenge
+Part of Incognito 2.0 CTF
+
+Answer the questions below
+### user.txt
+```
+d14def35ed0bd914c1c5881fa0fa8090
+```
+### root.txt
+```
+9dcb607e31348671de36b9eb7446cb59
+```
 # St1p 1: Recconance
 
 Let scan the Network:
