@@ -5,9 +5,9 @@
 </div>
 
 
-### Task 1.The Case
+## Task 1. The Case
 
-#### Lab Scenario
+### Lab Scenario
 
 A small music company was recently hit by a threat actor.
 The company's Art Directory, Larry, claims to have discovered a random note on his Desktop.
@@ -21,7 +21,8 @@ Click on the Download Task Files button at the top of this task. You will be pro
 Note: For free users using the AttackBox, the challenge is best done using your own environment. Some browsers may detect the file as malicious. The PCAP file is safe to download with md5 of 23393189b3cb22f7ac01ce10427886de. In general, as a security practice, download the PCAP and analyze it on a dedicated virtual machine, and not on your host OS.
 
 ## Answer the questions below
-What ports did the threat actor initially find open? Format: from lowest to highest, separated by a comma.
+
+### What ports did the threat actor initially find open? Format: from lowest to highest, separated by a comma.
 ```
 53,80,88,135,139,389,445,464,593,636,3268,3269,5357
 ```
@@ -50,7 +51,7 @@ reg save HKLM\SYSTEM C:\SYSTEM,reg save HKLM\SAM C:\SAM
 THM{Ya_G0t_R0aSt3d!}
 ```
 
-### Initial Reconnaissance: Finding Open Ports
+## Initial Reconnaissance: Finding Open Ports
 
 The attacker’s first step was to scan the target system to find open ports—these are the gateways that could allow further access. In TCP communication, a port is considered open when the target responds to a connection request (a SYN packet) with a SYN and ACK, which means it’s ready to connect.
 
@@ -98,7 +99,7 @@ This command filtered for Kerberos packets, extracted the username and domain, a
 The username appears multiple times, but it's all the same account - the one that gave the attacker their foothold on the server.
 
 
-### Extracting the Last 30 Characters of the Captured Hash
+## Extracting the Last 30 Characters of the Captured Hash
 
 After confirming the username from the previous step, I wanted to find the encrypted data the attacker captured during authentication. Technically, this isn’t a typical “hash” — it’s part of an **AS-REP** packet, which is an encrypted response from the Key Distribution Center. Depending on the environment, this could be encrypted using RC4, AES, or PKINIT.
 
@@ -138,7 +139,7 @@ tshark -r traffic-1725627206938.pcap \
 This gave me exactly the last 30 characters of the encrypted hash the attacker captured.
 
 
-### Extracting and Cracking the User’s Password
+## Extracting and Cracking the User’s Password
 
 Now that I had the valid Kerberos username my next goal was to find the user’s password.
 
@@ -206,7 +207,7 @@ Within seconds, Hashcat cracked the password, revealing it in plain text. Missio
 
 <img width="1910" height="131" alt="image" src="https://github.com/user-attachments/assets/dc5c6378-c4c9-4239-af52-37327ef30de7" />
 
-### Finding the Second and Third Commands the Attacker Executed
+## Finding the Second and Third Commands the Attacker Executed
 
 Once I had `Username` credentials, I noticed some interesting traffic headed to port 5985. That's the port used by WinRM, Windows Remote Management, which typically means remote commands are being executed after the attacker logs in. The catch was, all this traffic was encrypted.
 
@@ -245,7 +246,7 @@ grep -a '<S N="V">' arguments.txt | awk -F'[<>]' '{print $3}' | awk '
 
 That revealed all the commands run after the attacker logged in, letting me clearly identify the second and third commands:
 
-### FLAG
+## FLAG
 ```bash
 grep -a '<S N="V">' arguments.txt | awk -F'[<>]' '{print $3}'
 ```
