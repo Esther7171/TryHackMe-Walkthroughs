@@ -162,7 +162,6 @@ tshark -r traffic-1725627206938.pcap \
 
 This revealed the AS-REP cipher data, the encrypted blob needed for cracking.
 
-<img width="1907" height="487" alt="AS-REP cipher data" src="https://github.com/user-attachments/assets/447ccae6-7682-4603-9cf3-69869857a41e" />
 
 #### Step 2: Extracting Just the Cipher
 
