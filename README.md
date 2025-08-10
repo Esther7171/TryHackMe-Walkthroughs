@@ -67,7 +67,9 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
 | [Red Team Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Red%20Team%20Fundamentals#red-team-fundamentals) | Easy | Any |Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.|
-| [RootMe]()
+| [RootMe](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Rootme#root-me) | Easy | Linux |A ctf for beginners, can you root me? | `File Upload` |
+| [Roundcube: CVE-2025-49113](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Roundcube:%20CVE-2025-49113/readme.md#roundcube-cve-2025-49113) | Easy | Linux | Exploit CVE-2025-49113 in a lab environment. | `CVE-2025-49113`|
+| [Search Skills](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Search%20Skills#search-skills) | Easy | Any |Learn to efficiently search the Internet and use specialized search engines and technical docs. | `OSINT` |
 | [Silver Platter](./Room/Silver-Platter/readme.md)| Easy | Linux | Can you breach the server? | `CVE-2024-36042` |
 | [Simple CTF](./Room/Simple-CTF/writeup.md) | Easy | Linux | Beginner level ctf | ```CVE-2019-9053``` ```Vim``` |
 | [Slingshot](https://github.com/Esther7171/THM-Walkthroughs/edit/main/Room/Slingshot/README.md#slingshot) | Easy | Linux |Can you retrace an attacker's steps after they enumerate and compromise a web server?| Logs |
