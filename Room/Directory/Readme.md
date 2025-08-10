@@ -64,78 +64,58 @@ This gave me a sorted list of unique open ports, showing exactly which services 
 
 <img width="639" height="136" alt="Open Ports Discovered" src="https://github.com/user-attachments/assets/d5373bb4-1fc4-4404-848a-c337b8ec3fc8" />
 
-While going through the packets in Wireshark, I noticed Kerberos traffic starting around packet **4667**.
-
-At packet **4679**, there’s a `PREAUTH_REQUIRED` error — meaning the username exists but requires pre-authentication.
+Finding the Valid Username That Gave the Attacker a Foothold
+As I dug through the packets in Wireshark, I noticed Kerberos traffic starting around packet 4667. At packet 4679, there was a PREAUTH_REQUIRED error, which tells me the username exists but needs pre-authentication.
 
 <img width="1608" height="726" alt="image" src="https://github.com/user-attachments/assets/596dc7ab-025a-4585-ae28-195c8baadb35" />
 
-Following that, I saw a series of `unknown principal` errors, which means invalid usernames were being tested. These stopped after packet **4785**.
+Shortly after, I saw several unknown principal errors, meaning invalid usernames were being tried. These stopped by packet 4785.
 
 <img width="1232" height="103" alt="image" src="https://github.com/user-attachments/assets/72d1a3f8-cbdf-43ff-8013-5d25717c8182" />
 
-By the time I reached packet **4817**, there was an AS-REQ with no error message. That looked like the successful login.
+By packet 4817, there was an AS-REQ without any error - this looked like a successful login attempt.
 
 <img width="1704" height="377" alt="image" src="https://github.com/user-attachments/assets/9a38a33f-a3d7-4ac3-b3c4-1bde7f816a65" />
 
+At this point, I realized the Kerberos traffic in the capture must contain the username that successfully authenticated. In these packets:
+* `kerberos.CNameString` holds the username
+* `kerberos.crealm` contains the domain name
 
-At this stage of the investigation, I suspected that Kerberos traffic inside the `pcap` file contained the username that successfully authenticated to the server.
+So, by extracting these two fields, I could reconstruct the username in the format DOMAIN\usernameexactly what the challenge asked for.
 
-In Kerberos packets:
-
-* **`kerberos.CNameString`** → contains the username
-* **`kerberos.crealm`** → contains the domain name
-
-By extracting both fields, I could reconstruct the format `DOMAIN\username`, which is exactly the information the challenge is asking for.
-
-Instead of manually checking every Kerberos packet in Wireshark, I used **TShark** to automate the extraction.
-
-
-1. **`tshark -r traffic-1725627206938.pcap`**
-   Reads the pcap file.
-
-2. **`-Y "kerberos"`**
-   Filters the capture to only show Kerberos packets.
-
-3. **`-T fields`**
-   Outputs only specific fields instead of the full packet.
-
-4. **`-e kerberos.CNameString -e kerberos.crealm`**
-   Extracts both the username and the Kerberos realm (domain).
-
-5. **`| awk 'NF==2 {print $2 "\\" $1}'`**
-
-   * `NF==2` → only process lines where both fields are present.
-   * `print $2 "\\" $1` → prints the domain first, then a backslash, then the username, forming `DOMAIN\username`.
+Rather than combing through every packet manually, I used TShark to automate this:
 
 ```bash
 tshark -r traffic-1725627206938.pcap -Y "kerberos" \
   -T fields -e kerberos.CNameString -e kerberos.crealm \
   | awk 'NF==2 {print $2 "\\" $1}'
 ```
-<img width="692" height="134" alt="image" src="https://github.com/user-attachments/assets/979b672f-7689-4f9e-9ab9-9bb65838c004" />
 
-The username appears more than once, but it's the same account - this is the one used for the successful foothold.
+This command filtered for Kerberos packets, extracted the username and domain, and combined them in the proper format.
+
+<img width="687" height="135" alt="image" src="https://github.com/user-attachments/assets/01d77048-5ec1-48ad-b98c-378514fcc837" />
+
+The username appears multiple times, but it's all the same account - the one that gave the attacker their foothold on the server.
 
 
-#### Getting the Last 30 Characters of the Cipher
+### Extracting the Last 30 Characters of the Captured Hash
 
-Now that I had confirmed the username from earlier, I wanted to grab part of the encrypted blob that Kerberos sent during authentication.
-Technically, this isn’t a “hash” in the usual sense — it’s part of an **AS-REP** packet, which is an encrypted response from the Key Distribution Center. It can be encrypted with RC4, AES, or sometimes PKINIT, depending on the setup.
+After confirming the username from the previous step, I wanted to find the encrypted data the attacker captured during authentication. Technically, this isn’t a typical “hash” — it’s part of an **AS-REP** packet, which is an encrypted response from the Key Distribution Center. Depending on the environment, this could be encrypted using RC4, AES, or PKINIT.
 
-Since I already knew the username (`larry.doe`), my plan was to filter for only the Kerberos packets involving them and then pull the cipher field.
+Knowing the username was `larry.doe`, I filtered the Kerberos packets for that user to find the relevant encrypted cipher data.
 
-First, I checked all Kerberos packets for `larry.doe` and listed a few useful fields, including the frame number:
+First, I listed key fields from all Kerberos packets involving `larry.doe`, including the frame number, to identify where the encrypted blob appeared:
 
 ```bash
 tshark -r traffic-1725627206938.pcap \
   -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
   -T fields -e kerberos.checksum -e kerberos.cipher -e kerberos.CNameString -e frame.number
 ```
+<img width="1918" height="813" alt="image" src="https://github.com/user-attachments/assets/e620c46d-5731-400a-81be-e9df7a06d6ca" />
 
-From that output, I could see the frame right before `4817` contained the blob I was after.
+From this output, I found the frame just before **4817** contained the encrypted data I needed.
 
-Next, I focused only on the cipher itself and grabbed the last one in the capture:
+Then, I narrowed down to just the cipher field and grabbed the last occurrence in the capture:
 
 ```bash
 tshark -r traffic-1725627206938.pcap \
@@ -143,7 +123,9 @@ tshark -r traffic-1725627206938.pcap \
   -T fields -e kerberos.cipher | tail -n 1
 ```
 
-Finally, I used `awk` to print just the **last 30 characters**:
+<img width="1912" height="431" alt="image" src="https://github.com/user-attachments/assets/593ae8e4-4769-45d7-bbb0-651bcae80b56" />
+
+Finally, I extracted only the last 30 characters from that cipher string using `awk`:
 
 ```bash
 tshark -r traffic-1725627206938.pcap \
@@ -151,36 +133,40 @@ tshark -r traffic-1725627206938.pcap \
   -T fields -e kerberos.cipher | tail -n 1 | \
   awk '{print substr($0, length($0)-29)}'
 ```
-<img width="584" height="147" alt="image" src="https://github.com/user-attachments/assets/0df58e80-af0e-46fc-8df9-b4854123b246" />
+<img width="580" height="141" alt="image" src="https://github.com/user-attachments/assets/ecad1a95-4688-41f3-a997-32054a3ee266" />
 
-That gave me exactly what the question was asking for.
+This gave me exactly the last 30 characters of the encrypted hash the attacker captured.
 
 
-### Extracting & Cracking the User’s Password
+### Extracting and Cracking the User’s Password
 
-At this stage, I already know the valid Kerberos username from the earlier traffic analysis — `larry.doe`. My goal now is to figure out the password.
-When I looked closer at the packet capture, I spotted an AS-REP response for Kerberos 5 using etype 23. This is perfect, because AS-REP data can be extracted and cracked offline, meaning I don’t need live access to the system to get the password.
+Now that I had the valid Kerberos username my next goal was to find the user’s password.
 
-#### Step 1: Finding the AS-REP Packet
+Looking deeper into the packet capture, I found an AS-REP response for Kerberos 5 using encryption type 23. This was great news because AS-REP data can be extracted and cracked offline, so I didn’t need live access to the server to get the password.
 
-Since I already knew the username, I filtered the Kerberos traffic to show only packets where the client principal name matched `larry.doe`. This let me quickly zero in on the right packet.
+#### Step 1: Locating the AS-REP Packet
+
+I filtered the Kerberos traffic to only show packets related to `Username`, which helped me zero in on the right packet quickly:
 
 ```bash
 tshark -r traffic-1725627206938.pcap \
-  -Y 'kerberos and kerberos.CNameString == "larry.doe"' \
+  -Y 'kerberos and kerberos.CNameString == "Username"' \
   -T fields -e kerberos.CNameString -e kerberos.crealm \
             -e kerberos.sname_string -e kerberos.checksum \
             -e kerberos.cipher -e kerberos.info_salt \
   | tail -n 1
 ```
 
-<img width="1907" height="487" alt="image" src="https://github.com/user-attachments/assets/447ccae6-7682-4603-9cf3-69869857a41e" />
+<img width="1908" height="502" alt="image" src="https://github.com/user-attachments/assets/86b89881-5ad4-48aa-9651-f4dc911482e6" />
 
-This revealed the AS-REP cipher data — exactly what I need for offline cracking.
 
-#### Step 2: Pulling Out Only the Cipher
+This revealed the AS-REP cipher data, the encrypted blob needed for cracking.
 
-The AS-REP packet contains a lot of extra information, but Hashcat doesn’t need all of it. It only cares about the second part of the `kerberos.cipher` field, so I extracted that directly.
+<img width="1907" height="487" alt="AS-REP cipher data" src="https://github.com/user-attachments/assets/447ccae6-7682-4603-9cf3-69869857a41e" />
+
+#### Step 2: Extracting Just the Cipher
+
+Since **Hashcat** only needs the cipher part of the AS-REP packet, I extracted it by filtering the exact frame number where it appeared:
 
 ```bash
 tshark -r traffic-1725627206938.pcap \
@@ -188,17 +174,17 @@ tshark -r traffic-1725627206938.pcap \
   -T fields -e kerberos.cipher
 ```
 
-<img width="1909" height="419" alt="image" src="https://github.com/user-attachments/assets/39023775-9e1b-4b0b-8dc9-36186b04c289" />
+<img width="1903" height="415" alt="image" src="https://github.com/user-attachments/assets/afe6d18c-4fe9-4667-ae90-6b899e9d00ec" />
 
 #### Step 3: Formatting the Hash for Hashcat
 
-Hashcat expects AS-REP hashes to look like this:
+**Hashcat** requires the hash in a specific format:
 
 ```
 $krb5asrep$23$user@DOMAIN:<cipher>
 ```
 
-To get it in that format without typing everything manually, I used `awk` to combine the cipher with the username and realm from the packet.
+To automate this, I combined the cipher with the username and domain using `awk`:
 
 ```bash
 tshark -r traffic-1725627206938.pcap -Y "frame.number==4817" -T fields -e kerberos.cipher -e kerberos.CNameString -e kerberos.crealm | \
@@ -206,22 +192,20 @@ awk -F'\t' '{split($1,a,","); print "$krb5asrep$23$"$2"@"$3":"a[2]}' | \
 awk -F':' '{prefix_len=length($1) + 33; print substr($0, 1, prefix_len) "$" substr($0, prefix_len+1)}' | tee -a directory.hash
 ```
 
-<img width="1905" height="163" alt="image" src="https://github.com/user-attachments/assets/e510cdf3-f810-41fd-ba6b-36a8b631aa44" />
-
-Now I had a clean `$krb5asrep$` hash ready to crack.
+<img width="1908" height="162" alt="image" src="https://github.com/user-attachments/assets/af9030d6-de5f-45b1-84a3-b958b0ea18bf" />
 
 #### Step 4: Cracking the Password
 
-I saved the hash to a file called `directory.hash` and used Hashcat with mode `18200` (Kerberos 5 AS-REP, etype 23). I pointed it at the `rockyou.txt` wordlist to try common passwords.
+Finally, I saved the hash to a file named `directory.hash` and used Hashcat with mode `18200` for Kerberos AS-REP etype 23. I ran it against the popular `rockyou.txt` wordlist:
 
 ```bash
-  hashcat -a 0 -m 18200 directory.hash /usr/share/wordlists/rockyou.txt
+hashcat -a 0 -m 18200 directory.hash /usr/share/wordlists/rockyou.txt
 ```
 
-Within seconds, the password popped out in plain text.
-Mission accomplished.
+Within seconds, Hashcat cracked the password, revealing it in plain text. Mission accomplished.
 
-<img width="1891" height="127" alt="image" src="https://github.com/user-attachments/assets/8ddd7c42-6e07-4f3e-99f5-a4732ec62963" />
+
+<img width="1910" height="131" alt="image" src="https://github.com/user-attachments/assets/dc5c6378-c4c9-4239-af52-37327ef30de7" />
 
 ### Finding the Second and Third Commands
 
