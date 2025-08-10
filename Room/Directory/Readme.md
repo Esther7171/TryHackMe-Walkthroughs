@@ -206,39 +206,55 @@ Within seconds, Hashcat cracked the password, revealing it in plain text. Missio
 
 <img width="1910" height="131" alt="image" src="https://github.com/user-attachments/assets/dc5c6378-c4c9-4239-af52-37327ef30de7" />
 
-### Finding the Second and Third Commands
+### Finding the Second and Third Commands the Attacker Executed
 
-After I had larry.doe's credentials, I noticed some interesting traffic headed to port 5985. That port is used for WinRM (Windows Remote Management), which usually means remote administrative commands are being executed after authentication. The only problem was that all of this traffic was encrypted.
+Once I had `Username` credentials, I noticed some interesting traffic headed to port 5985. That's the port used by WinRM, Windows Remote Management, which typically means remote commands are being executed after the attacker logs in. The catch was, all this traffic was encrypted.
 
-Since I had the password, I decided to try decrypting it. I found a Github Gist containing code for Decrypting Traffic.
-Gist-link
 
-You can either clone the repo or copy & past the code. I simply copied and pasted in into
-```
+Since I already had the password, I decided to try decrypting the traffic. I found a helpful [GitHub Gist](http://gist.github.com/jborean93/d6ff5e87f8a9f5cb215cd49826523045) with Python code for decrypting WinRM data. Instead of cloning the repo, I copied the code into a file:
+```bash
 nano decrypt.py
 ```
-Now, run this: 
-```
+
+Then I ran the script using the password I found:
+```bash
 python3 decrypt.py -p 'Password-U-found' ./traffic-1725627206938.pcap > decrypted_traffic.txt
 ```
-Scrolling through the file, I started to notice a pattern - the commands being run were hidden inside <rsp:Arguments> tags and base64 encoded. I decided to extract just those chunks into a separate file:
-```
+
+Going through the decrypted output, I spotted a pattern - commands were hidden inside <rsp:Arguments> tags and base64 encoded. So, I extracted those parts into a separate file:
+```bash
 grep -oP '(?<=<rsp:Arguments>).*?(?=</rsp:Arguments>)' decrypted_traffic.txt > en_args.txt
 ```
-From there, I decoded each one and saved the results:
-```
+
+Next, I decoded each encoded chunk and saved the results:
+```bash
 while read line; do
   echo "$line" | base64 --decode >> arguments.txt
   echo "" >> arguments.txt
 done < en_args.txt
 ```
-Looking through arguments.txt, I spotted the first command right away - whoami. I wanted to see everything in order, so I cleaned it up with:
+
+Opening `arguments.txt`, the first command jumped out - `whoami`. To see the full sequence cleanly, I filtered and formatted it with:
+```bash
+grep -a '<S N="V">' arguments.txt | awk -F'[<>]' '{print $3}' | awk '
+  {print}
+  $0 == "$p = $ExecutionContext.SessionState.Path" {count++}
+  count == 2 {exit}
+'
 ```
+
+That revealed all the commands run after the attacker logged in, letting me clearly identify the second and third commands:
+
+### FLAG
+```bash
 grep -a '<S N="V">' arguments.txt | awk -F'[<>]' '{print $3}'
 ```
-<img width="766" height="866" alt="image" src="https://github.com/user-attachments/assets/49c92c97-a47a-4289-88fb-aede8651c1eb" />
 
-That gave me the full sequence of commands run after the initial login, and from there I could clearly identify the second and third ones the attacker used.
+### Wrapping Up the Investigation
+This lab took me through a realistic attack chain - from initial reconnaissance and port scanning, to uncovering valid credentials, extracting encrypted hashes, cracking the password offline, and finally decrypting the attacker's commands on the system.
 
 
+Analyzing the network capture taught me how attackers move step-by-step, leaving clues that can be pieced together to reconstruct the full story. It also highlighted the power of tools like Wireshark, TShark, and Hashcat in incident response and forensic investigations.
 
+
+I hope this walkthrough helps you sharpen your skills in network forensics and threat hunting. Every packet has a story to tell - you just need to know how to listen.
