@@ -115,9 +115,10 @@ Feel free to explore the walkthroughs and learn more about the different challen
 If you would like to contribute to this repository by adding your own walkthroughs or improving existing ones, please follow the standard GitHub workflow: Fork the repository, make your changes, and submit a pull request. Your contributions are greatly appreciated!
 Happy hacking!
 
-### Room Series
+<!--### Room Series
 * [Http smulgging](https://tryhackme.com/module/http-request-smuggling)
 * [windcorp](https://tryhackme.com/module/windcorp)
+-->
 
 ## Premium Rooms
 * [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain)
