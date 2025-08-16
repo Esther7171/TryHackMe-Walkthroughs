@@ -39,6 +39,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Linux | Have you ever been curious about how your router works? What OS it runs? What makes it tick? | Investigation of router firmware |
 | [Erlang/OTP SSH: CVE-2025-32433](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Learn about and exploit Erlang/OTP SSH CVE-2025-32433 in a lab setup. | `CVE-2025-32433` |
+| [Event Horizon](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Event%20Horizon/readme.md#event-horizon) | Hard | Linux | Unearth the secrets beyond the Event Horizon. | `DFIR` |
 | [Evil-GPT](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt) | Easy | Linux | Practice your LLM hacking skills. | `LLM hacking ` `Prompt Injection` |
 | [Evil-GPT v2](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt)| Easy | Web | Put your LLM hacking skills to the test one more time. | `Advance LLM hacking ` `Prompt Injection` |
 | [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
