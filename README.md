@@ -31,6 +31,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
 | [Cipher's Secret Message](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Cipher's%20Secret%20Message/readme.md#ciphers-secret-message--tryhackme-writeup) | Easy | Any |Sharpen your cryptography skills by analyzing code to get the flag. | `Caesar Decryption` `Crypto Challenge` |
+| [Compiled](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Compiled#compiled---tryhackme-writeup) | Easy | Any | Strings can only help you so far. | `binary` |
 | [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```Cryptography``` |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Crack the Hash Level 1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
