@@ -17,7 +17,7 @@ THM{8c8bc5558f0f3f8060d00ca231a9fb5e}
 
 ## Initial Enumeration
 
-As always, I kicked things off with an **Nmap scan** to enumerate the open services running on the target machine (`10.201.101.104`). I used the following command:
+As always, I kicked things off with an **Nmap scan** to enumerate the open services running on the target machine. I used the following command:
 
 ```bash
 nmap -sV -sC -Pn 10.201.101.104
