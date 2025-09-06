@@ -1,5 +1,8 @@
 # <div align="center">[Flatline TryHackMe Walkthrough — Complete Step-by-Step Guide to Root](https://tryhackme.com/room/flatline)</div>
-<
+<div align='center'>How low are your morals?</div>
+<div align='center'>
+ <img src='https://github.com/user-attachments/assets/f4f47f86-a7d5-475c-9059-8bee41d7a808' height='200' />
+</div>
 
 ## Task 1 . Flags
 
