@@ -1,4 +1,4 @@
-# <div align="center">[battery](https://tryhackme.com/r/room/battery)</div>
+# <div align="center">[battery - TryHackMe Writeup](https://tryhackme.com/r/room/battery)</div>
 <div align="center">CTF designed by CTF lover for CTF lovers</div>
 <br>
 <div align="center">
