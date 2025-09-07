@@ -1,4 +1,4 @@
-# <div align="center">[Agent Sudo](https://tryhackme.com/r/room/agentsudoctf)</div>
+# <div align="center">[Agent Sudo — TryHackMe Flags](https://tryhackme.com/r/room/agentsudoctf)</div>
 <div align="center">You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth.</div>
 <br>
 <div align="center">
