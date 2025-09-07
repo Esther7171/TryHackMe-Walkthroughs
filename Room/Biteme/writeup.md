@@ -1,4 +1,4 @@
-# <div align="center">[biteme](https://tryhackme.com/r/room/biteme)</div>
+# <div align="center">[biteme - TryHackMe Writeup](https://tryhackme.com/r/room/biteme)</div>
 <div align="center">Stay out of my server!</div>
 <div align="center">
 <img src="https://github.com/user-attachments/assets/f2ba38ee-f025-439a-bae3-ba631a0365a0" height="200"></img>
