@@ -1,4 +1,4 @@
-# <div align="center">[Blue](https://tryhackme.com/r/room/blue)</div>
+# <div align="center">[Blue - TryHackMe Writeup](https://tryhackme.com/r/room/blue)</div>
 <div align="center">Windows Exploitation Basics - Easy</div>
 <br><div align="center">
 <img src="https://github.com/user-attachments/assets/ae3803c5-7fa3-4d5a-89a1-6c5dc1d87233" height="200px"></img> 
