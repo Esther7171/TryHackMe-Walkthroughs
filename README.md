@@ -123,7 +123,6 @@ Happy hacking!
 <!--### Room Series
 * [Http smulgging](https://tryhackme.com/module/http-request-smuggling)
 * [windcorp](https://tryhackme.com/module/windcorp)
-
 -->
 
 ## Premium Rooms
