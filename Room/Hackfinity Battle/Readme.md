@@ -1,4 +1,4 @@
-<div>[Hackfinity Battle  – TryHackMe Flags]</div>
+# <div>[Hackfinity Battle  – TryHackMe Flags](https://tryhackme.com/room/HackfinityBattle)</div>
 
 <div align="center">Welcome to the Hackfinity Battle CTF!></div>
 <div align="center">
