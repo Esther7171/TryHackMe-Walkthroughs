@@ -46,6 +46,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
 | [FFuF](./Room/Ffuf/writeup.md) | Easy | Linux | Enumeration, fuzzing, and directory brute forcing using ffuf | Tool Guide |
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
+| [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challange` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Ice](./Room/Ice/walkthrough.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
