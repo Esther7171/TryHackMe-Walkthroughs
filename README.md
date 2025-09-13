@@ -5,7 +5,7 @@
 # TryHackMe-Walkthroughs
 This repository contains walkthroughs for various rooms on TryHackMe, a platform for learning and practicing cybersecurity skills through hands-on virtual environments. Each directory corresponds to a specific room and includes a detailed walkthrough guide, along with any necessary files or resources. Purpose of creating this for self learning and helping others.
 
-# Walkthroughs
+# Walkthroughs 
 | Room Name | Difficulty | Type |Description | Room Type |
 |:---:|:---:|---|---|---|
 | [0x41haz](./Room/0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge | ```Reverse Engerniering``` |
