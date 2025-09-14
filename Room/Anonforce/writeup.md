@@ -161,8 +161,5 @@ f706456440c7af4187810c31c6cebdce
 ```
 
 
-## Conclusion
+## *Hope you enjoyed this guide! For a more detailed walkthrough, read the full article here: [https://infosecwriteups.com/anonforce-tryhackme-walkthrough-complete-guide-to-boot2root-d66405777aec](https://infosecwriteups.com/anonforce-tryhackme-walkthrough-complete-guide-to-boot2root-d66405777aec)*
 
-Anonforce was an exciting Boot2Root challenge that tested my skills in enumeration, cryptography, and privilege escalation. I started with anonymous FTP login, found and cracked a GPG private key, decrypted a backup to extract password hashes, and finally cracked the root password to capture the root flag.
-
-This room is especially good for beginners preparing for certifications like **CompTIA Security+** and **CEH (Certified Ethical Hacker)**, as it covers important practical concepts such as service enumeration, password cracking, and privilege escalation.
