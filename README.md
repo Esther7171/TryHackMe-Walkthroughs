@@ -126,6 +126,137 @@ Happy hacking!
 * [windcorp](https://tryhackme.com/module/windcorp)
 -->
 
+## Certification Roadmap Guide
+
+### 🟢 Absolute Beginner & General Fundamentals
+*Perfect for those just starting out. Learn core concepts and basic tool usage.*
+
+| Room | Difficulty | Key Concepts | Cert Relevance |
+| :--- | :---: | :--- | :--- |
+| [Welcome](./Room/Welcome/writeup.md) | Easy | Platform Orientation | All |
+| [Principles of Security](./Room/Principles%20of%20Security) | Easy | Security Concepts | All |
+| [Pentesting Fundamentals](./Room/Pentesting%20Fundamentals) | Easy | Methodology & Ethics | All |
+| [Web Application Basics](./Room/Web_Application_Basics/readme.md) | Easy | HTTP, Requests, Headers | All, EJPT |
+| [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web App Theory | All, EJPT |
+| [Crack the Hash Level 1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | Cryptography Basics | All |
+| [Hydra](./Room/Hydra/writeup.md) | Easy | Password Brute-Forcing | All |
+| [FFuF](./Room/Ffuf/writeup.md) | Easy | Web Directory Fuzzing | All, EJPT |
+| [Toolbox: Vim](./Room/Toolbox:Vim/writeup.md) | Easy | Text Editor Skills | All |
+| [Search Skills](./Room/Search%20Skills) | Easy | OSINT, Google Fu | All |
+
+---
+
+### 🔵 eLearnSecurity Junior Penetration Tester (eJPT) Preparation
+*Focuses on networking, web app attacks, and basic privilege escalation—the core of eJPT.*
+
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Basic-Pentesting](./Room/Basic-Pentesting/walkthrough.md) | Easy | SMB, SSH, PrivEsc |
+| [Bounty Hacker](./Room/Bounty-Hacker/walkthrough.md) | Easy | FTP, SUID |
+| [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Stego, SUID |
+| [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Web, LFI, Command Injection |
+| [RootMe](./Room/Rootme) | Easy | File Upload, PrivEsc |
+| [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | **CVE-2019-14287**, Stego |
+| [Ice](./Room/Ice/walkthrough.md) | Easy | **CVE-2004-1561** (Buffer Overflow) |
+| [Kenobi](./Room/Kenobi/walkthrough.md) | Easy | Samba, ProFtpd, SUID |
+| [Startup](./Room/Startup/walkthrough.md) | Easy | FTP, Cron Jobs |
+| [Wgel CTF](./Room/Wgel) | Easy | LFI, Sudo Abuse |
+| [Capture!](./Room/Capture!/writeup.md) | Easy | Authentication Bypass |
+| [Corridor](./Room/Corridor/walkthroug.md) | Easy | IDOR |
+| [Blue](./Room/Blue/writeup.md) | Easy | **MS17-010** (EternalBlue) |
+| [Tomghost](./Room/Tomghost/writeup.md) | Easy | **CVE-2020–1938** (File Read) |
+| [Ignite](./Room/Ignite) | Easy | Fuel CMS, RCE |
+| [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | WordPress, PrivEsc |
+
+---
+
+### 🟠 Offensive Security Certified Professional (OSCP) Preparation
+*Emphasizes Windows/Linux priv esc, buffer overflows (BOF), and advanced web app exploitation.*
+
+#### **Initial Access & Web Attacks**
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Oh My WebServer](./Room/Oh-My-WebServer/writeup.md) | Medium | **CVE-2021-41773** (Path Traversal) |
+| [Kiba](./Room/Kiba/wrietup.md) | Easy | **CVE-2019-7609** (Kibana RCE) |
+| [The Sticker Shop](./Room/The-Sticker-Shop/writeup.md) | Easy | XSS |
+| [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | XSS, SQLi, Docker |
+| [Dogcat](./Room/Dogcat/writeup.md) | Medium | LFI, Docker Breakout |
+| [UltraTech](./Room/UltraTech/writeup.md) | Medium | API, PID Abuse |
+| [Zeno](./Room/Zeno/writeup.md) | Medium | Restaurant CMS RCE |
+| [Publisher](./Room/Publisher/walkthrough.md) | Easy | **CVE-2023-27372** (RCE) |
+
+#### **Privilege Escalation (Linux)**
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | LFI, RCE, SUID |
+| [Watcher](./Room/Watcher/writeup.md) | Medium | LFI, Cronjobs |
+| [Wonderland](./Room/Wonderland-CTF/walkthroughs.md) | Medium | Python SUID, Capabilities |
+| [Madness](./Room/Madness/walkthrough.md) | Easy | Stego, setuid |
+| [HaskHell](./Room/HaskHell/writeup.md) | Medium | Python Library Hijacking |
+| [Year of the Dog](./Room/Year-of-the-Dog/writeup.md) | Hard | SQLi, Gitea, PrivEsc |
+| [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Advanced Linux PrivEsc |
+
+#### **Privilege Escalation (Windows)**
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Alfred](./Room/Alfred/readme.md) | Easy | Jenkins, **Token Impersonation** |
+| [Steel Mountain](./Room/Steel%20Mountain) | Easy | **CVE-2014-6287**, PowerShell Enum |
+| [Blueprint](./Room/Blueprint/writeup.md) | Easy | osCommerce RCE |
+| [Year-of-the-Owl](./Room/Year-of-the-Owl/writeup.md) | Hard | Windows CTF, Advanced PrivEsc |
+
+#### **Buffer Overflow Practice**
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Ice](./Room/Ice/walkthrough.md) | Easy | **CVE-2004-1561** (Icecast BOF) |
+| [Brainstorm](https://tryhackme.com/room/brainstorm) | Medium | *(Not in your list, but highly recommended for OSCP)* |
+
+---
+
+### 🟣 Blue Team Level 1 (BTL1) & Digital Forensics (DFIR)
+*Focuses on forensics, log analysis, and defender-minded thinking.*
+
+| Room | Difficulty | Key Concepts | Cert Relevance |
+| :--- | :---: | :--- | :--- |
+| [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/writeup.md) | Easy | Stego, Spectrograms, Decoding | BTL1 |
+| [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Firmware Analysis, IoT | BTL1 |
+| [Slingshot](./Room/Slingshot/README.md) | Easy | **Log Analysis**, Attack Tracing | BTL1 |
+| [Directory](./Room/Directory) | Hard | **Disk Forensics**, DFIR | BTL1 |
+| [Event Horizon](./Room/Event%20Horizon/readme.md) | Hard | **Advanced DFIR** | BTL1 |
+| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Steganography, Cryptography | BTL1 |
+
+---
+
+### 🔴 Red Team & Advanced Exploitation
+*Covers specific CVEs, advanced attack vectors, and red team tactics.*
+
+| Room | Difficulty | Key Concepts |
+| :--- | :---: | :--- |
+| [Red Team Fundamentals](./Room/Red%20Team%20Fundamentals) | Easy | Red Team Theory |
+| [Annie](./Room/Annie/writeup.md) | Medium | **CVE-2020-13160** (AnyDesk RCE) |
+| [Nax](./Room/Nax/writeup.md) | Medium | **CVE-2019-15949** (Nagios) |
+| [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | SSRF, **CVE-2018-18955** |
+| [Silver Platter](./Room/Silver-Platter/readme.md) | Easy | **CVE-2024-36042** (OpenSMTPD) |
+| [Roundcube: CVE-2025-49113](./Room/Roundcube:%20CVE-2025-49113/readme.md) | Easy | **CVE-2025-49113** (RCE) |
+| [Erlang/OTP SSH_CVE-2025-32433](./Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md) | Easy | **CVE-2025-32433** (SSH) |
+| [Evil-GPT](./Room/Evil-GPT/Readme.md) | Easy | **LLM Prompt Injection** |
+| [Metasploit: Exploitation](./Room/Metasploit%3A%20Exploitation) | Easy | Metasploit Framework |
+| [Metasploit: Meterpreter](./Room/Metasploit%3A%20Meterpreter) | Easy | Meterpreter, Post-Exploitation |
+
+---
+
+## How to Use This Guide
+
+1.  **Choose Your Path:** Decide which certification or skill area you want to focus on (e.g., eJPT, OSCP).
+2.  **Start with Fundamentals:** If you're new, always begin with the "Absolute Beginner" section.
+3.  **Follow the Order:** Rooms are listed in a logical learning order within each category. Start from the top.
+4.  **Try Before You Peek!** The greatest learning comes from struggling with a problem. Only use the walkthrough after you've tried yourself or are completely stuck.
+5.  **Understand, Don't Copy:** The goal is to understand the *why* and *how* behind each step, not just to get the flags.
+
+Happy Hacking! 🚀
+
+---
+*This collection is maintained by [Esther7171](https://github.com/Esther7171).*
+
 ## Premium Rooms
 * [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain)
 * [Hack Park](https://tryhackme.com/why-subscribe?roomCode=hackpark)
