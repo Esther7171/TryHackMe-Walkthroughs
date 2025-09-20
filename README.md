@@ -88,6 +88,8 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Tomghost](./Room/Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
 | [Toolbox: Vim](./Room/Toolbox:Vim/writeup.md) | Easy | Lin/Win | Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit. | Text Editor |
 | [UltraTech](./Room/UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
+| [Void Execution](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Void%20Execution#void-execution--tryhackme-writeup) | Medium | Learn how to bypass restrictions in Linux exploit development. | ` Binary Exploitation ` |
+| [Vulnerabilities 101](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Vulnerabilities%20101#vulnerabilities-101) | Easy | Understand the flaws of an application and apply your researching skills on some vulnerability databases. | Info |
 | [W1seGuy](./Room/W1seGuy/writeup.md) | Easy | Linux| A w1se guy 0nce said, the answer is usually as plain as day. | ```Cryptographic``` | 
 | [Watcher](./Room/Watcher/writeup.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | ```LFI``` ```Cronjob```|
 | [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web | Learn about web applications and explore some of their common security issues. | Info |
