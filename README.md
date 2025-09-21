@@ -80,6 +80,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Soupedecode 01](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Soupedecode%2001#soupedecode-01) | Easy | Windows | Test your enumeration skills on this boot-to-root machine.| `AD` |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
 | [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain) | Easy | Linux | Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access. | `CVE-2014-6287` |
+| [The Greenholt Phish](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/The%20Greenholt%20Phish#the-greenholt-phish--tryhackme-write-up) | Easy | Windows | Use the knowledge attained to analyze a malicious email. | `soc`|  
 | [The Great Escape](./Room/The-Great-Escape/writeup.md)| Medium | Linux | Our devs have created an awesome new site. Can you break out of the sandbox? | ```API``` ```Docker``` | 
 | [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | Linux | The London Bridge is falling down | ```SSRF``` ```CVE-2018-18955```|
 | [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | Linux | Can you take over The Marketplace's infrastructure? | ```XSS``` ```SQL``` ```Docker``` |
