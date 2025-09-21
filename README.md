@@ -11,6 +11,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [0day](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/0day/readme.md#0day) | Medium | Linux | Exploit Ubuntu, like a Turtle in a Hurricane | `CTF` |
 | [0x41haz](./Room/0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge | ```Reverse Engerniering``` |
 | [25 Days of Cyber Security](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/25%20Days%20of%20Cyber%20Security#25-days-of-cyber-security---tryhackme-write-ups) | Easy | Linux | Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day. |learning |  
+| [A Bucket of Phish](From the Hackfinity Battle CTF event.) | Easy | Linux | From the Hackfinity Battle CTF event. | `cloud` |
 | [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | Linux | You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth | CTF ```CVE-2019-14287``` |
 | [Alfred](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Alfred/readme.md#alfred) | Easy | Windows | Exploit Jenkins to gain an initial shell, then escalate your privileges by exploiting Windows authentication tokens. | `privileges escalation via token impersonation` |
 | [Annie](./Room/Annie/writeup.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution ```CVE-2020-13160``` |
