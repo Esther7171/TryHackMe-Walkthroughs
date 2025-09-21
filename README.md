@@ -30,12 +30,12 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Careers in Cyber](./Room/Careers-in-Cyber/info.md) | Info | None | Learn about the different careers in cyber security | Guide |
 | [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | Linux | Inspired by the great cheese talk of THM!| CTF ```LFI``` ```RCE``` ```SUID``` |
 | [Chocolate_Factory](./Room/Chocolate_Factory/Walkthrough.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!| Beginner Level CTF |
+| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```Cryptography``` |
 | [Cipher's Secret Message](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Cipher's%20Secret%20Message/readme.md#ciphers-secret-message--tryhackme-writeup) | Easy | Any |Sharpen your cryptography skills by analyzing code to get the flag. | `Caesar Decryption` `Crypto Challenge` |
 | [Compiled](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Compiled#compiled---tryhackme-writeup) | Easy | Any | Strings can only help you so far. | `binary` |
-| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | ```Cryptography``` |
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
-| [Crack the Hash Level 1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
-| [Crack The Hash Level 2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
+| [Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
+| [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
 | [Directory](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Directory#directory) | Hard | Any | Do you have what it takes to crack this case? | `DFIR` |
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Linux | Have you ever been curious about how your router works? What OS it runs? What makes it tick? | Investigation of router firmware |
@@ -43,8 +43,9 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Event Horizon](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Event%20Horizon/readme.md#event-horizon) | Hard | Linux | Unearth the secrets beyond the Event Horizon. | `DFIR` |
 | [Evil-GPT](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt) | Easy | Linux | Practice your LLM hacking skills. | `LLM hacking ` `Prompt Injection` |
 | [Evil-GPT v2](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt)| Easy | Web | Put your LLM hacking skills to the test one more time. | `Advance LLM hacking ` `Prompt Injection` |
-| [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
 | [FFuF](./Room/Ffuf/writeup.md) | Easy | Linux | Enumeration, fuzzing, and directory brute forcing using ffuf | Tool Guide |
+| [Flatline](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Flatline#flatline-tryhackme-walkthrough--complete-step-by-step-guide-to-root)| Easy | Windows | How low are your morals? |`FreeSWITCH` `openclinic`|
+| [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challange` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
@@ -60,12 +61,13 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
 | [Metasploit: Exploitation](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Metasploit%3A%20Exploitation#metasploit-exploitation) | Easy | Linux | Using Metasploit for scanning, vulnerability assessment and exploitation. | `Msf` |
 | [Metasploit: Meterpreter](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Metasploit%3A%20Meterpreter#metasploit-meterpreter) | Easy | Linux | Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation. | `Msf` |
-| [Mindgames](./Room/Mindgames/writeup.md) | Medium | Linux | Just a terrible idea... | ```Python``` ```C```|
+ | [Mindgames](./Room/Mindgames/writeup.md) | Medium | Linux | Just a terrible idea... | ```Python``` ```C```|
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Nax](./Room/Nax/writeup.md) | Medium | Linux | Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution. | ```CVE-2019-15949``` ``` Metasploit```|
 | [Oh My WebServer](./Room/Oh-My-WebServer/writeup.md) | Medium | Linux | Can you root me? | ```CVE-2021-41773``` | 
 | [Pentesting Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Pentesting%20Fundamentals#pentesting-fundamentals) | Easy | Any | Learn the important ethics and methodologies behind every pentest. | `info` | 
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
+| [Precision](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Precision#precision--tryhackme-writeup)| Hard | Linux | Practice your advanced Linux Exploit Development skills. | ` Binary Exploitation` |
 | [Principles of Security](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Principles%20of%20Security#principles-of-security) | Easy | Any | Learn the principles of information security that secures data and protects systems from abuse | `info`
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/walkthrough.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF ```CVE-2023-27372``` |
@@ -87,7 +89,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Linux |Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root? | CTF |
 | [The Sticker Shop](./Room/The-Sticker-Shop/writeup.md) | Easy | Linux | Can you exploit the sticker shop in order to capture the flag? | ```XSS``` |
 | [Tomghost](./Room/Tomghost/writeup.md) | Easy | Linux | Identify recent vulnerabilities to try exploit the system or read files that you should not have access to. | ```CVE-2020–1938``` | 
-| [Toolbox: Vim](./Room/Toolbox:Vim/writeup.md) | Easy | Lin/Win | Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit. | Text Editor |
+| [Toolbox: Vim](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Toolbox%E2%80%94%20Vim/Readme.md#toolbox-vim) | Easy | Lin/Win | Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit. | Text Editor |
 | [UltraTech](./Room/UltraTech/writeup.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
 | [Void Execution](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Void%20Execution#void-execution--tryhackme-writeup) | Medium | Linux |Learn how to bypass restrictions in Linux exploit development. | ` Binary Exploitation ` |
 | [Vulnerabilities 101](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Vulnerabilities%20101#vulnerabilities-101) | Easy | Any | Understand the flaws of an application and apply your researching skills on some vulnerability databases. | Info |
@@ -99,14 +101,12 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Welcome](./Room/Welcome/writeup.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
 | [Wgel CTF](./Room/Wgel) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
 | [Whiterose](./Room/Whiterose/walkthrough.md) | Easy | Linux| Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
+| [Windows Fundamentals 1](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Windows%20Fundamentals%201#windows-fundamentals-1) | info | Windows | In part 1 of the Windows Fundamentals module, we'll start our journey learning about the Windows desktop, the NTFS file system, UAC, the Control Panel, and more..|`windows`|
 | [Wonderland](./Room/Wonderland-CTF/walkthroughs.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
 | [Year of the Dog](./Room/Year-of-the-Dog/writeup.md) | Hard | Linux | Always so polite... | ```Sqli``` ``Gitea`` |
 | [Year-of-the-Owl](./Room/Year-of-the-Owl/writeup.md) | Hard | Windows | The foolish owl sits on his throne... | ```CTF``` |  
 | [Zeno](./Room/Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
 
-<!--
-| []() | | | |
--->
 
 > ## Additional Information
 
@@ -122,147 +122,8 @@ Feel free to explore the walkthroughs and learn more about the different challen
 If you would like to contribute to this repository by adding your own walkthroughs or improving existing ones, please follow the standard GitHub workflow: Fork the repository, make your changes, and submit a pull request. Your contributions are greatly appreciated!
 Happy hacking!
 
-
-
-<!--### Room Series
-* [Http smulgging](https://tryhackme.com/module/http-request-smuggling)
-* [windcorp](https://tryhackme.com/module/windcorp)
--->
-
-
-## Certification Roadmap Guide
-
-### 🟢 Absolute Beginner & General Fundamentals
-*Perfect for those just starting out. Learn core concepts and basic tool usage.*
-
-| Room | Difficulty | Key Concepts | Cert Relevance |
-| :--- | :---: | :--- | :--- |
-| [Welcome](./Room/Welcome/writeup.md) | Easy | Platform Orientation | All |
-| [Principles of Security](./Room/Principles%20of%20Security) | Easy | Security Concepts | All |
-| [Pentesting Fundamentals](./Room/Pentesting%20Fundamentals) | Easy | Methodology & Ethics | All |
-| [Web Application Basics](./Room/Web_Application_Basics/readme.md) | Easy | HTTP, Requests, Headers | All, EJPT |
-| [Web Application Security](./Room/Web-Application-Security/writeup.md) | Easy | Web App Theory | All, EJPT |
-| [Crack the Hash Level 1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | Cryptography Basics | All |
-| [Hydra](./Room/Hydra/writeup.md) | Easy | Password Brute-Forcing | All |
-| [FFuF](./Room/Ffuf/writeup.md) | Easy | Web Directory Fuzzing | All, EJPT |
-| [Toolbox: Vim](./Room/Toolbox:Vim/writeup.md) | Easy | Text Editor Skills | All |
-| [Search Skills](./Room/Search%20Skills) | Easy | OSINT, Google Fu | All |
-
----
-
-### 🔵 eLearnSecurity Junior Penetration Tester (eJPT) Preparation
-*Focuses on networking, web app attacks, and basic privilege escalation—the core of eJPT.*
-
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Basic-Pentesting](./Room/Basic-Pentesting/walkthrough.md) | Easy | SMB, SSH, PrivEsc |
-| [Bounty Hacker](./Room/Bounty-Hacker/walkthrough.md) | Easy | FTP, SUID |
-| [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/walkthrough.md) | Easy | Stego, SUID |
-| [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Web, LFI, Command Injection |
-| [RootMe](./Room/Rootme) | Easy | File Upload, PrivEsc |
-| [Agent Sudo](./Room/Agent-Sudo/writeup.md) | Easy | **CVE-2019-14287**, Stego |
-| [Ice](./Room/Ice/walkthrough.md) | Easy | **CVE-2004-1561** (Buffer Overflow) |
-| [Kenobi](./Room/Kenobi/walkthrough.md) | Easy | Samba, ProFtpd, SUID |
-| [Startup](./Room/Startup/walkthrough.md) | Easy | FTP, Cron Jobs |
-| [Wgel CTF](./Room/Wgel) | Easy | LFI, Sudo Abuse |
-| [Capture!](./Room/Capture!/writeup.md) | Easy | Authentication Bypass |
-| [Corridor](./Room/Corridor/walkthroug.md) | Easy | IDOR |
-| [Blue](./Room/Blue/writeup.md) | Easy | **MS17-010** (EternalBlue) |
-| [Tomghost](./Room/Tomghost/writeup.md) | Easy | **CVE-2020–1938** (File Read) |
-| [Ignite](./Room/Ignite) | Easy | Fuel CMS, RCE |
-| [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | WordPress, PrivEsc |
-
----
-
-### 🟠 Offensive Security Certified Professional (OSCP) Preparation
-*Emphasizes Windows/Linux priv esc, buffer overflows (BOF), and advanced web app exploitation.*
-
-#### **Initial Access & Web Attacks**
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Oh My WebServer](./Room/Oh-My-WebServer/writeup.md) | Medium | **CVE-2021-41773** (Path Traversal) |
-| [Kiba](./Room/Kiba/wrietup.md) | Easy | **CVE-2019-7609** (Kibana RCE) |
-| [The Sticker Shop](./Room/The-Sticker-Shop/writeup.md) | Easy | XSS |
-| [The Marketplace](./Room/The-Marketplace/writeup.md) | Medium | XSS, SQLi, Docker |
-| [Dogcat](./Room/Dogcat/writeup.md) | Medium | LFI, Docker Breakout |
-| [UltraTech](./Room/UltraTech/writeup.md) | Medium | API, PID Abuse |
-| [Zeno](./Room/Zeno/writeup.md) | Medium | Restaurant CMS RCE |
-| [Publisher](./Room/Publisher/walkthrough.md) | Easy | **CVE-2023-27372** (RCE) |
-
-#### **Privilege Escalation (Linux)**
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Cheese CTF](./Room/Cheese-CTF/walkthrough.md) | Easy | LFI, RCE, SUID |
-| [Watcher](./Room/Watcher/writeup.md) | Medium | LFI, Cronjobs |
-| [Wonderland](./Room/Wonderland-CTF/walkthroughs.md) | Medium | Python SUID, Capabilities |
-| [Madness](./Room/Madness/walkthrough.md) | Easy | Stego, setuid |
-| [HaskHell](./Room/HaskHell/writeup.md) | Medium | Python Library Hijacking |
-| [Year of the Dog](./Room/Year-of-the-Dog/writeup.md) | Hard | SQLi, Gitea, PrivEsc |
-| [The Server From Hell](./Room/The-Server-From-Hell/writeup.md) | Medium | Advanced Linux PrivEsc |
-
-#### **Privilege Escalation (Windows)**
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Alfred](./Room/Alfred/readme.md) | Easy | Jenkins, **Token Impersonation** |
-| [Steel Mountain](./Room/Steel%20Mountain) | Easy | **CVE-2014-6287**, PowerShell Enum |
-| [Blueprint](./Room/Blueprint/writeup.md) | Easy | osCommerce RCE |
-| [Year-of-the-Owl](./Room/Year-of-the-Owl/writeup.md) | Hard | Windows CTF, Advanced PrivEsc |
-
-#### **Buffer Overflow Practice**
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Ice](./Room/Ice/walkthrough.md) | Easy | **CVE-2004-1561** (Icecast BOF) |
-| [Brainstorm](https://tryhackme.com/room/brainstorm) | Medium | *(Not in your list, but highly recommended for OSCP)* |
-
----
-
-### 🟣 Blue Team Level 1 (BTL1) & Digital Forensics (DFIR)
-*Focuses on forensics, log analysis, and defender-minded thinking.*
-
-| Room | Difficulty | Key Concepts | Cert Relevance |
-| :--- | :---: | :--- | :--- |
-| [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/writeup.md) | Easy | Stego, Spectrograms, Decoding | BTL1 |
-| [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Firmware Analysis, IoT | BTL1 |
-| [Slingshot](./Room/Slingshot/README.md) | Easy | **Log Analysis**, Attack Tracing | BTL1 |
-| [Directory](./Room/Directory) | Hard | **Disk Forensics**, DFIR | BTL1 |
-| [Event Horizon](./Room/Event%20Horizon/readme.md) | Hard | **Advanced DFIR** | BTL1 |
-| [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/writeup.md) | Medium | Steganography, Cryptography | BTL1 |
-
----
-
-### 🔴 Red Team & Advanced Exploitation
-*Covers specific CVEs, advanced attack vectors, and red team tactics.*
-
-| Room | Difficulty | Key Concepts |
-| :--- | :---: | :--- |
-| [Red Team Fundamentals](./Room/Red%20Team%20Fundamentals) | Easy | Red Team Theory |
-| [Annie](./Room/Annie/writeup.md) | Medium | **CVE-2020-13160** (AnyDesk RCE) |
-| [Nax](./Room/Nax/writeup.md) | Medium | **CVE-2019-15949** (Nagios) |
-| [The London Bridge](./Room/The-London-Bridge/writeup.md) | Medium | SSRF, **CVE-2018-18955** |
-| [Silver Platter](./Room/Silver-Platter/readme.md) | Easy | **CVE-2024-36042** (OpenSMTPD) |
-| [Roundcube: CVE-2025-49113](./Room/Roundcube:%20CVE-2025-49113/readme.md) | Easy | **CVE-2025-49113** (RCE) |
-| [Erlang/OTP SSH_CVE-2025-32433](./Room/Erlang-OTP%20SSH:%20CVE-2025-32433/readme.md) | Easy | **CVE-2025-32433** (SSH) |
-| [Evil-GPT](./Room/Evil-GPT/Readme.md) | Easy | **LLM Prompt Injection** |
-| [Metasploit: Exploitation](./Room/Metasploit%3A%20Exploitation) | Easy | Metasploit Framework |
-| [Metasploit: Meterpreter](./Room/Metasploit%3A%20Meterpreter) | Easy | Meterpreter, Post-Exploitation |
-
----
-
-## How to Use This Guide
-
-1.  **Choose Your Path:** Decide which certification or skill area you want to focus on (e.g., eJPT, OSCP).
-2.  **Start with Fundamentals:** If you're new, always begin with the "Absolute Beginner" section.
-3.  **Follow the Order:** Rooms are listed in a logical learning order within each category. Start from the top.
-4.  **Try Before You Peek!** The greatest learning comes from struggling with a problem. Only use the walkthrough after you've tried yourself or are completely stuck.
-5.  **Understand, Don't Copy:** The goal is to understand the *why* and *how* behind each step, not just to get the flags.
-
 Happy Hacking! 🚀
 
 ---
 *This collection is maintained by [Esther7171](https://github.com/Esther7171).*
 
-## Premium Rooms
-* [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain)
-* [Hack Park](https://tryhackme.com/why-subscribe?roomCode=hackpark)
-* [powershell](https://tryhackme.com/why-subscribe?roomCode=powershell)
-* [](https://tryhackme.com/module/windcorp)
