@@ -1,4 +1,4 @@
-# <div align="center">[25 Days of Cyber Security - TryHackMe write-ups](https://tryhackme.com/room/phishingemails5fgjlzxc)</div>
+# <div align="center">[25 Days of Cyber Security - TryHackMe write-ups](https://tryhackme.com/room/learncyberin25days)</div>
 <div align="center">Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day.</div>
 <br>
 <div align="center">
