@@ -1,4 +1,4 @@
-# <div align="center">[Red Stone One Carat](https://tryhackme.com/room/redstoneonecarat)</div>
+# <div align="center">[Red Stone One Carat - tryhackme Walkthrough & writeup](https://tryhackme.com/room/redstoneonecarat)</div>
 <div align="center">First room of the Red Stone series. Hack ruby using ruby.</div>
 <br>
 <div align="center">
