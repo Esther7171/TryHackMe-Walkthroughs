@@ -71,6 +71,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
  | [Mindgames](./Room/Mindgames/writeup.md) | Medium | Linux | Just a terrible idea... | ```Python``` ```C```|
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/writeup.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Nax](./Room/Nax/writeup.md) | Medium | Linux | Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution. | ```CVE-2019-15949``` ``` Metasploit```|
+| [Net Sec Challenge](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Net%20Sec%20Challenge#net-sec-challenge---tryhackme-walkthrough) | Medium | Linux | Practice the skills you have learned in the Network Security module.| `nmap` `Hydra` `Ftp`|
 | [Oh My WebServer](./Room/Oh-My-WebServer/writeup.md) | Medium | Linux | Can you root me? | ```CVE-2021-41773``` | 
 | [Pentesting Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Pentesting%20Fundamentals#pentesting-fundamentals) | Easy | Any | Learn the important ethics and methodologies behind every pentest. | `info` | 
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
