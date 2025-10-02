@@ -1,7 +1,7 @@
-# <div align='center'>[IDOR](https://tryhackme.com/room/idor)</div>
+# <div align='center'>[IDOR - TryhackMe writeup](https://tryhackme.com/room/idor)</div>
 <div align='center'>Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.</div>
 <div align='center'>
-  
+  <img width="200" height="200" alt="92b349206a2901c187e32ad074eae45c" src="https://github.com/user-attachments/assets/c62d8886-13ab-4648-bd5f-be629e36cc61" />
 </div>
 
 
