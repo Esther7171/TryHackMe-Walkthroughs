@@ -56,6 +56,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challange` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
+| [Idor](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/IDOR/Readme.md#idor---tryhackme-writeup) | Easy | Web |Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.| `Learn idor` |
 | [Ice](./Room/Ice/walkthrough.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
 | [Ignite](./Room/Ignite) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [kenobi](./Room/Kenobi/walkthrough.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | ```ProFtpd``` ```SUID```| 
