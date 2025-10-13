@@ -1,10 +1,8 @@
 # <div>[Hack Park - TryHackMe Walkthrough](https://tryhackme.com/room/hackpark)</div>
-<div>Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine!
-</div>
+<div>Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine!</div>
 <div></div>
 
-<<<<<<< HEAD
-Initial Reconnaissance
+## Initial Reconnaissance
 Starting with an Nmap scan to check for services:
 
 ```bash
@@ -13,7 +11,7 @@ nmap -sV -sC -Pn 10.201.19.188
 
 Output (trimmed to relevant parts):
 
-```
+```bash
 PORT     STATE SERVICE       VERSION
 80/tcp   open  http          Microsoft IIS httpd 8.5
 |_http-server-header: Microsoft-IIS/8.5
@@ -62,6 +60,4 @@ I opened the site on port 80. The homepage asked:
 
 If you’ve seen the movie *IT* or done a quick reverse-image search, the clown is Pennywise.
 
-=======
->>>>>>> 9e6ff440ba81a2c51a4a5f426f63a5b0b88ddebd
 <img width="708" height="740" alt="image" src="https://github.com/user-attachments/assets/ec6ea4a5-24dc-441a-9720-bb1811690fb8" />
