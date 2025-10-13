@@ -63,3 +63,5 @@ I opened the site on port 80. The homepage asked:
 If you’ve seen the movie *IT* or done a quick reverse-image search, the clown is Pennywise.
 
 <img width="708" height="740" alt="image" src="https://github.com/user-attachments/assets/ec6ea4a5-24dc-441a-9720-bb1811690fb8" />
+
+## Task 2
