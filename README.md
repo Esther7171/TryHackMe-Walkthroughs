@@ -52,6 +52,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [FFuF](./Room/Ffuf/writeup.md) | Easy | Linux | Enumeration, fuzzing, and directory brute forcing using ffuf | Tool Guide |
 | [Flatline](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Flatline#flatline-tryhackme-walkthrough--complete-step-by-step-guide-to-root)| Easy | Windows | How low are your morals? |`FreeSWITCH` `openclinic`|
 | [Game Buzz](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Game%20Buzz#gamebuzz) | Hard | Part of Incognito CTF | `Unsolved Port not open after knock` |
+| [HackPark](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/HackPark#hack-park---tryhackme-walkthrough) | Medium | Windows | Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine! | `Hydra`, `RCE` & `WinPEAS` `CTF`| 
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challange` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
