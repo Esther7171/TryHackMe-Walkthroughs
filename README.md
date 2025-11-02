@@ -117,6 +117,7 @@ This repository contains walkthroughs for various rooms on TryHackMe, a platform
 | [Year of the Dog](./Room/Year-of-the-Dog/writeup.md) | Hard | Linux | Always so polite... | ```Sqli``` ``Gitea`` |
 | [Year-of-the-Owl](./Room/Year-of-the-Owl/writeup.md) | Hard | Windows | The foolish owl sits on his throne... | ```CTF``` |  
 | [Zeno](./Room/Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
+| [hc0n Christmas CTF](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/hc0n%20Christmas%20CTF#hc0n-christmas-ctf---tryhackme-writeup) | Hard | Linux | hackt the planet | `CTF` |
 
 
 > ## Additional Information
