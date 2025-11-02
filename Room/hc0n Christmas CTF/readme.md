@@ -27,6 +27,3 @@ thm{hc0n_christmas_2019!!!}
 ```
 thm{3xplo1t_my_m1nd}
 ```
-9
-10
-Sub
