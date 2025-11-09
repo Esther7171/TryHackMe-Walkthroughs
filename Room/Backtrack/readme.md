@@ -43,7 +43,7 @@ From the scan I noted three open ports and services:
 * 8888/tcp - HTTP service responding with an Aria2 WebUI page (nmap's fingerprint shows Aria2 WebUI)
 
 ## Vulnerability Reasearch
-I focused on the web UI on port 8888. After inspecting the web interface I recognized it as Aria2 WebUI, which has a known path traversal vulnerability tracked as CVE-2023–39141.
+I focused on the web UI on port 8888. After inspecting the web interface I recognized it as Aria2 WebUI, which has a known path traversal vulnerability tracked as [CVE-2023–39141](https://security.snyk.io/vuln/SNYK-JS-WEBUIARIA2-6322148).
 I tested a simple proof-of-concept path-traversal request using curl (exact command I ran):
 ```
 curl --path-as-is http://10.48.148.167:8888/../../../../../../../../../../../../../../../../../../../../etc/passwd
@@ -51,3 +51,9 @@ curl --path-as-is http://10.48.148.167:8888/../../../../../../../../../../../../
 The curl request returned the contents of /etc/passwd. This confirms the Aria2 WebUI instance is vulnerable to a directory traversal (path-traversal) allowing access to files outside the webroot.
 
 <img width="1299" height="865" alt="image" src="https://github.com/user-attachments/assets/86a1aae0-c5a0-498e-a745-ba91c0401dd2" />
+---
+
+
+
+
+<img width="1535" height="269" alt="image" src="https://github.com/user-attachments/assets/8bd90f00-8fc5-4c2d-a818-2e1d198f5e04" />
