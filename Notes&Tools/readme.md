@@ -1,6 +1,3 @@
-### Think to create this page for beginners 
-
-
 ## For Scanning WordPress 
 
 Installation 
