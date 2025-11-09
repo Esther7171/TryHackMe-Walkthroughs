@@ -128,3 +128,7 @@ THM{823e4e40ead9683b06a8194eab01cee8}
 <img width="395" height="99" alt="image" src="https://github.com/user-attachments/assets/58607ddf-bc24-4d01-a30a-992c4ca03faf" />
 
 ---
+
+who am i
+<img width="995" height="898" alt="image" src="https://github.com/user-attachments/assets/829c4048-b7d0-45f5-819b-2fbb24706f64" />
+
