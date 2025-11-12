@@ -1,3 +1,7 @@
+## Common Scan technique to find open ports 
+```
+nmap -sV -sC 
+```
 ## For Scanning WordPress 
 
 Installation 
