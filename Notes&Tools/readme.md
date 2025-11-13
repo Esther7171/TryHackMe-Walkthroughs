@@ -1,3 +1,4 @@
+I think i need to buid a little help section for beginners maybe ?
 ## Common Scan technique to find open ports 
 ```
 nmap -sV -sC 
