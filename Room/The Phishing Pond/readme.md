@@ -30,6 +30,35 @@ I reached the main interface of the room and began working through the emails. L
 
 <img width="962" height="430" alt="image" src="https://github.com/user-attachments/assets/6796b2bc-4e63-45d8-bbd3-eccdd3d2770c" />
 
-> ### This one is not a phishing email.
+> ### This is not a phishing email.
 
 ## Level 3
+
+<img width="956" height="420" alt="image" src="https://github.com/user-attachments/assets/2b077b86-4741-4542-8ea3-84a34d412947" />
+
+> ### This is not a phishing email.
+
+## Level 4
+
+<img width="954" height="428" alt="image" src="https://github.com/user-attachments/assets/eb9dad08-4538-49cf-bce1-4efa1d6f746a" />
+
+> ### This is not a phishing email.
+
+## Level 5
+
+<img width="948" height="493" alt="image" src="https://github.com/user-attachments/assets/d53db70b-0d01-4e42-9dd9-4a74ec700e41" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Contains an attachment and asks to enable macros.
+
+## Level 6
+
+## Level 7
+
+## Level 8
+## Level 9
+## Level 10
+
+
+
