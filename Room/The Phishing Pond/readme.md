@@ -98,3 +98,5 @@ THM{i_phish_you_not}
 ```
 
 <img width="941" height="628" alt="image" src="https://github.com/user-attachments/assets/17cae383-f4c8-4f2b-a995-c6e07c105811" />
+
+Thanks for reading. I hope this walkthrough helps sharpen your phishing analysis skills and gives you a clearer view of how real-world email threats operate.
