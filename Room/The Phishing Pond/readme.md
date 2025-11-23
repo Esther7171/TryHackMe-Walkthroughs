@@ -5,12 +5,9 @@
 </div>
 
 # Room Introduction
+The Phishing Pond is designed to build practical phishing-detection skills through a set of real-world email examples. The room teaches how attackers craft deceptive messages and which red flags to look for when reviewing suspicious emails. It focuses on the most common phishing tactics, including urgency in subject lines, look-alike domains, display-name impersonation, malicious attachments, compromised sender accounts, and offers that attempt to gather personal or financial information.
 
-The Phishing Pond is designed to build practical phishing-detection skills by exposing the learner to a series of email examples that mirror real social engineering attempts. The core objective of the lab is to evaluate each message and decide whether it is legitimate or part of a phishing campaign. The room reinforces the key indicators attackers rely on when crafting these emails.
-
-The exercise highlights several common tactics. Urgency and scare-based subject lines push users into reacting without verifying the details. Look-alike sender addresses introduce subtle domain changes that resemble trusted brands. Display name impersonation makes the sender appear familiar even when the underlying email address is suspicious. Malicious attachments often disguise malware while encouraging the recipient to enable macros or open unsafe files. Some messages originate from compromised legitimate accounts, making them appear authentic while hiding harmful intent. Others use financial bait or unrealistic offers to lure victims into revealing personal information.
-
-The lab’s purpose is to sharpen awareness of these patterns and strengthen the ability to analyze emails with precision. Each task reinforces how attackers disguise intent and how to identify those signals confidently.
+The goal of the lab is simple. Review each email, decide whether it is legitimate or a phishing attempt, and identify the indicators that reveal the attacker’s intent. At the end of the challenge, the final flag is provided once all emails are correctly classified.
 
 # Starting the Phishing Analysis
 
@@ -46,7 +43,7 @@ I reached the main interface of the room and began working through the emails. L
 
 ## Level 5
 
-<img width="948" height="493" alt="image" src="https://github.com/user-attachments/assets/d53db70b-0d01-4e42-9dd9-4a74ec700e41" />
+<img width="956" height="493" alt="image" src="https://github.com/user-attachments/assets/96e1d662-2e74-4ebf-83bc-7e94e828c98a" />
 
 > ### This is a phishing email.
 >
@@ -54,11 +51,50 @@ I reached the main interface of the room and began working through the emails. L
 
 ## Level 6
 
+<img width="956" height="494" alt="image" src="https://github.com/user-attachments/assets/a25b7855-20dd-41dc-b560-4bd4d35c1f48" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Contains a suspicious third-party survey link.
+
 ## Level 7
 
+<img width="943" height="497" alt="image" src="https://github.com/user-attachments/assets/01407274-5a9c-461a-9977-7a8c194ed8b4" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Offers require sensitive personal or banking details.
+
 ## Level 8
+
+<img width="965" height="492" alt="image" src="https://github.com/user-attachments/assets/6a5760b9-7289-4c98-9c5b-148406a41e79" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Redirects to a malicious password rest page.
+
 ## Level 9
+
+<img width="967" height="494" alt="image" src="https://github.com/user-attachments/assets/56789249-b746-4a23-9d63-2e566452e4f3" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Link uses a deceptive to mimic a payment portal.
+
 ## Level 10
 
+<img width="962" height="446" alt="image" src="https://github.com/user-attachments/assets/190f1b8d-5ec0-4f8d-b7cc-4dbc66b5df86" />
+
+> ### This is a phishing email.
+>
+> ### Reason: Asks to enable macros in an attachment.
 
 
+<img width="957" height="485" alt="image" src="https://github.com/user-attachments/assets/c5db35c3-4654-408e-9db2-19ca504e34f9" />
+
+## Flag
+```
+THM{i_phish_you_not}
+```
+
+<img width="941" height="628" alt="image" src="https://github.com/user-attachments/assets/17cae383-f4c8-4f2b-a995-c6e07c105811" />
