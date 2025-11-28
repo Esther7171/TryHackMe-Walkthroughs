@@ -3,6 +3,11 @@ I think i need to buid a little help section for beginners maybe ?
 ```
 nmap -sV -sC 
 ```
+
+## Directory search 
+```
+dir -u 10.10.01.01
+```
 ## For Scanning WordPress 
 
 Installation 
