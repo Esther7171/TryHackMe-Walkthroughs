@@ -1,6 +1,8 @@
 # <div align="center">[Biblioteca - TryhHackMe Walkthrough](https://tryhackme.com/room/biblioteca)</div>
 <div align="center">Shhh. Be very very quiet, no shouting inside the biblioteca.</div>
-
+<div align="center">
+  <img width="200" height="200" alt="Biblioteca" src="https://github.com/user-attachments/assets/5054da5f-60f3-4c55-ad89-fff09f86721e" />
+</div>
 ### Task 1. What is the user and root flag?
 
 ### What is the user flag?
