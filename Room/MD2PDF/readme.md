@@ -4,6 +4,13 @@
   <img width="200" height="200" alt="c53da808dba7b45a03b79dacf587ebb6" src="https://github.com/user-attachments/assets/c1561e24-0daa-469d-b966-18530240f47b" />
 </div>
 
+## **Introduction**
+
+MD2PDF is a TryHackMe web challenge that demonstrates how a seemingly harmless Markdown-to-PDF feature can introduce serious security flaws when server-side rendering and access controls are improperly enforced.
+
+**Room Link:** [https://tryhackme.com/room/md2pdf](https://tryhackme.com/room/md2pdf)
+
+
 ## Initial Reconnaissance
 
 I started where it always makes sense to start: identifying the exposed services. A basic `nmap` scan was enough to get a clear picture of what the machine was offering.
