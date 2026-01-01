@@ -4,8 +4,7 @@
   <img width="200" height="200" alt="c53da808dba7b45a03b79dacf587ebb6" src="https://github.com/user-attachments/assets/c1561e24-0daa-469d-b966-18530240f47b" />
 </div>
 
-<img width="1372" height="538" alt="image" src="https://github.com/user-attachments/assets/dc66b8bd-a397-4c7a-8869-db367d036c73" />
-### Initial Reconnaissance
+## Initial Reconnaissance
 
 I started where it always makes sense to start: identifying the exposed services. A basic `nmap` scan was enough to get a clear picture of what the machine was offering.
 
@@ -25,7 +24,7 @@ Nothing exotic at this stage, but enough surface area to begin exploring.
 
 With HTTP exposed, I moved straight to the browser and opened `http://<IP>`. The application was extremely minimal. It presented a simple Markdown input field with a submit button, designed to convert Markdown content into a downloadable PDF.
 
-<img>
+<img width="1372" height="538" alt="image" src="https://github.com/user-attachments/assets/dc66b8bd-a397-4c7a-8869-db367d036c73" />
 
 I spent some time interacting with the functionality, testing different inputs and basic injections, but nothing meaningful surfaced from this interface directly. With no immediate feedback or errors to pivot on, the next logical step was directory enumeration.
 
