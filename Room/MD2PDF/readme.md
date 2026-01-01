@@ -91,6 +91,11 @@ The contents of the internally restricted `/admin` page were embedded directly i
 
 The restriction wasn’t enforced at the rendering layer. The server itself fetched the internal resource and embedded it into the output, effectively bypassing the access control by trusting its own request context.
 
+### Flag.txt
+```
+flag{1f4a2b6ffeaf4707c43885d704eaee4b}
+```
+
 ### Conclusion
 
 This room was a clean reminder that “internal only” is not a security boundary when user-controlled content is rendered server-side. Markdown processors, especially those that allow raw HTML, can quietly become a bridge into places that were never meant to be exposed.
