@@ -1,4 +1,4 @@
-# <div align="center">[MD2PDF TryHackMe writeup](https://tryhackme.com/room/md2pdf)</div>
+# <div align="center">[MD2PDF TryHackMe Writeup](https://tryhackme.com/room/md2pdf)</div>
 <div align="center">TopTierConversions LTD is proud to present its latest product launch.</div>
 <div align="center">
   <img width="200" height="200" alt="c53da808dba7b45a03b79dacf587ebb6" src="https://github.com/user-attachments/assets/c1561e24-0daa-469d-b966-18530240f47b" />
@@ -107,5 +107,5 @@ flag{1f4a2b6ffeaf4707c43885d704eaee4b}
 
 This room was a clean reminder that “internal only” is not a security boundary when user-controlled content is rendered server-side. Markdown processors, especially those that allow raw HTML, can quietly become a bridge into places that were never meant to be exposed.
 
-Thanks for reading this walkthrough.
+Thanks for reading this WriteUp.
 
