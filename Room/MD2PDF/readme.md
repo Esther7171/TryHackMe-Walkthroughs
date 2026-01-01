@@ -11,6 +11,12 @@ I started where it always makes sense to start: identifying the exposed services
 ```
 nmap -sV -sC -Pn <IP>
 ```
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  rtsp
+5000/tcp open  rtsp
+```
 
 The scan returned three open ports:
 
@@ -49,3 +55,45 @@ Task Completed
 ```
 
 The scan revealed a restricted endpoint: **`/admin`**.
+
+## Exploitation via Localhost Restriction Bypass
+
+I navigated to the `/admin` directory directly from the browser to see what it exposed.
+
+<img width="718" height="127" alt="image" src="https://github.com/user-attachments/assets/9972197c-b971-4de5-8d61-f0880ceb94be" />
+
+The response was immediate and explicit:
+
+> **Forbidden**
+> This page can only be seen internally (localhost:5000)
+
+That single line said a lot. The endpoint clearly existed, but access was restricted based on request origin. Anything not coming from `127.0.0.1:5000` was blocked outright. This wasn’t a dead end, just a locked door.
+
+Given the application’s purpose, the next thought was natural. User-supplied Markdown is being processed server-side and converted into a PDF. That processing context mattered.
+
+### Markdown Meets HTML
+
+On the surface, the Markdown parser appeared constrained. Plain text rendered as expected, and typical Markdown features behaved normally. The interesting part emerged when I tested raw HTML support.
+
+I submitted the following payload into the Markdown input field:
+
+```
+<iframe src="http://localhost:5000/admin"></iframe>
+```
+
+<img width="1349" height="545" alt="image" src="https://github.com/user-attachments/assets/36c289ee-d2dc-4fe6-95cc-2ba12a5280e4" />
+
+The request completed without errors, and the application generated the PDF as usual. When I opened the downloaded file, the result was immediate.
+
+The contents of the internally restricted `/admin` page were embedded directly inside the PDF, including the flag.
+
+<img width="754" height="295" alt="image" src="https://github.com/user-attachments/assets/5fe85713-2cf7-4812-8745-2e2c9c7b9d3a" />
+
+The restriction wasn’t enforced at the rendering layer. The server itself fetched the internal resource and embedded it into the output, effectively bypassing the access control by trusting its own request context.
+
+### Conclusion
+
+This room was a clean reminder that “internal only” is not a security boundary when user-controlled content is rendered server-side. Markdown processors, especially those that allow raw HTML, can quietly become a bridge into places that were never meant to be exposed.
+
+Thanks for reading this walkthrough.
+
