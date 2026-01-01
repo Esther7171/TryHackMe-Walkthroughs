@@ -8,7 +8,7 @@
 
 MD2PDF is a TryHackMe web challenge that demonstrates how a seemingly harmless Markdown-to-PDF feature can introduce serious security flaws when server-side rendering and access controls are improperly enforced.
 
-* **Room Link:** [https://tryhackme.com/room/md2pdf](https://tryhackme.com/room/md2pdf)
+**Room Link:** [https://tryhackme.com/room/md2pdf](https://tryhackme.com/room/md2pdf)
 
 
 ## Initial Reconnaissance
