@@ -46,9 +46,8 @@ The scan confirmed the host was reachable and exposed a small but interesting at
 • SMB services available on ports `139` and `445`
 
 With HTTP in play, the browser became the next obvious stop.
----
 
-### Web Enumeration
+## Web Enumeration
 
 Visiting the web service on port 80 landed me on a login page.
 
@@ -127,7 +126,7 @@ This second pass revealed additional endpoints, including `/cloud/index.php` and
 
 The page introduced itself as a personal cloud storage service with a time-limited file upload feature, which clearly marked it as a component worth paying close attention to moving forward.
 
-### Exploitation
+## Exploitation
 
 After a bit of trial and error, I noticed the upload feature only allowed `.jpg` or `.png` files, but the application still fetched files hosted from my machine, which opened a path to bypass the restriction using a renamed PHP file.
 
@@ -144,7 +143,7 @@ I edited the reverse shell and updated the IP address and port to match my VPN l
 nano php-reverse-shell.php
 ```
 
-<img>
+<img width="451" height="242" alt="image" src="https://github.com/user-attachments/assets/3089ffd2-7410-4fcc-9063-ded6b2fef704" />
 
 For convenience, I made a shorter copy of the file.
 
@@ -331,7 +330,7 @@ ssh sysadmin@ip
 6661b61b44d234d230d06bf5b3c075e2
 ```
 
-### Privilege Escalation to Root
+## Privilege Escalation to Root
 
 With user access secured, I moved on to reviewing scheduled or automated scripts owned by higher-privileged users.
 
@@ -390,25 +389,23 @@ EOF
 
 ---
 
-### Root Access
+## Root Access
 
 After a short wait, the scheduled task executed the modified script.
 
 • Incoming connection received
 • Shell spawned with root privileges
 
-<img>
-<img>
+<img width="527" height="225" alt="image" src="https://github.com/user-attachments/assets/4dff12f6-6bdd-4d73-834f-fd70ba801b33" />
 
 With root access confirmed, retrieving the final flag was straightforward.
 
 ```
 ac0d56f93202dd57dcb2498c739fd20e
 ```
-
 ---
 
-### Conclusion
+## Conclusion
 
 Opacity was a solid lab that rewarded careful enumeration and patience rather than brute force. Each stage flowed naturally into the next, from web enumeration to file upload abuse, credential extraction, and finally a clean privilege escalation via a misconfigured backup script. It’s a great reminder that small oversights, when chained together, can lead to full system compromise.
 
