@@ -10,21 +10,20 @@ Opacity is an easy machine that can help you in the penetration testing learning
 
 There are 2 hash keys located on the machine (user - local.txt and root - proof.txt). Can you find them and become root?
 
-### What is the  local.txt flag?
+#### What is the  local.txt flag?
 ```
 6661b61b44d234d230d06bf5b3c075e2
 ```
-### What is the proof.txt flag?
+#### What is the proof.txt flag?
 ```
 ac0d56f93202dd57dcb2498c739fd20e
 ```
-
-
+---
 # Introduction
 Opacity is an easy-level [TryHackMe](https://tryhackme.com/dashboard) room designed to build foundational penetration testing skills through practical, hands-on exploitation. The goal is to retrieve two flags, local.txt and proof.txt, by fully compromising the system.
 
 * Room link: https://tryhackme.com/room/opacity
-
+---
 ## Initial Reconnaissance
 
 I kicked things off with a quick version scan using Nmap to identify exposed services on the target host.
