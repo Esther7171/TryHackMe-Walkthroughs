@@ -5,8 +5,11 @@
 </div>
 
 ![TryHackMe](https://img.shields.io/badge/TryHackMe-Walkthrough-red)
+
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen)
+
 ![Technique](https://img.shields.io/badge/File%20Upload-Bypass-orange)
+
 ![Privilege](https://img.shields.io/badge/Privilege-Escalation-blue)
 
 
