@@ -4,6 +4,12 @@
   <img width="200" height="200" alt="Opacity-thm" src="https://github.com/user-attachments/assets/afa6e290-e01f-4b51-b358-461a1e94ee0c" />  
 </div>
 
+![TryHackMe](https://img.shields.io/badge/TryHackMe-Walkthrough-red)
+![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen)
+![Technique](https://img.shields.io/badge/File%20Upload-Bypass-orange)
+![Privilege](https://img.shields.io/badge/Privilege-Escalation-blue)
+
+
 ## Task 1. Opacity
 
 Opacity is an easy machine that can help you in the penetration testing learning process.
