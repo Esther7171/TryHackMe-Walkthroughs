@@ -1,15 +1,21 @@
 <div align="center">
-<img src="https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height="200"></img>
+<img src="https://github.com/user-attachments/assets/801f8cc4-8527-48bc-a875-8e5f8804d2ff" height="150"></img>
 </div>
 
 ![Platform](https://img.shields.io/badge/Platform-TryHackMe-red)
 ![Focus](https://img.shields.io/badge/Focus-Penetration%20Testing-blue)
 ![Level](https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-brightgreen)
 
-# TryHackMe-Walkthroughs
-This repository contains walkthroughs for various rooms on TryHackMe, a platform for learning and practicing cybersecurity skills through hands-on virtual environments. Each directory corresponds to a specific room and includes a detailed walkthrough guide, along with any necessary files or resources. Purpose of creating this for self learning and helping others.
+# TryHackMe Walkthroughs & Writeups 
+
+A structured collection of **TryHackMe walkthroughs and CTF writeups** for beginner to intermediate penetration testing labs.
+
+Each room documents methodology, commands, enumeration, exploitation steps, with **flags captured and completion points tracked**.
+
+A maintained **learning archive and reference** for hands-on practice and certification preparation.
+
         
-# Walkthroughs 
+# Walkthroughs
 | Room Name | Difficulty | Type |Description | Room Type |
 |:---:|:---:|---|---|---|
 | [0day](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/0day/readme.md#0day) | Medium | Linux | Exploit Ubuntu, like a Turtle in a Hurricane | `CTF` |
@@ -140,5 +146,4 @@ If you would like to contribute to this repository by adding your own walkthroug
 
 **Happy Hacking!** 🚀
 ---
-
 *This collection is maintained by [Esther7171](https://github.com/Esther7171).*
