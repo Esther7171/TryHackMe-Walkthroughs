@@ -1,8 +1,14 @@
 # <div align="center">[Neighbour TryHackMe Walkthrough](https://tryhackme.com/room/neighbour)</div>
-<div align="center"></div>
+<div align="center">Check out our new cloud service, Authentication Anywhere. Can you find other user's secrets?</div>
 <div align="center">
-  
+  <img width="200" height="200" alt="neighbour" src="https://github.com/user-attachments/assets/dba0f29f-616e-4cb1-a232-4c4e966f57e1" />
 </div>
+
+## Introduction
+
+This writeup covers the **Neighbour** room on TryHackMe, a beginner-level web challenge focused on insecure direct object references (IDOR). The lab is short, practical, and highlights how simple authorization flaws can lead to unintended data exposure.
+
+* **Room link**: [https://tryhackme.com/room/neighbour](https://tryhackme.com/room/neighbour)
 
 
 ## Initial Reconnaissance
@@ -26,7 +32,9 @@ SSH was open, but the web service on port 80 was clearly the main attack surface
 
 I navigated to the web application running on port 80 and was presented with a simple login interface.
 
-<img width="377" height="361" alt="login" src="https://github.com/user-attachments/assets/affe067f-8ddc-4bc3-9211-933ed7911b62" />
+<div align="center">
+  <img width="377" height="361" alt="login" src="https://github.com/user-attachments/assets/affe067f-8ddc-4bc3-9211-933ed7911b62" />
+</div>
 
 At first glance, the page looked intentionally minimal. One detail stood out immediately: a message below the login form referencing a **guest account**, along with a hint to inspect the page source (`Ctrl+U`) .
 
@@ -64,4 +72,6 @@ flag{66be95c478473d91a5358f2440c7af1f}
 ```
 
 <img width="1029" height="518" alt="image" src="https://github.com/user-attachments/assets/31774749-e736-4262-9f04-92ed6a21a2ef" />
+
+
 
