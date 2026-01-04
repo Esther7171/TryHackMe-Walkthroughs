@@ -73,5 +73,7 @@ flag{66be95c478473d91a5358f2440c7af1f}
 
 <img width="1029" height="518" alt="image" src="https://github.com/user-attachments/assets/31774749-e736-4262-9f04-92ed6a21a2ef" />
 
+For more TryHackMe labs and walkthroughs, check out my Medium profile:
+https://deathesther.medium.com/
 
 
