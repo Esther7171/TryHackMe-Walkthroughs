@@ -22,7 +22,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | Room Name | Difficulty | Type |Description | Room Type |
 |:---:|:---:|---|---|---|
 | [0day](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/0day/readme.md#0day) | Medium | Linux | Exploit Ubuntu, like a Turtle in a Hurricane | `CTF` |
-| [0x41haz](./Room/0x41haz/writeup.md) | Easy | Linux | Simple Reversing Challenge | ```Reverse Engerniering``` |
+| [0x41haz](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/0x41haz/writeup.md#0x41haz--tryhackme-walkthrough) | Easy | Linux | Simple Reversing Challenge | `Reverse Engerniering` |
 | [25 Days of Cyber Security](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/25%20Days%20of%20Cyber%20Security#25-days-of-cyber-security---tryhackme-write-ups) | Easy | Linux | Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day. |learning |  
 | [A Bucket of Phish](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/A%20Bucket%20of%20Phish/readme.md#a-bucket-of-phish---tryhackme-writeup) | Easy | Linux | From the Hackfinity Battle CTF event. | `cloud` |
 | [Abusing Windows Internals](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Abusing%20Windows%20Internals#abusing-windows-internals) | Hard | Windows | Leverage windows internals components to evade common detection solutions, using modern tool-agnostic approaches. | `Learning` |
