@@ -1,4 +1,5 @@
 # <div align="center">0x41haz — TryHackMe Walkthrough</div>
+<div align="center">Simple Reversing Challenge</div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/d1a28066-5e54-4f86-ba21-2353d5ecb097" height="200"></img>
 </div>
@@ -13,8 +14,14 @@ There may be anti-reversing measures in place!
 THM{2@@25$gfsT&@L}
 ```
 
-
 ---
+
+## Introduction
+
+**0x41haz** is a simple reversing challenge on TryHackMe that focuses on analyzing a Linux ELF binary to recover a hardcoded password. The task is minimal by design, with a small anti-analysis trick that forces you to slow down and inspect the binary properly.
+
+* **Room link**: [https://tryhackme.com/room/0x41haz](https://tryhackme.com/room/0x41haz)
+
 
 ## Downloading the Binary
 
