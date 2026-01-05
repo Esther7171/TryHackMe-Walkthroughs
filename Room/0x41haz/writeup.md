@@ -77,7 +77,9 @@ With the header fixed, I copied the binary to a simpler name, granted execution 
 
 At runtime, the program prompted me for a password.
 
-<img width="298" height="167" alt="exe fail" src="https://github.com/user-attachments/assets/438c2e83-60cb-49b8-a94b-8371ddcc8f30" />
+<div align="center">
+  <img width="298" height="167" alt="exe fail" src="https://github.com/user-attachments/assets/438c2e83-60cb-49b8-a94b-8371ddcc8f30" />
+</div>
 
 That confirmed this was a straightforward reversing challenge, so the next step was to analyze the binary to understand how the password check was implemented.
 
@@ -94,7 +96,9 @@ radare2/sys/install.sh
 
 Once installed, I loaded the binary into radare2.
 
-<img width="1067" height="89" alt="r2" src="https://github.com/user-attachments/assets/e8b9cb3c-2ffb-4bb1-9de5-a7cae9629b75" />
+<div align="center">
+  <img width="1067" height="89" alt="r2" src="https://github.com/user-attachments/assets/e8b9cb3c-2ffb-4bb1-9de5-a7cae9629b75" />
+</div>
 
 The first command I ran was a full analysis pass.
 
@@ -102,7 +106,9 @@ The first command I ran was a full analysis pass.
 aaa
 ```
 
-<img width="725" height="393" alt="aaa" src="https://github.com/user-attachments/assets/b7d4644d-6436-48a8-b903-773a8a5d4f35" />
+<div align="center">
+  <img width="725" height="393" alt="aaa" src="https://github.com/user-attachments/assets/b7d4644d-6436-48a8-b903-773a8a5d4f35" />
+</div>
 
 After analysis completed, I navigated to the `main` function.
 
@@ -116,7 +122,9 @@ From there, I disassembled the function to inspect its logic.
 pdf
 ```
 
-<img width="809" height="791" alt="s main and pdf" src="https://github.com/user-attachments/assets/c6bf33ba-bb1f-47d7-91b2-bb9ad8ce2fe1" />
+<div align="center">
+  <img width="809" height="791" alt="s main and pdf" src="https://github.com/user-attachments/assets/c6bf33ba-bb1f-47d7-91b2-bb9ad8ce2fe1" />
+</div>
 
 While reviewing the disassembly, a string pattern stood out during the password comparison logic.
 
@@ -128,7 +136,9 @@ While reviewing the disassembly, a string pattern stood out during the password 
 
 With that value identified, I executed the binary again and supplied it as the password.
 
-<img width="308" height="202" alt="flag" src="https://github.com/user-attachments/assets/b2ad00dc-47e0-4894-b09e-4363e6470535" />
+<div align="center">
+  <img width="308" height="202" alt="flag" src="https://github.com/user-attachments/assets/b2ad00dc-47e0-4894-b09e-4363e6470535" />
+</div>
 
 The program accepted the input and returned the flag.
 
@@ -143,7 +153,8 @@ This was a straightforward reversing challenge with a small twist at the start. 
 
 **Thank you for reading.**
 
-<img width="702" height="590" alt="image" src="https://github.com/user-attachments/assets/ed6d0581-db72-4e4d-bd0e-404010467680" />
-
+<div align="center">
+  <img width="702" height="590" alt="image" src="https://github.com/user-attachments/assets/ed6d0581-db72-4e4d-bd0e-404010467680" />
+</div>
 
 Send the next part whenever you’re ready. We’ll keep this clean, consistent, and sharp all the way to the end.
