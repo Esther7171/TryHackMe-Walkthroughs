@@ -54,6 +54,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
 | [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
+| [CyberHeroes](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/CyberHeroes#cyberheros-tryhackme-writeup) | Easy | Web | Want to be a part of the elite club of CyberHeroes? Prove your merit by finding a way to log in! | `Broken Authentication` |
 | [Directory](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Directory#directory) | Hard | Any | Do you have what it takes to crack this case? | `DFIR` |
 | [Dogcat](./Room/Dogcat/writeup.md) | Medium | Linux | I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container. | CTF ```Web``` 
 | [Dumping Router Firmware](./Room/Dumping-Router-Firmware/writeup.md) | Medium | Linux | Have you ever been curious about how your router works? What OS it runs? What makes it tick? | Investigation of router firmware |
