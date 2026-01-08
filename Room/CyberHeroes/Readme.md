@@ -1,7 +1,14 @@
 # <div align="center">[CyberHeros TryHackMe writeup](https://tryhackme.com/room/cyberheroes)</div>
 <div align="center">Want to be a part of the elite club of CyberHeroes? Prove your merit by finding a way to log in!</div>
-<div align="center"></div>
-<div align="center"></div>
+<div align="center">
+  <img width="200" height="200" alt="cyberheros" src="https://github.com/user-attachments/assets/48fab9e4-d9be-4326-971c-e92dcd0dd880" />
+</div>
+
+## Introduction
+
+CyberHeroes is a beginner-level TryHackMe room focused on breaking weak client-side authentication by inspecting exposed web logic. The goal is to find a way to log in using what the application itself reveals.
+
+**Room link:** [https://tryhackme.com/room/cyberheroes](https://tryhackme.com/room/cyberheroes)
 
 ## Initial Reconnaissance
 
@@ -25,11 +32,15 @@ There are two services running:
 
 Since port 80 was open, I navigated to it directly in the browser.
 
-<img width="1904" height="603" alt="image" src="https://github.com/user-attachments/assets/4fef4abe-00bf-43a8-8873-0eda664108a3" />
+<div align="center">
+  <img width="1904" height="603" alt="image" src="https://github.com/user-attachments/assets/4fef4abe-00bf-43a8-8873-0eda664108a3" />
+</div>
 
 The landing page turned out to be a simple index page with three tabs, including an About section and a Login page.
 
-<img width="699" height="525" alt="image" src="https://github.com/user-attachments/assets/63b72438-1b6b-4fec-983d-590738fd50c7" />
+<div align="center"> 
+  <img width="699" height="525" alt="image" src="https://github.com/user-attachments/assets/63b72438-1b6b-4fec-983d-590738fd50c7" />
+</div>
 
 The login page displayed a familiar challenge message inviting me to prove my hacking skills. With no credentials available upfront, I checked the page source and came across the following JavaScript block:
 
@@ -69,3 +80,12 @@ After logging in with the above credentials, the page returned the flag.
 flag{edb0be532c540b1a150c3a7e85d2466e}
 ```
 
+## Conclusion
+
+CyberHeroes was a short but clean room that reinforced a core lesson I keep coming back to: never ignore what the client side is doing. A simple look at exposed JavaScript was enough to break the authentication logic and reach the goal. No noise, no detours, just paying attention to what was already in plain sight.
+
+Thanks for taking the time to read this walkthrough.
+
+<div align="center">
+  <img width="658" height="590" alt="image" src="https://github.com/user-attachments/assets/2e614a5f-ff37-4aed-97ca-3c5ebfd4036f" />
+</div>
