@@ -84,8 +84,8 @@ flag{edb0be532c540b1a150c3a7e85d2466e}
 
 CyberHeroes was a short but clean room that reinforced a core lesson I keep coming back to: never ignore what the client side is doing. A simple look at exposed JavaScript was enough to break the authentication logic and reach the goal. No noise, no detours, just paying attention to what was already in plain sight.
 
-Thanks for taking the time to read this walkthrough.
-
 <div align="center">
   <img width="658" height="590" alt="image" src="https://github.com/user-attachments/assets/2e614a5f-ff37-4aed-97ca-3c5ebfd4036f" />
 </div>
+
+Thanks for taking the time to read this walkthrough.
