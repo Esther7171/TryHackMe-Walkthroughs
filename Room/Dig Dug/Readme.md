@@ -70,5 +70,8 @@ Both tools returned the same result, confirming the flag was stored directly in 
 
 Dig Dug is a compact room that revolves entirely around understanding DNS behavior rather than traditional service exploitation. The challenge highlights how data can be exposed through DNS records and how a single, well-crafted query can reveal everything when the context is read correctly.
 
+<div align"center">
+  <img width="669" height="557" alt="image" src="https://github.com/user-attachments/assets/d8874c4e-3b53-48ad-acbf-d6eae4c8e518" />
+</div>
 
 Thanks for reading this walkthrough.
