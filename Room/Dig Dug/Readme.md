@@ -4,6 +4,11 @@
   <img width="200" height="200" alt="dig dug" src="https://github.com/user-attachments/assets/9130515a-5dda-4c77-8c65-708446625d27" />
 </div>
 
+## Introduction
+
+Dig Dug is a quick TryHackMe room focused on DNS enumeration, where the goal is to extract hidden data directly from DNS records instead of exploiting traditional services. It’s a clean, practical lab that reinforces protocol-level thinking.
+
+Room link: [https://tryhackme.com/room/digdug](https://tryhackme.com/room/digdug)
 
 ## Initial Reconnaissance
 
