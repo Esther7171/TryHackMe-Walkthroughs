@@ -1,4 +1,4 @@
-# <div align="center">[TryHeartMe - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e5)</div>
+<img width="901" height="639" alt="image" src="https://github.com/user-attachments/assets/14a7d306-cb99-412d-96b0-1af179008eee" /># <div align="center">[TryHeartMe - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e5)</div>
 <div align="center">Access the hidden item in this Valentine's gift shop.</div>
 <br>
 <div align="center">
@@ -137,6 +137,9 @@ The purchase was successful, and the application returned the flag.
 ```bash
 THM{v4l3nt1n3_jwt_c00k13_t4mp3r_4dm1n_sh0p}
 ```
+<div align="center">
+  <img width="1211" height="520" alt="image" src="https://github.com/user-attachments/assets/3564d153-7358-414e-b79a-a547479ab2f9" />
+</div>
 
 > NOTE:
 > Make sure to replace the cookie in every request, as the modified token needs to be used consistently throughout the session.
