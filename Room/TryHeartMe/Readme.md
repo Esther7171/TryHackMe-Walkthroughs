@@ -8,6 +8,7 @@
 ## Task 1. TryHeartMe
 ### What is the flag?
 ```
+THM{v4l3nt1n3_jwt_c00k13_t4mp3r_4dm1n_sh0p}
 ```
 
 ## Accessing the Website
