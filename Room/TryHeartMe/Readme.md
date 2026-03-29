@@ -1,4 +1,4 @@
-<img width="901" height="639" alt="image" src="https://github.com/user-attachments/assets/14a7d306-cb99-412d-96b0-1af179008eee" /># <div align="center">[TryHeartMe - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e5)</div>
+# <div align="center">[TryHeartMe - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e5)</div>
 <div align="center">Access the hidden item in this Valentine's gift shop.</div>
 <br>
 <div align="center">
