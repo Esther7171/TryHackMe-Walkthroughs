@@ -106,7 +106,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Slingshot](https://github.com/Esther7171/THM-Walkthroughs/edit/main/Room/Slingshot/README.md#slingshot) | Easy | Linux |Can you retrace an attacker's steps after they enumerate and compromise a web server?| Logs |
 | [smol](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Smol#smol) | Medium | Linux |Test your enumeration skills on this boot-to-root machine. | CTF |
 | [Soupedecode 01](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Soupedecode%2001#soupedecode-01) | Easy | Windows | Test your enumeration skills on this boot-to-root machine.| `AD` |
-| [Speed Chatting](https://tryhackme.com/room/lafb2026e4) | Easy | Web | Can you hack as fast as you can chat? | `RCE ` |
+| [Speed Chatting](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Speed%20Chatting/Readme.md#speed-chatting---tryhackme-write-up) | Easy | Web | Can you hack as fast as you can chat? | `RCE ` |
 | [Startup](./Room/Startup/walkthrough.md) | Easy | Linux |Abuse traditional vulnerabilities via untraditional means. | CTF |
 | [Steel Mountain](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain) | Easy | Linux | Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access. | `CVE-2014-6287` |
 | [The Greenholt Phish](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/The%20Greenholt%20Phish#the-greenholt-phish--tryhackme-write-up) | Easy | Windows | Use the knowledge attained to analyze a malicious email. | `soc`|  
