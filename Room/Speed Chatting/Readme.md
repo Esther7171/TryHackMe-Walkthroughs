@@ -1,4 +1,4 @@
-# <div align="center">[Speed Chatting - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e5)</div>
+# <div align="center">[Speed Chatting - TryHackMe Write-up](https://tryhackme.com/room/lafb2026e4)</div>
 <div align="center">Can you hack as fast as you can chat?</div>
 <br>
 <div align="center">
