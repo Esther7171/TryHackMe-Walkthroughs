@@ -137,7 +137,6 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Zeno](./Room/Zeno/writeup.md) | Medium | Linux | Do you have the same patience as the great stoic philosopher Zeno? Try it out!| ```Restaurant Management System 1.0 - Remote Code Execution``` |
 | [hc0n Christmas CTF](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/hc0n%20Christmas%20CTF#hc0n-christmas-ctf---tryhackme-writeup) | Hard | Linux | hackt the planet | `CTF` |
 
-
 > ## Additional Information
 
 In addition to the walkthroughs, this repository may also include other relevant files or resources associated with each room, such as exploit scripts, log files, or nmap scans. These files can be found within the respective directories.
