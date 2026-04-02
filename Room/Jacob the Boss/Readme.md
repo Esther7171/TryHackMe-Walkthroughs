@@ -575,5 +575,5 @@ With root access obtained, I navigated to retrieve the final flag.
   <img width="1173" height="492" alt="image" src="https://github.com/user-attachments/assets/921ca6a3-0c1a-4a1f-aaca-48ebed107e6e" />
 </div>
 
-Thanks for reading.
+> Thanks for reading.
 
