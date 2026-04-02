@@ -6,11 +6,10 @@
 </div>
 
 ## Task 1
-Go on, it's your machine!
 
 Well, the flaw that makes up this box is the reproduction found in the production environment of a customer a while ago, the verification in season consisted of two steps, the last one within the environment, we hit it head-on and more than 15 machines were vulnerable that together with the development team we were able to correct and adapt.
 
-*First of all, add the jacobtheboss.box address to your hosts file.
+*First of all, add the jacobtheboss.box address to your hosts file.*
 
 Anyway, learn a little more, have fun!
 
