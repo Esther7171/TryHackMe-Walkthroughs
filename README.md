@@ -15,7 +15,6 @@ A structured collection of **TryHackMe walkthroughs and CTF writeups** for begin
 Each room documents methodology, commands, enumeration, exploitation steps, with **flags captured and completion points tracked**.
 
 A maintained **learning archive and reference** for hands-on practice and certification preparation.
-
         
 # Walkthroughs
 | Room Name | Difficulty | Type |Description | Room Type |
