@@ -92,19 +92,24 @@ Target: http://10.49.161.195/
 [20:18:22] 403 -  199B  - /server-status
 
 Task Completed
-
 ```
+
 We got a new page called `/island`
 Afert looking source code i got this hiddden keyword
 
 <img width="1920" height="406" alt="image" src="https://github.com/user-attachments/assets/ea6d9390-00e4-4cda-838c-a195bfe9d486" />
+
 Maybe this is somthing
+
 Its maybe a pass or username of any service like ftp,ssh  
+
 ```
 vigilante
 ```
+
 The issue is we dont not pass even thi is username  
 let dig more deeper
+
 ```
 death@esther:~$ dirsearch -u http://10.49.161.195/island/ -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
@@ -125,6 +130,7 @@ Target: http://10.49.161.195/
 Task Completed
 death@esther:~$ 
 ```
+
 we got another hidden directory `/2100`
 
 <img width="740" height="638" alt="image" src="https://github.com/user-attachments/assets/95b044e6-857e-4a21-a034-8114b53cc070" />
@@ -149,6 +155,7 @@ Target: http://10.49.161.195/
 Task Completed
 death@esther:~$
 ```
+
 We got a hiddent page again `/green_arrow.ticket` after opig we got this msg 
 
 <img width="455" height="124" alt="image" src="https://github.com/user-attachments/assets/30091d5a-ec70-4d66-a0f1-d4f16ff20d3d" />
