@@ -175,8 +175,7 @@ Using binary mode to transfer files.
 ftp> 
 ```
 
-
-
+---
 
 ## Initial Reconnaissance
 
