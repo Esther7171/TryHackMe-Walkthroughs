@@ -361,15 +361,15 @@ sudo -l
 
 The output showed that `/usr/bin/pkexec` could be executed with root privileges. Whenever I find a binary listed under sudo, my next move is to verify if it can be abused for escalation.
 
-For that, I referred to GTFOBins, a well-known resource that documents how common Linux binaries can be leveraged to bypass restrictions and escalate privileges in misconfigured environments. ([GTFOBins][1])
+For that, I referred to GTFOBins, a well-known resource that documents how common Linux binaries can be leveraged to bypass restrictions and escalate privileges in misconfigured environments.
 
-I looked up `pkexec` on GTFOBins and found a working method to spawn a root shell.
+I looked up `pkexec` on [GTFOBins](https://gtfobins.org) and found a working method to spawn a root shell.
 
 <img width="959" height="518" alt="image" src="https://github.com/user-attachments/assets/424921d6-909c-4665-ac35-d5719a378723" />
 
 The technique was straightforward:
 
-```id="g6m3zx"
+```
 sudo pkexec /bin/sh
 ```
 
@@ -385,16 +385,12 @@ This gave me a root shell.
 
 With root access confirmed, I navigated to retrieve the final flag.
 
-```id="3w0p9e"
+```
 THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'LL_BE_D34D}
 ```
 
 <img width="955" height="562" alt="image" src="https://github.com/user-attachments/assets/39784241-5f0e-42fd-9e55-5fce5aeb3042" />
 
----
-
-## Closing Note
-
-That wrapped up the machine from initial enumeration to full system compromise. Small findings, chained with the right references, led directly to root access.
-
 > Thanks for reading.
+
+<img width="860" height="384" alt="image" src="https://github.com/user-attachments/assets/9805ec51-6d15-4976-aec5-a3d6c490a3bb" />"
