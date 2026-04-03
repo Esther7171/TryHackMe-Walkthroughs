@@ -131,6 +131,24 @@ we got another hidden directory `/2100`
 
 sO THERE IS NOTHING COOLER SO LET DIG MORE 
 
+```
+death@esther:~$ dirsearch -u http://10.49.161.195/island/2100 -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+
+  _|. _ _  _  _  _ _|_    v0.4.3
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 220544
+
+Output File: /home/death/reports/http_10.49.161.195/_island__26-04-03_20-25-42.txt
+
+Target: http://10.49.161.195/
+
+[20:25:42] Starting: island/2100
+[20:26:01] 301 -  241B  - /green_arrow.ticket  ->  http://10.49.161.195/island/2100/green_arrow.ticket
+
+Task Completed
+death@esther:~$
+```
 We got a hiddent page again `/green_arrow.ticket` after opig we got this msg 
 
 <img width="455" height="124" alt="image" src="https://github.com/user-attachments/assets/30091d5a-ec70-4d66-a0f1-d4f16ff20d3d" />
@@ -142,10 +160,137 @@ After analysing the patter i got to know this is base58 let decode the phase
 
 And maybe this is ftp password `!#th3h00d`
 
+## Gaining Access Of FTP
 Let use above found phase and this as ftp pass
 ```
 death@esther:~$ ftp 10.49.161.195
 Connected to 10.49.161.195.
 220 (vsFTPd 3.0.2)
 Name (10.49.161.195:death): vigilante
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> 
 ```
+
+
+
+
+## Initial Reconnaissance
+
+I kicked things off with a full service and version scan to map the exposed attack surface. Instead of running a basic scan, I enabled default scripts along with version detection to get maximum visibility in one go.
+
+```
+nmap -sV -sC 10.49.161.195
+```
+
+The scan quickly revealed a small but interesting set of open services:
+
+* FTP running on port 21
+* SSH exposed on port 22
+* A web server on port 80
+* RPC service on port 111
+
+The presence of FTP alongside a web service immediately stood out. In many cases, misconfigured FTP services become an easy entry point, so I kept that in mind as I moved forward.
+
+---
+
+## Web Enumeration
+
+With the web server exposed, I shifted focus to port 80 and opened the target in the browser.
+
+<img width="1891" height="957" alt="image" src="https://github.com/user-attachments/assets/a483707b-ac54-47f3-a7f9-8b6c578a6ead" />
+
+At first glance, nothing useful was visible on the surface. No obvious inputs, no leaks, nothing actionable. That usually means one thing. Time to dig deeper.
+
+---
+
+## Directory Bruteforcing
+
+I started enumerating hidden paths using `dirsearch` with a well-known wordlist.
+
+```
+dirsearch -u http://10.49.161.195 -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+```
+
+The scan returned an interesting directory:
+
+```
+/island
+```
+
+That gave me a new attack vector to explore.
+
+---
+
+## Hidden Clues in Source Code
+
+After navigating to `/island`, I checked the page source instead of just relying on what was rendered.
+
+<img width="1920" height="406" alt="image" src="https://github.com/user-attachments/assets/ea6d9390-00e4-4cda-838c-a195bfe9d486" />
+
+Inside the source, I found a hidden keyword:
+
+```
+vigilante
+```
+
+At this stage, it looked like a potential username. It could be tied to FTP or SSH, but without a password, it was not immediately usable. Still, it was a valuable piece of intel, so I noted it down and continued enumerating.
+
+---
+
+## Deeper Enumeration
+
+I pushed further into the `/island` directory with another round of directory brute forcing.
+
+```
+dirsearch -u http://10.49.161.195/island/ -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+```
+
+This revealed another hidden path:
+
+```
+/island/2100
+```
+
+Opening it in the browser did not immediately reveal anything useful.
+
+<img width="740" height="638" alt="image" src="https://github.com/user-attachments/assets/95b044e6-857e-4a21-a034-8114b53cc070" />
+
+So I continued the same process and enumerated further.
+
+```
+dirsearch -u http://10.49.161.195/island/2100 -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+```
+
+This time, I discovered a file:
+
+```
+/island/2100/green_arrow.ticket
+```
+
+---
+
+## Extracting Credentials
+
+Opening the file revealed an encoded string.
+
+<img width="455" height="124" alt="image" src="https://github.com/user-attachments/assets/30091d5a-ec70-4d66-a0f1-d4f16ff20d3d" />
+
+```
+RTy8yhBQdscX
+```
+
+The format suggested it was not random. After analyzing the pattern, I identified it as Base58 encoding. I decoded it to retrieve the original value.
+
+<img width="1920" height="935" alt="image" src="https://github.com/user-attachments/assets/ac068391-589a-4e90-b50b-5517b49adad7" />
+
+The decoded output gave me a potential password:
+
+```
+!#th3h00d
+```
+
+At this point, I had a likely username and password combination gathered through enumeration. The next step was to validate where these credentials could be used.
