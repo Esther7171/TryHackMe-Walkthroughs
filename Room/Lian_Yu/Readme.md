@@ -68,3 +68,84 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 Web Enemuration
+
+Let Nevigate to web 
+
+<img width="1891" height="957" alt="image" src="https://github.com/user-attachments/assets/a483707b-ac54-47f3-a7f9-8b6c578a6ead" />
+
+Didnt find anything suspecis let dig deeper
+
+```
+death@esther:~$ dirsearch -u http://10.49.161.195 -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt 
+
+  _|. _ _  _  _  _ _|_    v0.4.3
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 220544
+
+Output File: /home/death/reports/http_10.49.161.195/_26-04-03_20-13-50.txt
+
+Target: http://10.49.161.195/
+
+[20:13:50] Starting: 
+[20:14:30] 301 -  236B  - /island  ->  http://10.49.161.195/island/
+[20:18:22] 403 -  199B  - /server-status
+
+Task Completed
+
+```
+We got a new page called `/island`
+Afert looking source code i got this hiddden keyword
+
+<img width="1920" height="406" alt="image" src="https://github.com/user-attachments/assets/ea6d9390-00e4-4cda-838c-a195bfe9d486" />
+Maybe this is somthing
+Its maybe a pass or username of any service like ftp,ssh  
+```
+vigilante
+```
+The issue is we dont not pass even thi is username  
+let dig more deeper
+```
+death@esther:~$ dirsearch -u http://10.49.161.195/island/ -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+/usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import DistributionNotFound, VersionConflict
+
+  _|. _ _  _  _  _ _|_    v0.4.3
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 220544
+
+Output File: /home/death/reports/http_10.49.161.195/_island__26-04-03_20-25-42.txt
+
+Target: http://10.49.161.195/
+
+[20:25:42] Starting: island/
+[20:26:01] 301 -  241B  - /island/2100  ->  http://10.49.161.195/island/2100/
+
+Task Completed
+death@esther:~$ 
+```
+we got another hidden directory `/2100`
+
+<img width="740" height="638" alt="image" src="https://github.com/user-attachments/assets/95b044e6-857e-4a21-a034-8114b53cc070" />
+
+sO THERE IS NOTHING COOLER SO LET DIG MORE 
+
+We got a hiddent page again `/green_arrow.ticket` after opig we got this msg 
+
+<img width="455" height="124" alt="image" src="https://github.com/user-attachments/assets/30091d5a-ec70-4d66-a0f1-d4f16ff20d3d" />
+
+this is some kind of a pass let try to decode this `RTy8yhBQdscX`
+After analysing the patter i got to know this is base58 let decode the phase
+
+<img width="1920" height="935" alt="image" src="https://github.com/user-attachments/assets/ac068391-589a-4e90-b50b-5517b49adad7" />
+
+And maybe this is ftp password `!#th3h00d`
+
+Let use above found phase and this as ftp pass
+```
+death@esther:~$ ftp 10.49.161.195
+Connected to 10.49.161.195.
+220 (vsFTPd 3.0.2)
+Name (10.49.161.195:death): vigilante
+```
