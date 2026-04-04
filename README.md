@@ -52,6 +52,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Corridor](./Room/Corridor/walkthroug.md) | Easy | Web | Can you escape the Corridor?| IDOR |
 | [Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/writeup.md) | Easy | any | Cracking hashes challenges | ```Cryptography```|   
 | [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/writeup.md) | Medium | Any | Advanced cracking hashes challenges and wordlist generation | ```Cryptography```|
+| [Cupid's Matchmaker](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Cupid's%20Matchmaker/Readme.md#cupids-matchmaker) | Easy | Web | Use your web exploitation skills against this matchmaking service.| `XXS` |
 | [CyberHeroes](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/CyberHeroes#cyberheros-tryhackme-writeup) | Easy | Web | Want to be a part of the elite club of CyberHeroes? Prove your merit by finding a way to log in! | `Broken Authentication` |
 | [Dig Dug](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Dig%20Dug/Readme.md#dig-dug-tryhackme-walkthrough) | Easy | Any | Turns out this machine is a DNS server - it's time to get your shovels out! |`Dns Enumeration` |
 | [Directory](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Directory#directory) | Hard | Any | Do you have what it takes to crack this case? | `DFIR` |
