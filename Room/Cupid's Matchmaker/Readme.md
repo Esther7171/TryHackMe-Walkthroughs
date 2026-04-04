@@ -7,6 +7,7 @@
 ## Task 1. Cupids Matchmaker
 ### What is the flag?
 ```
+THM{XSS_CuP1d_Str1k3s_Ag41n}
 ```
 
 --- 
