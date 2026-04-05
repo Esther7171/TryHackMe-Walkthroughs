@@ -80,6 +80,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Lo-Fi](./Room/Lo-Fi) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI`| 
 | [Looking Glass](./Room/Looking-Glass/writeup.md) | Linux | Medium | Step through the looking glass. A sequel to the Wonderland challenge room. | CTF |
 | [Lookup](./Room/Lookup/walkthrough.md)| Linux | Easy | Test your enumeration skills on this boot-to-root machine. | CTF `elFinder PHP Connector exiftran Command Injection vulnerability` `Path manipulation exploitation` |
+| [Love Letter Locker](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Love%20Letter%20Locker/Readme.md#love-letter-locker---tryhackme-writeup) | Easy | Web | Use your skills to access other users' letters. | `Idor` |         
 | [MD2PDF](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/MD2PDF#md2pdf-tryhackme-writeup) | Web | Easy | TopTierConversions LTD is proud to present its latest product launch. | CTF |
 | [Madness](./Room/Madness/walkthrough.md)| Easy | Linux | Will you be consumed by Madness? | CTF ```Steganography``` ```setuid``` |
 | [Metamorphosis](./Room/Metamorphosis/writeup.md) | Medium | Linux | Part of Incognito CTF | CTF ```rsync``` ```SQL```|
