@@ -69,4 +69,4 @@ Conclusion
 
 This room demonstrates how predictable identifiers in web applications can expose sensitive data when proper access controls are missing.
 
-Thanks for reading.
+> Thanks for reading.
