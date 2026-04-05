@@ -89,4 +89,8 @@ Conclusion
 
 This room demonstrates how predictable identifiers in web applications can expose sensitive data when proper access controls are missing.
 
+<div align="center">
+  <img width="863" height="390" alt="image" src="https://github.com/user-attachments/assets/ef283970-ac6a-4f88-8cf6-911844a0bd63" />
+</div>
+
 > Thanks for reading.
