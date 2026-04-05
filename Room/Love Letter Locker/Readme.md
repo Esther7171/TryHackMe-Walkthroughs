@@ -7,6 +7,8 @@
 ## Introduction
 Love Letter Locker is a web-based challenge focused on IDOR. While interacting with the application, I identified how predictable identifiers could be manipulated to access other users’ letters.
 
+---
+
 ## Initial Reconnaissance
 
 The room provides a direct entry point to the web application:
