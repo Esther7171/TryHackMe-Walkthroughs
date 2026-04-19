@@ -1,14 +1,17 @@
 # <div align="center">[Putting it all together - TryHackMe WriteUp](https://tryhackme.com/room/puttingitalltogether)</div>
-<div align="center"></div>
-<div align="center"></div>
-Putting it all together
+<div align="center">Learn how all the individual components of the web work together to bring you access to your favourite web sites.</div>
+<div align="center">
+  <img width="200" height="200" alt="putting it all " src="https://github.com/user-attachments/assets/5038ff7f-fdbe-4882-b957-a5d86ea0d047" />
+</div>
 
-https://tryhackme.com/room/puttingitalltogether<img width="322" height="923" alt="Screenshot from 2026-04-12 22-04-21" src="https://github.com/user-attachments/assets/2230a6f6-ca55-43f9-ad56-9120b0bba689" />
+
 
 <div align="center"></div>
 
-<img width="227" height="912" alt="1" src="https://github.com/user-attachments/assets/99b569c6-8a8d-4024-8d60-43321e03d406" />
-<img width="227" height="912" alt="2" src="https://github.com/user-attachments/assets/dffe0174-77c7-4cfe-9bfe-2b8c0eec4c4c" />
+<div align="center">
+  <img width="227" height="912" alt="1" src="https://github.com/user-attachments/assets/99b569c6-8a8d-4024-8d60-43321e03d406" />
+</div>
+  <img width="227" height="912" alt="2" src="https://github.com/user-attachments/assets/dffe0174-77c7-4cfe-9bfe-2b8c0eec4c4c" />
 <img width="492" height="223" alt="Flag" src="https://github.com/user-attachments/assets/9ca5446b-83bd-4782-8455-6cad89ed091a" />
 
 
