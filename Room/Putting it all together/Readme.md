@@ -4,19 +4,6 @@
   <img width="200" height="200" alt="putting it all " src="https://github.com/user-attachments/assets/5038ff7f-fdbe-4882-b957-a5d86ea0d047" />
 </div>
 
-
-
-<div align="center"></div>
-
-<div align="center">
-  <img width="227" height="912" alt="1" src="https://github.com/user-attachments/assets/99b569c6-8a8d-4024-8d60-43321e03d406" />
-</div>
-  <img width="227" height="912" alt="2" src="https://github.com/user-attachments/assets/dffe0174-77c7-4cfe-9bfe-2b8c0eec4c4c" />
-<img width="492" height="223" alt="Flag" src="https://github.com/user-attachments/assets/9ca5446b-83bd-4782-8455-6cad89ed091a" />
-
-
-
-
 ## Task 1. Putting It All Together
 
 From the previous modules, you'll have learned that quite a lot of things go on behind the scenes when you request a webpage in your browser.
@@ -131,7 +118,6 @@ Dynamic
 Nay
 ```
 
-
 ## Task 4. Quiz
 
 **The Quiz**
@@ -142,8 +128,22 @@ Note: When placing a tile in the correct position, it will highlight in green. W
 
 Answer the questions below
 
+
+<div align="center">
+  <img width="227" height="912" alt="1" src="https://github.com/user-attachments/assets/99b569c6-8a8d-4024-8d60-43321e03d406" />
+</div>
+
+<div align="center">
+  <img width="227" height="912" alt="2" src="https://github.com/user-attachments/assets/dffe0174-77c7-4cfe-9bfe-2b8c0eec4c4c" />
+</div>
+
+<div align="center">
+  <img width="492" height="223" alt="Flag" src="https://github.com/user-attachments/assets/9ca5446b-83bd-4782-8455-6cad89ed091a" />
+</div>
+
 ### Flag
 
 ```
 THM{YOU_GOT_THE_ORDER}
 ```
+
