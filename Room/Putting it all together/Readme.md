@@ -132,18 +132,14 @@ Answer the questions below
 <div align="center">
   <img width="227" height="912" alt="1" src="https://github.com/user-attachments/assets/99b569c6-8a8d-4024-8d60-43321e03d406" />
 </div>
-11
-
 <div align="center">
   <img width="227" height="912" alt="2" src="https://github.com/user-attachments/assets/dffe0174-77c7-4cfe-9bfe-2b8c0eec4c4c" />
 </div>
-22
+### Flag
 
 <div align="center">
   <img width="492" height="223" alt="Flag" src="https://github.com/user-attachments/assets/9ca5446b-83bd-4782-8455-6cad89ed091a" />
 </div>
-
-### Flag
 
 ```
 THM{YOU_GOT_THE_ORDER}
