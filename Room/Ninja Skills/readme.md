@@ -245,18 +245,17 @@ Final Answer:
 ```text id="q7v4n2"
 X1Uy
 ```
+<div align="center">
+  <img width="810" height="360" alt="image" src="https://github.com/user-attachments/assets/29209e0a-dc2b-42a7-92ea-f72f7d06e1da" />
+</div>
 
-<img>
+## Question 6
 
-<img width="810" height="360" alt="image" src="https://github.com/user-attachments/assets/29209e0a-dc2b-42a7-92ea-f72f7d06e1da" />
+The final question asks which file is executable by everyone.
 
-
-# Question 6 — Which file is executable by everyone?
-
-For this question, the goal was to identify which file had execute permissions enabled for all users.
 In Linux, file permissions are displayed using symbols such as:
 
-```text id="9m8p0x"
+```text id="n5v2k7"
 rwxrwxr-x
 ```
 
@@ -270,7 +269,7 @@ Where:
 
 To check the permissions of all target files, I used the following command:
 
-```bash id="0c7x7r"
+```bash id="m4q8x1"
 find / -type f \( -name 8V2L -o -name bny0 -o -name c4ZX -o -name D8B3 -o -name FHl1 -o -name oiMO -o -name PFbD -o -name rmfX -o -name SRSq -o -name uqyw -o -name v2Vb -o -name X1Uy \) -exec ls -ln {} \; 2>>/dev/null
 ```
 
@@ -283,29 +282,38 @@ find / -type f \( -name 8V2L -o -name bny0 -o -name c4ZX -o -name D8B3 -o -name 
 | `-name`        | Match the provided filenames       |
 | `-exec ls -ln` | Display detailed file permissions  |
 | `ls -l`        | Show file permissions and metadata |
-| `-n`           | Show numeric user and group IDs    |
+| `-n`           | Display numeric user and group IDs |
 | `2>>/dev/null` | Hide permission denied errors      |
 
-The output showed:
+The output returned:
 
-```text id="w4r5r2"
--rwxrwxr-x 1 501 501 13545 Oct 23  2019 /etc/8V2L
+```text id="p7w3m2"
+-rwxrwxr-x 1 501 501 13545 Oct 23 2019 /etc/8V2L
 ```
 
-The permission string `-rwxrwxr-x` indicates that the file is executable.
+The permission string `rwxrwxr-x` shows that the file has execute permissions enabled.
 
-This means the file `8V2L` is executable by everyone.
+This confirmed that the file `8V2L` is executable by everyone.
 
 Final Answer:
 
-```text id="mjlwmz"
+```text id="x2n8v4"
 8V2L
 ```
-<img width="813" height="359" alt="image" src="https://github.com/user-attachments/assets/36924ab9-8189-4d03-ad56-bcd1df9af983" />
 
-Thanks
+<div align="center">
+  <img width="813" height="359" alt="image" src="https://github.com/user-attachments/assets/36924ab9-8189-4d03-ad56-bcd1df9af983" />
+</div>
 
-<img width="848" height="402" alt="image" src="https://github.com/user-attachments/assets/d0c4035f-f775-41d9-9258-fce2de917ee6" />
+## Conclusion
 
+*Ninja Skills* was a great beginner friendly room for practicing Linux file enumeration and investigation using common commands like `find`, `grep`, `wc`, `sha1sum`, and `ls`.
 
+Even though the room was simple, it helped build practical Linux skills that are heavily used in cybersecurity, CTFs, and real world investigations.
+
+Thanks for reading.
+
+<div align="center">
+  <img width="848" height="402" alt="image" src="https://github.com/user-attachments/assets/d0c4035f-f775-41d9-9258-fce2de917ee6" />
+</div>
 
