@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Some people skip rooms like this because they feel repetitive or time consuming, but this is actually the kind of work real SOC analysts, Linux administrators, forensic investigators, and CTF players deal with daily. Knowing how to quickly search, filter, and investigate files inside a Linux system is one of the most useful skills in cybersecurity.
+Some people skip rooms like this because they feel repetitive or time consuming, but this is actually the kind of work real SOC analysts, Linux administrators, forensic investigators and CTF players deal with daily. Knowing how to quickly search, filter, and investigate files inside a Linux system is one of the most useful skills in cybersecurity.
 
 [Ninja Skills](https://tryhackme.com/room/ninjaskills?utm_source=chatgpt.com) is a Linux focused room based on file enumeration and investigation using common Linux commands.
 
@@ -307,9 +307,9 @@ Final Answer:
 
 ## Conclusion
 
-*Ninja Skills* was a great beginner friendly room for practicing Linux file enumeration and investigation using common commands like `find`, `grep`, `wc`, `sha1sum`, and `ls`.
+*Ninja Skills* was a great beginner friendly room for practicing Linux file enumeration and investigation using common commands like `find`, `grep`, `wc`, `sha1sum` and `ls`.
 
-Even though the room was simple, it helped build practical Linux skills that are heavily used in cybersecurity, CTFs, and real world investigations.
+Even though the room was simple, it helped build practical Linux skills that are heavily used in cybersecurity, CTFs and real world investigations.
 
 Thanks for reading.
 
