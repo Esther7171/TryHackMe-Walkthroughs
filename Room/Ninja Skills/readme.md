@@ -1,9 +1,8 @@
 # <div align="center">[Ninja Skills - TryHackMe Walkthrough](https://tryhackme.com/room/ninjaskills)</div>
 <div align="center">Ninja Skills completed!</div>
 <div align="center">
-  
+  <img width="200" height="200" alt="ninja-skills" src="https://github.com/user-attachments/assets/d50039a0-64a9-4ef3-82ac-0bbfa410f93c" />
 </div>
-
 
 ## Introduction
 
@@ -41,13 +40,13 @@ Username: new-user
 Password: new-user
 ```
 
+## Question 1
 
-The question is 
-Which of the above files are owned by the best-group group(enter the answer separated by spaces in alphabetical order)
+The first question asks which of the provided files are owned by the `best-group` group.
 
-To solve the first question, I used the `find` command to search the entire Linux system for the given files and filter only those belonging to the `best-group` group.
+To solve this, I used the `find` command to search the Linux filesystem and filter files that belong to the `best-group` group.
 
-```bash id="0p43hb"
+```bash id="j6v2p4"
 find / -type f \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -o -name "FHl1" -o -name "oiMO" -o -name "PFbD" -o -name "rmfX" -o -name "SRSq" -o -name "uqyw" -o -name "v2Vb" -o -name "X1Uy" \) -group best-group 2>/dev/null
 ```
 
@@ -62,26 +61,31 @@ find / -type f \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -
 | `-group best-group` | Filter files owned by the `best-group` group |
 | `2>/dev/null`       | Hide permission denied errors                |
 
-The output showed:
+The output returned:
 
-```text id="ckb5qg"
+```text id="v4n8m1"
 /mnt/D8B3
 /home/v2Vb
 ```
 
-This means the files `D8B3` and `v2Vb` are owned by the `best-group` group.
+This confirmed that the files `D8B3` and `v2Vb` are owned by the `best-group` group.
 
 Final Answer:
 
-```text id="q4llmz"
+```text id="k3w7q2"
 D8B3 v2Vb
 ```
+<div align="center"
+  <img width="803" height="332" alt="image" src="https://github.com/user-attachments/assets/4705da49-9ff4-4042-bac9-0fde65e3a269" />
+</div>
 
-<img width="803" height="332" alt="image" src="https://github.com/user-attachments/assets/4705da49-9ff4-4042-bac9-0fde65e3a269" />
+## Question 2
 
-For the second question, I needed to identify which file contained an IP address. Instead of opening every file manually, I used the `find` command together with `grep` to search inside the files automatically.
+The second question asks which file contains an IP address.
 
-```bash id="y42wdv"
+Instead of manually opening every file, I used the `find` command together with `grep` to search inside all the provided files automatically.
+
+```bash id="c7m2v9"
 find / -type f \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -o -name "FHl1" -o -name "oiMO" -o -name "PFbD" -o -name "rmfX" -o -name "SRSq" -o -name "uqyw" -o -name "v2Vb" -o -name "X1Uy" \) -exec grep -lE '([0-9]{1,3}\.){3}[0-9]{1,3}' {} \; 2>/dev/null
 ```
 
@@ -89,67 +93,72 @@ find / -type f \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -
 
 | Part                          | Meaning                                     |
 | ----------------------------- | ------------------------------------------- |
-| `find /`                      | Search the whole system                     |
+| `find /`                      | Search the entire filesystem                |
 | `-type f`                     | Search only files                           |
-| `-name`                       | Match the given filenames                   |
-| `-exec`                       | Run a command on each file found            |
-| `grep`                        | Search text inside files                    |
-| `-l`                          | Show only the filename                      |
+| `-name`                       | Match the provided filenames                |
+| `-exec`                       | Execute a command on each file found        |
+| `grep`                        | Search for patterns inside files            |
+| `-l`                          | Display only the filename                   |
 | `-E`                          | Enable extended regular expressions         |
 | `([0-9]{1,3}\.){3}[0-9]{1,3}` | Regex pattern used to detect IPv4 addresses |
 | `2>/dev/null`                 | Hide permission denied errors               |
 
-The output returned:
+The command returned:
 
-```text id="4j7x6g"
+```text id="q8w4k1"
 /opt/oiMO
 ```
 
-This means the file `oiMO` contains an IP address.
+This confirmed that the file `oiMO` contains an IP address.
 
 Final Answer:
 
-```text id="j9b51l"
+```text id="f2n7x5"
 oiMO
 ```
-<img width="813" height="138" alt="image" src="https://github.com/user-attachments/assets/7105efda-ae44-4260-a28f-64a67c94ad57" />
+<div align="center">
+  <img width="813" height="138" alt="image" src="https://github.com/user-attachments/assets/7105efda-ae44-4260-a28f-64a67c94ad57" />
+</div>
 
-For the third question, the goal was to identify which file matched the given SHA1 hash.
+## Question 3
 
-SHA1 hashes are commonly used in cybersecurity to verify file integrity and identify files uniquely.
+The third question asks which file matches the given SHA1 hash.
 
-I used the following command to generate the SHA1 hash of each target file:
+To solve this, I generated the SHA1 hash for each target file and compared the results with the hash provided in the question.
 
-```bash id="2mylhf"
+```bash id="x5n2k8"
 find / -type f \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -o -name "FHl1" -o -name "oiMO" -o -name "PFbD" -o -name "rmfX" -o -name "SRSq" -o -name "uqyw" -o -name "v2Vb" -o -name "X1Uy" \) -exec sha1sum {} \; 2>/dev/null
 ```
 
 ### Command Breakdown
 
-| Part            | Meaning                           |
-| --------------- | --------------------------------- |
-| `find /`        | Search the entire filesystem      |
-| `-type f`       | Search only files                 |
-| `-name`         | Match the provided filenames      |
-| `-exec sha1sum` | Generate SHA1 hash for each file  |
-| `{}`            | Represents the current file found |
-| `\;`            | Ends the execute command          |
-| `2>/dev/null`   | Hide permission denied errors     |
+| Part            | Meaning                            |
+| --------------- | ---------------------------------- |
+| `find /`        | Search the entire filesystem       |
+| `-type f`       | Search only files                  |
+| `-name`         | Match the provided filenames       |
+| `-exec sha1sum` | Generate SHA1 hashes for each file |
+| `{}`            | Represents the current file        |
+| `\;`            | Ends the execute command           |
+| `2>/dev/null`   | Hide permission denied errors      |
 
-The output showed:
+The output returned:
 
-```text id="5dr1hz"
+```text id="w3p7m1"
 9d54da7584015647ba052173b84d45e8007eba94  /mnt/c4ZX
 ```
 
-This means the file `c4ZX` matches the given SHA1 hash.
+This confirmed that the file `c4ZX` matches the given SHA1 hash.
 
 Final Answer:
 
-```text id="q78rjp"
+```text id="r8v4k2"
 c4ZX
 ```
-<img width="811" height="353" alt="image" src="https://github.com/user-attachments/assets/d7eb583e-58a7-4bd6-988b-ed334a76cd27" />
+
+<div align='center'>
+  <img width="811" height="353" alt="image" src="https://github.com/user-attachments/assets/d7eb583e-58a7-4bd6-988b-ed334a76cd27" />
+</div>
 
 # Question 4 — Which file contains 230 lines?
 
