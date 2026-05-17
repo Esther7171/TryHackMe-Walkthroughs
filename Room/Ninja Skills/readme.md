@@ -160,12 +160,13 @@ c4ZX
   <img width="811" height="353" alt="image" src="https://github.com/user-attachments/assets/d7eb583e-58a7-4bd6-988b-ed334a76cd27" />
 </div>
 
-# Question 4 — Which file contains 230 lines?
+## Question 4
 
-For this question, the goal was to identify which file contained exactly `230` lines.
-Instead of opening every file manually, I used the `wc -l` command together with `find` to count the number of lines in each target file automatically.
+The fourth question asks which file contains exactly `230` lines.
 
-```bash id="hyb3k7"
+To solve this, I used the `wc -l` command together with `find` to count the number of lines in each target file automatically.
+
+```bash id="x2m7v4"
 find / \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -o -name "FHl1" -o -name "oiMO" -o -name "PFbD" -o -name "rmfX" -o -name "SRSq" -o -name "uqyw" -o -name "v2Vb" -o -name "X1Uy" \) -exec wc -l {} \; 2>/dev/null
 ```
 
@@ -176,58 +177,76 @@ find / \( -name "8V2L" -o -name "bny0" -o -name "c4ZX" -o -name "D8B3" -o -name 
 | `find /`      | Search the entire filesystem            |
 | `-name`       | Match the provided filenames            |
 | `-exec wc -l` | Run the line count command on each file |
-| `wc -l`       | Count the number of lines inside a file |
+| `wc -l`       | Count the number of lines in a file     |
 | `2>/dev/null` | Hide permission denied errors           |
 
-The output displayed the total line count for each file.
-After reviewing the results, the file `bny0` was identified as the one containing `230` lines.
+When I ran the command, the file `bny0` did not appear in the output, which made this question slightly confusing at first.
+
+The output only displayed the remaining files and their line counts:
+
+```text id="t6p3k8"
+209 /mnt/D8B3
+209 /mnt/c4ZX
+209 /var/FHl1
+209 /var/log/uqyw
+209 /opt/PFbD
+209 /opt/oiMO
+209 /media/rmfX
+209 /etc/8V2L
+209 /etc/ssh/SRSq
+209 /home/v2Vb
+209 /X1Uy
+```
+
+Since `bny0` was missing from the results, it indicated that this was the file associated with the question. The correct answer was `bny0`.
 
 Final Answer:
 
-```text id="0e95ew"
+```text id="m8v1q5"
 bny0
 ```
-# Question 5 — Which file's owner has an ID of 502?
 
-For this task, the goal was to identify which file was owned by a user with the UID `502`.
-In Linux, every user has a numeric User ID (UID), and files store ownership information using these IDs.
+## Question 5
 
-To view the numeric owner and group IDs of each target file, I used the following command:
+The fifth question asks which file is owned by a user with the UID `502`.
 
-```bash id="m92m7m"
+In Linux, every user has a numeric User ID, also known as a UID. File ownership information can be viewed using the `ls -ln` command.
+
+To identify the correct file, I used the following command:
+
+```bash id="v5n2k7"
 find / -type f \( -name 8V2L -o -name bny0 -o -name c4ZX -o -name D8B3 -o -name FHl1 -o -name oiMO -o -name PFbD -o -name rmfX -o -name SRSq -o -name uqyw -o -name v2Vb -o -name X1Uy \) -exec ls -ln {} \; 2>>/dev/null
 ```
 
 ### Command Breakdown
 
-| Part           | Meaning                                           |
-| -------------- | ------------------------------------------------- |
-| `find /`       | Search the entire filesystem                      |
-| `-type f`      | Search only files                                 |
-| `-name`        | Match the provided filenames                      |
-| `-exec ls -ln` | Display file permissions with numeric UID and GID |
-| `ls -l`        | Show detailed file information                    |
-| `-n`           | Show numeric user and group IDs instead of names  |
-| `2>>/dev/null` | Hide permission denied errors                     |
+| Part           | Meaning                                            |
+| -------------- | -------------------------------------------------- |
+| `find /`       | Search the entire filesystem                       |
+| `-type f`      | Search only files                                  |
+| `-name`        | Match the provided filenames                       |
+| `-exec ls -ln` | Display detailed file permissions with numeric IDs |
+| `ls -l`        | Show detailed file information                     |
+| `-n`           | Display numeric UID and GID instead of names       |
+| `2>>/dev/null` | Hide permission denied errors                      |
 
-The output showed:
+The output returned:
 
-```text id="rbn44t"
--rw-rw-r-- 1 502 501 13545 Oct 23  2019 /X1Uy
+```text id="p3m8x1"
+-rw-rw-r-- 1 502 501 13545 Oct 23 2019 /X1Uy
 ```
 
-Here:
+Here, `502` represents the owner UID of the file.
 
-* `502` → Owner UID
-* `501` → Group ID
-
-This means the file `X1Uy` is owned by a user with the ID `502`.
+This confirmed that the file `X1Uy` is owned by a user with the ID `502`.
 
 Final Answer:
 
-```text id="s4ppd7"
+```text id="q7v4n2"
 X1Uy
 ```
+
+<img>
 
 <img width="810" height="360" alt="image" src="https://github.com/user-attachments/assets/29209e0a-dc2b-42a7-92ea-f72f7d06e1da" />
 
