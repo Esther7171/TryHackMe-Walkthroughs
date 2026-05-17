@@ -1,5 +1,6 @@
 # <div align="center">[Ninja Skills - TryHackMe Walkthrough](https://tryhackme.com/room/ninjaskills)</div>
 <div align="center">Ninja Skills completed!</div>
+
 <div align="center">
   <img width="200" height="200" alt="ninja-skills" src="https://github.com/user-attachments/assets/d50039a0-64a9-4ef3-82ac-0bbfa410f93c" />
 </div>
