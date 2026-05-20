@@ -460,3 +460,11 @@ cat /root/root.txt
 ```bash id="c6u2ra"
 THM{c0ngrats_for_read_the_f1le_w1th_credent1als}
 ```
+
+<img width="1222" height="501" alt="image" src="https://github.com/user-attachments/assets/751858b4-f232-47b6-b2cc-ff911983ec23" />
+
+Thanks for reading. Hope this walkthrough helped you solve the room and follow the exploitation process clearly.
+
+If you enjoyed this walkthrough, you can check out more rooms and labs here:
+* [Github](https://github.com/Esther7171/TryHackMe-Walkthroughs)
+* [Medium](https://deathesther.medium.com/)
