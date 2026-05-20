@@ -95,6 +95,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Oh My WebServer](./Room/Oh-My-WebServer/writeup.md) | Medium | Linux | Can you root me? | ```CVE-2021-41773``` | 
 | [Pentesting Fundamentals](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Pentesting%20Fundamentals#pentesting-fundamentals) | Easy | Any | Learn the important ethics and methodologies behind every pentest. | `info` | 
 | [Pickle Rick](./Room/Pickle-Rick/writeup.md) | Easy | Linux  | A Rick and Morty CTF. Help turn Rick back into a human!| CTF ```Web Cmd``` |
+| [Poster](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Poster#poster---tryhackme-walthrough) | Easy | Linux | The sys admin set up a rdbms in a safe way. | `Rdbms Exploitation`|
 | [Precision](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Precision#precision--tryhackme-writeup)| Hard | Linux | Practice your advanced Linux Exploit Development skills. | ` Binary Exploitation` |
 | [Principles of Security](https://github.com/Esther7171/THM-Walkthroughs/tree/main/Room/Principles%20of%20Security#principles-of-security) | Easy | Any | Learn the principles of information security that secures data and protects systems from abuse | `info`
 | [Psyco Break](./Room/Psycho-Break/writeup.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
