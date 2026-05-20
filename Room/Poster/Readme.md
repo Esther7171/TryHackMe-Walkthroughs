@@ -21,10 +21,12 @@ The machine may take up to 5 minutes to boot and configure
 ### *Answer the questions below*
 #### What is the rdbms installed on the server?
 ```
+postgresql
 ```
 
 ### What port is the rdbms running on?
 ```
+5432
 ```
 
 ### Metasploit contains a variety of modules that can be used to enumerate in multiple rdbms, making it easy to gather valuable information.
@@ -34,11 +36,52 @@ No answer needed
 
 ### After starting Metasploit, search for an associated auxiliary module that allows us to enumerate user credentials. What is the full path of the modules (starting with auxiliary)?
 ```
+auxiliary/scanner/postgres/postgres_login
 ```
 
 ### What are the credentials you found?
 ```
+postgres:password
 ```
+
+### What is the full path of the module that allows you to execute commands with the proper user credentials (starting with auxiliary)?
+```
+auxiliary/admin/postgres/postgres_sql
+```
+
+### Based on the results of #6, what is the rdbms version installed on the server?
+```
+9.5.21
+```
+
+### What is the full path of the module that allows for dumping user hashes (starting with auxiliary)?
+```
+auxiliary/scanner/postgres/postgres_hashdump
+```
+
+### How many user hashes does the module dump?
+```
+6
+```
+
+### What is the full path of the module (starting with auxiliary) that allows an authenticated user to view files of their choosing on the server?
+```
+auxiliary/admin/postgres/postgres_readfile
+```
+
+### What is the full path of the module that allows arbitrary command execution with the proper user credentials (starting with exploit)?
+```
+exploit/multi/postgres/postgres_copy_from_program_cmd_exec
+```
+### Compromise the machine and locate user.txt
+```
+THM{postgresql_fa1l_conf1gurat1on}
+```
+### Escalate privileges and obtain root.txt
+```
+THM{c0ngrats_for_read_the_f1le_w1th_credent1als}
+```
+
 
 ---
 ## Initial Enumeration
