@@ -112,7 +112,6 @@ So let use metasploit auxiliary to scan this rdbms for some vulnerability
 
 we can see the listed auxilaryers here 
 LEt use number 4 auxiliary/scanner/postgres/postgres_login that says `PostgreSQL Login Utility` basically this try to bruteforce the postgre
-<img width="1742" height="425" alt="image" src="https://github.com/user-attachments/assets/36f6bd06-470b-4bbe-aa78-4e3dfde719f9" />
 
 Let use this to use this:
 > use 4
