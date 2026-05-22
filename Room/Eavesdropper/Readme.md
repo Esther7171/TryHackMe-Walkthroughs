@@ -49,8 +49,9 @@ After letting it run for a few moments, several processes started appearing cont
 CMD: UID=0     PID=662    | sudo cat /etc/shadow
 ```
 
-<img width="1082" height="930" alt="image" src="https://github.com/user-attachments/assets/3dced6ae-009d-4767-b747-0c7a57c6bd71" />
-
+<div align="center">
+  <img width="1082" height="930" alt="image" src="https://github.com/user-attachments/assets/3dced6ae-009d-4767-b747-0c7a57c6bd71" />
+</div>
 
 This was interesting because the command was being executed as root, but it was using `sudo` without a full path.
 
@@ -112,8 +113,9 @@ During login, the automated process executed `sudo cat /etc/shadow`.
 
 Because `/tmp` appeared first in the PATH variable, the system executed my fake `sudo` script instead of the real binary. The password entered by root was captured and written into `/home/frank/pass.txt`.
 
-<img width="1511" height="777" alt="1" src="https://github.com/user-attachments/assets/2d385b22-2da5-46d3-9696-859aa19bbe33" />
-
+<div align="center">
+  <img width="1511" height="777" alt="1" src="https://github.com/user-attachments/assets/2d385b22-2da5-46d3-9696-859aa19bbe33" />
+</div>
 
 I checked the file and recovered the password:
 
@@ -133,7 +135,9 @@ Using the captured password, I switched to root.
 [sudo] password for frank: !@#frankisawesome2022%*
 ```
 
-<img width="496" height="226" alt="image" src="https://github.com/user-attachments/assets/caf786b1-4eef-4540-b5c4-645776da66c9" />
+<div align="center">
+  <img width="496" height="226" alt="image" src="https://github.com/user-attachments/assets/caf786b1-4eef-4540-b5c4-645776da66c9" />
+</div>
 
 Once authenticated, I successfully gained root access and retrieved the flag from the root home directory.
 
@@ -143,7 +147,9 @@ Once authenticated, I successfully gained root access and retrieved the flag fro
 flag{14370304172628f784d8e8962d54a600}
 ```
 
-<img width="842" height="386" alt="image" src="https://github.com/user-attachments/assets/16bf8138-8095-4852-b359-a77eb50d2b9f" />
+<div align="center">
+  <img width="842" height="386" alt="image" src="https://github.com/user-attachments/assets/16bf8138-8095-4852-b359-a77eb50d2b9f" />
+</div>
 
 ## Conclusion
 
