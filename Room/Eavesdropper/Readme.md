@@ -143,3 +143,15 @@ Once authenticated, I successfully gained root access and retrieved the flag fro
 flag{14370304172628f784d8e8962d54a600}
 ```
 
+<img width="842" height="386" alt="image" src="https://github.com/user-attachments/assets/16bf8138-8095-4852-b359-a77eb50d2b9f" />
+
+## Conclusion
+
+Eavesdropper was a short but interesting room focused on process monitoring and PATH hijacking. The biggest clue came from observing background activity with `pspy64`, which eventually revealed a vulnerable execution flow that could be abused to capture credentials and gain root access.
+
+Thanks for reading this walkthrough. I hope it helped you understand the room and follow the privilege escalation process clearly.
+
+You can check out more of my walkthroughs here:
+
+* [Medium Blog](https://deathesther.medium.com/?utm_source=chatgpt.com)
+* [GitHub Walkthrough Repository](https://github.com/Esther7171/TryHackMe-Walkthroughs?utm_source=chatgpt.com)
