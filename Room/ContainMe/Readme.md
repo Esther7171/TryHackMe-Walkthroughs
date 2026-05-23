@@ -2,9 +2,13 @@
 <div align="center">Where am I ? Catch me</div>
 <div align="center"></div>
 
-## Intial Access
-Let start with scanning and find running service
-```
+# ContainMe - TryHackMe Walkthrough
+
+## Initial Access
+
+I started the machine with a basic Nmap scan to identify the running services.
+
+```bash
 $ nmap -sV 10.49.172.109
 
 PORT     STATE SERVICE       VERSION
@@ -13,25 +17,34 @@ PORT     STATE SERVICE       VERSION
 2222/tcp open  EtherNetIP-1?
 8022/tcp open  ssh           OpenSSH 8.2p1 Ubuntu 4ubuntu0.13ppa1+obfuscated~focal (Ubuntu Linux; protocol 2.0)
 ```
-There are 4 ports running
-* tcpwrapped
-* http is running on port 80
-* ethernet-ip is running 2222
-* ssh is running on port 8022
 
-## Web Enemuration
-as Port 80 is open let take a look at it 
+The scan showed four open ports:
+
+* Port 22 running `tcpwrapped`
+* Port 80 serving HTTP
+* Port 2222 running `EtherNetIP`
+* Port 8022 running SSH
+
+Since HTTP was exposed on port 80, I started enumerating the web application first.
+
+---
+
+## Web Enumeration
+
+I opened the target in the browser and was greeted with the default Apache page.
 
 <img width="804" height="592" alt="image" src="https://github.com/user-attachments/assets/8b820332-a480-4ed5-adfe-35ec965281be" />
-Directory Enumeration
 
-Its default appache page running on port at let do directory search and find out more 
-```
-~$ gobuster dir -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt -u http://10.49.172.109 -x md,js,html,php,py,css,txt,bak 
+That usually means there could still be hidden files or directories behind the default landing page, so I started directory enumeration using Gobuster.
+
+```bash
+$ gobuster dir -w SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt -u http://10.49.172.109 -x md,js,html,php,py,css,txt,bak 
+
 ===============================================================
 Gobuster v3.6
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
+
 [+] Url:                     http://10.49.172.109
 [+] Method:                  GET
 [+] Threads:                 10
@@ -40,9 +53,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 [+] User Agent:              gobuster/3.6
 [+] Extensions:              js,html,php,py,css,txt,bak,md
 [+] Timeout:                 10s
+
 ===============================================================
 Starting gobuster in directory enumeration mode
 ===============================================================
+
 /.html                (Status: 403) [Size: 278]
 /index.html           (Status: 200) [Size: 10918]
 /.php                 (Status: 403) [Size: 278]
@@ -50,16 +65,17 @@ Starting gobuster in directory enumeration mode
 /info.php             (Status: 200) [Size: 68943]
 ```
 
-The index.html just returned the default page. The index.php returned:-
+The `index.html` page only returned the default Apache page, but `index.php` and `info.php` looked more interesting.
 
-Looked like it gave the content of the web-root directory. The info.php page gave information about php:-
+The `info.php` page exposed the PHP configuration of the server.
 
 <img width="964" height="919" alt="image" src="https://github.com/user-attachments/assets/3630d47c-2967-4fcc-b229-7ea0fea5a3ee" />
 
-The main interest here was the index.php page. The source code of the page gave an interesting comment:-
+The more interesting finding was `index.php`. When I checked its contents directly using `curl`, it revealed the contents of the web root directory along with an unusual comment.
 
-```
-$ curl http://10.49.172.109//index.php
+```bash
+$ curl http://10.49.172.109/index.php
+
 <html>
 <body>
 	<pre>
@@ -76,7 +92,10 @@ drwxr-xr-x 3 root root 4.0K Jul 15  2021 ..
 </body>
 </html>
 ```
-We can see this file are owned my root user 
+
+The output confirmed that the files inside the web root were owned by the `root` user. The comment at the bottom also looked intentional and hinted that there was still another path left to discover.
+
+---
 ## Exploitation
 It gave us a hint where is the path that mean we can attempts  local file inclusion
 
