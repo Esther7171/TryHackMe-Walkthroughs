@@ -4,6 +4,21 @@
 	<img width="200" height="200" alt="HIJACK" src="https://github.com/user-attachments/assets/951f63c4-eb12-4711-b60c-aabde3ecdbdc" />
 </div>
 
+## Task 1. Deploy the machine and get the flags!
+### What is the user flag?
+```
+THM{fdc8cd4cff2c19e0d1022e78481ddf36}
+```
+### What is the root flag?
+```
+THM{b91ea3e8285157eaf173d88d0a73ed5a}
+```
+
+---
+## Introduction
+
+Hijack is a beginner-friendly [TryHackMe](https://tryhackme.com/dashboard) room focused on misconfigurations, session hijacking, command injection, and Linux privilege escalation. In this walkthrough, I’ll cover the complete path from initial enumeration to root access.
+
 # Initial Enumeration
 
 I started with an Nmap scan to identify the running services and get a better understanding of the target surface.
