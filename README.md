@@ -72,6 +72,7 @@ A maintained **learning archive and reference** for hands-on practice and certif
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` | 
 | [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challange` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
+| [Hijack](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Hijack#hijack---tryhackme-walkthrough) | Easy | Linux | Misconfigs conquered, identities claimed. | `Misconfiguration` |  
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Idor](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/IDOR/Readme.md#idor---tryhackme-writeup) | Easy | Web |Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.| `Learn idor` |
 | [Ice](./Room/Ice/walkthrough.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
