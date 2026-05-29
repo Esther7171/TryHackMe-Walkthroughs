@@ -6,7 +6,7 @@
 # Flags
 * ## What is flag 1?
 ```
-THM{Th1s_15_Nt_4_Catdog_ab67edfa}
+THM{Th1s_15_N0t_4_Catdog_ab67edfa}
 ```
 * ##  What is flag 2?
 ```
