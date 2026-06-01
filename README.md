@@ -151,7 +151,7 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 | [Brooklyn-Nine-Nine](./Room/Brooklyn-Nine-Nine/readme.md) | Easy | Linux | This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box | Beginner Level CTF |
 | [Bugged](./Room/Bugged/readme.md) | Easy | Linux | John likes to live in a very Internet connected world. Maybe too connected...| ```IoT Device hacking``` |
 | [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/readme.md) | Easy | Linux | A beginner level CTF challenge | Decoding Messages ```Spectrograms``` ```Steganography``` ```Security through obscurity``` |
-| [CMesS](./Room/CMesS) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
+| [CMesS](./Room/CMesS/readme.md) | Medium | Linux | Can you root this Gila CMS box? | ```Gila CMS 1.10.9``` |
 | [CTF collection Vol.2](./Room/CTF-collection-Vol.2/readme.md) | Medium | Linux | Sharpening up your CTF skill with the collection. The second volume is about web-based CTF. | CTF ```Cryptography``` |
 | [Capture!](./Room/Capture!/readme.md) | Easy | Web | Can you bypass the login form? | Authentication vulnerability|
 | [Careers in Cyber](./Room/Careers-in-Cyber/readme.md) | Info | None | Learn about the different careers in cyber security | Guide |
@@ -188,12 +188,12 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 | [Hydra](./Room/Hydra/readme.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Idor](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/IDOR/Readme.md#idor---tryhackme-writeup) | Easy | Web |Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.| `Learn idor` |
 | [Ice](./Room/Ice/readme.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request ```CVE-2004-1561``` |
-| [Ignite](./Room/Ignite) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
+| [Ignite](./Room/Ignite/readme.md) | Easy | Linux | A new start-up has a few issues with their web server | vulnerable CMS service |
 | [Jacob the Boss](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Jacob%20the%20Boss#jacob-the-boss---tryhackme-writeup) | Easy | Linux | Find a way in and learn a little more. | `CVE-2010-0738` |
 | [Kenobi](./Room/Kenobi/readme.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | `ProFtpd` `SUID` |
 | [Kiba](./Room/Kiba/readme.md) | Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | ```CVE-2019-7609``` |
 | [Linux Shell](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Linux%20Shells#linux-shells---tryhackme-walkthrough) | Easy | Linux | Learn about scripting and the different types of Linux shells. | shell |
-| [Lo-Fi](./Room/Lo-Fi) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI`|
+| [Lo-Fi](./Room/Lo-Fi/readme.md) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI`|
 | [Looking Glass](./Room/Looking-Glass/readme.md) | Medium | Linux | Step through the looking glass. A sequel to the Wonderland challenge room. | CTF |
 | [Lookup](./Room/Lookup/readme.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine. | CTF `elFinder PHP Connector exiftran Command Injection vulnerability` `Path manipulation exploitation` |
 | [Love Letter Locker](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Love%20Letter%20Locker/Readme.md#love-letter-locker---tryhackme-writeup) | Easy | Web | Use your skills to access other users' letters. | `Idor` |
@@ -248,7 +248,7 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 | [Web Application Basics](./Room/Web_Application_Basics/readme.md) | Easy | Web | Learn the basics of web applications: HTTP, URLs, request methods, response codes, and headers.| Info |
 | [Wekor](./Room/Wekor/readme.md) | Medium | Linux | CTF challenge involving SQLi, WordPress, vhost enumeration and recognizing internal services. | `SQL` `WordPress` `Reverse Engineering` |
 | [Welcome](./Room/Welcome/readme.md) | Easy | Linux |Learn how to use a TryHackMe room to start your upskilling in cyber security. | Info |
-| [Wgel CTF](./Room/Wgel) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
+| [Wgel CTF](./Room/Wgel/readme.md) | Easy | Linux | Can you exfiltrate the root flag? | CTF |
 | [Whiterose](./Room/Whiterose/readme.md) | Easy | Linux | Yet another Mr. Robot themed challenge. | EJS ```SSTI```|
 | [Windows Fundamentals 1](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Windows%20Fundamentals%201#windows-fundamentals-1) | info | Windows | In part 1 of the Windows Fundamentals module, we'll start our journey learning about the Windows desktop, the NTFS file system, UAC, the Control Panel, and more..| `windows` |
 | [Wonderland](./Room/Wonderland-CTF/readme.md) | Medium | Linux | Fall down the rabbit hole and enter wonderland | ```Python``` |
