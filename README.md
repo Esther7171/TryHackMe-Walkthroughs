@@ -26,11 +26,11 @@ Topics I've covered include web application security, CVE exploitation, binary e
 
 | Metric | Count |
 |:---|:---:|
-| Easy rooms | 80 |
+| Easy rooms | 81 |
 | Medium rooms | 34 |
 | Hard rooms | 8 |
-| Info / Other | ~13 *(estimated — includes un-indexed rooms)* |
-| Rooms in table | 124 |
+| Info / Other | ~12 *(estimated — includes un-indexed rooms)* |
+| Rooms in table | 125 |
 | Total directories | 137+ |
 | CVEs documented | 20+ *(estimated)* |
 | Platforms | Linux · Windows · Web |
@@ -264,6 +264,8 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 This repository may also include relevant supporting files for each room, such as exploit scripts, log samples, and scan output. These can be found within the respective room directories.
 
 All walkthroughs are for educational purposes only. Always adhere to ethical hacking principles and the terms and conditions of the TryHackMe platform.
+
+---
 
 ## Contributing
 
