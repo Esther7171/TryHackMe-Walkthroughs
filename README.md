@@ -183,6 +183,7 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 | [Hacker v/s Hacker](./Room/Hacker-vs-Hacker/writeup.md) | Easy | Linux | Someone has compromised this server already! Can you get in and evade their countermeasures? | ```LFI``` |
 | [Hackfinity Battle](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Hackfinity%20Battle/Readme.md#hackfinity-battle---tryhackme-flags) | Medium | Any | Welcome to the Hackfinity Battle CTF! | `Challenge` |
 | [HaskHell](./Room/HaskHell/writeup.md) | Medium | Linux | Teach your CS professor that his PhD isn't in security. | ```Python``` |
+| [Hidden Deep Into my Heart](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Hidden-Deep-Into-my-Heart#hidden-deep-into-my-heart---tryhackme-walkthrough) | Easy | Web |Find what's hidden deep inside this website.| `Web Enumeration` |
 | [Hijack](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Hijack#hijack---tryhackme-walkthrough) | Easy | Linux | Misconfigs conquered, identities claimed. | `Misconfiguration` |
 | [Hydra](./Room/Hydra/writeup.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | Tool Guide |
 | [Idor](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/IDOR/Readme.md#idor---tryhackme-writeup) | Easy | Web |Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.| `Learn idor` |
