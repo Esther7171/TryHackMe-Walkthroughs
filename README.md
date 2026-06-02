@@ -26,11 +26,11 @@ Topics I've covered include web application security, CVE exploitation, binary e
 
 | Metric | Count |
 |:---|:---:|
-| Easy rooms | 81 |
+| Easy rooms | 82 |
 | Medium rooms | 34 |
 | Hard rooms | 8 |
 | Info / Other | ~12 *(estimated — includes un-indexed rooms)* |
-| Rooms in table | 125 |
+| Rooms in table | 126 |
 | Total directories | 137+ |
 | CVEs documented | 20+ *(estimated)* |
 | Platforms | Linux · Windows · Web |
