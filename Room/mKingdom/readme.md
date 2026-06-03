@@ -4,6 +4,7 @@ Beginner-friendly box inspired by a certain mustache man.
 
 
 
+
 Initial enumeration
 
 starting with nmap scan to check running port and services
