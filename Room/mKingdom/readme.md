@@ -1,4 +1,7 @@
 # mKingdom tryhckme writeup
+Beginner-friendly box inspired by a certain mustache man.
+
+
 
 
 Initial enumeration
@@ -328,5 +331,8 @@ use head cat still cant use
 <img width="424" height="271" alt="image" src="https://github.com/user-attachments/assets/c3345d9b-717e-4113-bbea-e5f83c814c46" />
 
 thm{e8b2f52d88b9930503cc16ef48775df0}
+
+<img width="1196" height="476" alt="image" src="https://github.com/user-attachments/assets/edf20c67-b7fb-4bf2-9c2f-78e55e4346ec" />
+
 
 
