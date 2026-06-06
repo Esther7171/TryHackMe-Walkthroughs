@@ -1,21 +1,23 @@
-# Valenfind tryhackme walkthrough
+# Valenfind TryHackMe Walkthrough
 
 https://tryhackme.com/room/lafb2026e10
 
-
-
-Initial reconnace
+## Initial Reconnaissance
 
 <img width="924" height="717" alt="image" src="https://github.com/user-attachments/assets/15436140-b246-4e5c-b5dc-e367e8b2cd88" />
 
-as the lab already gave us the web link and web page is running on port 5000 let take a look
+The room already provided the web application URL, and I noticed that the application was running on port 5000. I started by opening the website to see what functionality was available.
+
 <img width="1891" height="531" alt="image" src="https://github.com/user-attachments/assets/e92b772a-f438-4054-840f-85444f2b5ab9" />
 
-as i click on start journey it ask to create an account so i register here
+On the landing page, I clicked the **Start Journey** button. The application redirected me to a registration page, requiring a new account before accessing the platform.
+
 <img width="1898" height="495" alt="image" src="https://github.com/user-attachments/assets/f1b5c8c2-8c50-4753-8fd3-814fab7a112a" />
 
-as i register i got to dashboard where i can see some profiles created
+After creating an account and logging in, I was taken to the dashboard. From there, I could see several user profiles that had already been created within the application.
+
 <img width="1891" height="967" alt="image" src="https://github.com/user-attachments/assets/bc7329d3-2679-4e11-84b9-583461a73b34" />
+
 
 so we can like a person and view there profile and chnage profile bio theme
 
