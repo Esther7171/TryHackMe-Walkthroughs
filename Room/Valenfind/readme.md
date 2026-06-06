@@ -6,7 +6,7 @@ https://tryhackme.com/room/lafb2026e10
 
 <img width="924" height="717" alt="image" src="https://github.com/user-attachments/assets/15436140-b246-4e5c-b5dc-e367e8b2cd88" />
 
-The room already provided the web application URL, and I noticed that the application was running on port 5000. I started by opening the website to see what functionality was available.
+The room already provided the web application URL, and I noticed that the application was running on port `5000`. I started by opening the website to see what functionality was available.
 
 <img width="1891" height="531" alt="image" src="https://github.com/user-attachments/assets/e92b772a-f438-4054-840f-85444f2b5ab9" />
 
@@ -18,7 +18,34 @@ After creating an account and logging in, I was taken to the dashboard. From the
 
 <img width="1891" height="967" alt="image" src="https://github.com/user-attachments/assets/bc7329d3-2679-4e11-84b9-583461a73b34" />
 
+While exploring the application, I found that I could like other users, view their profiles, and modify my own profile settings such as the bio and theme.
 
+<img width="1917" height="745" alt="image" src="https://github.com/user-attachments/assets/72810aa9-4914-4604-9fa4-af9675d920b3" />
+
+At first glance, everything appeared to be working normally. I tried sending a Valentine by clicking the available button, but I did not notice any interesting URL changes. To understand how the application was functioning behind the scenes, I opened the browser's developer tools and monitored the network traffic.
+
+While changing the profile theme, I noticed a GET request being made to the following endpoint:
+
+```
+http://10.48.151.100:5000/api/fetch_layout?layout=theme_classic.html
+```
+
+<img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/2d148320-a341-46a8-93e8-11adbdedefe8" />
+
+The API appeared to be fetching layout templates based on the value supplied in the `layout` parameter. Since user input was being used to determine which file was loaded, I decided to test for a Local File Inclusion vulnerability by supplying path traversal sequences.
+
+My first test targeted `/etc/passwd` using the payload `../../../../etc/passwd`. I sent the request directly from my terminal using curl. Since the application appeared to be heavily vibe-coded, I suspected that authentication checks might not be enforced on this endpoint. That assumption turned out to be correct, as the request worked without requiring any session cookie.
+
+```
+curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../etc/passwd
+```
+
+The response returned the contents of `/etc/passwd`, confirming that the endpoint was vulnerable to Local File Inclusion through path traversal.
+
+<img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
+
+
+--------------------
 so we can like a person and view there profile and chnage profile bio theme
 
 <img width="1917" height="745" alt="image" src="https://github.com/user-attachments/assets/72810aa9-4914-4604-9fa4-af9675d920b3" />
@@ -38,10 +65,13 @@ curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../etc/passwd
 ```
 
 <img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
+
+-------------
+
 Use /proc/self/cmdline to Find the App's Location
 You have arbitrary file read, but you don’t know where the web application’s source code lives on the server. Here’s a Linux trick that solves that instantly.
 
-Write on Medium
+
 The /proc filesystem is a virtual filesystem that exposes live information about running processes. /proc/self refers to the current process — in this case, the Python web server serving your requests. Inside it, cmdline contains the exact command used to launch the process.
 
 ```
