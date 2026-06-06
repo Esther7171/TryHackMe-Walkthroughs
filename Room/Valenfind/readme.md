@@ -140,11 +140,11 @@ Reviewing the contents of the database revealed the room flag.
 THM{v1be_c0ding_1s_n0t_my_cup_0f_t3a}
 ```
 
-<img width="849" height="386" alt="image" src="https://github.com/user-attachments/assets/45cce556-d9c6-4c69-bbee-a7f66b54dcb8" />
-
 ## Conclusion
 
 Valenfind was a short and enjoyable room focused on identifying a Local File Inclusion vulnerability and using it to read sensitive files from the server. By leveraging the file read primitive, I was able to locate the application's source code, recover a hardcoded administrative API key, and ultimately export the database to obtain the flag.
+
+<img width="849" height="386" alt="image" src="https://github.com/user-attachments/assets/45cce556-d9c6-4c69-bbee-a7f66b54dcb8" />
 
 Thanks for reading.
 
