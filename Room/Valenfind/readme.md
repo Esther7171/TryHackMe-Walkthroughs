@@ -44,29 +44,7 @@ The response returned the contents of `/etc/passwd`, confirming that the endpoin
 
 <img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
 
-
---------------------
-so we can like a person and view there profile and chnage profile bio theme
-
-<img width="1917" height="745" alt="image" src="https://github.com/user-attachments/assets/72810aa9-4914-4604-9fa4-af9675d920b3" />
-
-at first look everthing seem normal as i send valantine by clicking on button i dont see any url changes so i open the inspect and network and when i chnage the theem i notic get requret 
-```
-http://10.48.151.100:5000/api/fetch_layout?layout=theme_classic.html
-```
-<img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/2d148320-a341-46a8-93e8-11adbdedefe8" />
-
-the api is try to fetch the layout so i try lfi sent this API request of sent path traversal payloads.
-
-First test was `/etc/passwd` with: `../../../../etc/passwd` with curl on terminal so i think it dosnt req session cookei as it vibe coded and im true 
-it return me what i want 
-```
-curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../etc/passwd
-```
-
-<img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
-
--------------
+---------------------
 
 Use /proc/self/cmdline to Find the App's Location
 You have arbitrary file read, but you don’t know where the web application’s source code lives on the server. Here’s a Linux trick that solves that instantly.
