@@ -16,9 +16,9 @@
 
 # TryHackMe Walkthroughs & Writeups
 
-This repository contains my TryHackMe walkthroughs and CTF writeups across Linux, Windows, and Web platforms, from beginner to intermediate difficulty. Each writeup documents the steps I took — reconnaissance, enumeration, exploitation, and privilege escalation — kept as a personal record and reference for practical penetration testing and cybersecurity learning.
+Writeups from every TryHackMe room I've completed. Methodology, commands, and what actually worked — for reference and for anyone following along.
 
-Topics I've covered include web application security, CVE exploitation, binary exploitation, Windows internals, container escapes, Active Directory, digital forensics, and AI/LLM security. CVEs I've documented range from 2004 through 2025.
+Covers web attacks, CVE exploitation, privilege escalation, container escapes, binary exploitation, DFIR, and AI/LLM security across Linux, Windows, and Web. CVEs from 2004 to 2025.
 
 ---
 
@@ -27,10 +27,10 @@ Topics I've covered include web application security, CVE exploitation, binary e
 | Metric | Count |
 |:---|:---:|
 | Easy rooms | 82 |
-| Medium rooms | 34 |
+| Medium rooms | 35 |
 | Hard rooms | 8 |
 | Info / Other | ~12 *(estimated — includes un-indexed rooms)* |
-| Rooms in table | 126 |
+| Rooms in table | 127 |
 | Total directories | 137+ |
 | CVEs documented | 20+ *(estimated)* |
 | Platforms | Linux · Windows · Web |
@@ -240,7 +240,7 @@ Prompt injection and LLM jailbreaking in a sandboxed lab.
 | [Toolbox: Vim](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Toolbox%E2%80%94%20Vim/Readme.md#toolbox-vim) | Easy | Lin/Win | Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit. | `Tool Guide` |
 | [TryHeartMe](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/TryHeartMe#tryheartme---tryhackme-write-up) | Easy | Web |Access the hidden item in this Valentine's gift shop. |`CTF`,`Web Exploitation`, `JWT Manipulation`|
 | [UltraTech](./Room/UltraTech/readme.md) | Medium | Linux | The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing | CTF |
-| [Valenfind](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Valenfind#valenfind-tryhackme-walkthrough) | Medium | Web | Can you find vulnerabilities in this new dating app? | `LFI` |
+| [Valenfind](./Room/Valenfind/readme.md) | Medium | Web | Can you find vulnerabilities in this new dating app? | `LFI` |
 | [Void Execution](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Void%20Execution#void-execution--tryhackme-writeup) | Medium | Linux |Learn how to bypass restrictions in Linux exploit development. | `Binary Exploitation` |
 | [Vulnerabilities 101](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Vulnerabilities%20101#vulnerabilities-101) | Easy | Any | Understand the flaws of an application and apply your researching skills on some vulnerability databases. | Info |
 | [W1seGuy](./Room/W1seGuy/readme.md) | Easy | Linux | A w1se guy 0nce said, the answer is usually as plain as day. | `Cryptography` |
