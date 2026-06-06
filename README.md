@@ -16,9 +16,9 @@
 
 # TryHackMe Walkthroughs & Writeups
 
-Writeups from every TryHackMe room I've completed. Methodology, commands, and what actually worked — for reference and for anyone following along.
+Writeups from every TryHackMe room I've completed. Steps I took, commands that worked and what I learned along the way.
 
-Covers web attacks, CVE exploitation, privilege escalation, container escapes, binary exploitation, DFIR, and AI/LLM security across Linux, Windows, and Web. CVEs from 2004 to 2025.
+Covers web exploitation, CVE research, privilege escalation, container escapes, binary exploitation, DFIR and AI/LLM security on Linux, Windows and Web. CVEs from 2004 to 2025.
 
 ---
 
