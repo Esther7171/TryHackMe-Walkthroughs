@@ -5,6 +5,9 @@ https://tryhackme.com/room/lafb2026e10
 
 
 Initial reconnace
+
+<img width="924" height="717" alt="image" src="https://github.com/user-attachments/assets/15436140-b246-4e5c-b5dc-e367e8b2cd88" />
+
 as the lab already gave us the web link and web page is running on port 5000 let take a look
 <img width="1891" height="531" alt="image" src="https://github.com/user-attachments/assets/e92b772a-f438-4054-840f-85444f2b5ab9" />
 
@@ -110,3 +113,5 @@ Flag
 ```
 THM{v1be_c0ding_1s_n0t_my_cup_0f_t3a}
 ```
+<img width="849" height="386" alt="image" src="https://github.com/user-attachments/assets/45cce556-d9c6-4c69-bbee-a7f66b54dcb8" />
+
