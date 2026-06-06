@@ -146,7 +146,7 @@ Valenfind was a short and enjoyable room focused on identifying a Local File Inc
 
 <img width="849" height="386" alt="image" src="https://github.com/user-attachments/assets/45cce556-d9c6-4c69-bbee-a7f66b54dcb8" />
 
-> Thanks for reading.
+> **Thanks for reading.**
 >
 > For more TryHackMe walkthroughs and cybersecurity content:
 >
