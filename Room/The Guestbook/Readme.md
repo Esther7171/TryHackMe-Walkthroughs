@@ -263,6 +263,10 @@ THM{c4r0l_t00k_th3_f4ll}
 THM{c4r0l_t00k_th3_f4ll}
 ```
 
+<div align="center">
+      <img width="397" height="184" alt="image" src="https://github.com/user-attachments/assets/02518def-0ef1-4cfe-bcb9-b3c70fc6f0a5" />
+</div>
+
 ## Conclusion
 
 The interesting part of this room was not simply finding the flag. The main issue was how VERA trusted instructions supplied through the guestbook.
