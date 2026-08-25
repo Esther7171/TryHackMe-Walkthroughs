@@ -1,4 +1,4 @@
-# <div align="center">[The Guestbook](https://tryhackme.com/room/hh-theguestbook-0130ffaf)</div>
+# <div align="center">[The Guestbook - TryHackMe Walkthrough](https://tryhackme.com/room/hh-theguestbook-0130ffaf)</div>
 <div align="center">VERA reads every guestbook entry as an instruction. You write something she really shouldn't act on.</div>
 
 <div align="center">
