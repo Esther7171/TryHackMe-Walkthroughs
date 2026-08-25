@@ -1,11 +1,15 @@
-# <div align="center">[The Guestbook - TryHackMe Walkthrough](https://tryhackme.com/room/hh-theguestbook-0130ffaf)</div>
-
 <div align="center">
-VERA reads every guestbook entry as an instruction. You write something she really shouldn't act on.
+  <a href="https://tryhackme.com/room/hh-theguestbook-0130ffaf">
+    The Guestbook - TryHackMe Walkthrough
+  </a>
 </div>
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/6664868e-34f6-47aa-9b01-0dc7845c8a07" height="200"></img>
+  VERA reads every guestbook entry as an instruction. You write something she really shouldn't act on.
+</div>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6664868e-34f6-47aa-9b01-0dc7845c8a07" height="200" />
 </div>
 
 ## Task 1. Hacker Holidays: Day 13
