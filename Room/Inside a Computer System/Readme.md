@@ -23,7 +23,9 @@ No Need
 THM{4llpccomp0n3nts1d3nt1f13d}
 ```
 
-<img width="579" height="548" alt="image" src="https://github.com/user-attachments/assets/fb2ef446-dfdd-4983-b283-5b26c212150b" />
+<div align='center'>
+  <img width="579" height="548" alt="image" src="https://github.com/user-attachments/assets/fb2ef446-dfdd-4983-b283-5b26c212150b" />
+</div>
 
 ## Task 3. What Happens When You Press the Start Button?
 
@@ -32,7 +34,9 @@ THM{4llpccomp0n3nts1d3nt1f13d}
 ```
 THM{pc5ucce55fully5t4rt3d}
 ```
-<img width="498" height="554" alt="image" src="https://github.com/user-attachments/assets/ac1005d8-eeaa-4d6c-8356-af7f29fd5928" />
+<div align='center'>
+  <img width="498" height="554" alt="image" src="https://github.com/user-attachments/assets/ac1005d8-eeaa-4d6c-8356-af7f29fd5928" />
+</div>
 
 ## Task 4. Conclusion
 ```
