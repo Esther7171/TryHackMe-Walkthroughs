@@ -5,6 +5,8 @@
 <img width="200" height="200" alt="808fb6095e5b1b6ead138077732c725d" src="https://github.com/user-attachments/assets/537e2573-d54a-4e70-a879-0e3aa288aa5b" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 1. Just another day as a SOC Analyst
 
 ### What is the Transfer Reference Number listed in the email's Subject?

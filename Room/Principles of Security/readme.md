@@ -4,6 +4,8 @@
   <img src='https://github.com/user-attachments/assets/12fa40c9-0957-4688-80e5-ca8a1fb04bdf' height='200'></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Task 1. Intro
 The following room is going to outline some of the fundamental principles of information security. The frameworks used to protect data and systems to the elements of what exactly makes data secure.
 

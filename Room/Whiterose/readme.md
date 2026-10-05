@@ -4,6 +4,7 @@
   <img src="https://github.com/user-attachments/assets/63573b56-425b-415c-9133-31f9b701470b" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Enumeration
 ```

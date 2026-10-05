@@ -6,6 +6,7 @@
 <img src="https://github.com/user-attachments/assets/aff860f5-44b7-4b8e-bb43-0f47a4c04e23" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 2. A Simple Webapp
 Start off with a simple webapp. Can you find the hidden flag?

@@ -4,6 +4,8 @@
   <img src= "https://github.com/user-attachments/assets/66313b6b-20e5-4db6-8c46-6c3e5bfa048b" height="200" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. h-c0n Christmas CTF
 
 <img height="200" alt="diseño v5 rojo-azul PNG sin brillo" src="https://github.com/user-attachments/assets/588e58f3-e704-4c54-8774-04b0baaf6e40" />

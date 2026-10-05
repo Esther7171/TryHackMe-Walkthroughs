@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/bc6de6eb-0839-405b-a33b-165c46c3393a" height="180"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Analyze the network
 
 John was working on his smart home appliances when he noticed weird traffic going across the network. Can you help him figure out what these weird network communications are?

@@ -5,6 +5,8 @@
 <img src="https://tryhackme-images.s3.amazonaws.com/room-icons/618b3fa52f0acc0061fb0172-1718375657104" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1. Flags
 Hack into the machine and get the flags!
 

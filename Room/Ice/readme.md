@@ -3,6 +3,8 @@
 <img src="https://miro.medium.com/v2/resize:fit:899/1*TxtDRv-bMxtlYtTwQ7TdCg.png" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 1. Connect
 
 ### You are now ready to use our machines on our network!

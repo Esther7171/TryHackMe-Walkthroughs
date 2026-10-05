@@ -4,6 +4,8 @@
 	<img width="200" height="200" alt="89eaf880161ad2a96f0a8000b5f9ab57" src="https://github.com/user-attachments/assets/a85556bf-b9b8-4945-b981-906a06d46840" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Find the flag
 
 ```

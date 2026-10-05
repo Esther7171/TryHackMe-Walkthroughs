@@ -5,6 +5,7 @@
 <img width="200" height="200" alt="y" src="https://github.com/user-attachments/assets/291aa038-defe-4674-9f97-d5165b60bcca" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 #### Task 1 .Cloud
 ### What is the flag?

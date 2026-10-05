@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/a4bb194c-cfa0-4cc7-aa24-abd0d3a8354e" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 # Task 1. Introduction
 
 ### What do you need to access a web application?

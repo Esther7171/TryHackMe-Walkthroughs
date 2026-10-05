@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="618b3fa52f0acc0061fb0172-1749651774451" src="https://github.com/user-attachments/assets/b3ce0df5-b3d5-4221-88b1-4159db8d6f28" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. The Event Horizon
 
 Join Tom and Dom on a quest to find out what happens when you look beyond the Event Horizon. A quest beyond borders, they need you to utilize all your abilities to find the secrets that were taken when they crossed over to the other side.

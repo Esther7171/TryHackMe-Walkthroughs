@@ -5,6 +5,7 @@
 <img width="200" height="200" alt="61e5fecf25e14912323cf5fd4dd7e934" src="https://github.com/user-attachments/assets/d792ce22-a54d-4635-92cf-850fe228446c" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ### What is the name of the cookie used for authentication?
 ```

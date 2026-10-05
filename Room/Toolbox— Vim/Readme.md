@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/f66bf6d7-d37e-4fcf-a500-70d735b56758" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux / Windows" src="https://img.shields.io/badge/OS-Linux%20%2F%20Windows-blue" /> </div>
+
 ## Task 1
 Lets get started!
 

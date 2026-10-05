@@ -5,6 +5,8 @@
   <img width="200" height="200" alt="Eavesdropper" src="https://github.com/user-attachments/assets/5def88fb-4fbe-43a3-8deb-3f47cc4d6180" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Download Keys
 
 The room already provides an SSH private key for the user `frank`, so I started by downloading the attached key file and preparing it for SSH authentication.

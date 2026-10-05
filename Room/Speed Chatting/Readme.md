@@ -5,6 +5,8 @@
   <img width="200" height="200" alt="Speed-Chatting" src="https://github.com/user-attachments/assets/6046f144-cdce-4ae6-bd3e-fb725460cc77" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. Speed Chat
 ### What is the flag?
 ```

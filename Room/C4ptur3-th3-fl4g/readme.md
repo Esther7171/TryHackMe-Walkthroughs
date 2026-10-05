@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/2de8a857-cec2-4188-9c81-37d1daeeeb81" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1.Translation & Shifting
 * Translate, shift and decode the following;
 * Answers are all case sensitive.

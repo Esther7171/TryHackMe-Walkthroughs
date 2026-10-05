@@ -5,6 +5,8 @@
 	<img width="200" height="200" alt="poster" src="https://github.com/user-attachments/assets/fa33b981-f75a-4c11-b2db-8e4a32367a5e" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Flag
 
 ### What is rdbms?

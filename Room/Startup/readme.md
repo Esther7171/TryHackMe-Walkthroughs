@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/5ec82312-a8a7-4ff9-8642-5c32efafe3f0" height="160"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1
 Welcome to Spice Hut!
 Start Machine

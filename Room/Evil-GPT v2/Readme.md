@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/fecb7511-de32-45f8-8529-39f277253a41" /img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 🧠 About the Lab
 * Room: Evil-GPT v2
 * Category: AI / Prompt Injection

@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="Dev Diaries" src="https://github.com/user-attachments/assets/0315eff9-8fbe-41a7-84a4-d61e5e0763bd" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. Challenge
 The room starts with a simple OSINT investigation based around a single domain name. The goal was to track down traces left behind during the development phase and recover information that was never fully removed.
 

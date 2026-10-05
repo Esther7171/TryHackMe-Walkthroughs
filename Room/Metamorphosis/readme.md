@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/6def35f2-455a-45cb-986a-4195a6e33b23" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1. Challenge
 
 Part of Incognito 2.0 CTF

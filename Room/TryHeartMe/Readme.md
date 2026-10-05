@@ -5,6 +5,8 @@
 <img width="200" height="200" alt="TryHeartMe" src="https://github.com/user-attachments/assets/e4df01da-c403-4a89-bdbb-d9d5bf6b9c4e" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. TryHeartMe
 ### What is the flag?
 ```

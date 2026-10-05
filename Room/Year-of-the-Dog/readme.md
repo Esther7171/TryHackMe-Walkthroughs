@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/234e35d2-c233-4bbf-9a7e-a869364f88e4" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Flags
 Who knew? The dog has some bite!
 ### User Flag

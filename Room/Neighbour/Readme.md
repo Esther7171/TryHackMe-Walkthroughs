@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="neighbour" src="https://github.com/user-attachments/assets/dba0f29f-616e-4cb1-a232-4c4e966f57e1" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Introduction
 
 This writeup covers the **Neighbour** room on TryHackMe, a beginner-level web challenge focused on insecure direct object references (IDOR). The lab is short, practical, and highlights how simple authorization flaws can lead to unintended data exposure.

@@ -4,6 +4,7 @@
 <img src="https://github.com/user-attachments/assets/286248ae-3acf-4a6f-9832-c668d1108ede" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Flags
 

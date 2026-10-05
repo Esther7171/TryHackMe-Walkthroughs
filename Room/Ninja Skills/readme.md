@@ -5,6 +5,8 @@
   <img width="200" height="200" alt="ninja-skills" src="https://github.com/user-attachments/assets/d50039a0-64a9-4ef3-82ac-0bbfa410f93c" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Introduction
 
 Some people skip rooms like this because they feel repetitive or time consuming, but this is actually the kind of work real SOC analysts, Linux administrators, forensic investigators and CTF players deal with daily. Knowing how to quickly search, filter, and investigate files inside a Linux system is one of the most useful skills in cybersecurity.

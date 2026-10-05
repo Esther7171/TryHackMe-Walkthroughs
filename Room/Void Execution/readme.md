@@ -1,4 +1,7 @@
 # <div align='center'>[Void Execution – TryHackMe Writeup](https://tryhackme.com/room/hfb1voidexecution)</div>
+
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 <div align='center'>Learn how to bypass restrictions in Linux exploit development.
 </div>
 <div align='center'>

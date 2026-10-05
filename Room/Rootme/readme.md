@@ -4,6 +4,8 @@
  <img width="200" height="200" alt="rootme" src="https://github.com/user-attachments/assets/94c6984c-5b16-4b2c-8c86-2164c33d3080" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Step 1: Reconnaissance
 
 We start with a basic Nmap scan to identify open ports and services running on the target machine.

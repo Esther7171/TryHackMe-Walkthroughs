@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="dig dug" src="https://github.com/user-attachments/assets/9130515a-5dda-4c77-8c65-708446625d27" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Introduction
 
 Dig Dug is a quick TryHackMe room focused on DNS enumeration, where the goal is to extract hidden data directly from DNS records instead of exploiting traditional services. It’s a clean, practical lab that reinforces protocol-level thinking.

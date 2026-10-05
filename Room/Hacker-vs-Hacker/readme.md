@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/67671f1b-2ffa-4036-b8d7-3f0abc76a89f" height=""></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Get on and boot them out!
 
 The server of this recruitment company appears to have been hacked, and the hacker has defeated all attempts by the admins to fix the machine. They can't shut it down (they'd lose SEO!) so maybe you can help?

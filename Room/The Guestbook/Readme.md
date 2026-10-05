@@ -1,6 +1,9 @@
 # <div align="center">[The Guestbook - TryHackMe Walkthrough](https://tryhackme.com/room/hh-theguestbook-0130ffaf)</div>
 
 <div align="center">
+
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Web / AI" src="https://img.shields.io/badge/OS-Web%20%2F%20AI-blue" /> </div>
+
 VERA reads every guestbook entry as an instruction. You write something she really shouldn't act on.
 </div>
 

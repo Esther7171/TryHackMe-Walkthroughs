@@ -1,4 +1,7 @@
 # <div align='center'>[Inside a Computer System - TryHackMe Writeup](https://tryhackme.com/room/insideacomputer)</div>
+
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 <div align='center'>This room covers the basic components of a computer system.
 </div>
 <div align='center'>

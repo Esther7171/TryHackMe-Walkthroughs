@@ -1,4 +1,7 @@
 # Wonderland CTF [Tryhackme Lab Walkthrough](https://tryhackme.com/r/room/wonderland)
+
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ![wonderland](https://github.com/Esther7171/Wonderland/assets/122229257/ee54cccf-d47b-4cb7-bd9c-bfb6c660d060)
 
 ### Answer the questions below

@@ -3,6 +3,8 @@
   <img src="https://github.com/user-attachments/assets/044d66b7-a10d-45ac-9790-2df9df4478c2" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Let start with Scanning The IP ```nmap -sC -sV <IP>```
 ```
 death@esther:~$ nmap -sC -sV 10.10.81.42

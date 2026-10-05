@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/a035c702-c26a-4654-93bf-0115e10f9f1b" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Simple CTF
 
 Deploy the machine and attempt the questions!

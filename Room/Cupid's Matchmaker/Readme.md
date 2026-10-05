@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="cupid matchmaker" src="https://github.com/user-attachments/assets/040914dd-9219-4e0d-b9e1-5ca3cc894d7a" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. Cupids Matchmaker
 ### What is the flag?
 ```

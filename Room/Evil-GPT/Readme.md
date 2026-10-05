@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/d5a568d2-e70c-43ce-8ba1-7ef01f76c718" /img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 Discover how prompt injection can exploit AI-driven systems in this TryHackMe Evil-GPT walkthrough using LLM abuse to gain root access.
 
 ---

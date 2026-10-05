@@ -4,6 +4,7 @@
   <img width="200" height="200" alt="92b349206a2901c187e32ad074eae45c" src="https://github.com/user-attachments/assets/c62d8886-13ab-4648-bd5f-be629e36cc61" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 
 ## Task 1. What is an IDOR?
 In this room, you're going to learn what an IDOR vulnerability is, what they look like, how to find them and a practical task exploiting a real case scenario.

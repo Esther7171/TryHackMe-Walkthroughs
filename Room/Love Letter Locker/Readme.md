@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="Love Letter Locker" src="https://github.com/user-attachments/assets/550ad1d5-6f14-4182-a308-9d468f8c64ef" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Introduction
 Love Letter Locker is a web-based challenge focused on IDOR. While interacting with the application, I identified how predictable identifiers could be manipulated to access other users’ letters.
 

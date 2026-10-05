@@ -4,6 +4,8 @@
   <img src='https://github.com/user-attachments/assets/771d82ac-78ff-4d34-b7ba-b4498f3b75ed' height='200'></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Introduction
 
 <div align='center'>

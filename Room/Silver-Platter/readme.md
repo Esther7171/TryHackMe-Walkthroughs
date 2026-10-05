@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## 1. Reconnaissance
 
 The first step in any penetration test is reconnaissance—gathering as much information as possible about the target. In this case, we start by scanning the network using Nmap to identify open ports and running services.

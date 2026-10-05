@@ -5,6 +5,7 @@
 <img src="https://github.com/user-attachments/assets/b7ce2ee8-5239-4098-b407-3df142e4d9a9" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Start up the VM
 Perform a penetration test against a vulnerable machine. Your end-goal is to become the root user and retrieve the two flags:

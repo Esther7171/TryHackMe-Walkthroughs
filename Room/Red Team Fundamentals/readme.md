@@ -4,6 +4,8 @@
   <img src='https://github.com/user-attachments/assets/165c5573-71ed-4552-a528-355f68666c23' height='200'></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Task 1. Introduction
 
 Cybersecurity is a constant race between white hat hackers and black hat hackers. As threats in the cyber-world evolve, so does the need for more specialized services that allow companies to prepare for real attacks the best they can.

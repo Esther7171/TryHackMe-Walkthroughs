@@ -4,6 +4,8 @@
  <img src='https://github.com/user-attachments/assets/f4f47f86-a7d5-475c-9059-8bee41d7a808' height='200' />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 1 . Flags
 
 ### 1.1. What is the user.txt flag?

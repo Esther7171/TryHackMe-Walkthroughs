@@ -6,6 +6,8 @@
 <img src="https://github.com/user-attachments/assets/58d506f4-0582-421d-88bb-56cc46af47fb" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Flags
 Are you able to complete the challenge?
 The machine may take up to 7 minutes to boot and configure

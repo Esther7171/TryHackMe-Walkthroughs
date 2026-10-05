@@ -5,6 +5,8 @@
   <img src="https://github.com/user-attachments/assets/d1a28066-5e54-4f86-ba21-2353d5ecb097" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1. Find the password!
 In this challenge, you are asked to solve a simple reversing solution. Download and analyze the binary to discover the password.
 

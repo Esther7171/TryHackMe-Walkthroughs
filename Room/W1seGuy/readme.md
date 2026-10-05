@@ -1,4 +1,7 @@
 # <div align="center">[W1seGuy](https://tryhackme.com/r/room/w1seguy)</div>
+
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 <div align="center">A w1se guy 0nce said, the answer is usually as plain as day.
 </div>
 <br>

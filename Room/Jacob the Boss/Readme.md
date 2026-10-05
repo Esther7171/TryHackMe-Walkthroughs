@@ -1,4 +1,7 @@
 # <div align="center">[Jacob the Boss - Tryhackme Writeup](https://tryhackme.com/room/jacobtheboss)</div>
+
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 <div align="center">Find a way in and learn a little more.
 </div>
 <div align="center">

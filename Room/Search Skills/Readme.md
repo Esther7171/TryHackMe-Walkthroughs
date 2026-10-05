@@ -4,6 +4,8 @@
   <img src='https://github.com/user-attachments/assets/cc486bee-db0c-4810-89a5-c8070cb026b0' height=''></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Task 1. Introduction
 
 A quick Google search for “learn cyber security” returned around 600 million hits, while a search for “learn hacking” returned more than double that number! The number might have grown even further when you go through this room.

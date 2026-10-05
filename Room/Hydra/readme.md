@@ -4,6 +4,7 @@
 <img src="https://github.com/user-attachments/assets/c4812e0c-6aec-48e2-bfcd-797f3ec9095e" height="200"></img>  
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 # Use Hydra to bruteforce molly's web password. What is flag 1?
 

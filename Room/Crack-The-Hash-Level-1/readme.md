@@ -4,6 +4,8 @@
 <img src="https://github.com/user-attachments/assets/7ed0fa9c-bdf2-44b6-ae16-d8b0d3ab96da" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Task 1. Level 1
 Can you complete the level 1 tasks by cracking the hashes?
 

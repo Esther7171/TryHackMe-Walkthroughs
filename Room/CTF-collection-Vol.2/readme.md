@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/9d32e7d0-f0f2-494a-8004-9374cd1fb864" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Author note
 
 Welcome, welcome and welcome to another CTF collection. This is the second installment of the CTF collection series. For your information, the second serious focuses on the web-based challenge. There are a total of 20 ### Easter eggs a.k.a flags can be found within the box. Let see how good is your CTF skill.

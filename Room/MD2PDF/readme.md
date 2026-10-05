@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="c53da808dba7b45a03b79dacf587ebb6" src="https://github.com/user-attachments/assets/c1561e24-0daa-469d-b966-18530240f47b" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## **Introduction**
 
 MD2PDF is a TryHackMe web challenge that demonstrates how a seemingly harmless Markdown-to-PDF feature can introduce serious security flaws when server-side rendering and access controls are improperly enforced.

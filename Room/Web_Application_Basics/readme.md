@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/e44d9e62-162a-4a02-a01e-91092ca41d69" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. Introduction
 
 Introduction

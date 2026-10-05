@@ -4,6 +4,8 @@
   <img src="https://github.com/user-attachments/assets/2913182e-1239-4f21-acb7-6a44e9b510e6" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Lo-Fi
 ### Climb the filesystem to find the flag!
 ```

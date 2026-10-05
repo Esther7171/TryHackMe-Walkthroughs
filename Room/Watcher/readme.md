@@ -5,6 +5,8 @@
 <img src="https://github.com/user-attachments/assets/7d7d90e8-a152-4829-bb39-6fb14cab3727" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1. Watcher
 
 Work your way through the machine and try to find all the flags you can!

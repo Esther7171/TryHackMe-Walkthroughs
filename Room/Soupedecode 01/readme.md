@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="xuper" src="https://github.com/user-attachments/assets/659ba37a-4640-4007-81fc-e6b11f6a7e2a" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 1. Soupedecode 01
 
 Soupedecode is an intense and engaging challenge in which players must compromise a domain controller by exploiting Kerberos authentication, navigating through SMB shares, performing password spraying, and utilizing Pass-the-Hash techniques. Prepare to test your skills and strategies in this multifaceted cyber security adventure.

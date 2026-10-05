@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="cyberheros" src="https://github.com/user-attachments/assets/48fab9e4-d9be-4326-971c-e92dcd0dd880" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Introduction
 
 CyberHeroes is a beginner-level TryHackMe room focused on breaking weak client-side authentication by inspecting exposed web logic. The goal is to find a way to log in using what the application itself reveals.

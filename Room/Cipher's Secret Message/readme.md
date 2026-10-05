@@ -6,6 +6,8 @@
   <img src='https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263' height='200'></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+
 ## Task 1. Crypto  Cipher's Secret Message
 
 <img src='https://github.com/user-attachments/assets/2c164f29-51ed-4907-97c6-ef8238a82b8c' />

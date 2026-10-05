@@ -4,6 +4,8 @@
   <img src='https://github.com/user-attachments/assets/f29ee43c-32a9-4d5f-b308-4a34c687f3b4' height='200'></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 1. Introduction to Windows
 
 ### What encryption can you enable on Pro that you can't enable in Home?

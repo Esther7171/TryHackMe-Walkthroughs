@@ -4,6 +4,8 @@
   <img width="200" height="200" alt="ctf" src="https://github.com/user-attachments/assets/4e581af9-ce2b-455d-aa17-d55879e753e4" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Introduction
 
 In this room, I performed basic web enumeration against a web application. A quick look at `robots.txt` revealed a hidden directory and a useful clue that ultimately led to the administrator panel and the flag.

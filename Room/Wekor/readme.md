@@ -6,6 +6,8 @@
 <img src="https://github.com/user-attachments/assets/7e5e0c2c-05fe-4829-9c54-41146e8b1ce9" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 # Task 1. Introduction
 # Task 2. Finishing Up
 Time To Submit The Flags :)

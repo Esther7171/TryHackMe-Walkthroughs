@@ -5,6 +5,8 @@
 <img width="256" height="256" alt="76910e7adb4cef3da9496c148b4c96c2" src="https://github.com/user-attachments/assets/8d0d6db2-d185-455b-aeda-aa8f1ae9d504" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 ## Task 2. Abusing Processes
 ### What flag is obtained after injecting the shellcode?
 ```

@@ -1,4 +1,7 @@
 # <div align="center">[Careers in Cyber](https://tryhackme.com/r/room/careersincyber)</div>
+
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 <div align="center">Learn about the different careers in cyber security.
 </div>
 

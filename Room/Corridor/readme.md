@@ -3,6 +3,8 @@
   <img src="https://github.com/user-attachments/assets/5fb3bb83-2944-499f-a4bc-8ac50298b6db" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+
 ## Task 1. Escape the Corridor
 
 You have found yourself in a strange corridor. Can you find your way back to where you came?

@@ -5,6 +5,8 @@
 <img width="200" height="200" alt="b15bdb33f152e2b3eb85f3218c6ae6e8" src="https://github.com/user-attachments/assets/bb446823-04a5-42f5-8b13-15ae8ab7c646" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
+
 Answers:
 ### Connect to the Lab. How many tools are present in the EZ tools folder on the Desktop?
 ```

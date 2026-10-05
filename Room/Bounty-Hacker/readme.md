@@ -3,6 +3,8 @@
 <img src="https://github.com/user-attachments/assets/a1c1a330-8473-4c7d-afc9-8ed0e17fe801" height="200"></img>
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ##  Task 1 . Living up to the title.
 
 #### Ques 1. Deploy the machine.

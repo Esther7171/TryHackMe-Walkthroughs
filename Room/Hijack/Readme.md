@@ -4,6 +4,8 @@
 	<img width="200" height="200" alt="HIJACK" src="https://github.com/user-attachments/assets/951f63c4-eb12-4711-b60c-aabde3ecdbdc" />
 </div>
 
+<div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+
 ## Task 1. Deploy the machine and get the flags!
 ### What is the user flag?
 ```
