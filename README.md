@@ -22,111 +22,7 @@ They cover web exploitation, CVE research, Linux and Windows privilege escalatio
 
 **Read them on the website:** [deathesther.tech/writeups](https://deathesther.tech/writeups/), with search, difficulty filters and flags hidden until you ask for them.
 
-### How each writeup is laid out
-
-Every writeup opens the same way: the room name linked to the lab on TryHackMe, the room description, the room image, and badges for difficulty and operating system. Then come the room's tasks and answers, and the walkthrough itself from `INTRO TO LAB` onwards. Rooms marked `only flag` in the table below hold the answers only; the full walkthrough is still to be written.
-
----
-## Statistics
-
-| Metric | Count |
-|:---|:---:|
-| Easy rooms | 83 |
-| Medium rooms | 36 |
-| Hard rooms | 8 |
-| Info rooms | 16 |
-| Total walkthroughs | 143 |
-| CVEs referenced | 125 |
-| Platforms | Linux, Windows, Web |
-| Active since | 2024 |
-
----
-
-## What You Will Learn
-
-**Exploitation**
-- Web attacks: SQL injection, XSS, LFI/RFI, SSRF, IDOR, RCE, SSTI, authentication bypass
-- CVE-based exploitation using public proof-of-concepts and Metasploit modules
-- Password cracking and hash identification with Hashcat and John the Ripper
-- Network service exploitation: Samba, ProFtpd, SSH, Icecast, OpenClinic, FreeSWITCH
-
-**Privilege Escalation**
-- Linux: SUID binaries, PATH hijacking, cronjob abuse, kernel exploits, sudo misconfiguration
-- Windows: token impersonation, WinPEAS, unquoted service paths, registry escalation
-
-**Enumeration**
-- Network scanning with nmap, subdomain and vhost enumeration
-- Directory brute-forcing with ffuf and Gobuster, DNS enumeration, OSINT
-
-**Specialised Topics**
-- Container and Docker exploitation and escape
-- Active Directory enumeration and attacks
-- Digital forensics and volatile memory analysis
-- Binary exploitation and reverse engineering
-- Cryptography, steganography, and encoding challenges
-- AI and LLM security: prompt injection and jailbreaking
-
----
-
-## Featured Rooms
-
-| Room | Difficulty | Platform | Technique |
-|---|:---:|:---:|---|
-| [Blue](./Room/Blue/readme.md) | Easy | Windows | EternalBlue (MS17-010) → Metasploit shell → hash cracking |
-| [Dogcat](./Room/Dogcat/readme.md) | Medium | Linux | LFI → log poisoning → RCE → Docker container escape |
-| [The Marketplace](./Room/The-Marketplace/readme.md) | Medium | Linux | Stored XSS → cookie theft → SQL injection → Docker socket escalation |
-| [ContainMe](./Room/ContainMe/Readme.md) | Medium | Linux | SSH pivot → multi-hop container escape across internal network |
-| [Erlang/OTP SSH CVE-2025-32433](./Room/Erlang-OTP%20SSH_CVE-2025-32433/readme.md) | Easy | Linux | Pre-auth RCE in Erlang SSH: 2025 CVE in a lab environment |
-| [Year of the Dog](./Room/Year-of-the-Dog/readme.md) | Hard | Linux | Blind SQL injection → Gitea code execution → root |
-
----
-
-## Learning Focus Areas
-
-### Web Exploitation
-SQL injection, XSS, LFI/RFI, SSRF, IDOR, SSTI, RCE, and authentication bypass.
-
-[The Marketplace](./Room/The-Marketplace/readme.md) · [Dogcat](./Room/Dogcat/readme.md) · [The London Bridge](./Room/The-London-Bridge/readme.md) · [Battery](./Room/Battery/readme.md) · [CTF Collection Vol.2](./Room/CTF-collection-Vol.2/readme.md) · [The Sticker Shop](./Room/The-Sticker-Shop/readme.md) · [Capture!](./Room/Capture!/readme.md) · [Wekor](./Room/Wekor/readme.md) · [MD2PDF](./Room/MD2PDF/readme.md)
-
-### Privilege Escalation: Linux
-SUID abuse, PATH hijacking, cronjob exploitation, sudo misconfiguration.
-
-[Kenobi](./Room/Kenobi/readme.md) · [Madness](./Room/Madness/readme.md) · [Eavesdropper](./Room/Eavesdropper/Readme.md) · [Cheese CTF](./Room/Cheese-CTF/readme.md) · [Watcher](./Room/Watcher/readme.md) · [Oh My WebServer](./Room/Oh-My-WebServer/readme.md) · [Startup](./Room/Startup/readme.md)
-
-### Privilege Escalation: Windows
-Token impersonation, WinPEAS, unquoted service paths, Metasploit post-exploitation.
-
-[Alfred](./Room/Alfred/readme.md) · [Blue](./Room/Blue/readme.md) · [HackPark](./Room/HackPark/Readme.md) · [Steel Mountain](./Room/Steel%20Mountain/readme.md) · [Ice](./Room/Ice/readme.md) · [Blueprint](./Room/Blueprint/readme.md) · [Flatline](./Room/Flatline/Readme.md)
-
-### CVE Exploitation
-Real-world CVEs in lab environments, 2004 to 2025.
-
-[Erlang/OTP CVE-2025-32433](./Room/Erlang-OTP%20SSH_CVE-2025-32433/readme.md) · [Roundcube CVE-2025-49113](./Room/Roundcube%E2%80%94%20CVE-2025-49113/Readme.md) · [Silver Platter CVE-2024-36042](./Room/Silver-Platter/readme.md) · [Annie CVE-2020-13160](./Room/Annie/readme.md) · [Kiba CVE-2019-7609](./Room/Kiba/readme.md) · [Blue MS17-010](./Room/Blue/readme.md) · [Ice CVE-2004-1561](./Room/Ice/readme.md)
-
-### Cryptography & Steganography
-Hash cracking, cipher analysis, encoding challenges, steganographic extraction.
-
-[Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/readme.md) · [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/readme.md) · [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/readme.md) · [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/readme.md) · [W1seGuy](./Room/W1seGuy/readme.md) · [Cipher's Secret Message](./Room/Cipher's%20Secret%20Message/readme.md)
-
-### Container & Cloud Security
-Docker socket exploitation, container escape, multi-hop pivoting, cloud misconfiguration.
-
-[ContainMe](./Room/ContainMe/Readme.md) · [Dogcat](./Room/Dogcat/readme.md) · [The Great Escape](./Room/The-Great-Escape/readme.md) · [The Marketplace](./Room/The-Marketplace/readme.md) · [A Bucket of Phish](./Room/A%20Bucket%20of%20Phish/readme.md)
-
-### Binary Exploitation & Reverse Engineering
-Buffer overflows, binary analysis, shellcode execution, reverse engineering.
-
-[Precision](./Room/Precision/readme.md) · [Void Execution](./Room/Void%20Execution/readme.md) · [0x41haz](./Room/0x41haz/readme.md) · [Compiled](./Room/Compiled/Readme.md) · [Mindgames](./Room/Mindgames/readme.md)
-
-### Forensics & DFIR
-Volatile memory analysis, log investigation, digital forensics.
-
-[Analysing Volatile Memory](./Room/Analysing%20Volatile%20Memory/Readme.md) · [Slingshot](./Room/Slingshot/README.md) · [Event Horizon](./Room/Event%20Horizon/readme.md) · [Directory](./Room/Directory/Readme.md) · [Dumping Router Firmware](./Room/Dumping-Router-Firmware/readme.md)
-
-### AI & LLM Security
-Prompt injection and LLM jailbreaking in a sandboxed lab.
-
-[Evil-GPT](./Room/Evil-GPT/Readme.md) · [Evil-GPT v2](./Room/Evil-GPT%20v2/Readme.md) · [BankGPT](./Room/BankGPT/readme.md)
+**Rooms:** 83 Easy, 36 Medium, 8 Hard, 16 Info. Rooms marked `only flag` hold the answers only; the full walkthrough is still to be written.
 
 ---
 
@@ -282,18 +178,8 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 
 ---
 
-## Additional Information
+## Notes
 
-This repository may also include relevant supporting files for each room, such as exploit scripts, log samples, and scan output. These can be found within the respective room directories.
+Some room folders also hold supporting files such as exploit scripts and scan output. All walkthroughs are for educational purposes only: follow ethical hacking principles and the TryHackMe terms.
 
-All walkthroughs are for educational purposes only. Always adhere to ethical hacking principles and the terms and conditions of the TryHackMe platform.
-
----
-
-## Contributing
-
-Contributions are welcome. To add a walkthrough or improve an existing one, follow the standard GitHub workflow: fork the repository, make your changes, and submit a pull request.
-
----
-
-*This collection is maintained by [Esther7171](https://github.com/Esther7171).*
+*Maintained by [Esther7171](https://github.com/Esther7171).*
