@@ -2,6 +2,12 @@
 
 <div align="center">Two strangers. One conversation. One profile they never meant to reveal.</div> <br> <div align="center"> <img width="200" height="200" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/b4133583-8dc8-4bb0-96c2-826a779f63f2"/> </div>
 
+### Task 1 OSINT. Hacker Holidays: Day 6
+#### What is the flag?
+```
+THM{S3creT_Pr0fil3_H4s_b33n_Ident1fi3d}
+```
+
 ## INTRO TO LAB
 
 Overheard at Breakfast is an easy TryHackMe OSINT challenge where the objective is to identify a hidden online profile from a conversation between two strangers.
@@ -67,7 +73,5 @@ The decoded value gave me the flag:
 ```text
 THM{S3creT_Pr0fil3_H4s_b33n_Ident1fi3d}
 ```
-
-<div align="center"> <img alt="any" src="https://github.com/user-attachments/assets/0f954297-d64c-444b-9814-856eb07e24" /> </div>
 
 With that, I had completed the **Overheard at Breakfast** TryHackMe OSINT challenge.
