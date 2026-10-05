@@ -6,7 +6,7 @@
 <img src="https://github.com/user-attachments/assets/3a3b65e4-3de2-44be-aa41-86db563c6f0f" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Hacking the server
 Start at port 1337 and enumerate your way.

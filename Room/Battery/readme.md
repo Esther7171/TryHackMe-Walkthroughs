@@ -5,7 +5,7 @@
 <img src="https://github.com/user-attachments/assets/044f2d97-3571-49d0-811f-cb13b31d4293" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. battery
 

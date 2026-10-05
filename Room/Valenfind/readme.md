@@ -4,7 +4,7 @@
   <img width="200" height="200" alt="valenfind" src="https://github.com/user-attachments/assets/d23cfbae-614f-460d-8dd1-a55fa058c1ca" />
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 
 ## Introduction
 

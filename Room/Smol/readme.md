@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/5a41a6b8-182b-4820-b171-a327310003d5" heigh="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 Step 1: Recoonance
 

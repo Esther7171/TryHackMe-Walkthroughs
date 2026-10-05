@@ -1,6 +1,6 @@
 # <div align="center">[Annie  — TryHackMe Flags](https://tryhackme.com/r/room/annie)</div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## <div align="center">   Linux ● Medium </div>
 <div align="center">

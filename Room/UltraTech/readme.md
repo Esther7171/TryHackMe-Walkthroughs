@@ -5,7 +5,7 @@
 <img src="https://github.com/user-attachments/assets/1a97d356-6e8b-43f4-b081-aa85419c75d5da" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Deploy the machine
 ```

@@ -4,7 +4,7 @@
 <img src="https://github.com/user-attachments/assets/0d678302-ea56-43cf-af22-0a868e76a63e" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Capture the flags
 No hints. Hack it. Don't give up if you get stuck, enumerate harder

@@ -4,7 +4,7 @@
   <img width="200" height="200" alt="5a1f33f79fce3569a2bc247468713c93" src="https://github.com/user-attachments/assets/80e31da8-cfd7-4ba4-b29d-f5dee5544c5c" />
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ## Task 1. Introduction
 Use this challenge to test your mastery of the skills you have acquired in the Network Security module. All the questions in this challenge can be solved using only nmap, telnet, and hydra.

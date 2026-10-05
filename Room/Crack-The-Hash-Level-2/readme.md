@@ -4,7 +4,7 @@
 <img src="https://github.com/user-attachments/assets/9e810060-24db-4072-96bb-ab25f9484040" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 
 ## Task 1. Info Introduction
 Password cracking is part of the penetration tester job but is rarely taught on challenges platforms. In this room you will learn to how to crack hashes, identify hash types, create custom wordlists, find specific wordlists, create mutations rules, etc.

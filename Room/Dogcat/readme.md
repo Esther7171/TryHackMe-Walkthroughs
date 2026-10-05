@@ -3,7 +3,7 @@
  <img src="https://github.com/user-attachments/assets/891b7488-99a8-4248-a5c7-24224ff1728d" height="150"></img> 
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 # Flags
 * ## What is flag 1?

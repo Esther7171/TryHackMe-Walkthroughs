@@ -4,7 +4,7 @@
 <img src="https://github.com/user-attachments/assets/b124b308-7bdd-408d-a13b-6e9218c4aa2d" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 ### Task 1. Looking Glass
 Climb through the Looking Glass and capture the flags.

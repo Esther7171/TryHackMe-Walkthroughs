@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/6a1bd7f0-2c17-4f11-8fb3-04d8eaa712c9" height="200"></img>
 </div>
 
-<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-orange" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
+<div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
 This is a classic boot2root CTF-style room. Make sure to get all the flags.
 
