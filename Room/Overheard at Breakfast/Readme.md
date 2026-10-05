@@ -73,5 +73,6 @@ The decoded value gave me the flag:
 ```text
 THM{S3creT_Pr0fil3_H4s_b33n_Ident1fi3d}
 ```
+![Uploading image.png…]()
 
 With that, I had completed the **Overheard at Breakfast** TryHackMe OSINT challenge.
