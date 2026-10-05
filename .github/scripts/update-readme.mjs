@@ -8,8 +8,8 @@
 //   <div align="center"> <img width="200" height="200" alt="Room Name" src="..."/> </div>
 //   <div align="center"> <img alt="Difficulty: Easy" src=".../badge/Difficulty-Easy-..." /> <img alt="OS: Linux" src=".../badge/OS-Linux-blue" /> </div>
 //
-// From it come the row's name, difficulty, OS (both shown as badges) and description; the row
-// links to the write-up itself. Topics: what is already written in the table is kept; an empty cell is filled from
+// From it come the row's name, difficulty (shown as coloured text), OS and description; the
+// row links to the write-up itself. Topics: what is already written in the table is kept; an empty cell is filled from
 // the techniques the write-up names. `only flag` is added while a room holds answers only and
 // leaves by itself once the walkthrough is written.
 import fs from 'node:fs';
@@ -21,10 +21,10 @@ const enc = s => s.split('/').map(encodeURIComponent).join('/');
 const cell = s => String(s || '').replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
 const unshield = s => decodeURIComponent(s.replace(/--/g, '\u0000').replace(/__/g, '\u0001').replace(/_/g, ' ').replace(/\u0000/g, '-').replace(/\u0001/g, '_'));
 
-// difficulty and OS are shown in the table as the same badges the rooms carry
-const DIFF_COLOR = { easy: 'brightgreen', medium: 'yellow', hard: 'red', insane: 'purple', info: 'lightgrey' };
-const shield = s => encodeURIComponent(s).replace(/-/g, '--').replace(/_/g, '__');
-const pill = (text, color) => (text ? `![${text}](https://img.shields.io/badge/${shield(text)}-${color})` : '');
+// Difficulty is shown as coloured text (GitHub renders colour only through its math syntax);
+// the OS as plain text. Badges in every row were loud to read.
+const DIFF_COLOR = { easy: '#3fb950', medium: '#d29922', hard: '#f85149', insane: '#a371f7', info: '#8b949e' };
+const tint = text => (text ? '${\\color{' + (DIFF_COLOR[text.toLowerCase()] || '#8b949e') + '}\\textsf{' + text.replace(/[^A-Za-z0-9 ]/g, '') + '}}$' : '');
 
 const TOPICS = [
   ['SQL injection', /sql ?injection|sqlmap|\bsqli\b/i], ['XSS', /\bxss\b|cross.site scripting/i], ['LFI', /\blfi\b|local file inclusion/i],
@@ -91,7 +91,7 @@ for (const folder of fs.readdirSync('Room')) {
   const thin = strip(body).length < 410;
   const kept = (old.get(folder) || {}).topics || '';
   const topics = [kept || topicsOf(body), thin ? '`only flag`' : ''].filter(Boolean).join(' ');
-  rooms.push({ sort: name, row: `| [${cell(name)}](./Room/${enc(folder)}/${file}) | ${pill(badge('Difficulty'), DIFF_COLOR[badge('Difficulty').toLowerCase()] || 'blue')} | ${pill(badge('OS'), 'blue')} | ${cell(desc)} | ${cell(topics)} |`, difficulty: badge('Difficulty').toLowerCase() });
+  rooms.push({ sort: name, row: `| [${cell(name)}](./Room/${enc(folder)}/${file}) | ${tint(badge('Difficulty'))} | ${cell(badge('OS'))} | ${cell(desc)} | ${cell(topics)} |`, difficulty: badge('Difficulty').toLowerCase() });
 }
 rooms.sort((a, b) => a.sort.localeCompare(b.sort, 'en', { sensitivity: 'base', numeric: true }));
 
