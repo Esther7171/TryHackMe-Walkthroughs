@@ -1,6 +1,6 @@
 # <div align="center">[Watcher - TryHackMe writeup](https://tryhackme.com/r/room/watcher)</div>
 
-<div align="center">A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques.</div>
+<div align="center">A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques</div>
 
 <div align="center"> <img width="200" height="200" alt="Watcher" src="https://github.com/user-attachments/assets/7d7d90e8-a152-4829-bb39-6fb14cab3727"/> </div>
 

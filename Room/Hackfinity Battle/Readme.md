@@ -1,6 +1,6 @@
 # <div align="center">[Hackfinity Battle - TryHackMe writeup](https://tryhackme.com/room/HackfinityBattle)</div>
 
-<div align="center">Welcome to the Hackfinity Battle CTF!></div>
+<div align="center">Welcome to the Hackfinity Battle CTF!</div>
 
 <div align="center"> <img width="200" height="200" alt="Hackfinity Battle" src="https://github.com/user-attachments/assets/8596f21b-03ab-4df5-ae28-06126bd51190"/> </div>
 

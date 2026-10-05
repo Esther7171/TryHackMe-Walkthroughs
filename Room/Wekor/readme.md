@@ -1,6 +1,6 @@
 # <div align="center">[Wekor - TryHackMe writeup](https://tryhackme.com/r/room/wekorra)</div>
 
-<div align="center">CTF challenge involving Sqli , WordPress , vhost enumeration and recognizing internal services ;)</div>
+<div align="center">CTF challenge involving SQLi, WordPress, vhost enumeration and recognizing internal services.</div>
 
 <div align="center"> <img width="200" height="200" alt="Wekor" src="https://github.com/user-attachments/assets/7e5e0c2c-05fe-4829-9c54-41146e8b1ce9"/> </div>
 

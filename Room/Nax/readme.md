@@ -1,6 +1,6 @@
 # <div align="center">[Nax - TryHackMe writeup](https://tryhackme.com/r/room/nax)</div>
 
-<div align="center">Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution.</div>
+<div align="center">Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an authenticated user to execute remote code execution.</div>
 
 <div align="center"> <img width="200" height="200" alt="Nax" src="https://github.com/user-attachments/assets/7f2bec20-9377-4463-abf7-12602b548fc3"/> </div>
 

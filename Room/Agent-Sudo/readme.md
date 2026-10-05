@@ -1,6 +1,6 @@
 # <div align="center">[Agent Sudo - TryHackMe writeup](https://tryhackme.com/r/room/agentsudoctf)</div>
 
-<div align="center">You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth.</div>
+<div align="center">You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth</div>
 
 <div align="center"> <img width="200" height="200" alt="Agent Sudo" src="https://github.com/user-attachments/assets/4af38d66-6dd1-41ae-9086-7f17ffda540b"/> </div>
 
