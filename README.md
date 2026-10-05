@@ -69,11 +69,11 @@ Covers web exploitation, CVE research, privilege escalation, container escapes, 
 | Room | Difficulty | Platform | Technique |
 |---|:---:|:---:|---|
 | [Blue](./Room/Blue/readme.md) | Easy | Windows | EternalBlue (MS17-010) → Metasploit shell → hash cracking |
-| [Dogcat](./Room/Dogcat/readme.md) | Medium | Linux | LFI → log poisoning → RCE → Docker container escape `only flag` |
+| [Dogcat](./Room/Dogcat/readme.md) | Medium | Linux | LFI → log poisoning → RCE → Docker container escape |
 | [The Marketplace](./Room/The-Marketplace/readme.md) | Medium | Linux | Stored XSS → cookie theft → SQL injection → Docker socket escalation |
 | [ContainMe](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/ContainMe/Readme.md#containme---tryhackme-walkthrough) | Medium | Linux | SSH pivot → multi-hop container escape across internal network |
 | [Erlang/OTP SSH CVE-2025-32433](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Erlang-OTP%20SSH_CVE-2025-32433#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Pre-auth RCE in Erlang SSH: 2025 CVE in a lab environment |
-| [Year of the Dog](./Room/Year-of-the-Dog/readme.md) | Hard | Linux | Blind SQL injection → Gitea code execution → root `only flag` |
+| [Year of the Dog](./Room/Year-of-the-Dog/readme.md) | Hard | Linux | Blind SQL injection → Gitea code execution → root |
 
 ---
 
