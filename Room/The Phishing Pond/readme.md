@@ -6,18 +6,18 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 
-# Room Introduction
+## Room Introduction
 The Phishing Pond is designed to build practical phishing-detection skills through a set of real-world email examples. The room teaches how attackers craft deceptive messages and which red flags to look for when reviewing suspicious emails. It focuses on the most common phishing tactics, including urgency in subject lines, look-alike domains, display-name impersonation, malicious attachments, compromised sender accounts, and offers that attempt to gather personal or financial information.
 
 The goal of the lab is simple. Review each email, decide whether it is legitimate or a phishing attempt, and identify the indicators that reveal the attacker’s intent. At the end of the challenge, the final flag is provided once all emails are correctly classified.
 
-# Starting the Phishing Analysis
+## Starting the Phishing Analysis
 
 <img width="987" height="958" alt="begin challange" src="https://github.com/user-attachments/assets/efdddb7d-f62e-4fe8-acd4-2a745ae2a56c" />
 
 I reached the main interface of the room and began working through the emails. Let’s dive into Level 1.
 
-## Level 1
+### Level 1
 
 <img width="958" height="495" alt="image" src="https://github.com/user-attachments/assets/5775665f-cb55-4375-98de-acf08f305c1c" />
 
@@ -25,25 +25,25 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: It impersonates an executive and requests an urgent wire transfer.
 
-## Level 2
+### Level 2
 
 <img width="962" height="430" alt="image" src="https://github.com/user-attachments/assets/6796b2bc-4e63-45d8-bbd3-eccdd3d2770c" />
 
 > ### This is not a phishing email.
 
-## Level 3
+### Level 3
 
 <img width="956" height="420" alt="image" src="https://github.com/user-attachments/assets/2b077b86-4741-4542-8ea3-84a34d412947" />
 
 > ### This is not a phishing email.
 
-## Level 4
+### Level 4
 
 <img width="954" height="428" alt="image" src="https://github.com/user-attachments/assets/eb9dad08-4538-49cf-bce1-4efa1d6f746a" />
 
 > ### This is not a phishing email.
 
-## Level 5
+### Level 5
 
 <img width="956" height="493" alt="image" src="https://github.com/user-attachments/assets/96e1d662-2e74-4ebf-83bc-7e94e828c98a" />
 
@@ -51,7 +51,7 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: Contains an attachment and asks to enable macros.
 
-## Level 6
+### Level 6
 
 <img width="956" height="494" alt="image" src="https://github.com/user-attachments/assets/a25b7855-20dd-41dc-b560-4bd4d35c1f48" />
 
@@ -59,7 +59,7 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: Contains a suspicious third-party survey link.
 
-## Level 7
+### Level 7
 
 <img width="943" height="497" alt="image" src="https://github.com/user-attachments/assets/01407274-5a9c-461a-9977-7a8c194ed8b4" />
 
@@ -67,7 +67,7 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: Offers require sensitive personal or banking details.
 
-## Level 8
+### Level 8
 
 <img width="965" height="492" alt="image" src="https://github.com/user-attachments/assets/6a5760b9-7289-4c98-9c5b-148406a41e79" />
 
@@ -75,7 +75,7 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: Redirects to a malicious password rest page.
 
-## Level 9
+### Level 9
 
 <img width="967" height="494" alt="image" src="https://github.com/user-attachments/assets/56789249-b746-4a23-9d63-2e566452e4f3" />
 
@@ -83,7 +83,7 @@ I reached the main interface of the room and began working through the emails. L
 >
 > ### Reason: Link uses a deceptive to mimic a payment portal.
 
-## Level 10
+### Level 10
 
 <img width="962" height="446" alt="image" src="https://github.com/user-attachments/assets/190f1b8d-5ec0-4f8d-b7cc-4dbc66b5df86" />
 
@@ -94,7 +94,7 @@ I reached the main interface of the room and began working through the emails. L
 
 <img width="957" height="485" alt="image" src="https://github.com/user-attachments/assets/c5db35c3-4654-408e-9db2-19ca504e34f9" />
 
-## Flag
+### Flag
 ```
 THM{i_phish_you_not}
 ```

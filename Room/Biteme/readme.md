@@ -6,12 +6,12 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Task 1. Take a bite
-### What is the user flag?
+## Task 1. Take a bite
+#### What is the user flag?
 ```
 THM{6fbf1fb7241dac060cd3abba70c33070}
 ```
-### What is the root flag?
+#### What is the root flag?
 ```
 THM{0e355b5c907ef7741f40f4a41cc6678d}
 ```

@@ -12,16 +12,16 @@ This room will take upto 5 minutes to fully boot , please be patient.
 
 Please use rate limiters while brute-forcing.
 
-# Task 1. Capture the Flag
-## What is the user flag?
+## Task 1. Capture the Flag
+### What is the user flag?
 ```
 THM{l0n6_l1v3_7h3_qu33n}
 ```
-## What is the root flag?
+### What is the root flag?
 ```
 THM{l0nd0n_br1d63_p47ch3d}
 ```
-## What is the password of charles?
+### What is the password of charles?
 ```
 thekingofengland
 ```

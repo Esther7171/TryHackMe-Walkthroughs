@@ -6,19 +6,19 @@
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. Challenge
+### Task 1. Challenge
 Part of Incognito 2.0 CTF
 
 Answer the questions below
-### user.txt
+#### user.txt
 ```
 d14def35ed0bd914c1c5881fa0fa8090
 ```
-### root.txt
+#### root.txt
 ```
 9dcb607e31348671de36b9eb7446cb59
 ```
-# St1p 1: Recconance
+## St1p 1: Recconance
 
 Let scan the Network:
 ```bash
@@ -154,7 +154,7 @@ Task Completed
 ```
 Ah ha! There’s an upload feature. Let’s start testing which types of files we can upload. `http://dev.incognito.com/secret/upload/`
 
-## Step 2: Exploitation
+### Step 2: Exploitation
 
 In start we saw the request carrying this:
 ```
@@ -205,10 +205,10 @@ bash: no job control in this shell
 www-data@incognito:/$ 
 ```
 
-# Step 3 : post exploitation
+## Step 3 : post exploitation
 We have 2 user `dev1` & `dve2` we dont permission to view dev1 so move to dev2 home directory to find usefull stuff
 
-## User flag.txt
+### User flag.txt
 ![image](https://github.com/user-attachments/assets/a35abe66-20d3-4644-8af1-6504651f1a46)
 
 Rather than wasting time focusing on upgrading privillage, so for that im transfering linpeas.sh form my system to this maching in /dev/shm folder using python server

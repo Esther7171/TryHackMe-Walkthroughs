@@ -6,17 +6,17 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. battery
+### Task 1. battery
 
 Electricity bill portal has been hacked many times in the past , so we have fired one of the employee from the security team , As a new recruit you need to work like a hacker to find the loop holes in the portal and gain root access to the server .
 
 Hope you will enjoy the journey ! 
 
-### Base Flag : 
+#### Base Flag : 
 ```
 THM{6f7e4dd134e19af144c88e4fe46c67ea}
 ```
-### User Flag :
+#### User Flag :
 ```
 THM{20c1d18791a246001f5df7867d4e6bf5}
 ```
@@ -25,7 +25,7 @@ Root Flag :
 THM{db12b4451d5e70e2a177880ecfe3428d}
 ```
 
-# Writeup
+## Writeup
 
 * ```nmap -sSCV <IP>```
 * ```gobuster dir -u http://<IP> -w /usr/share/dirb/wordlists /common.txt -x txt,php```

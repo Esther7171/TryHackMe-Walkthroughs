@@ -6,22 +6,22 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. Deploy the machine and get the flags!
-### What is the user flag?
+### Task 1. Deploy the machine and get the flags!
+#### What is the user flag?
 ```
 THM{fdc8cd4cff2c19e0d1022e78481ddf36}
 ```
-### What is the root flag?
+#### What is the root flag?
 ```
 THM{b91ea3e8285157eaf173d88d0a73ed5a}
 ```
 
 ---
-## Introduction
+### Introduction
 
 Hijack is a beginner-friendly [TryHackMe](https://tryhackme.com/dashboard) room focused on misconfigurations, session hijacking, command injection, and Linux privilege escalation. In this walkthrough, I’ll cover the complete path from initial enumeration to root access.
 
-# Initial Enumeration
+## Initial Enumeration
 
 I started with an Nmap scan to identify the running services and get a better understanding of the target surface.
 
@@ -106,7 +106,7 @@ ftp creds :
 ftpuser:W3stV1rg1n14M0un741nM4m4
 ```
 
-# Credential Discovery
+## Credential Discovery
 
 Using the credentials discovered from the NFS share, I logged into the FTP service.
 
@@ -178,7 +178,7 @@ The file contained multiple passwords, which looked potentially useful for furth
 	<img width="401" height="199" alt="image" src="https://github.com/user-attachments/assets/fee27f94-abb8-49a9-996d-1285742e9a0c" />
 </div>
 
-## Web Enumeration
+### Web Enumeration
 
 After collecting the FTP password list, I moved toward the web application running on port 80.
 
@@ -318,7 +318,7 @@ Using the generated cookie, I was able to access the admin panel successfully.
 	<img width="784" height="179" alt="image" src="https://github.com/user-attachments/assets/10aa672c-458d-4b26-bd5e-b608b02bb804" />
 </div>
 
-## Initial Access
+### Initial Access
 
 With the valid admin session cookie generated earlier, I went back to the application and intercepted the request to the administration panel using Burp Suite.
 
@@ -409,7 +409,7 @@ $dbname = "hijack";
 	<img width="733" height="372" alt="image" src="https://github.com/user-attachments/assets/3a148004-9146-44cc-a543-58ee05b61367" />
 </div>
 
-# Lateral Movement
+## Lateral Movement
 
 After finding the credentials inside `config.php`, I decided to test whether the same credentials were reused for SSH access.
 
@@ -441,7 +441,7 @@ cat user.txt
 THM{fdc8cd4cff2c19e0d1022e78481ddf36}
 ```
 
-# Privilege Escalation Enumeration
+## Privilege Escalation Enumeration
 
 After getting access as the `rick` user, I started checking for possible privilege escalation vectors.
 
@@ -523,7 +523,7 @@ The exploit worked successfully and spawned a root shell.
 	<img width="1303" height="164" alt="image" src="https://github.com/user-attachments/assets/efb9896e-09d1-4750-98e2-5e58616472ce" />
 </div>
 
-# Root Access
+## Root Access
 
 Now operating as root, I captured the final flag.
 
@@ -542,7 +542,7 @@ cat /root/root.txt
 THM{b91ea3e8285157eaf173d88d0a73ed5a}
 ```
 
-# Conclusion
+## Conclusion
 
 Hijack was a fun machine focused on misconfigurations, session hijacking, command injection, and privilege escalation through `LD_LIBRARY_PATH` abuse. Every step connected nicely and made the enumeration process feel realistic and practical.
 

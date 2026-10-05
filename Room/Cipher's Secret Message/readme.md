@@ -6,24 +6,24 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 
-## Task 1. Crypto  Cipher's Secret Message
+### Task 1. Crypto  Cipher's Secret Message
 
 <img src='https://github.com/user-attachments/assets/2c164f29-51ed-4907-97c6-ef8238a82b8c' />
 
 Answer the questions below
 
-### What is the flag?
+#### What is the flag?
 
 ```
 THM{a_sm4ll_crypt0_message_to_st4rt_with_THM_cracks}
 ```
 
-# Writeup
+## Writeup
 
 Decrypt a custom Caesar cipher with Python and uncover the flag**  
 Reverse a Caesar-style encryption by analyzing Python code in this beginner-friendly TryHackMe challenge.
 
-## 🧩 Overview
+### 🧩 Overview
 
 In this TryHackMe room, **Cipher's Secret Message**, you’re handed a jumbled string and the encryption function that produced it. Your mission? **Figure out how the cipher works**, reverse it, and grab the flag.
 
@@ -37,7 +37,7 @@ If you’re just getting into **cryptography CTFs**, this is a perfect warm-up.
 
 ---
 
-## 📜 The Encrypted Message
+### 📜 The Encrypted Message
 
 Here’s the message you need to decode:
 
@@ -51,7 +51,7 @@ Looks messy, right? But there’s a pattern hiding in there — let’s break it
 
 ---
 
-## 🔍 The Encryption Logic
+### 🔍 The Encryption Logic
 
 You’re given the Python function that was used to scramble the original flag. Here's what it looks like:
 
@@ -64,7 +64,7 @@ def enc(plaintext):
     )
 ````
 
-### 🧠 How it Works:
+#### 🧠 How it Works:
 
 * The code loops through each character in the plaintext along with its **index `i`**.
 * If the character is a **letter**, it gets **shifted forward by `i` positions** in the alphabet.
@@ -75,7 +75,7 @@ In short: it’s a **position-based Caesar cipher** — the further into the str
 
 ---
 
-## 🔓 The Decryption Script
+### 🔓 The Decryption Script
 
 To crack this, we just need to reverse the logic: instead of shifting letters forward by their index, we’ll **shift them backward**.
 
@@ -98,7 +98,7 @@ print(dec(cipher))
 ```
 
 
-## 🧾 Output
+### 🧾 Output
 
 When you run the script, you’ll get this decoded message:
 
@@ -108,7 +108,7 @@ a_sm4ll_crypt0_message_to_st4rt_with_THM_cracks
 
 Nice! That’s the original string before encryption.
 
-## 🏁 Final Flag
+### 🏁 Final Flag
 
 To complete the challenge, wrap the decrypted message in `THM{}`:
 
@@ -119,7 +119,7 @@ THM{a_sm4ll_crypt0_message_to_st4rt_with_THM_cracks}
 Submit this on TryHackMe, and you’re done ✅
 
 
-## ✅ Summary
+### ✅ Summary
 
 This was a simple but fun challenge that walked through:
 
@@ -129,7 +129,7 @@ This was a simple but fun challenge that walked through:
 
 Great for practicing **basic cryptanalysis**, string manipulation, and Python logic.
 
-## 💡 Pro Tips for CTFs
+### 💡 Pro Tips for CTFs
 
 * Caesar-style ciphers with **variable shifts** show up often in beginner CTFs.
 * Use Python’s `ord()` and `chr()` to convert between letters and numbers.
@@ -138,7 +138,7 @@ Great for practicing **basic cryptanalysis**, string manipulation, and Python lo
 The more you see these patterns, the faster you'll crack future challenges.
 
 
-## 💬 Let’s Connect!
+### 💬 Let’s Connect!
 
 If you found this helpful, feel free to follow me for more hands-on walkthroughs in:
 

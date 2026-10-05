@@ -6,11 +6,11 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Task 1. HaskHell
+## Task 1. HaskHell
 
 Show your professor that his PhD isn't in security.
 
-## Get the flag in the user.txt file.
+### Get the flag in the user.txt file.
 ```
 flag{academic_dishonesty}
 ```
@@ -38,7 +38,7 @@ chmod 600 id_rsa
 ssh -i id_rsa prof@<IP>
 cat /home/prof/user.txt
 ```
-## Obtain the flag in root.txt
+### Obtain the flag in root.txt
 ```
 flag{im_purely_functional}
 ```

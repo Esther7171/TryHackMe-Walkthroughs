@@ -6,7 +6,7 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Task 1. Watcher
+## Task 1. Watcher
 
 Work your way through the machine and try to find all the flags you can!
 

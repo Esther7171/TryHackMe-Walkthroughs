@@ -6,26 +6,26 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Task 1. Find the password!
+## Task 1. Find the password!
 In this challenge, you are asked to solve a simple reversing solution. Download and analyze the binary to discover the password.
 
 There may be anti-reversing measures in place!
 
-## What is the password?
+### What is the password?
 ```
 THM{2@@25$gfsT&@L}
 ```
 
 ---
 
-## Introduction
+### Introduction
 
 **0x41haz** is a simple reversing challenge on TryHackMe that focuses on analyzing a Linux ELF binary to recover a hardcoded password. The task is minimal by design, with a small anti-analysis trick that forces you to slow down and inspect the binary properly.
 
 * **Room link**: [https://tryhackme.com/room/0x41haz](https://tryhackme.com/room/0x41haz)
 
 
-## Downloading the Binary
+### Downloading the Binary
 
 To get started with **0x41haz**, I first downloaded the task file directly from the room. This can be done by clicking the blue download button provided in Task 1.
 
@@ -40,7 +40,7 @@ Once the file was on my system, the first thing I did was identify what kind of 
 
 At this point, it was clear that the file was an ELF 64-bit binary. However, the output also showed something unusual: `MSB *unknown arch 0x3e00*`. That immediately stood out and explained why the binary wouldn’t execute in its current state.
 
-## Fixing the Binary Header
+### Fixing the Binary Header
 
 The issue turned out to be related to the ELF header. With some quick research and reference material, I found that the problem could be resolved by patching the sixth byte in the file header. Specifically, changing its value from `0x02` to `0x01`.
 
@@ -67,7 +67,7 @@ After making the change, I ran the `file` command again to verify whether the bi
 
 The output now looked clean. The binary was properly identified as a 64-bit x86-64 ELF executable.
 
-## Executing the Program
+### Executing the Program
 
 With the header fixed, I copied the binary to a simpler name, granted execution permissions, and ran it.
 
@@ -85,7 +85,7 @@ At runtime, the program prompted me for a password.
 
 That confirmed this was a straightforward reversing challenge, so the next step was to analyze the binary to understand how the password check was implemented.
 
-## Reversing with Radare2
+### Reversing with Radare2
 
 For analysis, I used **radare2**, a command-line reverse engineering framework that I personally find efficient for quick static analysis.
 
@@ -134,7 +134,7 @@ While reviewing the disassembly, a string pattern stood out during the password 
 2@@25$gfsT&@L
 ```
 
-## Retrieving the Flag
+### Retrieving the Flag
 
 With that value identified, I executed the binary again and supplied it as the password.
 
@@ -144,12 +144,12 @@ With that value identified, I executed the binary again and supplied it as the p
 
 The program accepted the input and returned the flag.
 
-### What is the password?
+#### What is the password?
 
 ```
 THM{2@@25$gfsT&@L}
 ```
-## Conclusion
+### Conclusion
 
 This was a straightforward reversing challenge with a small twist at the start. Fixing the binary header and analyzing the password check was enough to reach the flag without overcomplicating things.
 

@@ -6,9 +6,9 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Task 1. Deploy your first machine 
+## Task 1. Deploy your first machine 
 
-## What is the flag text shown on website of the machine you deployed on this task?
+### What is the flag text shown on website of the machine you deployed on this task?
 ```
 flag{connection_verified}
 ```

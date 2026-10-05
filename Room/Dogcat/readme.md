@@ -6,7 +6,7 @@
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-# Flags
+## Flags
 * ## What is flag 1?
 ```
 THM{Th1s_1s_N0t_4_Catdog_ab67edfa}

