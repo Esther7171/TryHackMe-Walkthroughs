@@ -1,5 +1,7 @@
 # <div align="center">mKingdom - TryHackMe writeup</div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 Beginner-friendly box inspired by a certain mustache man.
 
 

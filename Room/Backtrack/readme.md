@@ -1,5 +1,7 @@
 # <div align="center">Backtrack - TryHackMe writeup</div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ## Initial Reconnaissance
 I started with a standard nmap scan to enumerate services and versions on the target.
 

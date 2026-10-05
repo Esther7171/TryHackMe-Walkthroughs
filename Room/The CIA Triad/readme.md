@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="The CIA Triad" src="https://github.com/user-attachments/assets/1c7c9462-d14b-4c23-b72a-970e727b4fd1"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ### Task 1. Introduction
 
 #### I am ready to start!

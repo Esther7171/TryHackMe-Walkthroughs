@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="Opacity" src="https://github.com/user-attachments/assets/afa6e290-e01f-4b51-b358-461a1e94ee0c"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ### Task 1. Opacity
 
 Opacity is an easy machine that can help you in the penetration testing learning process.

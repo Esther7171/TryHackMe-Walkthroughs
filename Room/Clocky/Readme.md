@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="Clocky" src="https://github.com/user-attachments/assets/6de5dbc0-add7-45c2-ab71-9bbccab2459d"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ## Introduction
 <img width="1039" height="315" alt="fb credt" src="https://github.com/user-attachments/assets/2ff5e1bd-0407-4fbe-9593-bd551f19579a" />
 <img width="593" height="114" alt="host code" src="https://github.com/user-attachments/assets/4e69c953-c2da-4d01-9897-53bc5fc6bbac" />

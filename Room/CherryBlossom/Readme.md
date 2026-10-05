@@ -2,6 +2,8 @@
 
 <div align="center">Boot-to-root with emphasis on crypto and password cracking.</div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 Initial Recconnace
 
 starting with nmap scan

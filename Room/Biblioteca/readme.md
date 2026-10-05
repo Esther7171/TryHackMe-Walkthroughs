@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="Biblioteca" src="https://github.com/user-attachments/assets/5054da5f-60f3-4c55-ad89-fff09f86721e"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ### Task 1. What is the user and root flag?
 
 ### What is the user flag?

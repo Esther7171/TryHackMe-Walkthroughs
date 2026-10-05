@@ -34,8 +34,7 @@ Every writeup opens the same way: the room name linked to the lab on TryHackMe, 
 | Easy rooms | 83 |
 | Medium rooms | 36 |
 | Hard rooms | 8 |
-| Info rooms | 3 |
-| Not yet rated | 13 |
+| Info rooms | 16 |
 | Total walkthroughs | 143 |
 | CVEs referenced | 125 |
 | Platforms | Linux, Windows, Web |
@@ -148,11 +147,11 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Annie](./Room/Annie/readme.md) | Medium | Linux | Remote access comes in different flavors | AnyDesk 5.5.2 – Remote Code Execution `CVE-2020-13160` |
 | [Anonforce](./Room/Anonforce/readme.md) | Easy | Linux | boot2root machine for FIT and bsides guatemala CTF | CTF |
 | [Archangel](./Room/Archangel/readme.md) | Easy | Linux | Boot2root, Web exploitation, Privilege escalation, LFI | CTF |
-| [Backtrack](./Room/Backtrack/readme.md) |  |  |  |  |
-| [BankGPT](./Room/BankGPT/readme.md) |  |  | A customer service assistant used by a banking system. | `only flag` |
+| [Backtrack](./Room/Backtrack/readme.md) | Info |  |  |  |
+| [BankGPT](./Room/BankGPT/readme.md) | Info |  | A customer service assistant used by a banking system. | `only flag` |
 | [Basic-Pentesting](./Room/Basic-Pentesting/readme.md) | Easy | Linux | This is a machine that allows you to practise web app hacking and privilege escalation | `CTF` |
 | [Battery](./Room/Battery/readme.md) | Medium | Linux | CTF designed by CTF lover for CTF lovers | `Re-Registration Attack` `XML External Entity` `Sudo Abuse` |
-| [Biblioteca](./Room/Biblioteca/readme.md) |  |  | Shhh. Be very very quiet, no shouting inside the biblioteca. | `only flag` |
+| [Biblioteca](./Room/Biblioteca/readme.md) | Info |  | Shhh. Be very very quiet, no shouting inside the biblioteca. | `only flag` |
 | [Biteme](./Room/Biteme/readme.md) | Medium | Linux | Stay out of my server! | CTF `only flag` |
 | [Blue](./Room/Blue/readme.md) | Easy | Windows | Windows Exploitation Basics - Easy | `MS17-010` EternalBlue SMB Remote Windows Kernel Pool Corruption |
 | [Blueprint](./Room/Blueprint/readme.md) | Easy | Windows | Hack into this Windows machine and escalate your privileges to Administrator. | `osCommerce 2.3.4.1 - Remote Code Execution` `only flag` |
@@ -164,11 +163,11 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Capture!](./Room/Capture!/readme.md) | Easy | Web | Can you bypass the login form? | `Authentication Bypass` |
 | [Careers in Cyber](./Room/Careers-in-Cyber/readme.md) | Info |  | Learn about the different careers in cyber security | `Guide` |
 | [Cheese CTF](./Room/Cheese-CTF/readme.md) | Easy | Linux | Inspired by the great cheese talk of THM! | CTF `LFI` `RCE` `SUID` |
-| [CherryBlossom](./Room/CherryBlossom/Readme.md) |  |  | Boot-to-root with emphasis on crypto and password cracking. |  |
+| [CherryBlossom](./Room/CherryBlossom/Readme.md) | Info |  | Boot-to-root with emphasis on crypto and password cracking. |  |
 | [Chocolate_Factory](./Room/Chocolate_Factory/readme.md) | Easy | Linux | A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory! | `CTF` |
 | [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/readme.md) | Medium | Linux | A basic steganography and cryptography challenge room based on the Cicada 3301 challenges | `Cryptography` |
 | [Cipher's Secret Message](./Room/Cipher's%20Secret%20Message/readme.md) | Easy | Any | Sharpen your cryptography skills by analyzing code to get the flag. | `Caesar Decryption` `Crypto Challenge` |
-| [Clocky](./Room/Clocky/Readme.md) |  |  | Time is an illusion. |  |
+| [Clocky](./Room/Clocky/Readme.md) | Info |  | Time is an illusion. |  |
 | [CMesS](./Room/CMesS/readme.md) | Medium | Linux | Can you root this Gila CMS box? | `Gila CMS 1.10.9` |
 | [Compiled](./Room/Compiled/Readme.md) | Easy | Any | Strings can only help you so far. | `binary` `only flag` |
 | [ContainMe](./Room/ContainMe/Readme.md) | Medium | Linux | Where am I ? Catch me | `Container Escape` |
@@ -203,11 +202,11 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [IDOR](./Room/IDOR/Readme.md) | Easy | Web | Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have. | `Learn idor` |
 | [Ignite](./Room/Ignite/readme.md) | Easy | Linux | A new start-up has a few issues with their web server | `CMS` `RCE` `only flag` |
 | [Inside a Computer System](./Room/Inside%20a%20Computer%20System/Readme.md) | Info | Web | This room covers the basic components of a computer system. | `Info` |
-| [Introductory Networking](./Room/Introductory%20Networking/Readme.md) |  |  | An introduction to networking theory and basic networking tools |  |
+| [Introductory Networking](./Room/Introductory%20Networking/Readme.md) | Info |  | An introduction to networking theory and basic networking tools |  |
 | [Jacob the Boss](./Room/Jacob%20the%20Boss/Readme.md) | Easy | Linux | Find a way in and learn a little more. | `CVE-2010-0738` |
 | [Kenobi](./Room/Kenobi/readme.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | `ProFtpd` `SUID` |
 | [Kiba](./Room/Kiba/readme.md) | Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | `CVE-2019-7609` |
-| [Lian Yu](./Room/Lian_Yu/Readme.md) |  |  | A beginner level security challenge |  |
+| [Lian Yu](./Room/Lian_Yu/Readme.md) | Info |  | A beginner level security challenge |  |
 | [Linux Shells](./Room/Linux%20Shells/readme.md) | Easy | Linux | Learn about scripting and the different types of Linux shells. | `Shell` |
 | [Lo-Fi](./Room/Lo-Fi/readme.md) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI` |
 | [Looking Glass](./Room/Looking-Glass/readme.md) | Medium | Linux | Step through the looking glass. A sequel to the Wonderland challenge room. | CTF |
@@ -219,14 +218,14 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Metasploit: Exploitation](./Room/Metasploit%E2%80%94%20Exploitation/Readme.md) | Easy | Linux | Using Metasploit for scanning, vulnerability assessment and exploitation. | `Metasploit` |
 | [Metasploit: Meterpreter](./Room/Metasploit%E2%80%94%20Meterpreter/Readme.md) | Easy | Linux | Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation. | `Metasploit` |
 | [Mindgames](./Room/Mindgames/readme.md) | Medium | Linux | Just a terrible idea... | `Python` `C` |
-| [mKingdom](./Room/mKingdom/readme.md) |  |  |  |  |
+| [mKingdom](./Room/mKingdom/readme.md) | Info |  |  |  |
 | [Mr Robot CTF](./Room/Mr-Robot-CTF/readme.md) | Medium | Linux | Based on the Mr. Robot show, can you root this box? | CTF |
 | [Nax](./Room/Nax/readme.md) | Medium | Linux | Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an authenticated user to execute remote code execution. | `CVE-2019-15949` `Metasploit` |
 | [Neighbour](./Room/Neighbour/Readme.md) | Easy | Web | Check out our new cloud service, Authentication Anywhere. Can you find other user's secrets? | `IDOR` |
 | [Net Sec Challenge](./Room/Net%20Sec%20Challenge/Readme.md) | Medium | Linux | Practice the skills you have learned in the Network Security module. | `nmap` `Hydra` `FTP` |
 | [Ninja Skills](./Room/Ninja%20Skills/readme.md) | Easy | Linux | Practise your Linux skills and complete the challenges. | `investigation` |
 | [Oh My WebServer](./Room/Oh-My-WebServer/readme.md) | Medium | Linux | Can you root me? | `CVE-2021-41773` |
-| [Opacity](./Room/Opacity/readme.md) |  |  | Opacity is a Boot2Root made for pentesters and cybersecurity enthusiasts. |  |
+| [Opacity](./Room/Opacity/readme.md) | Info |  | Opacity is a Boot2Root made for pentesters and cybersecurity enthusiasts. |  |
 | [Overheard at Breakfast](./Room/Overheard%20at%20Breakfast/Readme.md) | Easy |  | Two strangers. One conversation. One profile they never meant to reveal. |  |
 | [Pentesting Fundamentals](./Room/Pentesting%20Fundamentals/readme.md) | Easy | Any | Learn the important ethics and methodologies behind every pentest. | `info` |
 | [Pickle Rick](./Room/Pickle-Rick/readme.md) | Easy | Linux | A Rick and Morty CTF. Help turn Rick back into a human! | CTF `Web Cmd` |
@@ -235,7 +234,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Principles of Security](./Room/Principles%20of%20Security/readme.md) | Easy | Any | Learn the principles of information security that secures data and protects systems from abuse | `info` |
 | [Psycho Break](./Room/Psycho-Break/readme.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/readme.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF `CVE-2023-27372` |
-| [Putting it all together](./Room/Putting%20it%20all%20together/Readme.md) |  |  | Learn how all the individual components of the web work together to bring you access to your favourite web sites. |  |
+| [Putting it all together](./Room/Putting%20it%20all%20together/Readme.md) | Info |  | Learn how all the individual components of the web work together to bring you access to your favourite web sites. |  |
 | [Red Stone One Carat](./Room/Red%20Stone%20One%20Carat/Readme.md) | Medium | Linux | First room of the Red Stone series. Hack ruby using ruby. | restricted `rzsh` shell |
 | [Red Team Fundamentals](./Room/Red%20Team%20Fundamentals/readme.md) | Easy | Any | Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements. |  |
 | [RootMe](./Room/Rootme/readme.md) | Easy | Linux | A ctf for beginners, can you root me? | `File Upload` |
@@ -249,7 +248,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Speed Chatting](./Room/Speed%20Chatting/Readme.md) | Easy | Web | Can you hack as fast as you can chat? | `RCE` |
 | [Startup](./Room/Startup/readme.md) | Easy | Linux | Abuse traditional vulnerabilities via untraditional means. | CTF |
 | [Steel Mountain](./Room/Steel%20Mountain/readme.md) | Easy | Linux | Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access. | `CVE-2014-6287` |
-| [The CIA Triad](./Room/The%20CIA%20Triad/readme.md) |  |  | Understand the CIA Triad and how it shapes cyber security mindset. |  |
+| [The CIA Triad](./Room/The%20CIA%20Triad/readme.md) | Info |  | Understand the CIA Triad and how it shapes cyber security mindset. |  |
 | [The Greenholt Phish](./Room/The%20Greenholt%20Phish/readme.md) | Easy | Windows | VERA reads every guestbook entry as an instruction. You write something she really shouldn't act on. | `SOC` |
 | [The Guestbook](./Room/The%20Guestbook/Readme.md) | Medium | Web / AI |  | `AI` |
 | [The Phishing Pond](./Room/The%20Phishing%20Pond/readme.md) | Easy | Web | Catch the phish before the phish catches you. | `Identifying Phishing Emails` |
@@ -265,8 +264,8 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Valenfind](./Room/Valenfind/readme.md) | Medium | Web | Can you find vulnerabilities in this new dating app? | `LFI` |
 | [Void Execution](./Room/Void%20Execution/readme.md) | Medium | Linux | Learn how to bypass restrictions in Linux exploit development. | `Binary Exploitation` `only flag` |
 | [Vulnerabilities 101](./Room/Vulnerabilities%20101/readme.md) | Easy | Any | Understand the flaws of an application and apply your researching skills on some vulnerability databases. | Info |
-| [VulnNet Active](./Room/VulnNet-Active/Readme.md) |  |  |  |  |
-| [VulnNet Endgame](./Room/VulnNet-Endgame%E2%80%8A/Readme.md) |  |  |  | `only flag` |
+| [VulnNet Active](./Room/VulnNet-Active/Readme.md) | Info |  |  |  |
+| [VulnNet Endgame](./Room/VulnNet-Endgame%E2%80%8A/Readme.md) | Info |  |  | `only flag` |
 | [W1seGuy](./Room/W1seGuy/readme.md) | Easy | Linux | A w1se guy 0nce said, the answer is usually as plain as day. | `Cryptography` |
 | [Watcher](./Room/Watcher/readme.md) | Medium | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | `LFI` `Cronjob` |
 | [Web Application Basics](./Room/Web_Application_Basics/readme.md) | Easy | Web | Learn the basics of web applications: HTTP, URLs, request methods, response codes, and headers. | Info |

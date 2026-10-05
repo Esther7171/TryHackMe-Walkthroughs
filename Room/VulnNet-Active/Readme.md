@@ -1,5 +1,7 @@
 # <div align="center">VulnNet Active - TryHackMe writeup</div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 VulnNet: ActivE Tryhackme walkthough
 
 

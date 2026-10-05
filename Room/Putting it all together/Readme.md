@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="Putting it all together" src="https://github.com/user-attachments/assets/5038ff7f-fdbe-4882-b957-a5d86ea0d047"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ## Task 1. Putting It All Together
 
 From the previous modules, you'll have learned that quite a lot of things go on behind the scenes when you request a webpage in your browser.

@@ -4,6 +4,8 @@
 
 <div align="center"> <img width="200" height="200" alt="Lian Yu" src="https://github.com/user-attachments/assets/af788293-2527-4656-8dc2-2db94d4e01b7"/> </div>
 
+<div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
+
 ## Task 1. Find the Flags
 Welcome to Lian_YU, this Arrowverse themed beginner CTF box! Capture the flags and have fun.
 
