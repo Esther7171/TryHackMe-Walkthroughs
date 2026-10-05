@@ -75,6 +75,7 @@ THM{S3creT_Pr0fil3_H4s_b33n_Ident1fi3d}
 ```
 
 <div align="center">
-  <img width="894" height="406" alt="image" src="https://github.com/user-attachments/assets/b0e9c3b3-fe67-4ec8-88a2-d04943d7deec" />
+  <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b0e9c3b3-fe67-4ec8-88a2-d04943d7deec" />
 </div>
-With that, I had completed the **Overheard at Breakfast** TryHackMe OSINT challenge.
+
+> With that, I had completed the **Overheard at Breakfast** TryHackMe OSINT challenge.
