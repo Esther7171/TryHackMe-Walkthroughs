@@ -1,9 +1,8 @@
-# <div align="center">[Year of the Dog](https://tryhackme.com/r/room/yearofthedog)</div>
+# <div align="center">[Year of the Dog - TryHackMe writeup](https://tryhackme.com/r/room/yearofthedog)</div>
+
 <div align="center">Always so polite...</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/234e35d2-c233-4bbf-9a7e-a869364f88e4" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Year of the Dog" src="https://github.com/user-attachments/assets/234e35d2-c233-4bbf-9a7e-a869364f88e4"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

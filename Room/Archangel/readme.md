@@ -1,9 +1,8 @@
-# <div align="center">[Archangel - TryHackMe Walkthrough](https://tryhackme.com/r/room/archangel)</div>
+# <div align="center">[Archangel - TryHackMe writeup](https://tryhackme.com/r/room/archangel)</div>
+
 <div align="center">Boot2root, Web exploitation, Privilege escalation, LFI</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/a2d75f44-5757-47a5-899a-0b4fc03059ab" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Archangel" src="https://github.com/user-attachments/assets/a2d75f44-5757-47a5-899a-0b4fc03059ab"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

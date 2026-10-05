@@ -1,8 +1,8 @@
+# <div align="center">[Mr Robot CTF - TryHackMe writeup](https://tryhackme.com/r/room/mrrobot)</div>
 
-# <div align="center">[Mr Robot CTF](https://tryhackme.com/r/room/mrrobot)</div>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/0b4d4b9c-feba-48dc-8665-347ffd05967b" height="200"></img>
-</div>
+<div align="center">Based on the Mr. Robot show, can you root this box?</div>
+
+<div align="center"> <img width="200" height="200" alt="Mr Robot CTF" src="https://github.com/user-attachments/assets/0b4d4b9c-feba-48dc-8665-347ffd05967b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

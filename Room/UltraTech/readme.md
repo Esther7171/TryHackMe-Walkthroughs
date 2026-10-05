@@ -1,9 +1,8 @@
-# <div align="center">[UltraTech](https://tryhackme.com/r/room/ultratech1)</div>
+# <div align="center">[UltraTech - TryHackMe writeup](https://tryhackme.com/r/room/ultratech1)</div>
+
 <div align="center">The basics of Penetration Testing, Enumeration, Privilege Escalation and WebApp testing</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/1a97d356-6e8b-43f4-b081-aa85419c75d5da" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="UltraTech" src="https://github.com/user-attachments/assets/1a97d356-6e8b-43f4-b081-aa85419c75d5da"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

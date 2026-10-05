@@ -1,9 +1,8 @@
-# <div align="center">[Zeno](https://tryhackme.com/r/room/zeno)</div>
+# <div align="center">[Zeno - TryHackMe writeup](https://tryhackme.com/r/room/zeno)</div>
+
 <div align="center">Do you have the same patience as the great stoic philosopher Zeno? Try it out!</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/b7ce2ee8-5239-4098-b407-3df142e4d9a9" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Zeno" src="https://github.com/user-attachments/assets/b7ce2ee8-5239-4098-b407-3df142e4d9a9"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

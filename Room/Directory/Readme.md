@@ -1,8 +1,8 @@
-# <div align='center'>[Directory](https://tryhackme.com/room/directorydfirroom)</div>
-<div align='center'>Do you have what it takes to crack this case?</div>
-<div align='center'>
-  <img width="200" height="200" alt="directory" src="https://github.com/user-attachments/assets/cf02dfbe-85b5-4315-a0f6-63d77356afa6" />
-</div>
+# <div align="center">[Directory - TryHackMe writeup](https://tryhackme.com/room/directorydfirroom)</div>
+
+<div align="center">Do you have what it takes to crack this case?</div>
+
+<div align="center"> <img width="200" height="200" alt="Directory" src="https://github.com/user-attachments/assets/cf02dfbe-85b5-4315-a0f6-63d77356afa6"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

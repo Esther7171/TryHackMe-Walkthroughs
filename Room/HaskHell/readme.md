@@ -1,9 +1,8 @@
-# <div align="center">[HaskHell](https://tryhackme.com/r/room/haskhell)</div>
+# <div align="center">[HaskHell - TryHackMe writeup](https://tryhackme.com/r/room/haskhell)</div>
+
 <div align="center">Teach your CS professor that his PhD isn't in security</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/22815413-4b47-4523-ab64-26ea043316c3" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="HaskHell" src="https://github.com/user-attachments/assets/22815413-4b47-4523-ab64-26ea043316c3"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

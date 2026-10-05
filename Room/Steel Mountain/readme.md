@@ -1,8 +1,8 @@
-# <div align='center'>[Steel Mountain](https://tryhackme.com/room/steelmountain)</div>
-<div align='center'>Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/771d82ac-78ff-4d34-b7ba-b4498f3b75ed' height='200'></img>
-</div>
+# <div align="center">[Steel Mountain - TryHackMe writeup](https://tryhackme.com/room/steelmountain)</div>
+
+<div align="center">Hack into a Mr. Robot themed Windows machine. Use metasploit for initial access, utilise powershell for Windows privilege escalation enumeration and learn a new technique to get Administrator access.</div>
+
+<div align="center"> <img width="200" height="200" alt="Steel Mountain" src="https://github.com/user-attachments/assets/771d82ac-78ff-4d34-b7ba-b4498f3b75ed"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

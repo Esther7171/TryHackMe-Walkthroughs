@@ -1,8 +1,8 @@
-# <div align='center'>[Windows Fundamentals 1](https://tryhackme.com/room/windowsfundamentals1xbx)</div>
-<div align='center'>In part 1 of the Windows Fundamentals module, we'll start our journey learning about the Windows desktop, the NTFS file system, UAC, the Control Panel, and more..</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/f29ee43c-32a9-4d5f-b308-4a34c687f3b4' height='200'></img>
-</div>
+# <div align="center">[Windows Fundamentals 1 - TryHackMe writeup](https://tryhackme.com/room/windowsfundamentals1xbx)</div>
+
+<div align="center">In part 1 of the Windows Fundamentals module, we'll start our journey learning about the Windows desktop, the NTFS file system, UAC, the Control Panel, and more..</div>
+
+<div align="center"> <img width="200" height="200" alt="Windows Fundamentals 1" src="https://github.com/user-attachments/assets/f29ee43c-32a9-4d5f-b308-4a34c687f3b4"/> </div>
 
 <div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

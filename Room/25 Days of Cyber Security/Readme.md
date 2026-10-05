@@ -1,9 +1,8 @@
-# <div align="center">[25 Days of Cyber Security - TryHackMe write-ups](https://tryhackme.com/room/learncyberin25days)</div>
+# <div align="center">[25 Days of Cyber Security - TryHackMe writeup](https://tryhackme.com/room/learncyberin25days)</div>
+
 <div align="center">Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day.</div>
-<br>
-<div align="center">
-<img width="200" height="200" alt="61e5fecf25e14912323cf5fd4dd7e934" src="https://github.com/user-attachments/assets/d792ce22-a54d-4635-92cf-850fe228446c" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="25 Days of Cyber Security" src="https://github.com/user-attachments/assets/d792ce22-a54d-4635-92cf-850fe228446c"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

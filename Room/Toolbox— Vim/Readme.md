@@ -1,9 +1,8 @@
-# <div align="center">[Toolbox: Vim](https://tryhackme.com/r/room/toolboxvim)</div>
+# <div align="center">[Toolbox: Vim - TryHackMe writeup](https://tryhackme.com/r/room/toolboxvim)</div>
+
 <div align="center">Learn vim, a universal text editor that can be incredibly powerful when used properly. From basic text editing to editing of binary files, Vim can be an important arsenal in a security toolkit.</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f66bf6d7-d37e-4fcf-a500-70d735b56758" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Toolbox: Vim" src="https://github.com/user-attachments/assets/f66bf6d7-d37e-4fcf-a500-70d735b56758"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux / Windows" src="https://img.shields.io/badge/OS-Linux%20%2F%20Windows-blue" /> </div>
 

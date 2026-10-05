@@ -1,9 +1,8 @@
-# <div align="center">[Agent Sudo — TryHackMe Flags](https://tryhackme.com/r/room/agentsudoctf)</div>
+# <div align="center">[Agent Sudo - TryHackMe writeup](https://tryhackme.com/r/room/agentsudoctf)</div>
+
 <div align="center">You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth.</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/4af38d66-6dd1-41ae-9086-7f17ffda540b" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Agent Sudo" src="https://github.com/user-attachments/assets/4af38d66-6dd1-41ae-9086-7f17ffda540b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

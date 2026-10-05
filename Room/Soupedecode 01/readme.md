@@ -1,8 +1,8 @@
-# <div align='center'>[Soupedecode 01](https://tryhackme.com/room/soupedecode01)</div>
-<div align='center'>Test your enumeration skills on this boot-to-root machine.</div>
-<div align='center'>
-  <img width="200" height="200" alt="xuper" src="https://github.com/user-attachments/assets/659ba37a-4640-4007-81fc-e6b11f6a7e2a" />
-</div>
+# <div align="center">[Soupedecode 01 - TryHackMe writeup](https://tryhackme.com/room/soupedecode01)</div>
+
+<div align="center">Test your enumeration skills on this boot-to-root machine.</div>
+
+<div align="center"> <img width="200" height="200" alt="Soupedecode 01" src="https://github.com/user-attachments/assets/659ba37a-4640-4007-81fc-e6b11f6a7e2a"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

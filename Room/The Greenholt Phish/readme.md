@@ -1,9 +1,8 @@
-# <div align="center">[The Greenholt Phish — TryHackMe Write-up](https://tryhackme.com/room/phishingemails5fgjlzxc)</div>
+# <div align="center">[The Greenholt Phish - TryHackMe writeup](https://tryhackme.com/room/phishingemails5fgjlzxc)</div>
+
 <div align="center">Use the knowledge attained to analyze a malicious email.</div>
-<br>
-<div align="center">
-<img width="200" height="200" alt="808fb6095e5b1b6ead138077732c725d" src="https://github.com/user-attachments/assets/537e2573-d54a-4e70-a879-0e3aa288aa5b" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="The Greenholt Phish" src="https://github.com/user-attachments/assets/537e2573-d54a-4e70-a879-0e3aa288aa5b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

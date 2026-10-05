@@ -1,8 +1,8 @@
-# <div align='center'>[GameBuzz](https://tryhackme.com/room/gamebuzz)</div>
-<div align='center'>Part of Incognito CTF</div>
-<div align='center'>
-  <img alt="gamebuzz" src="https://github.com/user-attachments/assets/b82d2e36-8800-4cd3-98a7-388c3ff47c7b" height='200'></img>
-</div>
+# <div align="center">[Game Buzz - TryHackMe writeup](https://tryhackme.com/room/gamebuzz)</div>
+
+<div align="center">Part of Incognito CTF</div>
+
+<div align="center"> <img width="200" height="200" alt="Game Buzz" src="https://github.com/user-attachments/assets/b82d2e36-8800-4cd3-98a7-388c3ff47c7b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

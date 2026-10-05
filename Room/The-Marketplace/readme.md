@@ -1,9 +1,8 @@
-# <div align="center">[The Marketplace](https://tryhackme.com/r/room/marketplace)</div>
+# <div align="center">[The Marketplace - TryHackMe writeup](https://tryhackme.com/r/room/marketplace)</div>
+
 <div align="center">Can you take over The Marketplace's infrastructure?</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/e5dd3e52-6ba0-4cee-a3fc-5a3c86816ac8" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="The Marketplace" src="https://github.com/user-attachments/assets/e5dd3e52-6ba0-4cee-a3fc-5a3c86816ac8"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

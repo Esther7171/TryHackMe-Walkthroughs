@@ -1,9 +1,8 @@
-# <div align="center">[Nax](https://tryhackme.com/r/room/nax)</div>
-<div align="center">Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution.</div><br>
+# <div align="center">[Nax - TryHackMe writeup](https://tryhackme.com/r/room/nax)</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/7f2bec20-9377-4463-abf7-12602b548fc3" height="200"></img>
-</div>
+<div align="center">Identify the critical security flaw in the most powerful and trusted network monitoring software on the market, that allows an user authenticated execute remote code execution.</div>
+
+<div align="center"> <img width="200" height="200" alt="Nax" src="https://github.com/user-attachments/assets/7f2bec20-9377-4463-abf7-12602b548fc3"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,9 +1,8 @@
-# <div align="center">[Anonforce - TryHackMe Walkthrough | Complete Guide to Boot2Root](https://tryhackme.com/r/room/bsidesgtanonforce)</div>
+# <div align="center">[Anonforce - TryHackMe writeup](https://tryhackme.com/r/room/bsidesgtanonforce)</div>
+
 <div align="center">boot2root machine for FIT and bsides guatemala CTF</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/b2bd9f6b-8995-402a-8e54-2c5596bc16cc" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Anonforce" src="https://github.com/user-attachments/assets/b2bd9f6b-8995-402a-8e54-2c5596bc16cc"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

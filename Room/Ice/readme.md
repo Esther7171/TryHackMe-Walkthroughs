@@ -1,7 +1,8 @@
-# <div align="center">[ICE](https://tryhackme.com/r/room/ice)</div>
-<div align="center">
-<img src="https://miro.medium.com/v2/resize:fit:899/1*TxtDRv-bMxtlYtTwQ7TdCg.png" height="200"></img>
-</div>
+# <div align="center">[Ice - TryHackMe writeup](https://tryhackme.com/r/room/ice)</div>
+
+<div align="center">Deploy & hack into a Windows machine, exploiting a very poorly secured media server</div>
+
+<div align="center"> <img width="200" height="200" alt="Ice" src="https://miro.medium.com/v2/resize:fit:899/1*TxtDRv-bMxtlYtTwQ7TdCg.png"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

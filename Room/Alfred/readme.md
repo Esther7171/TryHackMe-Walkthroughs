@@ -1,8 +1,8 @@
-# <div align='center'>[Alfred TryHackMe Walkthrough – Complete Boot2Root Guide | Step-by-Step Hacking Tutorial](https://tryhackme.com/room/alfred)</div>
-<div align='center'>Exploit Jenkins to gain an initial shell, then escalate your privileges by exploiting Windows authentication tokens.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/335a1059-b792-4edc-a5e2-ea767b35e798' height='200'></img>
-</div>
+# <div align="center">[Alfred - TryHackMe writeup](https://tryhackme.com/room/alfred)</div>
+
+<div align="center">Exploit Jenkins to gain an initial shell, then escalate your privileges by exploiting Windows authentication tokens.</div>
+
+<div align="center"> <img width="200" height="200" alt="Alfred" src="https://github.com/user-attachments/assets/335a1059-b792-4edc-a5e2-ea767b35e798"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

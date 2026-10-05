@@ -1,8 +1,8 @@
+# <div align="center">[Hydra - TryHackMe writeup](https://tryhackme.com/r/room/hydra)</div>
 
-# <div align="center">[Hydra](https://tryhackme.com/r/room/hydra)</div>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/c4812e0c-6aec-48e2-bfcd-797f3ec9095e" height="200"></img>  
-</div>
+<div align="center">Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials</div>
+
+<div align="center"> <img width="200" height="200" alt="Hydra" src="https://github.com/user-attachments/assets/c4812e0c-6aec-48e2-bfcd-797f3ec9095e"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

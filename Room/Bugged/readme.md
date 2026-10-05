@@ -1,9 +1,8 @@
-# <div align="center">[Bugged](https://tryhackme.com/r/room/bugged)</div>
-<br>
-<div align="center">John likes to live in a very Internet connected world. Maybe too connected...</div><br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/bc6de6eb-0839-405b-a33b-165c46c3393a" height="180"></img>
-</div>
+# <div align="center">[Bugged - TryHackMe writeup](https://tryhackme.com/r/room/bugged)</div>
+
+<div align="center">John likes to live in a very Internet connected world. Maybe too connected...</div>
+
+<div align="center"> <img width="200" height="200" alt="Bugged" src="https://github.com/user-attachments/assets/bc6de6eb-0839-405b-a33b-165c46c3393a"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

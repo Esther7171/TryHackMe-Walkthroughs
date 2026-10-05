@@ -1,15 +1,10 @@
-# <div align='center'>[Inside a Computer System - TryHackMe Writeup](https://tryhackme.com/room/insideacomputer)</div>
+# <div align="center">[Inside a Computer System - TryHackMe writeup](https://tryhackme.com/room/insideacomputer)</div>
+
+<div align="center">This room covers the basic components of a computer system.</div>
+
+<div align="center"> <img width="200" height="200" alt="Inside a Computer System" src="https://github.com/user-attachments/assets/2f78fc49-0fe2-4067-81fe-a68c0cc6a840"/> </div>
 
 <div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
-
-<div align='center'>This room covers the basic components of a computer system.
-</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/2f78fc49-0fe2-4067-81fe-a68c0cc6a840' height='200'></img>
-</div>
-
-
-
 
 ## Task 1. Introduction
 

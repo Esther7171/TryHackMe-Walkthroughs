@@ -1,9 +1,8 @@
-# <div align="center">[Break Out The Cage](https://tryhackme.com/r/room/breakoutthecage1)</div>
+# <div align="center">[Break Out The Cage - TryHackMe writeup](https://tryhackme.com/r/room/breakoutthecage1)</div>
+
 <div align="center">Help Cage bring back his acting career and investigate the nefarious goings on of his agent!</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/ed38db2b-132d-4481-91b0-b98251287fd6" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Break Out The Cage" src="https://github.com/user-attachments/assets/ed38db2b-132d-4481-91b0-b98251287fd6"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

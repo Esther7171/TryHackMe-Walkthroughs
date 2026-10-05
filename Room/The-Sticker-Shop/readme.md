@@ -1,9 +1,8 @@
-# <div align="center">The Sticker Shop</div>
+# <div align="center">The Sticker Shop - TryHackMe writeup</div>
+
 <div align="center">Can you exploit the sticker shop in order to capture the flag?</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/60ef0486-b6b7-45db-877e-e54963e36e03" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="The Sticker Shop" src="https://github.com/user-attachments/assets/60ef0486-b6b7-45db-877e-e54963e36e03"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

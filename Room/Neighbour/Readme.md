@@ -1,8 +1,8 @@
-# <div align="center">[Neighbour TryHackMe Walkthrough](https://tryhackme.com/room/neighbour)</div>
+# <div align="center">[Neighbour - TryHackMe writeup](https://tryhackme.com/room/neighbour)</div>
+
 <div align="center">Check out our new cloud service, Authentication Anywhere. Can you find other user's secrets?</div>
-<div align="center">
-  <img width="200" height="200" alt="neighbour" src="https://github.com/user-attachments/assets/dba0f29f-616e-4cb1-a232-4c4e966f57e1" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Neighbour" src="https://github.com/user-attachments/assets/dba0f29f-616e-4cb1-a232-4c4e966f57e1"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

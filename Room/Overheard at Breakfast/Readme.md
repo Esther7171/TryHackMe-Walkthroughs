@@ -1,6 +1,8 @@
 # <div align="center">[Overheard at Breakfast - TryHackMe writeup](https://tryhackme.com/room/hh-overheardatbreakfast-6f01793c)</div>
 
-<div align="center">Two strangers. One conversation. One profile they never meant to reveal.</div> <br> <div align="center"> <img width="200" height="200" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/b4133583-8dc8-4bb0-96c2-826a779f63f2"/> </div>
+<div align="center">Two strangers. One conversation. One profile they never meant to reveal.</div>
+
+<div align="center"> <img width="200" height="200" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/b4133583-8dc8-4bb0-96c2-826a779f63f2"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> </div>
 

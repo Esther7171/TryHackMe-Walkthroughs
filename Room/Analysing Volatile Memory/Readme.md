@@ -1,9 +1,8 @@
-# <div align="center">[Analysing Volatile Memory](https://tryhackme.com/room/analysingvolatilememory)</div>
+# <div align="center">[Analysing Volatile Memory - TryHackMe writeup](https://tryhackme.com/room/analysingvolatilememory)</div>
+
 <div align="center">Learn how the Windows OS manages volatile data in different files on disk. Explore how to extract and analyse volatile data from those artefacts.</div>
-<br>
-<div align="center">
-<img width="200" height="200" alt="b15bdb33f152e2b3eb85f3218c6ae6e8" src="https://github.com/user-attachments/assets/bb446823-04a5-42f5-8b13-15ae8ab7c646" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Analysing Volatile Memory" src="https://github.com/user-attachments/assets/bb446823-04a5-42f5-8b13-15ae8ab7c646"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

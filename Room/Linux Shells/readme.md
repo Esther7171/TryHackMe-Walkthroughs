@@ -1,8 +1,8 @@
-# <div align="center">[Linux Shells - tryhackme walkthrough](https://tryhackme.com/room/linuxshells)</div>
+# <div align="center">[Linux Shells - TryHackMe writeup](https://tryhackme.com/room/linuxshells)</div>
+
 <div align="center">Learn about scripting and the different types of Linux shells.</div>
-<div align="center">
-  <img width="200" height="200" alt="linux shell" src="https://github.com/user-attachments/assets/62f8737a-8103-43ad-840d-070f1ffb3c97" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Linux Shells" src="https://github.com/user-attachments/assets/62f8737a-8103-43ad-840d-070f1ffb3c97"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

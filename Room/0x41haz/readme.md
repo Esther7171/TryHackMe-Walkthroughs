@@ -1,9 +1,8 @@
-# <div align="center">0x41haz — TryHackMe Walkthrough</div>
+# <div align="center">0x41haz - TryHackMe writeup</div>
+
 <div align="center">Simple Reversing Challenge</div>
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d1a28066-5e54-4f86-ba21-2353d5ecb097" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="0x41haz" src="https://github.com/user-attachments/assets/d1a28066-5e54-4f86-ba21-2353d5ecb097"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

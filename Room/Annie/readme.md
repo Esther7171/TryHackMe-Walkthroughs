@@ -1,11 +1,10 @@
-# <div align="center">[Annie  — TryHackMe Flags](https://tryhackme.com/r/room/annie)</div>
+# <div align="center">[Annie - TryHackMe writeup](https://tryhackme.com/r/room/annie)</div>
+
+<div align="center">Remote access comes in different flavors</div>
+
+<div align="center"> <img width="200" height="200" alt="Annie" src="https://tryhackme-images.s3.amazonaws.com/room-icons/9bcbd71d6ed380bcbf41c10cce8ccfcd.png"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
-
-## <div align="center">   Linux ● Medium </div>
-<div align="center">
-  <img src="https://tryhackme-images.s3.amazonaws.com/room-icons/9bcbd71d6ed380bcbf41c10cce8ccfcd.png" height="200"></img>
-</div>
 
 ## Task 1. Recon - Research - Exploit
 

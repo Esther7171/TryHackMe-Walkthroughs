@@ -1,12 +1,10 @@
-# <div align="center">[Jacob the Boss - Tryhackme Writeup](https://tryhackme.com/room/jacobtheboss)</div>
+# <div align="center">[Jacob the Boss - TryHackMe writeup](https://tryhackme.com/room/jacobtheboss)</div>
+
+<div align="center">Find a way in and learn a little more.</div>
+
+<div align="center"> <img width="200" height="200" alt="Jacob the Boss" src="https://github.com/user-attachments/assets/ff13492d-fbe8-4cb9-99d0-e2a2553879be"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
-
-<div align="center">Find a way in and learn a little more.
-</div>
-<div align="center">
-  <img height=200 width=200 src="https://github.com/user-attachments/assets/ff13492d-fbe8-4cb9-99d0-e2a2553879be"/>
-</div>
 
 ## Task 1
 

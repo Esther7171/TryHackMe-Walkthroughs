@@ -1,12 +1,10 @@
-# <div align="center">[Cicada-3301 Vol:1](https://tryhackme.com/r/room/cicada3301vol1)</div>
+# <div align="center">[Cicada-3301 Vol:1 - TryHackMe writeup](https://tryhackme.com/r/room/cicada3301vol1)</div>
+
+<div align="center">A basic steganography and cryptography challenge room based on the Cicada 3301 challenges</div>
+
+<div align="center"> <img width="200" height="200" alt="Cicada-3301 Vol:1" src="https://github.com/user-attachments/assets/0574a40f-819d-4a66-97ab-04e875091956"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
-
-<div align="center"></div>
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/0574a40f-819d-4a66-97ab-04e875091956" height=""></img>
-</div>
 
 ## Task 1. Download!
 

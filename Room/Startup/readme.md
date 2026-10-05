@@ -1,8 +1,8 @@
-# <div align="center">[Startup](https://tryhackme.com/r/room/startup#)</div>
+# <div align="center">[Startup - TryHackMe writeup](https://tryhackme.com/r/room/startup#)</div>
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5ec82312-a8a7-4ff9-8642-5c32efafe3f0" height="160"></img>
-</div>
+<div align="center">Abuse traditional vulnerabilities via untraditional means.</div>
+
+<div align="center"> <img width="200" height="200" alt="Startup" src="https://github.com/user-attachments/assets/5ec82312-a8a7-4ff9-8642-5c32efafe3f0"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

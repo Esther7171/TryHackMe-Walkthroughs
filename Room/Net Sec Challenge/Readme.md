@@ -1,8 +1,8 @@
-# <div align='center'>[Net Sec Challenge - Tryhackme Walkthrough](https://tryhackme.com/room/netsecchallenge)</div>
-<div align='center'>Practice the skills you have learned in the Network Security module.</div>
-<div align='center'>
-  <img width="200" height="200" alt="5a1f33f79fce3569a2bc247468713c93" src="https://github.com/user-attachments/assets/80e31da8-cfd7-4ba4-b29d-f5dee5544c5c" />
-</div>
+# <div align="center">[Net Sec Challenge - TryHackMe writeup](https://tryhackme.com/room/netsecchallenge)</div>
+
+<div align="center">Practice the skills you have learned in the Network Security module.</div>
+
+<div align="center"> <img width="200" height="200" alt="Net Sec Challenge" src="https://github.com/user-attachments/assets/80e31da8-cfd7-4ba4-b29d-f5dee5544c5c"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,8 +1,8 @@
-# <div align="center">[Year of the Owl](https://tryhackme.com/r/room/yearoftheowl)</div>
-<div align="center">The foolish owl sits on his throne...</div><br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/e2e8f5ec-54f1-45f3-9e35-62a05b127bad" height="200"></img>
-</div>
+# <div align="center">[Year-of-the-Owl - TryHackMe writeup](https://tryhackme.com/r/room/yearoftheowl)</div>
+
+<div align="center">The foolish owl sits on his throne...</div>
+
+<div align="center"> <img width="200" height="200" alt="Year-of-the-Owl" src="https://github.com/user-attachments/assets/e2e8f5ec-54f1-45f3-9e35-62a05b127bad"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

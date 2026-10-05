@@ -1,8 +1,8 @@
-# <div align="center">[Valenfind TryHackMe Walkthrough](https://tryhackme.com/room/lafb2026e10)</div>
+# <div align="center">[Valenfind - TryHackMe writeup](https://tryhackme.com/room/lafb2026e10)</div>
+
 <div align="center">Can you find vulnerabilities in this new dating app?</div>
-<div align="center">
-  <img width="200" height="200" alt="valenfind" src="https://github.com/user-attachments/assets/d23cfbae-614f-460d-8dd1-a55fa058c1ca" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Valenfind" src="https://github.com/user-attachments/assets/d23cfbae-614f-460d-8dd1-a55fa058c1ca"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

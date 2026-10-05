@@ -1,8 +1,8 @@
-# <div align="center">[Mindgames](https://tryhackme.com/r/room/mindgames)</div>
-<div align="center">Just a terrible idea...</div> <br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/0d678302-ea56-43cf-af22-0a868e76a63e" height="200"></img>
-</div>
+# <div align="center">[Mindgames - TryHackMe writeup](https://tryhackme.com/r/room/mindgames)</div>
+
+<div align="center">Just a terrible idea...</div>
+
+<div align="center"> <img width="200" height="200" alt="Mindgames" src="https://github.com/user-attachments/assets/0d678302-ea56-43cf-af22-0a868e76a63e"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

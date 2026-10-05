@@ -1,8 +1,8 @@
-# <div align="center">[Putting it all together - TryHackMe WriteUp](https://tryhackme.com/room/puttingitalltogether)</div>
+# <div align="center">[Putting it all together - TryHackMe writeup](https://tryhackme.com/room/puttingitalltogether)</div>
+
 <div align="center">Learn how all the individual components of the web work together to bring you access to your favourite web sites.</div>
-<div align="center">
-  <img width="200" height="200" alt="putting it all " src="https://github.com/user-attachments/assets/5038ff7f-fdbe-4882-b957-a5d86ea0d047" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Putting it all together" src="https://github.com/user-attachments/assets/5038ff7f-fdbe-4882-b957-a5d86ea0d047"/> </div>
 
 ## Task 1. Putting It All Together
 

@@ -1,8 +1,8 @@
+# <div align="center">[The London Bridge - TryHackMe writeup](https://tryhackme.com/r/room/thelondonbridge)</div>
 
-# <div align="center">[The London Bridge](https://tryhackme.com/r/room/thelondonbridge)</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/6a1bd7f0-2c17-4f11-8fb3-04d8eaa712c9" height="200"></img>
-</div>
+<div align="center">The London Bridge is falling down</div>
+
+<div align="center"> <img width="200" height="200" alt="The London Bridge" src="https://github.com/user-attachments/assets/6a1bd7f0-2c17-4f11-8fb3-04d8eaa712c9"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

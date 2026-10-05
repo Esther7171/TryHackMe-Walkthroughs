@@ -1,4 +1,5 @@
-# mKingdom tryhckme writeup
+# <div align="center">mKingdom - TryHackMe writeup</div>
+
 Beginner-friendly box inspired by a certain mustache man.
 
 

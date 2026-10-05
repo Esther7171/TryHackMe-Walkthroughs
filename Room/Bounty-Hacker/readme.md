@@ -1,7 +1,8 @@
-# <div align="center">[Bounty Hacker](https://tryhackme.com/r/room/cowboyhacker)</div>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/a1c1a330-8473-4c7d-afc9-8ed0e17fe801" height="200"></img>
-</div>
+# <div align="center">[Bounty Hacker - TryHackMe writeup](https://tryhackme.com/r/room/cowboyhacker)</div>
+
+<div align="center">You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!</div>
+
+<div align="center"> <img width="200" height="200" alt="Bounty Hacker" src="https://github.com/user-attachments/assets/a1c1a330-8473-4c7d-afc9-8ed0e17fe801"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

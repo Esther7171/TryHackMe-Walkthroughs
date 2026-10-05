@@ -1,7 +1,8 @@
-# <div align="center">[Pickle Rick](https://tryhackme.com/r/room/picklerick)</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/993a831c-095e-4911-b366-2d56203a0df3" height="200"></img>
-</div>
+# <div align="center">[Pickle Rick - TryHackMe writeup](https://tryhackme.com/r/room/picklerick)</div>
+
+<div align="center">A Rick and Morty CTF. Help turn Rick back into a human!</div>
+
+<div align="center"> <img width="200" height="200" alt="Pickle Rick" src="https://github.com/user-attachments/assets/993a831c-095e-4911-b366-2d56203a0df3"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

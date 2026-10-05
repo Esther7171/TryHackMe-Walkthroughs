@@ -1,9 +1,8 @@
-# <div align="center">[Web Application Basics](https://tryhackme.com/room/webapplicationbasics)</div>
+# <div align="center">[Web Application Basics - TryHackMe writeup](https://tryhackme.com/room/webapplicationbasics)</div>
+
 <div align="center">Learn the basics of web applications: HTTP, URLs, request methods, response codes, and headers.</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/e44d9e62-162a-4a02-a01e-91092ca41d69" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Web Application Basics" src="https://github.com/user-attachments/assets/e44d9e62-162a-4a02-a01e-91092ca41d69"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

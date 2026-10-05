@@ -1,8 +1,8 @@
-# <div align="center">[Looking Glass](https://tryhackme.com/r/room/lookingglass) </div>
-<div align="center">Step through the looking glass. A sequel to the Wonderland challenge room.</div><br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/b124b308-7bdd-408d-a13b-6e9218c4aa2d" height="200"></img>
-</div>
+# <div align="center">[Looking Glass - TryHackMe writeup](https://tryhackme.com/r/room/lookingglass)</div>
+
+<div align="center">Step through the looking glass. A sequel to the Wonderland challenge room.</div>
+
+<div align="center"> <img width="200" height="200" alt="Looking Glass" src="https://github.com/user-attachments/assets/b124b308-7bdd-408d-a13b-6e9218c4aa2d"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,8 +1,8 @@
-# <div align="center">[Hijack - TryHackMe walkthrough](https://tryhackme.com/room/hijack?utm_source=chatgpt.com)</div>
+# <div align="center">[Hijack - TryHackMe writeup](https://tryhackme.com/room/hijack?utm_source=chatgpt.com)</div>
+
 <div align="center">Misconfigs conquered, identities claimed.</div>
-<div align="center">
-	<img width="200" height="200" alt="HIJACK" src="https://github.com/user-attachments/assets/951f63c4-eb12-4711-b60c-aabde3ecdbdc" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Hijack" src="https://github.com/user-attachments/assets/951f63c4-eb12-4711-b60c-aabde3ecdbdc"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

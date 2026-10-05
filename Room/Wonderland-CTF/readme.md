@@ -1,8 +1,10 @@
-# Wonderland CTF [Tryhackme Lab Walkthrough](https://tryhackme.com/r/room/wonderland)
+# <div align="center">[Wonderland - TryHackMe writeup](https://tryhackme.com/r/room/wonderland)</div>
+
+<div align="center">Fall down the rabbit hole and enter wonderland</div>
+
+<div align="center"> <img width="200" height="200" alt="Wonderland" src="https://github.com/Esther7171/Wonderland/assets/122229257/ee54cccf-d47b-4cb7-bd9c-bfb6c660d060"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
-
-![wonderland](https://github.com/Esther7171/Wonderland/assets/122229257/ee54cccf-d47b-4cb7-bd9c-bfb6c660d060)
 
 ### Answer the questions below
 

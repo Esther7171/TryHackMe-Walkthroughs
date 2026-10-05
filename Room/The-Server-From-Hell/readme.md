@@ -1,10 +1,8 @@
+# <div align="center">[The Server From Hell - TryHackMe writeup](https://tryhackme.com/r/room/theserverfromhell)</div>
 
-# <div align="center">[The Server From Hell](https://tryhackme.com/r/room/theserverfromhell)</div>
 <div align="center">Face a server that feels as if it was configured and deployed by Satan himself. Can you escalate to root?</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/3a3b65e4-3de2-44be-aa41-86db563c6f0f" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="The Server From Hell" src="https://github.com/user-attachments/assets/3a3b65e4-3de2-44be-aa41-86db563c6f0f"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

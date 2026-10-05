@@ -1,8 +1,8 @@
-# <div align='center'>[Smol](https://tryhackme.com/room/smol)</div>
-<div align='center'>Test your enumeration skills on this boot-to-root machine.</div>
-<div align='center'>
-  <img src="https://github.com/user-attachments/assets/5a41a6b8-182b-4820-b171-a327310003d5" heigh="200"></img>
-</div>
+# <div align="center">[Smol - TryHackMe writeup](https://tryhackme.com/room/smol)</div>
+
+<div align="center">Test your enumeration skills on this boot-to-root machine.</div>
+
+<div align="center"> <img width="200" height="200" alt="Smol" src="https://github.com/user-attachments/assets/5a41a6b8-182b-4820-b171-a327310003d5"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

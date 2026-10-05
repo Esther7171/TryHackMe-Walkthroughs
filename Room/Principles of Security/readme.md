@@ -1,8 +1,8 @@
-# <div align='center'>[Principles of Security](https://tryhackme.com/room/principlesofsecurity)</div>
-<div align='center'>Learn the principles of information security that secures data and protects systems from abuse</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/12fa40c9-0957-4688-80e5-ca8a1fb04bdf' height='200'></img>
-</div>
+# <div align="center">[Principles of Security - TryHackMe writeup](https://tryhackme.com/room/principlesofsecurity)</div>
+
+<div align="center">Learn the principles of information security that secures data and protects systems from abuse</div>
+
+<div align="center"> <img width="200" height="200" alt="Principles of Security" src="https://github.com/user-attachments/assets/12fa40c9-0957-4688-80e5-ca8a1fb04bdf"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

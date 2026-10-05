@@ -1,10 +1,8 @@
-# <div align="center">[Cipher's Secret Message – TryHackMe Writeup](https://tryhackme.com/room/hfb1cipherssecretmessage)</div>
+# <div align="center">[Cipher's Secret Message - TryHackMe writeup](https://tryhackme.com/room/hfb1cipherssecretmessage)</div>
 
 <div align="center">Sharpen your cryptography skills by analyzing code to get the flag.</div>
 
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263' height='200'></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Cipher's Secret Message" src="https://github.com/user-attachments/assets/2a493956-07e0-40df-9179-fd9f77a0a263"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

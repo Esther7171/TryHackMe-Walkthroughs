@@ -1,8 +1,8 @@
-# <div align='center'>[Vulnerabilities 101](https://tryhackme.com/room/vulnerabilities101)</div>
-<div align='center'>Understand the flaws of an application and apply your researching skills on some vulnerability databases.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/e664ade5-b34e-4a56-9f8c-bde133eadb69' height='200'/>
-</div>
+# <div align="center">[Vulnerabilities 101 - TryHackMe writeup](https://tryhackme.com/room/vulnerabilities101)</div>
+
+<div align="center">Understand the flaws of an application and apply your researching skills on some vulnerability databases.</div>
+
+<div align="center"> <img width="200" height="200" alt="Vulnerabilities 101" src="https://github.com/user-attachments/assets/e664ade5-b34e-4a56-9f8c-bde133eadb69"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

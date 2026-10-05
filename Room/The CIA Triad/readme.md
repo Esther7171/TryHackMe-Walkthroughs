@@ -1,8 +1,8 @@
-# <div align='center'>[The CIA Triad TryHackMe Writeup](https://tryhackme.com/room/theciatriad)</div>
-<div align='center'>Understand the CIA Triad and how it shapes cyber security mindset.</div>
-<div align='center'>
-  <img src="https://github.com/user-attachments/assets/1c7c9462-d14b-4c23-b72a-970e727b4fd1" height='200'></img>
-</div>
+# <div align="center">[The CIA Triad - TryHackMe writeup](https://tryhackme.com/room/theciatriad)</div>
+
+<div align="center">Understand the CIA Triad and how it shapes cyber security mindset.</div>
+
+<div align="center"> <img width="200" height="200" alt="The CIA Triad" src="https://github.com/user-attachments/assets/1c7c9462-d14b-4c23-b72a-970e727b4fd1"/> </div>
 
 ### Task 1. Introduction
 

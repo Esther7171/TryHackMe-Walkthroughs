@@ -16,12 +16,17 @@
 
 # TryHackMe Walkthroughs & Writeups
 
-Writeups from every TryHackMe room I've completed. Steps I took, commands that worked and what I learned along the way.
+143 TryHackMe walkthroughs and writeups, one for every room I have completed: the steps I took, the commands that worked and what I learned along the way. Each room has its own folder under [`Room/`](./Room) with a step-by-step writeup.
 
-Covers web exploitation, CVE research, privilege escalation, container escapes, binary exploitation, DFIR and AI/LLM security on Linux, Windows and Web. CVEs from 2004 to 2025.
+They cover web exploitation, CVE research, Linux and Windows privilege escalation, container escapes, binary exploitation, DFIR, OSINT and AI/LLM security, from beginner rooms to hard CTF boxes.
+
+**Read them on the website:** [deathesther.tech/writeups](https://deathesther.tech/writeups/), with search, difficulty filters and flags hidden until you ask for them.
+
+### How each writeup is laid out
+
+Every writeup opens the same way: the room name linked to the lab on TryHackMe, the room description, the room image, and badges for difficulty and operating system. Then come the room's tasks and answers, and the walkthrough itself from `INTRO TO LAB` onwards. Rooms marked `only flag` in the table below hold the answers only; the full walkthrough is still to be written.
 
 ---
-
 ## Statistics
 
 | Metric | Count |
@@ -71,8 +76,8 @@ Covers web exploitation, CVE research, privilege escalation, container escapes, 
 | [Blue](./Room/Blue/readme.md) | Easy | Windows | EternalBlue (MS17-010) → Metasploit shell → hash cracking |
 | [Dogcat](./Room/Dogcat/readme.md) | Medium | Linux | LFI → log poisoning → RCE → Docker container escape |
 | [The Marketplace](./Room/The-Marketplace/readme.md) | Medium | Linux | Stored XSS → cookie theft → SQL injection → Docker socket escalation |
-| [ContainMe](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/ContainMe/Readme.md#containme---tryhackme-walkthrough) | Medium | Linux | SSH pivot → multi-hop container escape across internal network |
-| [Erlang/OTP SSH CVE-2025-32433](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Erlang-OTP%20SSH_CVE-2025-32433#erlangotp-ssh-cve-2025-32433) | Easy | Linux | Pre-auth RCE in Erlang SSH: 2025 CVE in a lab environment |
+| [ContainMe](./Room/ContainMe/Readme.md) | Medium | Linux | SSH pivot → multi-hop container escape across internal network |
+| [Erlang/OTP SSH CVE-2025-32433](./Room/Erlang-OTP%20SSH_CVE-2025-32433/readme.md) | Easy | Linux | Pre-auth RCE in Erlang SSH: 2025 CVE in a lab environment |
 | [Year of the Dog](./Room/Year-of-the-Dog/readme.md) | Hard | Linux | Blind SQL injection → Gitea code execution → root |
 
 ---
@@ -82,47 +87,47 @@ Covers web exploitation, CVE research, privilege escalation, container escapes, 
 ### Web Exploitation
 SQL injection, XSS, LFI/RFI, SSRF, IDOR, SSTI, RCE, and authentication bypass.
 
-[The Marketplace](./Room/The-Marketplace/readme.md) · [Dogcat](./Room/Dogcat/readme.md) · [The London Bridge](./Room/The-London-Bridge/readme.md) · [Battery](./Room/Battery/readme.md) · [CTF Collection Vol.2](./Room/CTF-collection-Vol.2/readme.md) · [The Sticker Shop](./Room/The-Sticker-Shop/readme.md) · [Capture!](./Room/Capture!/readme.md) · [Wekor](./Room/Wekor/readme.md) · [MD2PDF](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/MD2PDF#md2pdf-tryhackme-writeup)
+[The Marketplace](./Room/The-Marketplace/readme.md) · [Dogcat](./Room/Dogcat/readme.md) · [The London Bridge](./Room/The-London-Bridge/readme.md) · [Battery](./Room/Battery/readme.md) · [CTF Collection Vol.2](./Room/CTF-collection-Vol.2/readme.md) · [The Sticker Shop](./Room/The-Sticker-Shop/readme.md) · [Capture!](./Room/Capture!/readme.md) · [Wekor](./Room/Wekor/readme.md) · [MD2PDF](./Room/MD2PDF/readme.md)
 
 ### Privilege Escalation: Linux
 SUID abuse, PATH hijacking, cronjob exploitation, sudo misconfiguration.
 
-[Kenobi](./Room/Kenobi/readme.md) · [Madness](./Room/Madness/readme.md) · [Eavesdropper](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Eavesdropper/Readme.md#eavesdropper-tryhackme-walkthrough) · [Cheese CTF](./Room/Cheese-CTF/readme.md) · [Watcher](./Room/Watcher/readme.md) · [Oh My WebServer](./Room/Oh-My-WebServer/readme.md) · [Startup](./Room/Startup/readme.md)
+[Kenobi](./Room/Kenobi/readme.md) · [Madness](./Room/Madness/readme.md) · [Eavesdropper](./Room/Eavesdropper/Readme.md) · [Cheese CTF](./Room/Cheese-CTF/readme.md) · [Watcher](./Room/Watcher/readme.md) · [Oh My WebServer](./Room/Oh-My-WebServer/readme.md) · [Startup](./Room/Startup/readme.md)
 
 ### Privilege Escalation: Windows
 Token impersonation, WinPEAS, unquoted service paths, Metasploit post-exploitation.
 
-[Alfred](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Alfred/readme.md#alfred) · [Blue](./Room/Blue/readme.md) · [HackPark](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/HackPark#hack-park---tryhackme-walkthrough) · [Steel Mountain](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Steel%20Mountain#steel-mountain) · [Ice](./Room/Ice/readme.md) · [Blueprint](./Room/Blueprint/readme.md) · [Flatline](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Flatline#flatline-tryhackme-walkthrough--complete-step-by-step-guide-to-root)
+[Alfred](./Room/Alfred/readme.md) · [Blue](./Room/Blue/readme.md) · [HackPark](./Room/HackPark/Readme.md) · [Steel Mountain](./Room/Steel%20Mountain/readme.md) · [Ice](./Room/Ice/readme.md) · [Blueprint](./Room/Blueprint/readme.md) · [Flatline](./Room/Flatline/Readme.md)
 
 ### CVE Exploitation
 Real-world CVEs in lab environments, 2004 to 2025.
 
-[Erlang/OTP CVE-2025-32433](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Erlang-OTP%20SSH_CVE-2025-32433#erlangotp-ssh-cve-2025-32433) · [Roundcube CVE-2025-49113](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Roundcube%E2%80%94%20CVE-2025-49113/Readme.md#roundcube-cve-2025-49113) · [Silver Platter CVE-2024-36042](./Room/Silver-Platter/readme.md) · [Annie CVE-2020-13160](./Room/Annie/readme.md) · [Kiba CVE-2019-7609](./Room/Kiba/readme.md) · [Blue MS17-010](./Room/Blue/readme.md) · [Ice CVE-2004-1561](./Room/Ice/readme.md)
+[Erlang/OTP CVE-2025-32433](./Room/Erlang-OTP%20SSH_CVE-2025-32433/readme.md) · [Roundcube CVE-2025-49113](./Room/Roundcube%E2%80%94%20CVE-2025-49113/Readme.md) · [Silver Platter CVE-2024-36042](./Room/Silver-Platter/readme.md) · [Annie CVE-2020-13160](./Room/Annie/readme.md) · [Kiba CVE-2019-7609](./Room/Kiba/readme.md) · [Blue MS17-010](./Room/Blue/readme.md) · [Ice CVE-2004-1561](./Room/Ice/readme.md)
 
 ### Cryptography & Steganography
 Hash cracking, cipher analysis, encoding challenges, steganographic extraction.
 
-[Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/readme.md) · [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/readme.md) · [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/readme.md) · [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/readme.md) · [W1seGuy](./Room/W1seGuy/readme.md) · [Cipher's Secret Message](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Cipher's%20Secret%20Message/readme.md#ciphers-secret-message--tryhackme-writeup)
+[Crack the Hash Level-1](./Room/Crack-The-Hash-Level-1/readme.md) · [Crack The Hash Level-2](./Room/Crack-The-Hash-Level-2/readme.md) · [Cicada-3301 Vol:1](./Room/Cicada-3301-Vol_1/readme.md) · [C4ptur3-th3-fl4g](./Room/C4ptur3-th3-fl4g/readme.md) · [W1seGuy](./Room/W1seGuy/readme.md) · [Cipher's Secret Message](./Room/Cipher's%20Secret%20Message/readme.md)
 
 ### Container & Cloud Security
 Docker socket exploitation, container escape, multi-hop pivoting, cloud misconfiguration.
 
-[ContainMe](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/ContainMe/Readme.md#containme---tryhackme-walkthrough) · [Dogcat](./Room/Dogcat/readme.md) · [The Great Escape](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/The-Great-Escape/readme.md#the-great-escape) · [The Marketplace](./Room/The-Marketplace/readme.md) · [A Bucket of Phish](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/A%20Bucket%20of%20Phish/readme.md#a-bucket-of-phish---tryhackme-writeup)
+[ContainMe](./Room/ContainMe/Readme.md) · [Dogcat](./Room/Dogcat/readme.md) · [The Great Escape](./Room/The-Great-Escape/readme.md) · [The Marketplace](./Room/The-Marketplace/readme.md) · [A Bucket of Phish](./Room/A%20Bucket%20of%20Phish/readme.md)
 
 ### Binary Exploitation & Reverse Engineering
 Buffer overflows, binary analysis, shellcode execution, reverse engineering.
 
-[Precision](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Precision#precision--tryhackme-writeup) · [Void Execution](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Void%20Execution#void-execution--tryhackme-writeup) · [0x41haz](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/0x41haz/readme.md#0x41haz--tryhackme-walkthrough) · [Compiled](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Compiled#compiled---tryhackme-writeup) · [Mindgames](./Room/Mindgames/readme.md)
+[Precision](./Room/Precision/readme.md) · [Void Execution](./Room/Void%20Execution/readme.md) · [0x41haz](./Room/0x41haz/readme.md) · [Compiled](./Room/Compiled/Readme.md) · [Mindgames](./Room/Mindgames/readme.md)
 
 ### Forensics & DFIR
 Volatile memory analysis, log investigation, digital forensics.
 
-[Analysing Volatile Memory](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Analysing%20Volatile%20Memory#analysing-volatile-memory) · [Slingshot](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Slingshot/README.md#slingshot) · [Event Horizon](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Event%20Horizon/readme.md#event-horizon) · [Directory](https://github.com/Esther7171/TryHackMe-Walkthroughs/tree/main/Room/Directory#directory) · [Dumping Router Firmware](./Room/Dumping-Router-Firmware/readme.md)
+[Analysing Volatile Memory](./Room/Analysing%20Volatile%20Memory/Readme.md) · [Slingshot](./Room/Slingshot/README.md) · [Event Horizon](./Room/Event%20Horizon/readme.md) · [Directory](./Room/Directory/Readme.md) · [Dumping Router Firmware](./Room/Dumping-Router-Firmware/readme.md)
 
 ### AI & LLM Security
 Prompt injection and LLM jailbreaking in a sandboxed lab.
 
-[Evil-GPT](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Evil-GPT/Readme.md#evil-gpt) · [Evil-GPT v2](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/Evil-GPT%20v2/Readme.md#evil-gpt-v2) · [BankGPT](https://github.com/Esther7171/TryHackMe-Walkthroughs/blob/main/Room/BankGPT/readme.md)
+[Evil-GPT](./Room/Evil-GPT/Readme.md) · [Evil-GPT v2](./Room/Evil-GPT%20v2/Readme.md) · [BankGPT](./Room/BankGPT/readme.md)
 
 ---
 
@@ -195,7 +200,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Hijack](./Room/Hijack/Readme.md) | Easy | Linux | Misconfigs conquered, identities claimed. | `Misconfiguration` |
 | [Hydra](./Room/Hydra/readme.md) | Easy | Linux | Learn about and use Hydra, a fast network logon cracker, to bruteforce and obtain a website's credentials | `Tool Guide` |
 | [Ice](./Room/Ice/readme.md) | Easy | Windows | Deploy & hack into a Windows machine, exploiting a very poorly secured media server | Buffer overflow in Icecast 2.0.1 allows remote attackers to execute arbitrary code via an HTTP request `CVE-2004-1561` |
-| [Idor](./Room/IDOR/Readme.md) | Easy | Web | Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have. | `Learn idor` |
+| [IDOR](./Room/IDOR/Readme.md) | Easy | Web | Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have. | `Learn idor` |
 | [Ignite](./Room/Ignite/readme.md) | Easy | Linux | A new start-up has a few issues with their web server | `CMS` `RCE` `only flag` |
 | [Inside a Computer System](./Room/Inside%20a%20Computer%20System/Readme.md) | Info | Web | This room covers the basic components of a computer system. | `Info` |
 | [Introductory Networking](./Room/Introductory%20Networking/Readme.md) |  |  | An introduction to networking theory and basic networking tools |  |
@@ -203,7 +208,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Kenobi](./Room/Kenobi/readme.md) | Easy | Linux | Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation. | `ProFtpd` `SUID` |
 | [Kiba](./Room/Kiba/readme.md) | Easy | Linux | Identify the critical security flaw in the data visualization dashboard, that allows execute remote code execution. | `CVE-2019-7609` |
 | [Lian Yu](./Room/Lian_Yu/Readme.md) |  |  | A beginner level security challenge |  |
-| [Linux Shell](./Room/Linux%20Shells/readme.md) | Easy | Linux | Learn about scripting and the different types of Linux shells. | `Shell` |
+| [Linux Shells](./Room/Linux%20Shells/readme.md) | Easy | Linux | Learn about scripting and the different types of Linux shells. | `Shell` |
 | [Lo-Fi](./Room/Lo-Fi/readme.md) | Easy | Linux | Want to hear some lo-fi beats, to relax or study to? We've got you covered! | CTF `LFI` |
 | [Looking Glass](./Room/Looking-Glass/readme.md) | Medium | Linux | Step through the looking glass. A sequel to the Wonderland challenge room. | CTF |
 | [Lookup](./Room/Lookup/readme.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine. | CTF `elFinder PHP Connector exiftran Command Injection vulnerability` `Path manipulation exploitation` |
@@ -228,7 +233,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Poster](./Room/Poster/Readme.md) | Easy | Linux | The sys admin set up a rdbms in a safe way. | `RDBMS Exploitation` |
 | [Precision](./Room/Precision/readme.md) | Hard | Linux | Practice your advanced Linux Exploit Development skills. | `Binary Exploitation` `only flag` |
 | [Principles of Security](./Room/Principles%20of%20Security/readme.md) | Easy | Any | Learn the principles of information security that secures data and protects systems from abuse | `info` |
-| [Psyco Break](./Room/Psycho-Break/readme.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
+| [Psycho Break](./Room/Psycho-Break/readme.md) | Easy | Linux | Help Sebastian and his team of investigators to withstand the dangers that come ahead. | CTF |
 | [Publisher](./Room/Publisher/readme.md) | Easy | Linux | Test your enumeration skills on this boot-to-root machine | CTF `CVE-2023-27372` |
 | [Putting it all together](./Room/Putting%20it%20all%20together/Readme.md) |  |  | Learn how all the individual components of the web work together to bring you access to your favourite web sites. |  |
 | [Red Stone One Carat](./Room/Red%20Stone%20One%20Carat/Readme.md) | Medium | Linux | First room of the Red Stone series. Hack ruby using ruby. | restricted `rzsh` shell |
@@ -239,7 +244,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Silver Platter](./Room/Silver-Platter/readme.md) | Easy | Linux | Can you breach the server? | `CVE-2024-36042` |
 | [Simple CTF](./Room/Simple-CTF/readme.md) | Easy | Linux | Beginner level ctf | `CVE-2019-9053` `Vim` |
 | [Slingshot](./Room/Slingshot/README.md) | Easy | Linux | Can you retrace an attacker's steps after they enumerate and compromise a web server? | `Logs` |
-| [smol](./Room/Smol/readme.md) | Medium | Linux | Test your enumeration skills on this boot-to-root machine. | CTF |
+| [Smol](./Room/Smol/readme.md) | Medium | Linux | Test your enumeration skills on this boot-to-root machine. | CTF |
 | [Soupedecode 01](./Room/Soupedecode%2001/readme.md) | Easy | Windows | Test your enumeration skills on this boot-to-root machine. | `AD` |
 | [Speed Chatting](./Room/Speed%20Chatting/Readme.md) | Easy | Web | Can you hack as fast as you can chat? | `RCE` |
 | [Startup](./Room/Startup/readme.md) | Easy | Linux | Abuse traditional vulnerabilities via untraditional means. | CTF |

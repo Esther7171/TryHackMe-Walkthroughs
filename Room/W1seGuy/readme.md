@@ -1,13 +1,10 @@
-# <div align="center">[W1seGuy](https://tryhackme.com/r/room/w1seguy)</div>
+# <div align="center">[W1seGuy - TryHackMe writeup](https://tryhackme.com/r/room/w1seguy)</div>
+
+<div align="center">A w1se guy 0nce said, the answer is usually as plain as day.</div>
+
+<div align="center"> <img width="200" height="200" alt="W1seGuy" src="https://github.com/user-attachments/assets/64dd254a-d67c-45a5-943b-264fecae60da"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
-
-<div align="center">A w1se guy 0nce said, the answer is usually as plain as day.
-</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/64dd254a-d67c-45a5-943b-264fecae60da" height="200"></img>
-</div>
 
 ## Task 1. Source Code
 Download Task Files

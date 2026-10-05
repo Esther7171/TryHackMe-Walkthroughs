@@ -1,9 +1,8 @@
-# <div align="center">[ffuf](https://tryhackme.com/r/room/ffuf)</div>
+# <div align="center">[FFuF - TryHackMe writeup](https://tryhackme.com/r/room/ffuf)</div>
+
 <div align="center">Enumeration, fuzzing, and directory brute forcing using ffuf</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/38863d20-fe42-4cf3-80c5-6271ffc1a64a" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="FFuF" src="https://github.com/user-attachments/assets/38863d20-fe42-4cf3-80c5-6271ffc1a64a"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

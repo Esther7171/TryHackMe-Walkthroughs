@@ -1,8 +1,8 @@
-# <div align="center">Crack the hash</div>
-<div align="center">Cracking hashes challenges</div><br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/7ed0fa9c-bdf2-44b6-ae16-d8b0d3ab96da" height="200"></img>
-</div>
+# <div align="center">Crack the Hash Level-1 - TryHackMe writeup</div>
+
+<div align="center">Cracking hashes challenges</div>
+
+<div align="center"> <img width="200" height="200" alt="Crack the Hash Level-1" src="https://github.com/user-attachments/assets/7ed0fa9c-bdf2-44b6-ae16-d8b0d3ab96da"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

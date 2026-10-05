@@ -1,8 +1,8 @@
-# <div align="center">[Silver Platter](https://tryhackme.com/room/silverplatter)</div>
+# <div align="center">[Silver Platter - TryHackMe writeup](https://tryhackme.com/room/silverplatter)</div>
+
 <div align="center">Can you breach the server?</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Silver Platter" src="https://github.com/user-attachments/assets/5d49e885-e0d8-4058-a8ea-eb23b7bf8b2a"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,7 +1,8 @@
-# <div align="center">[Dogcat](https://tryhackme.com/r/room/dogcat)</div>
-<div align="center">
- <img src="https://github.com/user-attachments/assets/891b7488-99a8-4248-a5c7-24224ff1728d" height="150"></img> 
-</div>
+# <div align="center">[Dogcat - TryHackMe writeup](https://tryhackme.com/r/room/dogcat)</div>
+
+<div align="center">I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container.</div>
+
+<div align="center"> <img width="200" height="200" alt="Dogcat" src="https://github.com/user-attachments/assets/891b7488-99a8-4248-a5c7-24224ff1728d"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

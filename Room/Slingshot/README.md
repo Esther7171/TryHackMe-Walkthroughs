@@ -1,8 +1,8 @@
-# <div align='center'>[Slingshot](https://github.com/user-attachments/assets/9a05c698-e2b9-4746-8370-7794d65ced77)</div>
-<div align='center'>Can you retrace an attacker's steps after they enumerate and compromise a web server?</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/9a05c698-e2b9-4746-8370-7794d65ced77' height='200'></img>
-</div>
+# <div align="center">Slingshot - TryHackMe writeup</div>
+
+<div align="center">Can you retrace an attacker's steps after they enumerate and compromise a web server?</div>
+
+<div align="center"> <img width="200" height="200" alt="Slingshot" src="https://github.com/user-attachments/assets/9a05c698-e2b9-4746-8370-7794d65ced77"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

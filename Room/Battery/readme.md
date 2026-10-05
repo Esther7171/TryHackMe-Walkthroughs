@@ -1,9 +1,8 @@
-# <div align="center">[battery - TryHackMe Writeup](https://tryhackme.com/r/room/battery)</div>
+# <div align="center">[Battery - TryHackMe writeup](https://tryhackme.com/r/room/battery)</div>
+
 <div align="center">CTF designed by CTF lover for CTF lovers</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/044f2d97-3571-49d0-811f-cb13b31d4293" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Battery" src="https://github.com/user-attachments/assets/044f2d97-3571-49d0-811f-cb13b31d4293"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

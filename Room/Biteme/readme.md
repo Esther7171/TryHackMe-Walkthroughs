@@ -1,8 +1,8 @@
-# <div align="center">[biteme - TryHackMe Writeup](https://tryhackme.com/r/room/biteme)</div>
+# <div align="center">[Biteme - TryHackMe writeup](https://tryhackme.com/r/room/biteme)</div>
+
 <div align="center">Stay out of my server!</div>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f2ba38ee-f025-439a-bae3-ba631a0365a0" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Biteme" src="https://github.com/user-attachments/assets/f2ba38ee-f025-439a-bae3-ba631a0365a0"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

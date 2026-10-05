@@ -1,8 +1,8 @@
-# <div align="center">Lo-Fi</div>
+# <div align="center">Lo-Fi - TryHackMe writeup</div>
+
 <div align="center">Want to hear some lo-fi beats, to relax or study to? We've got you covered!</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/2913182e-1239-4f21-acb7-6a44e9b510e6" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Lo-Fi" src="https://github.com/user-attachments/assets/2913182e-1239-4f21-acb7-6a44e9b510e6"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

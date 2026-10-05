@@ -1,9 +1,8 @@
-# <div align="center">[Metamorphosis](https://tryhackme.com/r/room/metamorphosis)</div>
-<div align="center">Part of Incognito CTF</div><br>
+# <div align="center">[Metamorphosis - TryHackMe writeup](https://tryhackme.com/r/room/metamorphosis)</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/6def35f2-455a-45cb-986a-4195a6e33b23" height="200"></img>
-</div>
+<div align="center">Part of Incognito CTF</div>
+
+<div align="center"> <img width="200" height="200" alt="Metamorphosis" src="https://github.com/user-attachments/assets/6def35f2-455a-45cb-986a-4195a6e33b23"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

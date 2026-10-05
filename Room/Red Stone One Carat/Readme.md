@@ -1,9 +1,8 @@
-# <div align="center">[Red Stone One Carat - tryhackme Walkthrough & writeup](https://tryhackme.com/room/redstoneonecarat)</div>
+# <div align="center">[Red Stone One Carat - TryHackMe writeup](https://tryhackme.com/room/redstoneonecarat)</div>
+
 <div align="center">First room of the Red Stone series. Hack ruby using ruby.</div>
-<br>
-<div align="center">
-<img width="200" height="200" alt="ec3c930d88ecfb86f9d215a48e74df98" src="https://github.com/user-attachments/assets/2df219b9-bb18-4d65-8cad-1b36ea97842b" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Red Stone One Carat" src="https://github.com/user-attachments/assets/2df219b9-bb18-4d65-8cad-1b36ea97842b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

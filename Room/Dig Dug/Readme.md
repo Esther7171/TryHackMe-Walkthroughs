@@ -1,8 +1,8 @@
-# <div align="center">[Dig Dug TryHackMe Walkthrough](https://tryhackme.com/room/digdug)</div>
+# <div align="center">[Dig Dug - TryHackMe writeup](https://tryhackme.com/room/digdug)</div>
+
 <div align="center">Turns out this machine is a DNS server - it's time to get your shovels out!</div>
-<div align="center">
-  <img width="200" height="200" alt="dig dug" src="https://github.com/user-attachments/assets/9130515a-5dda-4c77-8c65-708446625d27" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Dig Dug" src="https://github.com/user-attachments/assets/9130515a-5dda-4c77-8c65-708446625d27"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

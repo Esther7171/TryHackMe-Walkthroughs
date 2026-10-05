@@ -1,8 +1,8 @@
-# <div align='center'>[Love Letter Locker - TryHackMe Writeup](https://tryhackme.com/room/lafb2026e2)</div>
+# <div align="center">[Love Letter Locker - TryHackMe writeup](https://tryhackme.com/room/lafb2026e2)</div>
+
 <div align="center">Use your skills to access other users' letters.</div>
-<div align="center">
-  <img width="200" height="200" alt="Love Letter Locker" src="https://github.com/user-attachments/assets/550ad1d5-6f14-4182-a308-9d468f8c64ef" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Love Letter Locker" src="https://github.com/user-attachments/assets/550ad1d5-6f14-4182-a308-9d468f8c64ef"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

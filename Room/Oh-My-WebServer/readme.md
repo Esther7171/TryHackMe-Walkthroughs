@@ -1,9 +1,8 @@
-# <div align="center">[Oh My WebServer](https://tryhackme.com/r/room/ohmyweb)</div>
-<div align="center">Can you root me?</div><br>
+# <div align="center">[Oh My WebServer - TryHackMe writeup](https://tryhackme.com/r/room/ohmyweb)</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/2f7ecf5b-ab91-4a12-bfd5-bcd55e359857" height="200"></img>
-</div>
+<div align="center">Can you root me?</div>
+
+<div align="center"> <img width="200" height="200" alt="Oh My WebServer" src="https://github.com/user-attachments/assets/2f7ecf5b-ab91-4a12-bfd5-bcd55e359857"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

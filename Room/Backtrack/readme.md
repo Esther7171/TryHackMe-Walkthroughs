@@ -1,8 +1,4 @@
-# <div align="center">[Backtrack TryHackMe Walkthrough]()</div>
-<div align="center"></div>
-<div align="center">
-  
-</div>
+# <div align="center">Backtrack - TryHackMe writeup</div>
 
 ## Initial Reconnaissance
 I started with a standard nmap scan to enumerate services and versions on the target.

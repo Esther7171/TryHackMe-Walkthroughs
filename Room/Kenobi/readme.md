@@ -1,7 +1,8 @@
-# <div align="center">[kenobi](https://tryhackme.com/r/room/kenobi)</div>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/87cc5aeb-1a06-43b3-93fe-9533cd3f9402" height="270"></img>
-</div>
+# <div align="center">[Kenobi - TryHackMe writeup](https://tryhackme.com/r/room/kenobi)</div>
+
+<div align="center">Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation.</div>
+
+<div align="center"> <img width="200" height="200" alt="Kenobi" src="https://github.com/user-attachments/assets/87cc5aeb-1a06-43b3-93fe-9533cd3f9402"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

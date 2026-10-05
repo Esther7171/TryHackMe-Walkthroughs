@@ -1,7 +1,8 @@
-# <div align="center">[Publisher](https://tryhackme.com/r/room/publisher)</div>
-<div align="center">
-  <img src="https://tryhackme-images.s3.amazonaws.com/room-icons/618b3fa52f0acc0061fb0172-1718377893997" height="300"></img>
-</div>
+# <div align="center">[Publisher - TryHackMe writeup](https://tryhackme.com/r/room/publisher)</div>
+
+<div align="center">Test your enumeration skills on this boot-to-root machine</div>
+
+<div align="center"> <img width="200" height="200" alt="Publisher" src="https://tryhackme-images.s3.amazonaws.com/room-icons/618b3fa52f0acc0061fb0172-1718377893997"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

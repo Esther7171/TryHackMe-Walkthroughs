@@ -1,8 +1,8 @@
-# <div align="center">CTF collection Vol.2</div>
-<div align="center">Sharpening up your CTF skill with the collection. The second volume is about web-based CTF.</div><br>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/9d32e7d0-f0f2-494a-8004-9374cd1fb864" height="200"></img>
-</div>
+# <div align="center">CTF collection Vol.2 - TryHackMe writeup</div>
+
+<div align="center">Sharpening up your CTF skill with the collection. The second volume is about web-based CTF.</div>
+
+<div align="center"> <img width="200" height="200" alt="CTF collection Vol.2" src="https://github.com/user-attachments/assets/9d32e7d0-f0f2-494a-8004-9374cd1fb864"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

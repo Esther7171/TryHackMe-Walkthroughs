@@ -1,10 +1,8 @@
-# <div align="center">[Opacity TryHackMe Walkthrough](https://tryhackme.com/room/opacity)</div>
+# <div align="center">[Opacity - TryHackMe writeup](https://tryhackme.com/room/opacity)</div>
+
 <div align="center">Opacity is a Boot2Root made for pentesters and cybersecurity enthusiasts.</div>
-<div align="center">
-  <img width="200" height="200" alt="Opacity-thm" src="https://github.com/user-attachments/assets/afa6e290-e01f-4b51-b358-461a1e94ee0c" />  
-</div>
 
-
+<div align="center"> <img width="200" height="200" alt="Opacity" src="https://github.com/user-attachments/assets/afa6e290-e01f-4b51-b358-461a1e94ee0c"/> </div>
 
 ## Task 1. Opacity
 

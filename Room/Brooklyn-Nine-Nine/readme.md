@@ -1,8 +1,8 @@
-# <div align="center">[Brooklyn-Nine CTF](https://tryhackme.com/r/room/brooklynninenine)</div>
+# <div align="center">[Brooklyn-Nine-Nine - TryHackMe writeup](https://tryhackme.com/r/room/brooklynninenine)</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f99597c1-133b-4e59-a5b7-5e673ec6c862" height="200"></img>
-</div>
+<div align="center">This room is aimed for beginner level hackers but anyone can try to hack this box. There are two main intended ways to root the box</div>
+
+<div align="center"> <img width="200" height="200" alt="Brooklyn-Nine-Nine" src="https://github.com/user-attachments/assets/f99597c1-133b-4e59-a5b7-5e673ec6c862"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

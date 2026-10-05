@@ -1,8 +1,8 @@
-# <div align="center">[tomghost](https://tryhackme.com/r/room/tomghost)</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/286248ae-3acf-4a6f-9832-c668d1108ede" height="200"></img>
-</div>
+# <div align="center">[Tomghost - TryHackMe writeup](https://tryhackme.com/r/room/tomghost)</div>
+
+<div align="center">Identify recent vulnerabilities to try exploit the system or read files that you should not have access to.</div>
+
+<div align="center"> <img width="200" height="200" alt="Tomghost" src="https://github.com/user-attachments/assets/286248ae-3acf-4a6f-9832-c668d1108ede"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

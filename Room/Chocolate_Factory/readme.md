@@ -1,9 +1,8 @@
+# <div align="center">[Chocolate Factory - TryHackMe writeup](https://tryhackme.com/r/room/chocolatefactory)</div>
 
-# <div align="center">[Chocolate Factory](https://tryhackme.com/r/room/chocolatefactory)</div>
+<div align="center">A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!</div>
 
-<div align="center">
-	<img src="https://github.com/user-attachments/assets/1db6a365-f65f-43f0-a641-a8b6a5d714f3" ></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Chocolate Factory" src="https://github.com/user-attachments/assets/1db6a365-f65f-43f0-a641-a8b6a5d714f3"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,8 +1,8 @@
-# <div align="center">[Dev Diaries - TryHackMe Walkthrough](https://tryhackme.com/room/devdiaries)</div>
+# <div align="center">[Dev Diaries - TryHackMe writeup](https://tryhackme.com/room/devdiaries)</div>
+
 <div align="center">Hunt through online development traces to uncover what was left behind.</div>
-<div align="center">
-  <img width="200" height="200" alt="Dev Diaries" src="https://github.com/user-attachments/assets/0315eff9-8fbe-41a7-84a4-d61e5e0763bd" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Dev Diaries" src="https://github.com/user-attachments/assets/0315eff9-8fbe-41a7-84a4-d61e5e0763bd"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

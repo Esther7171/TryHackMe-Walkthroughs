@@ -1,8 +1,8 @@
-# <div align="center">[Flatline TryHackMe Walkthrough — Complete Step-by-Step Guide to Root](https://tryhackme.com/room/flatline)</div>
-<div align='center'>How low are your morals?</div>
-<div align='center'>
- <img src='https://github.com/user-attachments/assets/f4f47f86-a7d5-475c-9059-8bee41d7a808' height='200' />
-</div>
+# <div align="center">[Flatline - TryHackMe writeup](https://tryhackme.com/room/flatline)</div>
+
+<div align="center">How low are your morals?</div>
+
+<div align="center"> <img width="200" height="200" alt="Flatline" src="https://github.com/user-attachments/assets/f4f47f86-a7d5-475c-9059-8bee41d7a808"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

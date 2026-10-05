@@ -1,8 +1,8 @@
-# <div align="center">[Hidden Deep Into my Heart - TryHackMe Walkthrough](https://tryhackme.com/room/lafb2026e9)</div>
+# <div align="center">[Hidden Deep Into my Heart - TryHackMe writeup](https://tryhackme.com/room/lafb2026e9)</div>
+
 <div align="center">Find what's hidden deep inside this website.</div>
-<div align="center">
-  <img width="200" height="200" alt="ctf" src="https://github.com/user-attachments/assets/4e581af9-ce2b-455d-aa17-d55879e753e4" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Hidden Deep Into my Heart" src="https://github.com/user-attachments/assets/4e581af9-ce2b-455d-aa17-d55879e753e4"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

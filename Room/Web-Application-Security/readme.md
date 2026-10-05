@@ -1,9 +1,8 @@
+# <div align="center">[Web Application Security - TryHackMe writeup](https://tryhackme.com/r/room/introwebapplicationsecurity)</div>
 
-# <div align="center">[Web Application Security](https://tryhackme.com/r/room/introwebapplicationsecurity)</div>
+<div align="center">Learn about web applications and explore some of their common security issues.</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/a4bb194c-cfa0-4cc7-aa24-abd0d3a8354e" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Web Application Security" src="https://github.com/user-attachments/assets/a4bb194c-cfa0-4cc7-aa24-abd0d3a8354e"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

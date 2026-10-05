@@ -1,9 +1,8 @@
-# <div align="center">[Cheese CTF](https://tryhackme.com/r/room/cheesectfv10)</div>
+# <div align="center">[Cheese CTF - TryHackMe writeup](https://tryhackme.com/r/room/cheesectfv10)</div>
 
+<div align="center">Inspired by the great cheese talk of THM!</div>
 
-<div align="center">
-<img src="https://tryhackme-images.s3.amazonaws.com/room-icons/618b3fa52f0acc0061fb0172-1718375657104" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Cheese CTF" src="https://tryhackme-images.s3.amazonaws.com/room-icons/618b3fa52f0acc0061fb0172-1718375657104"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

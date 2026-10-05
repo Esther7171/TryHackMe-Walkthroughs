@@ -1,8 +1,8 @@
-# <div align='center'>[Metasploit: Meterpreter](https://tryhackme.com/room/meterpreter)</div>
-<div align='center'>Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/c0a3de46-547f-4cca-9001-338b04577e10' height='200'></img>
-</div>
+# <div align="center">[Metasploit: Meterpreter - TryHackMe writeup](https://tryhackme.com/room/meterpreter)</div>
+
+<div align="center">Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation.</div>
+
+<div align="center"> <img width="200" height="200" alt="Metasploit: Meterpreter" src="https://github.com/user-attachments/assets/c0a3de46-547f-4cca-9001-338b04577e10"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

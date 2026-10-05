@@ -1,9 +1,8 @@
-# <div align="center">[Lookup](https://tryhackme.com/r/room/lookup)</div>
+# <div align="center">[Lookup - TryHackMe writeup](https://tryhackme.com/r/room/lookup)</div>
+
 <div align="center">Test your enumeration skills on this boot-to-root machine.</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/0f4016d8-b972-442d-93b3-056fcff87add" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Lookup" src="https://github.com/user-attachments/assets/0f4016d8-b972-442d-93b3-056fcff87add"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

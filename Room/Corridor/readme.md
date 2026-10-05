@@ -1,7 +1,8 @@
-# <div align="center">[Corridor](https://tryhackme.com/r/room/corridor)</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5fb3bb83-2944-499f-a4bc-8ac50298b6db" height="200"></img>
-</div>
+# <div align="center">[Corridor - TryHackMe writeup](https://tryhackme.com/r/room/corridor)</div>
+
+<div align="center">Can you escape the Corridor?</div>
+
+<div align="center"> <img width="200" height="200" alt="Corridor" src="https://github.com/user-attachments/assets/5fb3bb83-2944-499f-a4bc-8ac50298b6db"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

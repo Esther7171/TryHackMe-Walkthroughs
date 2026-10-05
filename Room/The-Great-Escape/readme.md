@@ -1,10 +1,8 @@
+# <div align="center">[The Great Escape - TryHackMe writeup](https://tryhackme.com/r/room/thegreatescape)</div>
 
-# <div align="center">[The Great Escape](https://tryhackme.com/r/room/thegreatescape)</div>
 <div align="center">Our devs have created an awesome new site. Can you break out of the sandbox?</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/aff860f5-44b7-4b8e-bb43-0f47a4c04e23" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="The Great Escape" src="https://github.com/user-attachments/assets/aff860f5-44b7-4b8e-bb43-0f47a4c04e23"/> </div>
 
 <div align="center"> <img alt="Difficulty: Medium" src="https://img.shields.io/badge/Difficulty-Medium-yellow" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

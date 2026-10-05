@@ -1,8 +1,8 @@
-# <div align='center'>[Search Skills](http://tryhackme.com/room/searchskills)</div>
-<div align='center'>Learn to efficiently search the Internet and use specialized search engines and technical docs.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/cc486bee-db0c-4810-89a5-c8070cb026b0' height=''></img>
-</div>
+# <div align="center">[Search Skills - TryHackMe writeup](http://tryhackme.com/room/searchskills)</div>
+
+<div align="center">Learn to efficiently search the Internet and use specialized search engines and technical docs.</div>
+
+<div align="center"> <img width="200" height="200" alt="Search Skills" src="https://github.com/user-attachments/assets/cc486bee-db0c-4810-89a5-c8070cb026b0"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

@@ -1,13 +1,10 @@
-# <div align="center">[Careers in Cyber](https://tryhackme.com/r/room/careersincyber)</div>
+# <div align="center">[Careers in Cyber - TryHackMe writeup](https://tryhackme.com/r/room/careersincyber)</div>
+
+<div align="center">Learn about the different careers in cyber security</div>
+
+<div align="center"> <img width="200" height="200" alt="Careers in Cyber" src="https://github.com/user-attachments/assets/fe474298-e068-4485-81f3-47d8117eafab"/> </div>
 
 <div align="center"> <img alt="Difficulty: Info" src="https://img.shields.io/badge/Difficulty-Info-lightgrey" /> </div>
-
-<div align="center">Learn about the different careers in cyber security.
-</div>
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/fe474298-e068-4485-81f3-47d8117eafab" height="200px"></img>
-</div>
 
 # Task 1. Introduction
 

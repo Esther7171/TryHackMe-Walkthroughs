@@ -1,8 +1,8 @@
-# <div align="center">[The Phishing Pond - TryHackMe Walkthrough Identifying Real-World Phishing Emails](https://tryhackme.com/room/phishingpond)</div>
+# <div align="center">[The Phishing Pond - TryHackMe writeup](https://tryhackme.com/room/phishingpond)</div>
+
 <div align="center">Catch the phish before the phish catches you.</div>
-<div align="center">
-  <img width="200" height="200" alt="the-phishing-pond" src="https://github.com/user-attachments/assets/750cf163-ea4e-4ab3-a5c6-968c7c2be9aa" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="The Phishing Pond" src="https://github.com/user-attachments/assets/750cf163-ea4e-4ab3-a5c6-968c7c2be9aa"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 

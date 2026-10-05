@@ -1,9 +1,8 @@
-# <div align="center">[Abusing Windows Internals](https://tryhackme.com/room/abusingwindowsinternals)</div>
+# <div align="center">[Abusing Windows Internals - TryHackMe writeup](https://tryhackme.com/room/abusingwindowsinternals)</div>
+
 <div align="center">Leverage windows internals components to evade common detection solutions, using modern tool-agnostic approaches.</div>
-<br>
-<div align="center">
-<img width="256" height="256" alt="76910e7adb4cef3da9496c148b4c96c2" src="https://github.com/user-attachments/assets/8d0d6db2-d185-455b-aeda-aa8f1ae9d504" />
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Abusing Windows Internals" src="https://github.com/user-attachments/assets/8d0d6db2-d185-455b-aeda-aa8f1ae9d504"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Windows" src="https://img.shields.io/badge/OS-Windows-blue" /> </div>
 

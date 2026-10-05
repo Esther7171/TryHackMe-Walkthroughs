@@ -1,8 +1,6 @@
-# <div align="center">[hc0n Christmas CTF - TryHackMe Writeup](https://tryhackme.com/room/hc0nchristmasctf)</div>
+# <div align="center">[hc0n Christmas CTF - TryHackMe writeup](https://tryhackme.com/room/hc0nchristmasctf)</div>
+
 <div align="center">hackt the planet</div>
-<div align="center">
-  <img src= "https://github.com/user-attachments/assets/66313b6b-20e5-4db6-8c46-6c3e5bfa048b" height="200" />
-</div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

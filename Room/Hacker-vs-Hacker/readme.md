@@ -1,9 +1,8 @@
-# <div align="center">[Hacker vs. Hacker](https://tryhackme.com/r/room/hackervshacker)</div>
+# <div align="center">[Hacker v/s Hacker - TryHackMe writeup](https://tryhackme.com/r/room/hackervshacker)</div>
+
 <div align="center">Someone has compromised this server already! Can you get in and evade their countermeasures?</div>
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/67671f1b-2ffa-4036-b8d7-3f0abc76a89f" height=""></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Hacker v/s Hacker" src="https://github.com/user-attachments/assets/67671f1b-2ffa-4036-b8d7-3f0abc76a89f"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

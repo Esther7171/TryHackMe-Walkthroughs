@@ -1,9 +1,8 @@
-# <div align="center">[Simple CTF](https://tryhackme.com/r/room/easyctf)</div>
+# <div align="center">[Simple CTF - TryHackMe writeup](https://tryhackme.com/r/room/easyctf)</div>
+
 <div align="center">Beginner level ctf</div>
-<br>
-<div align="center">
-<img src="https://github.com/user-attachments/assets/a035c702-c26a-4654-93bf-0115e10f9f1b" height="200"></img>
-</div>
+
+<div align="center"> <img width="200" height="200" alt="Simple CTF" src="https://github.com/user-attachments/assets/a035c702-c26a-4654-93bf-0115e10f9f1b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

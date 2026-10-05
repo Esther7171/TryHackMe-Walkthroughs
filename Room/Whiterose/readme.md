@@ -1,8 +1,8 @@
-# <div align="center">[Whiterose](https://tryhackme.com/r/room/whiterose)</div>
-<div align="center"> Yet another Mr. Robot themed challenge.</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/63573b56-425b-415c-9133-31f9b701470b" height="200"></img>
-</div>
+# <div align="center">[Whiterose - TryHackMe writeup](https://tryhackme.com/r/room/whiterose)</div>
+
+<div align="center">Yet another Mr. Robot themed challenge.</div>
+
+<div align="center"> <img width="200" height="200" alt="Whiterose" src="https://github.com/user-attachments/assets/63573b56-425b-415c-9133-31f9b701470b"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

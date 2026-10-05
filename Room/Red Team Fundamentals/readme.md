@@ -1,8 +1,8 @@
-# <div align='center'>[Red Team Fundamentals](https://tryhackme.com/room/redteamfundamentals)</div>
-<div align='center'>Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.</div>
-<div align='center'>
-  <img src='https://github.com/user-attachments/assets/165c5573-71ed-4552-a528-355f68666c23' height='200'></img>
-</div>
+# <div align="center">[Red Team Fundamentals - TryHackMe writeup](https://tryhackme.com/room/redteamfundamentals)</div>
+
+<div align="center">Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.</div>
+
+<div align="center"> <img width="200" height="200" alt="Red Team Fundamentals" src="https://github.com/user-attachments/assets/165c5573-71ed-4552-a528-355f68666c23"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Any" src="https://img.shields.io/badge/OS-Any-blue" /> </div>
 

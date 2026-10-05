@@ -1,8 +1,8 @@
-# <div align='center'>[Event Horizon](https://tryhackme.com/room/eventhorizonroom)</div>
-<div align='center'>Unearth the secrets beyond the Event Horizon.</div>
-<div align='center'>
-  <img width="200" height="200" alt="618b3fa52f0acc0061fb0172-1749651774451" src="https://github.com/user-attachments/assets/b3ce0df5-b3d5-4221-88b1-4159db8d6f28" />
-</div>
+# <div align="center">[Event Horizon - TryHackMe writeup](https://tryhackme.com/room/eventhorizonroom)</div>
+
+<div align="center">Unearth the secrets beyond the Event Horizon.</div>
+
+<div align="center"> <img width="200" height="200" alt="Event Horizon" src="https://github.com/user-attachments/assets/b3ce0df5-b3d5-4221-88b1-4159db8d6f28"/> </div>
 
 <div align="center"> <img alt="Difficulty: Hard" src="https://img.shields.io/badge/Difficulty-Hard-red" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

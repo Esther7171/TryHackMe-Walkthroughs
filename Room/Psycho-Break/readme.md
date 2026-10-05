@@ -1,7 +1,8 @@
-# <div align="center">[Psycho Break](https://tryhackme.com/r/room/psychobreak)</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/edcce401-b1e6-4578-9a81-19031b31945f" height="200"></img>
-</div>
+# <div align="center">[Psycho Break - TryHackMe writeup](https://tryhackme.com/r/room/psychobreak)</div>
+
+<div align="center">Help Sebastian and his team of investigators to withstand the dangers that come ahead.</div>
+
+<div align="center"> <img width="200" height="200" alt="Psycho Break" src="https://github.com/user-attachments/assets/edcce401-b1e6-4578-9a81-19031b31945f"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

@@ -1,8 +1,8 @@
-# <div align='center'>[Evil-GPT](https://tryhackme.com/room/hfb1evilgpt)</div>
-<div align='center'>Practice your LLM hacking skills.</div>
-<div align='center'>
-  <img src="https://github.com/user-attachments/assets/d5a568d2-e70c-43ce-8ba1-7ef01f76c718" /img>
-</div>
+# <div align="center">[Evil-GPT - TryHackMe writeup](https://tryhackme.com/room/hfb1evilgpt)</div>
+
+<div align="center">Practice your LLM hacking skills.</div>
+
+<div align="center"> <img width="200" height="200" alt="Evil-GPT" src="https://github.com/user-attachments/assets/d5a568d2-e70c-43ce-8ba1-7ef01f76c718"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

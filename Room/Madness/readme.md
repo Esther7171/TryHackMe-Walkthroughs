@@ -1,7 +1,8 @@
-# <div align="center">[Madness](https://tryhackme.com/r/room/madness)</div>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/044d66b7-a10d-45ac-9790-2df9df4478c2" height="200"></img>
-</div>
+# <div align="center">[Madness - TryHackMe writeup](https://tryhackme.com/r/room/madness)</div>
+
+<div align="center">Will you be consumed by Madness?</div>
+
+<div align="center"> <img width="200" height="200" alt="Madness" src="https://github.com/user-attachments/assets/044d66b7-a10d-45ac-9790-2df9df4478c2"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Linux" src="https://img.shields.io/badge/OS-Linux-blue" /> </div>
 

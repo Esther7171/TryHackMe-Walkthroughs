@@ -1,9 +1,8 @@
+# <div align="center">[Capture! - TryHackMe writeup](https://tryhackme.com/r/room/capture)</div>
 
-# <div align="center">[Capture!](https://tryhackme.com/r/room/capture)</div>
+<div align="center">Can you bypass the login form?</div>
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/b80bf4c0-f7c0-4d57-9365-cfec6de6020a" height="200"></img>
-</div>
+<div align="center"> <img width="200" height="200" alt="Capture!" src="https://github.com/user-attachments/assets/b80bf4c0-f7c0-4d57-9365-cfec6de6020a"/> </div>
 
 <div align="center"> <img alt="Difficulty: Easy" src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" /> <img alt="OS: Web" src="https://img.shields.io/badge/OS-Web-blue" /> </div>
 
