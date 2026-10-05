@@ -3,6 +3,8 @@ Description: Two strangers. One conversation. One profile they never meant to re
 Lab Link: https://tryhackme.com/room/hh-overheardatbreakfast-6f01793c
 level easy
 
+<img width="900" height="900" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/9709628c-43f7-4ddc-a615-4e322c3b258d" />
+
 ### Task 1. OSINT Hacker Holidays: Day 6
 #### What is the flag?
 ```
