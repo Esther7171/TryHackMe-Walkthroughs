@@ -1,4 +1,4 @@
-<img width="900" height="900" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/6d51a5f7-07ba-4985-9d18-cbcb08bedffd" /># <div align="center">[Overheard at Breakfast - TryHackMe writeup](https://tryhackme.com/room/hh-overheardatbreakfast-6f01793c)</div>
+# <div align="center">[Overheard at Breakfast - TryHackMe writeup](https://tryhackme.com/room/hh-overheardatbreakfast-6f01793c)</div>
 
 <div align="center">Two strangers. One conversation. One profile they never meant to reveal.</div> <br> <div align="center"> <img width="200" height="200" alt="Overheard at Breakfast" src="https://github.com/user-attachments/assets/b4133583-8dc8-4bb0-96c2-826a779f63f2"/> </div>
 
