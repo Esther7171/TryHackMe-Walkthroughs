@@ -161,7 +161,7 @@ All 143 TryHackMe walkthroughs in this repository, A to Z. Each one is also on [
 | [Void Execution](./Room/Void%20Execution/readme.md) | ${\color{#d29922}\textsf{Medium}}$ | Linux | Learn how to bypass restrictions in Linux exploit development. | `Binary Exploitation` `only flag` |
 | [Vulnerabilities 101](./Room/Vulnerabilities%20101/readme.md) | ${\color{#3fb950}\textsf{Easy}}$ | Any | Understand the flaws of an application and apply your researching skills on some vulnerability databases. | Info |
 | [VulnNet Active](./Room/VulnNet-Active/Readme.md) | ${\color{#8b949e}\textsf{Info}}$ |  |  | `SMB` `Hash cracking` `Metasploit` |
-| [VulnNet Endgame](./Room/VulnNet-Endgame%E2%80%8A/Readme.md) | ${\color{#8b949e}\textsf{Info}}$ |  |  | `only flag` |
+| [VulnNet Endgame](./Room/VulnNet-Endgame/Readme.md) | ${\color{#8b949e}\textsf{Info}}$ |  |  | `only flag` |
 | [W1seGuy](./Room/W1seGuy/readme.md) | ${\color{#3fb950}\textsf{Easy}}$ | Linux | A w1se guy 0nce said, the answer is usually as plain as day. | `Cryptography` |
 | [Watcher](./Room/Watcher/readme.md) | ${\color{#d29922}\textsf{Medium}}$ | Linux | A boot2root Linux machine utilising web exploits along with some common privilege escalation techniques | `LFI` `Cronjob` |
 | [Web Application Basics](./Room/Web_Application_Basics/readme.md) | ${\color{#3fb950}\textsf{Easy}}$ | Web | Learn the basics of web applications: HTTP, URLs, request methods, response codes, and headers. | Info |
